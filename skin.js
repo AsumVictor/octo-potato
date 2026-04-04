@@ -1,7 +1,7 @@
 // Garden Gnome Software - Skin
 // Pano2VR 8.0 beta3/22272
 // Filename: feather_orb.ggsk
-// Generated 2026-04-04T15:47:10Z
+// Generated 2026-04-04T18:00:59Z
 
 function pano2vrSkin(player,base) {
 	player.addVariable('vis_sounds_splashscreen', 2, false, { ignoreInState: 1  });
