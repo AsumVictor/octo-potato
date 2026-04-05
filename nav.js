@@ -54,7 +54,7 @@
   }
 
   function initNav() {
-    fetch('pano.xml?ts=50961051')
+    fetch('pano.xml?ts=51710039')
       .then(function (r) { return r.text(); })
       .then(function (xmlText) {
         var doc = new DOMParser().parseFromString(xmlText, 'application/xml');
