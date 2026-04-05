@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tour apprev="22272" appversion="8.0 beta3" hassounds="0" start="node9">
-  <panorama hideabout="1" id="node1">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node1/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node1">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node1/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="346.10" author="" capturedatetime="2026-03-12T13:33:29" comment="" copyright="" customnodeid="" datetime="12/03/2026 1:33 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75980556" longitude="-0.21966667" nodeid="node1" source="" tags="IMG_20260312_133329_006_010_HDR|Library|Main_Spot" title="Library Ground Floor"/>
@@ -24,11 +23,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node2">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node2/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node2">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node2/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="343.30" author="" capturedatetime="2026-03-12T13:36:36" comment="" copyright="" customnodeid="" datetime="12/03/2026 1:36 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75986111" longitude="-0.21966667" nodeid="node2" source="" tags="IMG_20260312_133636_011_015_HDR|Library|Main_Spot" title="Library Ground Floor II"/>
@@ -47,11 +45,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node3">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node3/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node3">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node3/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="344.20" author="" capturedatetime="2026-03-12T13:39:42" comment="" copyright="" customnodeid="" datetime="12/03/2026 1:39 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75997222" longitude="-0.21969444" nodeid="node3" source="" tags="IMG_20260312_133942_016_020_HDR|Library|Main_Spot" title="Library Ground Floor III"/>
@@ -68,11 +65,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node4">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node4/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node4">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node4/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="346.90" author="" capturedatetime="2026-03-12T13:42:14" comment="" copyright="" customnodeid="" datetime="12/03/2026 1:42 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75980556" longitude="-0.21972222" nodeid="node4" source="" tags="IMG_20260312_134214_021_025_HDR" title="Library Stairs"/>
@@ -91,11 +87,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node5">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node5/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node5">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node5/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="347.60" author="" capturedatetime="2026-03-12T13:43:52" comment="" copyright="" customnodeid="" datetime="12/03/2026 1:43 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75991667" longitude="-0.21980556" nodeid="node5" source="" tags="IMG_20260312_134352_026_030_HDR" title="Library Ground Stairs"/>
@@ -112,11 +107,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node7">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node7/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node7">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node7/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="354.00" author="" capturedatetime="2026-03-12T13:53:15" comment="" copyright="" customnodeid="" datetime="12/03/2026 1:53 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75980556" longitude="-0.21972222" nodeid="node7" source="" tags="IMG_20260312_135315_036_040_HDR" title="Library top Floor"/>
@@ -134,11 +128,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node6">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node6/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node6">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node6/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="343.70" author="" capturedatetime="2026-03-12T13:49:25" comment="" copyright="" customnodeid="" datetime="12/03/2026 1:49 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75986111" longitude="-0.21969444" nodeid="node6" source="" tags="IMG_20260312_134925_031_035_HDR" title="Library Conference Room"/>
@@ -154,11 +147,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node8">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node8/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node8">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node8/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="329.80" author="" capturedatetime="2026-03-12T13:55:34" comment="" copyright="" customnodeid="" datetime="12/03/2026 1:55 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75986111" longitude="-0.21961111" nodeid="node8" source="" tags="IMG_20260312_135534_041_045_HDR" title="Library top Floor II"/>
@@ -174,11 +166,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node9">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node9/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node9">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node9/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="344.80" author="" capturedatetime="2026-03-12T14:00:55" comment="" copyright="" customnodeid="todd_library" datetime="12/03/2026 2:00 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75972222" longitude="-0.21972222" nodeid="node9" source="" tags="IMG_20260312_140055_046_050_HDR|Location|ROAD" title="Todd_Library"/>
@@ -198,11 +189,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node10">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node10/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node10">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node10/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="343.50" author="" capturedatetime="2026-03-12T14:03:52" comment="" copyright="" customnodeid="" datetime="12/03/2026 2:03 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75994444" longitude="-0.21986111" nodeid="node10" source="" tags="IMG_20260312_140352_051_055_HDR|ROAD" title="Road-small-green-gate"/>
@@ -219,11 +209,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node11">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node11/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node11">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node11/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="343.60" author="" capturedatetime="2026-03-12T14:05:08" comment="" copyright="" customnodeid="" datetime="12/03/2026 2:05 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75991667" longitude="-0.21983333" nodeid="node11" source="" tags="IMG_20260312_140508_056_060_HDR|ROAD" title="Road II"/>
@@ -241,11 +230,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node12">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node12/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node12">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node12/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="344.00" author="" capturedatetime="2026-03-12T14:11:27" comment="" copyright="" customnodeid="" datetime="12/03/2026 2:11 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75994444" longitude="-0.21997222" nodeid="node12" source="" tags="IMG_20260312_141127_061_065_HDR|Location|Office|ROAD" title="Registry_Office-Counselling_Office"/>
@@ -262,11 +250,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node13">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node13/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node13">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node13/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="356.70" author="" capturedatetime="2026-03-12T14:13:30" comment="" copyright="" customnodeid="" datetime="12/03/2026 2:13 PM" description="" heading="0" hideinlist="0" info="" latitude="5.76005556" longitude="-0.22002778" nodeid="node13" source="" tags="IMG_20260312_141330_071_075_HDR|ROAD" title="IMG_20260312_141330_00_071.insp"/>
@@ -284,11 +271,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node14">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node14/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node14">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node14/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="350.40" author="" capturedatetime="2026-03-12T14:14:53" comment="" copyright="" customnodeid="" datetime="12/03/2026 2:14 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75983333" longitude="-0.22005556" nodeid="node14" source="" tags="IMG_20260312_141453_076_080_HDR|Location|ROAD" title="Najeeb_Office"/>
@@ -305,11 +291,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node15">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node15/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node15">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node15/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="341.30" author="" capturedatetime="2026-03-12T14:15:38" comment="" copyright="" customnodeid="" datetime="12/03/2026 2:15 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75997222" longitude="-0.22005556" nodeid="node15" source="" tags="IMG_20260312_141538_081_085_HDR|Location|ROAD" title="Student_Life_Engement-Office_of_Internation_Program_and_Cohesion-Academic_Advisor_Office"/>
@@ -325,11 +310,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node16">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node16/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node16">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node16/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="347.20" author="" capturedatetime="2026-03-12T14:17:18" comment="" copyright="" customnodeid="career_service_1" datetime="12/03/2026 2:17 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75991667" longitude="-0.22011111" nodeid="node16" source="" tags="IMG_20260312_141718_086_090_HDR|Location|ROAD" title="Career_Services_Office"/>
@@ -347,11 +331,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node17">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node17/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node17">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node17/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="341.90" author="" capturedatetime="2026-03-12T14:20:19" comment="" copyright="" customnodeid="" datetime="12/03/2026 2:20 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75983333" longitude="-0.22008333" nodeid="node17" source="" tags="IMG_20260312_142019_091_095_HDR|ROAD" title="IMG_20260312_142019_00_091.insp"/>
@@ -371,11 +354,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node18">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node18/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node18">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node18/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="341.50" author="" capturedatetime="2026-03-12T14:22:31" comment="" copyright="" customnodeid="" datetime="12/03/2026 2:22 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75975000" longitude="-0.22022222" nodeid="node18" source="" tags="all|ROAD" title="IMG_20260312_142231_00_096.insp"/>
@@ -392,11 +374,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node19">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node19/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node19">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node19/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="355.80" author="" capturedatetime="2026-03-12T14:23:23" comment="" copyright="" customnodeid="" datetime="12/03/2026 2:23 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75972222" longitude="-0.22022222" nodeid="node19" source="" tags="all|Classroom|Location|ROAD" title="Computer_Lab_222"/>
@@ -413,11 +394,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node21">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node21/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node21">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node21/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="340.80" author="" capturedatetime="2026-03-12T14:24:48" comment="" copyright="" customnodeid="" datetime="12/03/2026 2:24 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75958333" longitude="-0.22016667" nodeid="node21" source="" tags="all|Location|ROAD" title="Computer_Lab_221"/>
@@ -435,11 +415,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node22">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node22/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node22">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node22/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="341.20" author="" capturedatetime="2026-03-12T14:26:37" comment="" copyright="" customnodeid="" datetime="12/03/2026 2:26 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75969444" longitude="-0.22013889" nodeid="node22" source="" tags="all" title="IMG_20260312_142637_00_116.insp"/>
@@ -456,11 +435,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node23">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node23/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node23">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node23/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="341.50" author="" capturedatetime="2026-03-12T14:28:12" comment="" copyright="" customnodeid="" datetime="12/03/2026 2:28 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75958333" longitude="-0.22013889" nodeid="node23" source="" tags="all|ROAD" title="IMG_20260312_142812_00_121.insp"/>
@@ -480,11 +458,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node24">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node24/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node24">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node24/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="342.30" author="" capturedatetime="2026-03-12T14:30:52" comment="" copyright="" customnodeid="" datetime="12/03/2026 2:30 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75958333" longitude="-0.22005556" nodeid="node24" source="" tags="all|ROAD" title="IMG_20260312_143052_00_126.insp"/>
@@ -504,11 +481,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node25">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node25/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node25">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node25/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="341.70" author="" capturedatetime="2026-03-12T14:32:46" comment="" copyright="" customnodeid="data_bank_218" datetime="12/03/2026 2:32 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75941667" longitude="-0.22011111" nodeid="node25" source="" tags="all|Classroom|Location|ROAD" title="Databank Building"/>
@@ -528,11 +504,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node26">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node26/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node26">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node26/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="341.90" author="" capturedatetime="2026-03-12T14:35:00" comment="" copyright="" customnodeid="" datetime="12/03/2026 2:35 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75938889" longitude="-0.22002778" nodeid="node26" source="" tags="all" title="IMG_20260312_143500_00_136.insp"/>
@@ -549,11 +524,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node27">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node27/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node27">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node27/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="351.20" author="" capturedatetime="2026-03-12T14:36:34" comment="" copyright="" customnodeid="data_bank_216" datetime="12/03/2026 2:36 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75933333" longitude="-0.22005556" nodeid="node27" source="" tags="all|Classroom|Location|ROAD" title="Databank Building"/>
@@ -570,11 +544,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node28">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node28/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node28">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node28/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="355.30" author="" capturedatetime="2026-03-12T14:38:35" comment="" copyright="" customnodeid="" datetime="12/03/2026 2:38 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75911111" longitude="-0.22005556" nodeid="node28" source="" tags="all|ROAD" title="IMG_20260312_143835_00_146.insp"/>
@@ -591,11 +564,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node29">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node29/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node29">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node29/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="342.30" author="" capturedatetime="2026-03-12T14:41:39" comment="" copyright="" customnodeid="couryard_mini" datetime="12/03/2026 2:41 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75938889" longitude="-0.22005556" nodeid="node29" source="" tags="all|Location" title="Couryard_Mini"/>
@@ -613,11 +585,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node30">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node30/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node30">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node30/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="354.80" author="" capturedatetime="2026-03-12T14:42:39" comment="" copyright="" customnodeid="" datetime="12/03/2026 2:42 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75930556" longitude="-0.21994444" nodeid="node30" source="" tags="all|ROAD" title="IMG_20260312_144239_00_156.insp"/>
@@ -636,11 +607,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node31">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node31/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node31">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node31/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="343.80" author="" capturedatetime="2026-03-12T14:43:13" comment="" copyright="" customnodeid="" datetime="12/03/2026 2:43 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75933333" longitude="-0.21991667" nodeid="node31" source="" tags="all|ROAD" title="IMG_20260312_144313_00_161.insp"/>
@@ -659,11 +629,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node32">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node32/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node32">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node32/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="344.20" author="" capturedatetime="2026-03-12T14:43:55" comment="" copyright="" customnodeid="" datetime="12/03/2026 2:43 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75930556" longitude="-0.21991667" nodeid="node32" source="" tags="all|ROAD" title="IMG_20260312_144355_00_166.insp"/>
@@ -680,11 +649,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node33">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node33/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node33">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node33/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="346.10" author="" capturedatetime="2026-03-12T14:45:42" comment="" copyright="" customnodeid="ashesi_shop" datetime="12/03/2026 2:45 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75916667" longitude="-0.21994444" nodeid="node33" source="" tags="all|Location|ROAD" title="Ashesi_Shop"/>
@@ -701,11 +669,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node34">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node34/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node34">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node34/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="343.50" author="" capturedatetime="2026-03-12T14:48:14" comment="" copyright="" customnodeid="" datetime="12/03/2026 2:48 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75952778" longitude="-0.21986111" nodeid="node34" source="" tags="all" title="IMG_20260312_144814_00_176.insp"/>
@@ -722,11 +689,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node35">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node35/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node35">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node35/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="343.20" author="" capturedatetime="2026-03-12T14:49:03" comment="" copyright="" customnodeid="apt_217" datetime="12/03/2026 2:49 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75947222" longitude="-0.21983333" nodeid="node35" source="" tags="all|Location|ROAD" title="APT_217"/>
@@ -747,11 +713,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node36">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node36/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node36">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node36/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="344.30" author="" capturedatetime="2026-03-12T14:50:57" comment="" copyright="" customnodeid="apt_216" datetime="12/03/2026 2:50 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75950000" longitude="-0.21972222" nodeid="node36" source="" tags="all|Location|ROAD" title="APT_216"/>
@@ -770,11 +735,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node37">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node37/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node37">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node37/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="313.60" author="" capturedatetime="2026-03-12T14:51:44" comment="" copyright="" customnodeid="" datetime="12/03/2026 2:51 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75961111" longitude="-0.21977778" nodeid="node37" source="" tags="all|ROAD" title="IMG_20260312_145144_00_191.insp"/>
@@ -795,11 +759,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node38">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node38/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node38">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node38/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="358.40" author="" capturedatetime="2026-03-12T14:54:30" comment="" copyright="" customnodeid="courtyard" datetime="12/03/2026 2:54 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75963889" longitude="-0.21994444" nodeid="node38" source="" tags="all|Location" title="Courtyard"/>
@@ -831,11 +794,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node39">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node39/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node39">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node39/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="348.30" author="" capturedatetime="2026-03-12T14:56:37" comment="" copyright="" customnodeid="" datetime="12/03/2026 2:56 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75955556" longitude="-0.22002778" nodeid="node39" source="" tags="all|ROAD" title="IMG_20260312_145637_00_201.insp"/>
@@ -852,11 +814,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node40">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node40/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node40">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node40/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="349.80" author="" capturedatetime="2026-03-12T14:57:20" comment="" copyright="" customnodeid="" datetime="12/03/2026 2:57 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75955556" longitude="-0.22008333" nodeid="node40" source="" tags="all|ROAD" title="Note"/>
@@ -873,11 +834,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node41">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node41/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node41">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node41/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="340.50" author="" capturedatetime="2026-03-12T14:58:46" comment="" copyright="" customnodeid="" datetime="12/03/2026 2:58 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75961111" longitude="-0.22027778" nodeid="node41" source="" tags="all|Location|ROAD" title="Jackson_Hall_116"/>
@@ -894,11 +854,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node42">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node42/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node42">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node42/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="340.70" author="" capturedatetime="2026-03-12T14:59:27" comment="" copyright="" customnodeid="" datetime="12/03/2026 2:59 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75963889" longitude="-0.22022222" nodeid="node42" source="" tags="all" title="IMG_20260312_145927_00_216.insp"/>
@@ -915,11 +874,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node43">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node43/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node43">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node43/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="341.50" author="" capturedatetime="2026-03-12T15:00:40" comment="" copyright="" customnodeid="" datetime="12/03/2026 3:00 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75958333" longitude="-0.22016667" nodeid="node43" source="" tags="all|ROAD" title="IMG_20260312_150040_00_221.insp"/>
@@ -940,11 +898,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node44">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node44/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node44">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node44/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="341.30" author="" capturedatetime="2026-03-12T15:01:43" comment="" copyright="" customnodeid="" datetime="12/03/2026 3:01 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75963889" longitude="-0.22013889" nodeid="node44" source="" tags="all|Location|ROAD" title="Jackson_Hall_115"/>
@@ -963,11 +920,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node45">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node45/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node45">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node45/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="342.20" author="" capturedatetime="2026-03-12T15:03:36" comment="" copyright="" customnodeid="" datetime="12/03/2026 3:03 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75983333" longitude="-0.22008333" nodeid="node45" source="" tags="all|Location|ROAD" title="Admission_Office"/>
@@ -986,11 +942,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node46">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node46/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node46">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node46/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="352.00" author="" capturedatetime="2026-03-12T15:05:27" comment="" copyright="" customnodeid="" datetime="12/03/2026 3:05 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75980556" longitude="-0.22000000" nodeid="node46" source="" tags="all|ROAD" title="IMG_20260312_150527_00_236.insp"/>
@@ -1010,11 +965,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node47">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node47/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node47">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node47/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="342.40" author="" capturedatetime="2026-03-12T15:06:16" comment="" copyright="" customnodeid="" datetime="12/03/2026 3:06 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75988889" longitude="-0.22008333" nodeid="node47" source="" tags="all" title="IMG_20260312_150616_00_241.insp"/>
@@ -1032,11 +986,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node48">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node48/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node48">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node48/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="358.30" author="" capturedatetime="2026-03-12T15:07:15" comment="" copyright="" customnodeid="" datetime="12/03/2026 3:07 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75986111" longitude="-0.22002778" nodeid="node48" source="" tags="all|ROAD" title="IMG_20260312_150715_00_246.insp"/>
@@ -1055,11 +1008,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node49">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node49/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node49">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node49/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="342.30" author="" capturedatetime="2026-03-12T15:08:01" comment="" copyright="" customnodeid="" datetime="12/03/2026 3:08 PM" description="" heading="0" hideinlist="0" info="" latitude="5.76002778" longitude="-0.21997222" nodeid="node49" source="" tags="all|ROAD" title="IMG_20260312_150801_00_251.insp"/>
@@ -1077,11 +1029,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node50">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node50/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node50">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node50/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="352.80" author="" capturedatetime="2026-03-12T15:08:36" comment="" copyright="" customnodeid="" datetime="12/03/2026 3:08 PM" description="" heading="0" hideinlist="0" info="" latitude="5.76008333" longitude="-0.22002778" nodeid="node50" source="" tags="all|Location|ROAD" title="Down_Office_NA"/>
@@ -1097,11 +1048,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node51">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node51/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node51">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node51/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="345.30" author="" capturedatetime="2026-03-12T15:10:25" comment="" copyright="" customnodeid="" datetime="12/03/2026 3:10 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75991667" longitude="-0.21991667" nodeid="node51" source="" tags="all|Location|ROAD" title="Down_Office_NA_2"/>
@@ -1119,11 +1069,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node52">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node52/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node52">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node52/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="343.60" author="" capturedatetime="2026-03-12T15:12:46" comment="" copyright="" customnodeid="" datetime="12/03/2026 3:12 PM" description="" heading="0" hideinlist="0" info="" latitude="5.76000000" longitude="-0.21980556" nodeid="node52" source="" tags="all|ROAD" title="IMG_20260312_151246_00_266.insp"/>
@@ -1140,11 +1089,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node53">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node53/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node53">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node53/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="343.30" author="" capturedatetime="2026-03-12T15:14:01" comment="" copyright="" customnodeid="" datetime="12/03/2026 3:14 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75991667" longitude="-0.21980556" nodeid="node53" source="" tags="all|Location|ROAD" title="Essentials"/>
@@ -1162,11 +1110,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node54">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node54/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node54">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node54/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="345.30" author="" capturedatetime="2026-03-12T15:16:53" comment="" copyright="" customnodeid="" datetime="12/03/2026 3:16 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75997222" longitude="-0.21988889" nodeid="node54" source="" tags="all" title="IMG_20260312_151653_00_276.insp"/>
@@ -1182,11 +1129,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node55">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node55/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node55">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node55/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="343.50" author="" capturedatetime="2026-03-12T16:09:40" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:09 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75986111" longitude="-0.21991667" nodeid="node55" source="" tags="all|ROAD" title="IMG_20260312_160940_00_281.insp"/>
@@ -1203,11 +1149,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node56">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node56/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node56">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node56/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="361.50" author="" capturedatetime="2026-03-12T16:11:27" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:11 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75977778" longitude="-0.21997222" nodeid="node56" source="" tags="all|ROAD" title="IMG_20260312_161127_00_286.insp"/>
@@ -1225,11 +1170,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node57">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node57/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node57">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node57/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="340.60" author="" capturedatetime="2026-03-12T16:12:44" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:12 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75980556" longitude="-0.22027778" nodeid="node57" source="" tags="all|ROAD" title="IMG_20260312_161244_00_291.insp"/>
@@ -1245,11 +1189,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node58">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node58/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node58">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node58/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="340.50" author="" capturedatetime="2026-03-12T16:14:37" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:14 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75958333" longitude="-0.22027778" nodeid="node58" source="" tags="all|ROAD" title="IMG_20260312_161437_00_296.insp"/>
@@ -1269,11 +1212,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node61">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node61/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node61">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node61/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="341.90" author="" capturedatetime="2026-03-12T16:18:18" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:18 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75997222" longitude="-0.22016667" nodeid="node61" source="" tags="all|Location" title="African_Cultural_Center"/>
@@ -1289,11 +1231,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node60">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node60/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node60">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node60/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="341.60" author="" capturedatetime="2026-03-12T16:17:20" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:17 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75997222" longitude="-0.22013889" nodeid="node60" source="" tags="all|ROAD" title="IMG_20260312_161720_00_306.insp"/>
@@ -1310,11 +1251,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node59">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node59/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node59">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node59/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="341.30" author="" capturedatetime="2026-03-12T16:16:24" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:16 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75991667" longitude="-0.22030556" nodeid="node59" source="" tags="all|ROAD" title="IMG_20260312_161624_00_301.insp"/>
@@ -1332,11 +1272,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node62">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node62/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node62">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node62/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="339.70" author="" capturedatetime="2026-03-12T16:19:23" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:19 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75997222" longitude="-0.22044444" nodeid="node62" source="" tags="all|ROAD" title="IMG_20260312_161923_00_316.insp"/>
@@ -1354,11 +1293,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node63">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node63/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node63">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node63/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="340.50" author="" capturedatetime="2026-03-12T16:22:05" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:22 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75975000" longitude="-0.22055556" nodeid="node63" source="" tags="all|Location|ROAD" title="School_Main_Car_Park"/>
@@ -1376,11 +1314,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node64">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node64/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node64">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node64/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="338.50" author="" capturedatetime="2026-03-12T16:23:13" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:23 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75941667" longitude="-0.22066667" nodeid="node64" source="" tags="all|ROAD" title="IMG_20260312_162313_00_326.insp"/>
@@ -1397,11 +1334,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node65">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node65/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node65">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node65/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="343.90" author="" capturedatetime="2026-03-12T16:24:35" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:24 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75938889" longitude="-0.22055556" nodeid="node65" source="" tags="all|ROAD" title="IMG_20260312_162435_00_331.insp"/>
@@ -1417,11 +1353,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node66">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node66/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node66">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node66/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="340.50" author="" capturedatetime="2026-03-12T16:25:59" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:25 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75936111" longitude="-0.22041667" nodeid="node66" source="" tags="all|ROAD" title="IMG_20260312_162559_00_336.insp"/>
@@ -1439,11 +1374,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node67">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node67/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node67">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node67/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="340.80" author="" capturedatetime="2026-03-12T16:27:03" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:27 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75966667" longitude="-0.22033333" nodeid="node67" source="" tags="all|ROAD" title="IMG_20260312_162703_00_341.insp"/>
@@ -1460,11 +1394,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node68">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node68/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node68">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node68/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="340.50" author="" capturedatetime="2026-03-12T16:27:51" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:27 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75950000" longitude="-0.22030556" nodeid="node68" source="" tags="all" title="IMG_20260312_162751_00_346.insp"/>
@@ -1482,11 +1415,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node69">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node69/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node69">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node69/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="341.40" author="" capturedatetime="2026-03-12T16:32:55" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:32 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75941667" longitude="-0.22027778" nodeid="node69" source="" tags="all" title="IMG_20260312_163255_00_351.insp"/>
@@ -1504,11 +1436,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node70">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node70/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node70">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node70/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="344.80" author="" capturedatetime="2026-03-12T16:41:03" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:41 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75958333" longitude="-0.21972222" nodeid="node70" source="" tags="all|ROAD" title="IMG_20260312_164103_00_357.insp"/>
@@ -1528,11 +1459,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node73">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node73/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node73">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node73/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="347.20" author="" capturedatetime="2026-03-12T16:44:10" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:44 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75952778" longitude="-0.21952778" nodeid="node73" source="" tags="all|Location|ROAD" title="Engineering_Courtyard"/>
@@ -1545,16 +1475,15 @@
     <hotspots>
       <hotspot description="" distance="22.3809" id="Point01" pan="95.65" skinid="ht_node" target="19.2/8.4/100.0" tilt="-6.02" title="IMG_20260312_164103_00_357.insp" url="{node70}"/>
       <hotspot description="" distance="21.5127" id="Point02" pan="-45.17" skinid="ht_node" target="-173.0/12.0/100.0" tilt="-5.01" title="IMG_20260312_164541_00_377.insp" url="{node74}"/>
-      <hotspot description="" distance="19.7168" id="Point03" pan="-173.55" skinid="ht_node" target="4.4/7.8/100.0" tilt="-7.01" title="IMG_20260313_123917_00_432.insp" url="{node84}"/>
+      <hotspot description="" distance="19.7168" id="Point03" pan="-173.56" skinid="ht_node" target="4.4/7.8/100.0" tilt="-7.21" title="IMG_20260313_123917_00_432.insp" url="{node84}"/>
     </hotspots>
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node74">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node74/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node74">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node74/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="358.10" author="" capturedatetime="2026-03-12T16:45:41" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:45 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75952778" longitude="-0.21933333" nodeid="node74" source="" tags="all|ROAD" title="IMG_20260312_164541_00_377.insp"/>
@@ -1570,11 +1499,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node75">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node75/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node75">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node75/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="432.80" author="" capturedatetime="2026-03-12T16:47:11" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:47 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75969444" longitude="-0.21944444" nodeid="node75" source="" tags="all|ROAD" title="IMG_20260312_164711_00_382.insp"/>
@@ -1592,11 +1520,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node99">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node99/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node99">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node99/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="348.30" author="" capturedatetime="2026-03-13T13:15:00" comment="" copyright="" customnodeid="" datetime="13/03/2026 1:15 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75950000" longitude="-0.21936111" nodeid="node99" source="" tags="all|Location|ROAD" title="Engineering_Lab_225"/>
@@ -1615,11 +1542,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node101">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node101/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node101">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node101/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="350.30" author="" capturedatetime="2026-03-13T13:17:00" comment="" copyright="" customnodeid="" datetime="13/03/2026 1:17 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75955556" longitude="-0.21938889" nodeid="node101" source="" tags="all|ROAD" title="IMG_20260313_131700_00_518.insp"/>
@@ -1636,11 +1562,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node102">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node102/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node102">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node102/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="346.90" author="" capturedatetime="2026-03-13T13:19:24" comment="" copyright="" customnodeid="" datetime="13/03/2026 1:19 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75963889" longitude="-0.21944444" nodeid="node102" source="" tags="all|ROAD" title="IMG_20260313_131924_00_523.insp"/>
@@ -1658,11 +1583,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node103">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node103/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node103">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node103/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="347.60" author="" capturedatetime="2026-03-13T13:21:09" comment="" copyright="" customnodeid="" datetime="13/03/2026 1:21 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75963889" longitude="-0.21938889" nodeid="node103" source="" tags="all|Location|ROAD" title="Washroom_Kings_1"/>
@@ -1678,11 +1602,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node100">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node100/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node100">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node100/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="347.00" author="" capturedatetime="2026-03-13T13:15:57" comment="" copyright="" customnodeid="" datetime="13/03/2026 1:15 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75947222" longitude="-0.21947222" nodeid="node100" source="" tags="all" title="IMG_20260313_131557_00_513.insp"/>
@@ -1699,11 +1622,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node76">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node76/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node76">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node76/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="360.90" author="" capturedatetime="2026-03-12T16:48:13" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:48 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75947222" longitude="-0.21919444" nodeid="node76" source="" tags="all|Location|ROAD" title="IT_Support_Center"/>
@@ -1721,11 +1643,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node77">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node77/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node77">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node77/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="350.10" author="" capturedatetime="2026-03-12T16:49:47" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:49 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75955556" longitude="-0.21941667" nodeid="node77" source="" tags="all|Location" title="FI_Office_Hours_Offices"/>
@@ -1741,11 +1662,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node78">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node78/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node78">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node78/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="352.20" author="" capturedatetime="2026-03-12T17:20:52" comment="" copyright="" customnodeid="" datetime="12/03/2026 5:20 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75955556" longitude="-0.21966667" nodeid="node78" source="" tags="all|Location" title="Student_Hangout"/>
@@ -1762,11 +1682,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node79">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node79/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node79">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node79/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="360.70" author="" capturedatetime="2026-03-12T17:22:48" comment="" copyright="" customnodeid="" datetime="12/03/2026 5:22 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75963889" longitude="-0.21961111" nodeid="node79" source="" tags="all|ROAD" title="IMG_20260312_172248_00_407.insp"/>
@@ -1785,11 +1704,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node80">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node80/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node80">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node80/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="349.00" author="" capturedatetime="2026-03-12T17:40:22" comment="" copyright="" customnodeid="" datetime="12/03/2026 5:40 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75936111" longitude="-0.21972222" nodeid="node80" source="" tags="all" title="IMG_20260312_174022_00_412.insp"/>
@@ -1802,11 +1720,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node81">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node81/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node81">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node81/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="346.70" author="" capturedatetime="2026-03-12T17:41:21" comment="" copyright="" customnodeid="" datetime="12/03/2026 5:41 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75930556" longitude="-0.21969444" nodeid="node81" source="" tags="all" title="IMG_20260312_174121_00_417.insp"/>
@@ -1822,11 +1739,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node84">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node84/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node84">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node84/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="346.60" author="" capturedatetime="2026-03-13T12:39:17" comment="" copyright="" customnodeid="" datetime="13/03/2026 12:39 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75941667" longitude="-0.21966667" nodeid="node84" source="" tags="all|ROAD" title="IMG_20260313_123917_00_432.insp"/>
@@ -1842,15 +1758,15 @@
       <hotspot description="" distance="19.5242" id="Point03" pan="-124.87" skinid="ht_node" target="0.4/4.8/100.0" tilt="-5.94" title="IMG_20260312_164103_00_357.insp" url="{node70}"/>
       <hotspot description="" distance="26.1434" id="Point04" pan="55.89" skinid="ht_node" target="143.1/5.0/100.0" tilt="4.82" title="IMG_20260313_125655_00_438.insp" url="{node85}"/>
       <hotspot description="" distance="8.71497" id="Point05" pan="16.54" skinid="ht_node" target="137.8/6.9/100.0" tilt="-0.99" title="IMG_20260313_131143_00_493.insp" url="{node96}"/>
+      <hotspot description="" distance="29.2876" id="Point06" pan="0.83" skinid="ht_node" target="-166.2/2.0/100.0" tilt="0.83" title="IMG_20260313_131023_00_488.insp" url="{node95}"/>
     </hotspots>
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node96">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node96/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node96">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node96/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="348.30" author="" capturedatetime="2026-03-13T13:11:43" comment="" copyright="" customnodeid="" datetime="13/03/2026 1:11 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75936111" longitude="-0.21961111" nodeid="node96" source="" tags="all|ROAD" title="IMG_20260313_131143_00_493.insp"/>
@@ -1872,11 +1788,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node85">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node85/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node85">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node85/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="350.20" author="" capturedatetime="2026-03-13T12:56:55" comment="" copyright="" customnodeid="" datetime="13/03/2026 12:56 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75925000" longitude="-0.21950000" nodeid="node85" source="" tags="all|ROAD" title="IMG_20260313_125655_00_438.insp"/>
@@ -1894,11 +1809,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node86">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node86/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node86">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node86/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="348.80" author="" capturedatetime="2026-03-13T12:58:38" comment="" copyright="" customnodeid="" datetime="13/03/2026 12:58 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75933333" longitude="-0.21950000" nodeid="node86" source="" tags="all|ROAD" title="IMG_20260313_125838_00_443.insp"/>
@@ -1917,11 +1831,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node87">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node87/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node87">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node87/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="348.50" author="" capturedatetime="2026-03-13T12:59:13" comment="" copyright="" customnodeid="" datetime="13/03/2026 12:59 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75933333" longitude="-0.21952778" nodeid="node87" source="" tags="all|Location|ROAD" title="Norton_Multulsky_B"/>
@@ -1940,11 +1853,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node88">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node88/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node88">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node88/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="348.30" author="" capturedatetime="2026-03-13T13:00:39" comment="" copyright="" customnodeid="" datetime="13/03/2026 1:00 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75927778" longitude="-0.21958333" nodeid="node88" source="" tags="all" title="IMG_20260313_130039_00_453.insp"/>
@@ -1961,11 +1873,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node89">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node89/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node89">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node89/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="347.60" author="" capturedatetime="2026-03-13T13:01:35" comment="" copyright="" customnodeid="" datetime="13/03/2026 1:01 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75927778" longitude="-0.21961111" nodeid="node89" source="" tags="all|ROAD" title="IMG_20260313_130135_00_458.insp"/>
@@ -1983,11 +1894,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node90">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node90/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node90">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node90/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="349.60" author="" capturedatetime="2026-03-13T13:02:01" comment="" copyright="" customnodeid="" datetime="13/03/2026 1:02 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75913889" longitude="-0.21972222" nodeid="node90" source="" tags="all|ROAD" title="Norton_Multulsky_A"/>
@@ -2006,11 +1916,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node104">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node104/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node104">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node104/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="350.00" author="" capturedatetime="2026-03-13T13:24:04" comment="" copyright="" customnodeid="" datetime="13/03/2026 1:24 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75944444" longitude="-0.21936111" nodeid="node104" source="" tags="all|Location|ROAD" title="Master_Class_A"/>
@@ -2027,11 +1936,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node105">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node105/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node105">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node105/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="361.80" author="" capturedatetime="2026-03-13T13:24:55" comment="" copyright="" customnodeid="" datetime="13/03/2026 1:24 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75950000" longitude="-0.21944444" nodeid="node105" source="" tags="all|ROAD" title="IMG_20260313_132455_00_538.insp"/>
@@ -2049,11 +1957,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node106">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node106/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node106">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node106/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="349.40" author="" capturedatetime="2026-03-13T13:26:02" comment="" copyright="" customnodeid="" datetime="13/03/2026 1:26 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75941667" longitude="-0.21941667" nodeid="node106" source="" tags="all|Location" title="Green_Lounge"/>
@@ -2069,11 +1976,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node110">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node110/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node110">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node110/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="356.30" author="" capturedatetime="2026-03-13T13:31:35" comment="" copyright="" customnodeid="" datetime="13/03/2026 1:31 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75947222" longitude="-0.21941667" nodeid="node110" source="" tags="all|Location|ROAD" title="Masters Class B"/>
@@ -2090,11 +1996,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node109">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node109/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node109">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node109/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="347.80" author="" capturedatetime="2026-03-13T13:30:10" comment="" copyright="" customnodeid="" datetime="13/03/2026 1:30 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75944444" longitude="-0.21950000" nodeid="node109" source="" tags="all" title="IMG_20260313_133010_00_558.insp"/>
@@ -2110,11 +2015,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node111">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node111/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node111">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node111/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="348.80" author="" capturedatetime="2026-03-13T13:32:08" comment="" copyright="" customnodeid="" datetime="13/03/2026 1:32 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75938889" longitude="-0.21950000" nodeid="node111" source="" tags="all|ROAD" title="IMG_20260313_133208_00_568.insp"/>
@@ -2132,11 +2036,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node92">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node92/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node92">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node92/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="349.20" author="" capturedatetime="2026-03-13T13:05:15" comment="" copyright="" customnodeid="" datetime="13/03/2026 1:05 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75916667" longitude="-0.21961111" nodeid="node92" source="" tags="all" title="IMG_20260313_130515_00_473.insp"/>
@@ -2153,11 +2056,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node93">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node93/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node93">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node93/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="360.40" author="" capturedatetime="2026-03-13T13:07:08" comment="" copyright="" customnodeid="" datetime="13/03/2026 1:07 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75919444" longitude="-0.21961111" nodeid="node93" source="" tags="all|ROAD" title="IMG_20260313_130708_00_478.insp"/>
@@ -2174,11 +2076,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node94">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node94/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node94">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node94/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="351.80" author="" capturedatetime="2026-03-13T13:09:12" comment="" copyright="" customnodeid="" datetime="13/03/2026 1:09 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75900000" longitude="-0.21963889" nodeid="node94" source="" tags="all|ROAD" title="IMG_20260313_130912_00_483.insp"/>
@@ -2196,11 +2097,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node95">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node95/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node95">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node95/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="348.40" author="" capturedatetime="2026-03-13T13:10:23" comment="" copyright="" customnodeid="" datetime="13/03/2026 1:10 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75916667" longitude="-0.21975000" nodeid="node95" source="" tags="all|ROAD" title="IMG_20260313_131023_00_488.insp"/>
@@ -2219,11 +2119,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node118">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node118/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node118">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node118/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="350.90" author="" capturedatetime="2026-03-13T14:30:55" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:30 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75891667" longitude="-0.21975000" nodeid="node118" source="" tags="all|ROAD" title="IMG_20260313_143055_00_603.insp"/>
@@ -2242,11 +2141,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node117">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node117/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node117">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node117/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="347.90" author="" capturedatetime="2026-03-13T14:27:52" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:27 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75897222" longitude="-0.21991667" nodeid="node117" source="" tags="all|ROAD" title="sadfsadf"/>
@@ -2262,11 +2160,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node116">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node116/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node116">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node116/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="349.20" author="" capturedatetime="2026-03-13T14:26:49" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:26 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75888889" longitude="-0.21983333" nodeid="node116" source="" tags="all|Location|ROAD" title="Patrick_Nutor_115-RB_100"/>
@@ -2282,11 +2179,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node119">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node119/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node119">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node119/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="348.10" author="" capturedatetime="2026-03-13T14:32:41" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:32 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75877778" longitude="-0.22002778" nodeid="node119" source="" tags="all|ROAD" title="IMG_20260313_143241_00_608.insp"/>
@@ -2304,11 +2200,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node123">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node123/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node123">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node123/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="349.00" author="" capturedatetime="2026-03-13T14:38:15" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:38 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75880556" longitude="-0.21986111" nodeid="node123" source="" tags="all|ROAD" title="IMG_20260313_143815_00_628.insp"/>
@@ -2328,11 +2223,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node120">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node120/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node120">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node120/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="349.00" author="" capturedatetime="2026-03-13T14:35:30" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:35 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75858333" longitude="-0.21988889" nodeid="node120" source="" tags="all|ROAD" title="IMG_20260313_143530_00_613.insp"/>
@@ -2350,11 +2244,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node121">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node121/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node121">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node121/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="348.60" author="" capturedatetime="2026-03-13T14:36:15" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:36 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75863889" longitude="-0.21991667" nodeid="node121" source="" tags="all|ROAD" title="IMG_20260313_143615_00_618.insp"/>
@@ -2370,11 +2263,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node122">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node122/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node122">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node122/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="312.50" author="" capturedatetime="2026-03-13T14:36:58" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:36 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75838889" longitude="-0.21991667" nodeid="node122" source="" tags="all|ROAD" title="IMG_20260313_143658_00_623.insp"/>
@@ -2387,11 +2279,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node124">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node124/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node124">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node124/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="351.50" author="" capturedatetime="2026-03-13T14:39:27" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:39 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75880556" longitude="-0.21980556" nodeid="node124" source="" tags="all|ROAD" title="IMG_20260313_143927_00_633.insp"/>
@@ -2412,11 +2303,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node126">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node126/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node126">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node126/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="350.40" author="" capturedatetime="2026-03-13T14:40:23" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:40 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75883333" longitude="-0.21983333" nodeid="node126" source="" tags="all|ROAD" title="IMG_20260313_144023_00_643.insp"/>
@@ -2435,11 +2325,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node128">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node128/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node128">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node128/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="350.50" author="" capturedatetime="2026-03-13T14:41:11" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:41 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75883333" longitude="-0.21983333" nodeid="node128" source="" tags="all|ROAD" title="IMG_20260313_144111_00_653.insp"/>
@@ -2455,11 +2344,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node129">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node129/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node129">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node129/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="351.10" author="" capturedatetime="2026-03-13T14:41:47" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:41 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75883333" longitude="-0.21983333" nodeid="node129" source="" tags="all|ROAD" title="IMG_20260313_144147_00_658.insp"/>
@@ -2478,11 +2366,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node130">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node130/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node130">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node130/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="350.60" author="" capturedatetime="2026-03-13T14:42:30" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:42 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75883333" longitude="-0.21983333" nodeid="node130" source="" tags="all|ROAD" title="IMG_20260313_144230_00_663.insp"/>
@@ -2501,11 +2388,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node132">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node132/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node132">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node132/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="350.60" author="" capturedatetime="2026-03-13T14:43:23" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:43 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75875000" longitude="-0.21983333" nodeid="node132" source="" tags="all|ROAD" title="IMG_20260313_144323_00_673.insp"/>
@@ -2524,11 +2410,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node133">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node133/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node133">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node133/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="351.60" author="" capturedatetime="2026-03-13T14:44:18" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:44 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75861111" longitude="-0.21977778" nodeid="node133" source="" tags="all" title="IMG_20260313_144418_00_678.insp"/>
@@ -2546,11 +2431,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node134">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node134/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node134">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node134/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="351.40" author="" capturedatetime="2026-03-13T14:45:25" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:45 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75863889" longitude="-0.21983333" nodeid="node134" source="" tags="all|ROAD" title="IMG_20260313_144525_00_683.insp"/>
@@ -2569,11 +2453,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node135">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node135/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node135">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node135/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="360.00" author="" capturedatetime="2026-03-13T14:46:14" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:46 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75855556" longitude="-0.21980556" nodeid="node135" source="" tags="all|ROAD" title="IMG_20260313_144614_00_688.insp"/>
@@ -2594,11 +2477,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node136">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node136/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node136">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node136/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="349.60" author="" capturedatetime="2026-03-13T14:47:10" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:47 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75861111" longitude="-0.21986111" nodeid="node136" source="" tags="all|Location|ROAD" title="Hallmark_Cafeteria"/>
@@ -2617,11 +2499,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node137">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node137/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node137">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node137/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="352.40" author="" capturedatetime="2026-03-13T14:48:05" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:48 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75850000" longitude="-0.21980556" nodeid="node137" source="" tags="all|ROAD" title="IMG_20260313_144805_00_698.insp"/>
@@ -2638,11 +2519,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node138">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node138/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node138">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node138/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="351.20" author="" capturedatetime="2026-03-13T14:48:54" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:48 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75850000" longitude="-0.21986111" nodeid="node138" source="" tags="all|ROAD" title="IMG_20260313_144854_00_703.insp"/>
@@ -2659,11 +2539,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node139">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node139/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node139">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node139/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="352.80" author="" capturedatetime="2026-03-13T14:49:35" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:49 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75844444" longitude="-0.21980556" nodeid="node139" source="" tags="all|ROAD" title="IMG_20260313_144935_00_708.insp"/>
@@ -2681,11 +2560,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node140">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node140/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node140">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node140/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="353.80" author="" capturedatetime="2026-03-13T14:50:44" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:50 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75850000" longitude="-0.21980556" nodeid="node140" source="" tags="all|Location|ROAD" title="Hive_Courtyard"/>
@@ -2708,11 +2586,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node145">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node145/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node145">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node145/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="355.20" author="" capturedatetime="2026-03-13T14:55:42" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:55 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75844444" longitude="-0.21972222" nodeid="node145" source="" tags="all|ROAD" title="IMG_20260313_145542_00_738.insp"/>
@@ -2733,11 +2610,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node146">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node146/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node146">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node146/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="354.10" author="" capturedatetime="2026-03-13T14:56:05" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:56 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75836111" longitude="-0.21975000" nodeid="node146" source="" tags="all|Location|ROAD" title="The_Box_1"/>
@@ -2756,11 +2632,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node141">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node141/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node141">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node141/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="350.30" author="" capturedatetime="2026-03-13T14:51:34" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:51 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75847222" longitude="-0.21980556" nodeid="node141" source="" tags="all" title="IMG_20260313_145134_00_718.insp"/>
@@ -2780,11 +2655,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node142">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node142/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node142">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node142/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="352.60" author="" capturedatetime="2026-03-13T14:52:08" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:52 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75863889" longitude="-0.21977778" nodeid="node142" source="" tags="all|Location|ROAD" title="The_Box_2"/>
@@ -2805,11 +2679,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node143">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node143/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node143">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node143/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="353.20" author="" capturedatetime="2026-03-13T14:52:49" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:52 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75861111" longitude="-0.21972222" nodeid="node143" source="" tags="all" title="IMG_20260313_145249_00_728.insp"/>
@@ -2827,11 +2700,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node144">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node144/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node144">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node144/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="355.10" author="" capturedatetime="2026-03-13T14:53:28" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:53 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75861111" longitude="-0.21969444" nodeid="node144" source="" tags="all|ROAD" title="IMG_20260313_145328_00_733.insp"/>
@@ -2851,11 +2723,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node147">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node147/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node147">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node147/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="352.90" author="" capturedatetime="2026-03-13T14:58:33" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:58 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75850000" longitude="-0.21977778" nodeid="node147" source="" tags="all" title="IMG_20260313_145833_00_748.insp"/>
@@ -2871,11 +2742,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node148">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node148/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node148">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node148/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="353.70" author="" capturedatetime="2026-03-14T07:57:24" comment="" copyright="" customnodeid="" datetime="14/03/2026 7:57 AM" description="" heading="0" hideinlist="0" info="" latitude="5.75841667" longitude="-0.21975000" nodeid="node148" source="" tags="all|ROAD" title="IMG_20260314_075724_00_753.insp"/>
@@ -2896,11 +2766,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node149">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node149/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node149">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node149/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="354.00" author="" capturedatetime="2026-03-14T07:58:40" comment="" copyright="" customnodeid="" datetime="14/03/2026 7:58 AM" description="" heading="0" hideinlist="0" info="" latitude="5.75844444" longitude="-0.21972222" nodeid="node149" source="" tags="all|Location|ROAD" title="Akorno_Cafeteria"/>
@@ -2919,11 +2788,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node150">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node150/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node150">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node150/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="354.40" author="" capturedatetime="2026-03-14T07:59:31" comment="" copyright="" customnodeid="" datetime="14/03/2026 7:59 AM" description="" heading="0" hideinlist="0" info="" latitude="5.75858333" longitude="-0.21969444" nodeid="node150" source="" tags="all|ROAD" title="IMG_20260314_075931_00_763.insp"/>
@@ -2943,11 +2811,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node152">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node152/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node152">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node152/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="354.90" author="" capturedatetime="2026-03-14T08:01:17" comment="" copyright="" customnodeid="" datetime="14/03/2026 8:01 AM" description="" heading="0" hideinlist="0" info="" latitude="5.75858333" longitude="-0.21975000" nodeid="node152" source="" tags="all|ROAD" title="IMG_20260314_080117_00_773.insp"/>
@@ -2965,11 +2832,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node153">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node153/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node153">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node153/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="353.50" author="" capturedatetime="2026-03-14T08:03:03" comment="" copyright="" customnodeid="" datetime="14/03/2026 8:03 AM" description="" heading="0" hideinlist="0" info="" latitude="5.75861111" longitude="-0.21977778" nodeid="node153" source="" tags="all|ROAD" title="IMG_20260314_080303_00_778.insp"/>
@@ -2989,11 +2855,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node154">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node154/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node154">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node154/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="353.00" author="" capturedatetime="2026-03-14T08:03:45" comment="" copyright="" customnodeid="" datetime="14/03/2026 8:03 AM" description="" heading="0" hideinlist="0" info="" latitude="5.75858333" longitude="-0.21969444" nodeid="node154" source="" tags="all" title="IMG_20260314_080345_00_783.insp"/>
@@ -3010,11 +2875,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node155">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node155/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node155">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node155/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="354.50" author="" capturedatetime="2026-03-14T08:04:14" comment="" copyright="" customnodeid="" datetime="14/03/2026 8:04 AM" description="" heading="0" hideinlist="0" info="" latitude="5.75861111" longitude="-0.21969444" nodeid="node155" source="" tags="all" title="IMG_20260314_080414_00_788.insp"/>
@@ -3032,11 +2896,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node156">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node156/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node156">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node156/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="354.40" author="" capturedatetime="2026-03-14T08:05:03" comment="" copyright="" customnodeid="" datetime="14/03/2026 8:05 AM" description="" heading="0" hideinlist="0" info="" latitude="5.75858333" longitude="-0.21969444" nodeid="node156" source="" tags="all|ROAD" title="IMG_20260314_080503_00_793.insp"/>
@@ -3057,11 +2920,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node157">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node157/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node157">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node157/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="354.80" author="" capturedatetime="2026-03-14T08:06:56" comment="" copyright="" customnodeid="" datetime="14/03/2026 8:06 AM" description="" heading="0" hideinlist="0" info="" latitude="5.75858333" longitude="-0.21969444" nodeid="node157" source="" tags="all|ROAD" title="IMG_20260314_080656_00_798.insp"/>
@@ -3083,11 +2945,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node112">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node112/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node112">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node112/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="348.50" author="" capturedatetime="2026-03-13T14:21:36" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:21 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75911111" longitude="-0.21975000" nodeid="node112" source="" tags="all" title="IMG_20260313_142136_00_573.insp"/>
@@ -3104,11 +2965,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node114">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node114/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node114">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node114/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="350.10" author="" capturedatetime="2026-03-13T14:24:09" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:24 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75911111" longitude="-0.21975000" nodeid="node114" source="" tags="all" title="IMG_20260313_142409_00_583.insp"/>
@@ -3125,11 +2985,10 @@
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>
-  <panorama hideabout="1" id="node115">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node115/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
+  <panorama id="node115">
+    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="1022" leveltileurl="tiles/node115/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
+      <level height="760" predecode="1" preload="1" width="760"/>
       <preview color="0x808080" strip="1"/>
     </input>
     <userdata altitude="345.80" author="" capturedatetime="2026-03-13T14:25:09" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:25 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75919444" longitude="-0.22000000" nodeid="node115" source="" tags="all" title="IMG_20260313_142509_00_588.insp"/>
@@ -3149,16 +3008,16 @@
   <masternode>
     <userdata author="" comment="" copyright="" description="" tags="" title="Library_main" uuid="{00000000-0000-0000-0000-000000000000}"/>
     <autorotate delay="5.00" enabled="1" horizonfromdefview="0" nodedelay="0.00" nodefilter="" noderandom="1" returntohorizon="0.000" speed="0.100" startloaded="0" useanimation="0"/>
-    <transition blendcolor="0x000000" blendtime="1" delay="none" enabled="1" softedge="0" type="mesh" zoomafterinfov="140" zoomafteroutfov="40" zoomfov="40" zoomin="6" zoomout="0" zoomoutpause="1" zoomspeed="2"/>
+    <transition blendcolor="0x000000" blendtime="1" delay="none" enabled="1" softedge="0" type="mesh" zoomafterinfov="140" zoomafteroutfov="40" zoomfov="40" zoomin="7" zoomout="0" zoomoutpause="1" zoomspeed="2"/>
+    <soundstransition crossfade="0" enabled="1" transitiontime="0.10000000000000001"/>
     <flyintransition enabled="1" speed="2.00"/>
-    <control contextfullscreen="1" contextprojections="0" contextvr="1" dblclickfullscreen="0" hideabout="1" invertcontrol="1" invertwheel="0" lockedkeyboard="0" lockedkeyboardzoom="0" lockedmouse="0" lockedwheel="0" rubberband="0" sensitivity="12" simulatemass="1" speedwheel="1" zoomcentercursor="1"/>
-    <vr defaulthsscale="100" handtracking="3" skinbuttonposition="0" toggleskinbutton="1"/>
+    <control contextfullscreen="1" contextprojections="0" contextvr="1" dblclickfullscreen="0" hideabout="0" invertcontrol="1" invertwheel="0" lockedkeyboard="0" lockedkeyboardzoom="0" lockedmouse="0" lockedwheel="0" rubberband="0" sensitivity="8" simulatemass="1" speedwheel="1" zoomcentercursor="1"/>
     <animationsequences>
       <sequence title="Animation01"/>
     </animationsequences>
     <hotspots smoothmovement="0">
       <label background="1" backgroundalpha="1" backgroundcolor="0xffffff" border="1" borderalpha="1" bordercolor="0x000000" borderradius="1" enabled="1" height="20" textalpha="1" textcolor="0x000000" width="180" wordwrap="1"/>
-      <polystyle backgroundalpha="0.25098" backgroundcolor="0x550000" borderalpha="1" bordercolor="0x550000" handcursor="1" mode="0"/>
+      <polystyle backgroundalpha="0.25098" backgroundcolor="0x0000ff" borderalpha="1" bordercolor="0x0000ff" handcursor="1" mode="0"/>
     </hotspots>
   </masternode>
 </tour>
