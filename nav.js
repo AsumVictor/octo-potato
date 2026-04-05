@@ -54,7 +54,7 @@
   }
 
   function initNav() {
-    fetch('pano.xml?ts=27535862')
+    fetch('pano.xml?ts=49663371')
       .then(function (r) { return r.text(); })
       .then(function (xmlText) {
         var doc = new DOMParser().parseFromString(xmlText, 'application/xml');
@@ -165,42 +165,15 @@
   // ─────────────────────────────────────────────────────────────────────────────
 
   function dijkstra(startId, endId) {
-    // If start is not a ROAD node (e.g., library interior), find nearest ROAD ancestor
-    var effectiveStart = startId;
-    if (!graph[startId]) {
-      var anc = findRoadAncestor(startId);
-      if (!anc) return null;
-      effectiveStart = anc;
-    }
-
-    // If destination is not a ROAD node, route to the ROAD neighbor that leads to it
-    var effectiveEnd = endId;
-    var finalHop     = null;
-    if (!graph[endId]) {
-      var roadNeighbor = null;
-      var nodeKeys = Object.keys(nodes);
-      for (var i = 0; i < nodeKeys.length; i++) {
-        var n = nodes[nodeKeys[i]];
-        if (!n.isRoad) continue;
-        for (var j = 0; j < n.hotspots.length; j++) {
-          if (n.hotspots[j].targetId === endId) { roadNeighbor = n; break; }
-        }
-        if (roadNeighbor) break;
-      }
-      if (!roadNeighbor) return null;
-      finalHop     = endId;
-      effectiveEnd = roadNeighbor.id;
-    }
-
-    // Standard Dijkstra with simple array queue (≤143 nodes — fast enough)
     var dist    = {};
     var prev    = {};
     var visited = {};
 
     Object.keys(graph).forEach(function (id) { dist[id] = Infinity; prev[id] = null; });
-    dist[effectiveStart] = 0;
+    if (dist[startId] === undefined || dist[endId] === undefined) return null;
 
-    var queue = [{ id: effectiveStart, d: 0 }];
+    dist[startId] = 0;
+    var queue = [{ id: startId, d: 0 }];
 
     while (queue.length > 0) {
       queue.sort(function (a, b) { return a.d - b.d; });
@@ -209,7 +182,7 @@
 
       if (visited[u]) continue;
       visited[u] = true;
-      if (u === effectiveEnd) break;
+      if (u === endId) break;
 
       var edges = graph[u] || [];
       for (var ei = 0; ei < edges.length; ei++) {
@@ -230,11 +203,11 @@
       }
     }
 
-    if (dist[effectiveEnd] === Infinity) return null;
+    if (dist[endId] === Infinity) return null;
 
-    // Reconstruct path (array of step objects)
+    // Reconstruct path
     var path = [];
-    var cur  = effectiveEnd;
+    var cur  = endId;
     while (cur !== null) {
       var info = prev[cur];
       path.unshift({
@@ -248,43 +221,7 @@
       cur = info ? info.fromId : null;
     }
 
-    var totalDist = dist[effectiveEnd];
-
-    // Append final hop to a non-ROAD destination
-    if (finalHop && nodes[finalHop]) {
-      var lastNode     = nodes[effectiveEnd];
-      var finalHsData  = null;
-      for (var hi = 0; hi < lastNode.hotspots.length; hi++) {
-        if (lastNode.hotspots[hi].targetId === finalHop) {
-          finalHsData = lastNode.hotspots[hi]; break;
-        }
-      }
-      if (finalHsData) {
-        path.push({
-          nodeId:       finalHop,
-          title:        nodes[finalHop].title,
-          pan:          finalHsData.pan,
-          tilt:         finalHsData.tilt,
-          hotspotId:    finalHsData.id,
-          hotspotTitle: finalHsData.title
-        });
-        totalDist += finalHsData.distance || 10;
-      }
-    }
-
-    return { path: path, totalDistance: totalDist };
-  }
-
-  function findRoadAncestor(nodeId) {
-    var nodeKeys = Object.keys(nodes);
-    for (var i = 0; i < nodeKeys.length; i++) {
-      var n = nodes[nodeKeys[i]];
-      if (!n.isRoad) continue;
-      for (var j = 0; j < n.hotspots.length; j++) {
-        if (n.hotspots[j].targetId === nodeId) return n.id;
-      }
-    }
-    return null;
+    return { path: path, totalDistance: dist[endId] };
   }
 
   // ─────────────────────────────────────────────────────────────────────────────

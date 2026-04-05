@@ -19,7 +19,7 @@
       <hotspot description="" distance="6.17688" id="Point02" pan="-142.39" skinid="ht_node" target="-121.3/-4.1/100.0" tilt="-20.58" title="Library Ground Floor II" url="{node2}"/>
       <hotspot description="" distance="18.7847" id="Point03" pan="-28.34" skinid="ht_node" target="156.6/-2.8/100.0" tilt="-9.7" title="Library Ground Floor III" url="{node3}"/>
       <hotspot description="" distance="6.14569" id="Point04" pan="-5.75" skinid="ht_node" target="0.0/0.0/100.0" tilt="-3.67" title="Library Stairs" url="{node4}"/>
-      <hotspot description="" distance="11.1196" id="Point05" pan="146.448" skinid="ht_node" target="106.6/-5.0/100.0" tilt="0" title="Todd Library" url="{node9}"/>
+      <hotspot description="" distance="11.1196" id="Point05" pan="146.448" skinid="ht_node" target="106.6/-5.0/100.0" tilt="0" title="Todd_Library" url="{node9}"/>
     </hotspots>
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
@@ -181,7 +181,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="344.80" author="" capturedatetime="2026-03-12T14:00:55" comment="" copyright="" customnodeid="todd_library" datetime="12/03/2026 2:00 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75972222" longitude="-0.21972222" nodeid="node9" source="" tags="IMG_20260312_140055_046_050_HDR|Location|ROAD" title="Todd Library"/>
+    <userdata altitude="344.80" author="" capturedatetime="2026-03-12T14:00:55" comment="" copyright="" customnodeid="todd_library" datetime="12/03/2026 2:00 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75972222" longitude="-0.21972222" nodeid="node9" source="" tags="IMG_20260312_140055_046_050_HDR|Location|ROAD" title="Todd_Library"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="-3.70485" projection="4" tilt="0.957371"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -213,7 +213,7 @@
       <max fov="120" fovfisheye="360" fovstereographic="270" pan="360" scaletofit="0" tilt="90"/>
     </view>
     <hotspots>
-      <hotspot description="" distance="29.0978" id="Point01" pan="-133.85" skinid="ht_node" target="-101.2/0.1/100.0" tilt="-3.48" title="Todd Library" url="{node9}"/>
+      <hotspot description="" distance="29.0978" id="Point01" pan="-133.85" skinid="ht_node" target="-101.2/0.1/100.0" tilt="-3.48" title="Todd_Library" url="{node9}"/>
       <hotspot description="" distance="4.3567" id="Point02" pan="90.88" skinid="ht_node" target="-89.7/-5.7/100.0" tilt="-7.9" title="Road II" url="{node11}"/>
     </hotspots>
     <media/>
@@ -235,7 +235,7 @@
     </view>
     <hotspots>
       <hotspot description="" distance="4.3567" id="Point01" pan="86.89" skinid="ht_node" target="-122.0/-0.8/100.0" tilt="-5.27" title="Road-small-green-gate" url="{node10}"/>
-      <hotspot description="" distance="15.6731" id="Point02" pan="-79.3" skinid="ht_node" target="-91.4/0.2/100.0" tilt="-8.02" title="Registry-Counselling" url="{node12}"/>
+      <hotspot description="" distance="15.6731" id="Point02" pan="-79.3" skinid="ht_node" target="-91.4/0.2/100.0" tilt="-8.02" title="Registry_Office-Counselling_Office" url="{node12}"/>
       <hotspot description="" distance="11.0986" id="Point03" pan="176.32" skinid="ht_node" target="-54.3/-13.8/100.0" tilt="-23.25" title="IMG_20260312_160940_00_281.insp" url="{node55}"/>
     </hotspots>
     <media/>
@@ -248,7 +248,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="344.00" author="" capturedatetime="2026-03-12T14:11:27" comment="" copyright="" customnodeid="" datetime="12/03/2026 2:11 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75994444" longitude="-0.21997222" nodeid="node12" source="" tags="IMG_20260312_141127_061_065_HDR|Location|Office|ROAD" title="Registry-Counselling"/>
+    <userdata altitude="344.00" author="" capturedatetime="2026-03-12T14:11:27" comment="" copyright="" customnodeid="" datetime="12/03/2026 2:11 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75994444" longitude="-0.21997222" nodeid="node12" source="" tags="IMG_20260312_141127_061_065_HDR|Location|Office|ROAD" title="Registry_Office-Counselling_Office"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -277,9 +277,9 @@
       <max fov="120" fovfisheye="360" fovstereographic="270" pan="360" scaletofit="0" tilt="90"/>
     </view>
     <hotspots>
-      <hotspot description="" distance="13.8005" id="Point01" pan="-91.5" skinid="ht_node" target="134.9/-1.0/100.0" tilt="-7.26" title="Registry-Counselling" url="{node12}"/>
-      <hotspot description="" distance="24.9012" id="Point02" pan="-1.39" skinid="ht_node" target="-155.3/-1.0/100.0" tilt="-7.19" title="Career_Service-2" url="{node14}"/>
-      <hotspot description="" distance="17.9862" id="Point03" pan="176.57" skinid="ht_node" target="-111.8/-2.4/100.0" tilt="-6.68" title="Career Services Office" url="{node16}"/>
+      <hotspot description="" distance="13.8005" id="Point01" pan="-91.5" skinid="ht_node" target="134.9/-1.0/100.0" tilt="-7.26" title="Registry_Office-Counselling_Office" url="{node12}"/>
+      <hotspot description="" distance="24.9012" id="Point02" pan="-1.39" skinid="ht_node" target="-155.3/-1.0/100.0" tilt="-7.19" title="Najeeb_Office" url="{node14}"/>
+      <hotspot description="" distance="17.9862" id="Point03" pan="176.57" skinid="ht_node" target="-111.8/-2.4/100.0" tilt="-6.68" title="Career_Services_Office" url="{node16}"/>
     </hotspots>
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
@@ -291,7 +291,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="350.40" author="" capturedatetime="2026-03-12T14:14:53" comment="" copyright="" customnodeid="" datetime="12/03/2026 2:14 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75983333" longitude="-0.22005556" nodeid="node14" source="" tags="IMG_20260312_141453_076_080_HDR|Location|ROAD" title="Career_Service-2"/>
+    <userdata altitude="350.40" author="" capturedatetime="2026-03-12T14:14:53" comment="" copyright="" customnodeid="" datetime="12/03/2026 2:14 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75983333" longitude="-0.22005556" nodeid="node14" source="" tags="IMG_20260312_141453_076_080_HDR|Location|ROAD" title="Najeeb_Office"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -300,7 +300,7 @@
     </view>
     <hotspots>
       <hotspot description="" distance="24.9012" id="Point01" pan="65.71" skinid="ht_node" target="-140.7/2.6/100.0" tilt="-8.94" title="IMG_20260312_141330_00_071.insp" url="{node13}"/>
-      <hotspot description="" distance="15.4439" id="Point02" pan="157.13" skinid="ht_node" target="-169.2/0.5/100.0" tilt="-17.52" title="SLE-ODIP-Academic_Advisor" url="{node15}"/>
+      <hotspot description="" distance="15.4439" id="Point02" pan="157.13" skinid="ht_node" target="-169.2/0.5/100.0" tilt="-17.52" title="Student_Life_Engement-Office_of_Internation_Program_and_Cohesion-Academic_Advisor_Office" url="{node15}"/>
     </hotspots>
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
@@ -312,7 +312,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="341.30" author="" capturedatetime="2026-03-12T14:15:38" comment="" copyright="" customnodeid="" datetime="12/03/2026 2:15 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75997222" longitude="-0.22005556" nodeid="node15" source="" tags="IMG_20260312_141538_081_085_HDR|Location|ROAD" title="SLE-ODIP-Academic_Advisor"/>
+    <userdata altitude="341.30" author="" capturedatetime="2026-03-12T14:15:38" comment="" copyright="" customnodeid="" datetime="12/03/2026 2:15 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75997222" longitude="-0.22005556" nodeid="node15" source="" tags="IMG_20260312_141538_081_085_HDR|Location|ROAD" title="Student_Life_Engement-Office_of_Internation_Program_and_Cohesion-Academic_Advisor_Office"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -320,7 +320,7 @@
       <max fov="120" fovfisheye="360" fovstereographic="270" pan="360" scaletofit="0" tilt="90"/>
     </view>
     <hotspots>
-      <hotspot description="" distance="15.4439" id="Point01" pan="5.97" skinid="ht_node" target="6.2/-2.8/100.0" tilt="-18.46" title="Career_Service-2" url="{node14}"/>
+      <hotspot description="" distance="15.4439" id="Point01" pan="5.97" skinid="ht_node" target="6.2/-2.8/100.0" tilt="-18.46" title="Najeeb_Office" url="{node14}"/>
     </hotspots>
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
@@ -332,7 +332,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="347.20" author="" capturedatetime="2026-03-12T14:17:18" comment="" copyright="" customnodeid="career_service_1" datetime="12/03/2026 2:17 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75991667" longitude="-0.22011111" nodeid="node16" source="" tags="IMG_20260312_141718_086_090_HDR|Location|ROAD" title="Career Services Office"/>
+    <userdata altitude="347.20" author="" capturedatetime="2026-03-12T14:17:18" comment="" copyright="" customnodeid="career_service_1" datetime="12/03/2026 2:17 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75991667" longitude="-0.22011111" nodeid="node16" source="" tags="IMG_20260312_141718_086_090_HDR|Location|ROAD" title="Career_Services_Office"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -340,7 +340,7 @@
       <max fov="120" fovfisheye="360" fovstereographic="270" pan="360" scaletofit="0" tilt="90"/>
     </view>
     <hotspots>
-      <hotspot description="" distance="15.6731" id="Point01" pan="25.67" skinid="ht_node" target="135.5/0.6/100.0" tilt="-2.05" title="Registry-Counselling" url="{node12}"/>
+      <hotspot description="" distance="15.6731" id="Point01" pan="25.67" skinid="ht_node" target="135.5/0.6/100.0" tilt="-2.05" title="Registry_Office-Counselling_Office" url="{node12}"/>
       <hotspot description="" distance="17.9862" id="Point02" pan="80.49" skinid="ht_node" target="0.9/0.7/100.0" tilt="-6.03" title="IMG_20260312_141330_00_071.insp" url="{node13}"/>
       <hotspot description="" distance="9.76334" id="Point03" pan="-102.51" skinid="ht_node" target="85.8/1.9/100.0" tilt="-9.13" title="IMG_20260312_142019_00_091.insp" url="{node17}"/>
     </hotspots>
@@ -362,8 +362,8 @@
       <max fov="120" fovfisheye="360" fovstereographic="270" pan="360" scaletofit="0" tilt="90"/>
     </view>
     <hotspots>
-      <hotspot description="" distance="9.76334" id="Point01" pan="-85.65" skinid="ht_node" target="87.4/-0.7/100.0" tilt="-7.83" title="Career Services Office" url="{node16}"/>
-      <hotspot description="" distance="41.8176" id="Point02" pan="-166.64" skinid="ht_node" target="-12.4/-1.9/100.0" tilt="-0.6" title="Todd Library" url="{node9}"/>
+      <hotspot description="" distance="9.76334" id="Point01" pan="-85.65" skinid="ht_node" target="87.4/-0.7/100.0" tilt="-7.83" title="Career_Services_Office" url="{node16}"/>
+      <hotspot description="" distance="41.8176" id="Point02" pan="-166.64" skinid="ht_node" target="-12.4/-1.9/100.0" tilt="-0.6" title="Todd_Library" url="{node9}"/>
       <hotspot description="" distance="29.1696" id="Point03" pan="-138" skinid="ht_node" target="-48.6/-5.2/100.0" tilt="-1.8" title="Road II" url="{node11}"/>
       <hotspot description="" distance="17.9434" id="Point04" pan="86.53" skinid="ht_node" target="97.3/3.7/100.0" tilt="-4.76" title="IMG_20260312_142231_00_096.insp" url="{node18}"/>
       <hotspot description="" distance="13.7572" id="Point05" pan="51.98" skinid="ht_node" target="-173.2/-19.4/100.0" tilt="-21.16" title="IMG_20260312_161127_00_286.insp" url="{node56}"/>
@@ -387,7 +387,7 @@
     </view>
     <hotspots>
       <hotspot description="" distance="17.9434" id="Point01" pan="-99.1" skinid="ht_node" target="" tilt="-6.11" title="IMG_20260312_142019_00_091.insp" url="{node17}"/>
-      <hotspot description="" distance="3.089" id="Point02" pan="100.01" skinid="ht_node" target="-18.1/0.6/100.0" tilt="-6.02" title="IMG_20260312_142323_00_101.insp" url="{node19}"/>
+      <hotspot description="" distance="3.089" id="Point02" pan="100.01" skinid="ht_node" target="-18.1/0.6/100.0" tilt="-6.02" title="Computer_Lab_222" url="{node19}"/>
     </hotspots>
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
@@ -399,7 +399,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="355.80" author="" capturedatetime="2026-03-12T14:23:23" comment="" copyright="" customnodeid="" datetime="12/03/2026 2:23 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75972222" longitude="-0.22022222" nodeid="node19" source="" tags="all|Classroom|Location|ROAD" title="IMG_20260312_142323_00_101.insp"/>
+    <userdata altitude="355.80" author="" capturedatetime="2026-03-12T14:23:23" comment="" copyright="" customnodeid="" datetime="12/03/2026 2:23 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75972222" longitude="-0.22022222" nodeid="node19" source="" tags="all|Classroom|Location|ROAD" title="Computer_Lab_222"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -408,7 +408,7 @@
     </view>
     <hotspots>
       <hotspot description="" distance="3.089" id="Point01" pan="85.64" skinid="ht_node" target="96.1/3.9/100.0" tilt="-8.21" title="IMG_20260312_142231_00_096.insp" url="{node18}"/>
-      <hotspot description="" distance="16.6217" id="Point02" pan="-5.88" skinid="ht_node" target="2.5/0.9/100.0" tilt="-7.8" title="IMG_20260312_142448_00_111.insp" url="{node21}"/>
+      <hotspot description="" distance="16.6217" id="Point02" pan="-5.88" skinid="ht_node" target="2.5/0.9/100.0" tilt="-7.8" title="Computer_Lab_221" url="{node21}"/>
     </hotspots>
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
@@ -420,7 +420,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="340.80" author="" capturedatetime="2026-03-12T14:24:48" comment="" copyright="" customnodeid="" datetime="12/03/2026 2:24 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75958333" longitude="-0.22016667" nodeid="node21" source="" tags="all|ROAD" title="IMG_20260312_142448_00_111.insp"/>
+    <userdata altitude="340.80" author="" capturedatetime="2026-03-12T14:24:48" comment="" copyright="" customnodeid="" datetime="12/03/2026 2:24 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75958333" longitude="-0.22016667" nodeid="node21" source="" tags="all|Location|ROAD" title="Computer_Lab_221"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -428,7 +428,7 @@
       <max fov="120" fovfisheye="360" fovstereographic="270" pan="360" scaletofit="0" tilt="90"/>
     </view>
     <hotspots>
-      <hotspot description="" distance="16.6217" id="Point01" pan="-177" skinid="ht_node" target="176.7/-3.0/100.0" tilt="-5.73" title="IMG_20260312_142323_00_101.insp" url="{node19}"/>
+      <hotspot description="" distance="16.6217" id="Point01" pan="-177" skinid="ht_node" target="176.7/-3.0/100.0" tilt="-5.73" title="Computer_Lab_222" url="{node19}"/>
       <hotspot description="" distance="12.7314" id="Point02" pan="-139.28" skinid="ht_node" target="45.5/4.1/100.0" tilt="-5.73" title="IMG_20260312_142637_00_116.insp" url="{node22}"/>
       <hotspot description="" distance="3.0734" id="Point03" pan="0.93" skinid="ht_node" target="-107.8/-5.9/100.0" tilt="-3.53" title="IMG_20260312_142812_00_121.insp" url="{node23}"/>
     </hotspots>
@@ -450,8 +450,8 @@
       <max fov="120" fovfisheye="360" fovstereographic="270" pan="360" scaletofit="0" tilt="90"/>
     </view>
     <hotspots>
-      <hotspot description="" distance="12.7314" id="Point01" pan="-140.74" skinid="ht_node" target="143.1/0.5/100.0" tilt="-1.75" title="IMG_20260312_142448_00_111.insp" url="{node21}"/>
-      <hotspot description="" distance="12.7314" id="Point02" pan="141.15" skinid="ht_node" target="50.9/5.5/100.0" tilt="0.74" title="IMG_20260312_142448_00_111.insp" url="{node21}"/>
+      <hotspot description="" distance="12.7314" id="Point01" pan="-140.74" skinid="ht_node" target="143.1/0.5/100.0" tilt="-1.75" title="Computer_Lab_221" url="{node21}"/>
+      <hotspot description="" distance="12.7314" id="Point02" pan="141.15" skinid="ht_node" target="50.9/5.5/100.0" tilt="0.74" title="Computer_Lab_221" url="{node21}"/>
     </hotspots>
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
@@ -472,8 +472,8 @@
     </view>
     <hotspots>
       <hotspot description="" distance="12.3549" id="Point01" pan="111.63" skinid="ht_node" target="-72.1/2.8/100.0" tilt="-0.81" title="IMG_20260312_142637_00_116.insp" url="{node22}"/>
-      <hotspot description="" distance="3.0734" id="Point02" pan="87.54" skinid="ht_node" target="174.9/-4.4/100.0" tilt="-7.6" title="IMG_20260312_142448_00_111.insp" url="{node21}"/>
-      <hotspot description="" distance="44.1851" id="Point03" pan="-24.6655" skinid="ht_node" target="$fwd" tilt="0" title="Registry-Counselling" url="{node12}"/>
+      <hotspot description="" distance="3.0734" id="Point02" pan="87.54" skinid="ht_node" target="174.9/-4.4/100.0" tilt="-7.6" title="Computer_Lab_221" url="{node21}"/>
+      <hotspot description="" distance="44.1851" id="Point03" pan="-24.6655" skinid="ht_node" target="$fwd" tilt="0" title="Registry_Office-Counselling_Office" url="{node12}"/>
       <hotspot description="" distance="9.2191" id="Point04" pan="-95.97" skinid="ht_node" target="159.7/1.3/100.0" tilt="-3.29" title="IMG_20260312_143052_00_126.insp" url="{node24}"/>
       <hotspot description="" distance="12.6744" id="Point05" pan="-176.15" skinid="ht_node" target="9.1/-16.2/100.0" tilt="-23.72" title="IMG_20260312_145637_00_201.insp" url="{node39}"/>
     </hotspots>
@@ -497,9 +497,9 @@
     <hotspots>
       <hotspot description="" distance="9.2191" id="Point01" pan="0.59" skinid="ht_node" target="90.2/3.3/100.0" tilt="-4.65" title="IMG_20260312_142812_00_121.insp" url="{node23}"/>
       <hotspot description="" distance="19.5242" id="Point02" pan="88.93" skinid="ht_node" target="107.3/3.5/100.0" tilt="-5.88" title="Databank Building" url="{node25}"/>
-      <hotspot description="" distance="27.5158" id="Point03" pan="-179" skinid="ht_node" target="-129.9/0.6/100.0" tilt="-2.32" title="APT 217" url="{node35}"/>
-      <hotspot description="" distance="38.0248" id="Point04" pan="-145.94" skinid="ht_node" target="-132.0/3.9/100.0" tilt="0.81" title="APT 216" url="{node36}"/>
-      <hotspot description="" distance="39.9818" id="Point05" pan="-109.29" skinid="ht_node" target="37.9/1.6/100.0" tilt="0.15" title="Todd Library" url="{node9}"/>
+      <hotspot description="" distance="27.5158" id="Point03" pan="-179" skinid="ht_node" target="-129.9/0.6/100.0" tilt="-2.32" title="APT_217" url="{node35}"/>
+      <hotspot description="" distance="38.0248" id="Point04" pan="-145.94" skinid="ht_node" target="-132.0/3.9/100.0" tilt="0.81" title="APT_216" url="{node36}"/>
+      <hotspot description="" distance="39.9818" id="Point05" pan="-109.29" skinid="ht_node" target="37.9/1.6/100.0" tilt="0.15" title="Todd_Library" url="{node9}"/>
     </hotspots>
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
@@ -522,8 +522,8 @@
       <hotspot description="" distance="19.5242" id="Point01" pan="-81.63" skinid="ht_node" target="-109.7/4.7/100.0" tilt="-1.04" title="IMG_20260312_143052_00_126.insp" url="{node24}"/>
       <hotspot description="" distance="9.72284" id="Point02" pan="132.36" skinid="ht_node" target="6.9/13.0/100.0" tilt="-4.52" title="IMG_20260312_143500_00_136.insp" url="{node26}"/>
       <hotspot description="" distance="11.1197" id="Point03" pan="99.19" skinid="ht_node" target="5.0/3.1/100.0" tilt="-4.89" title="Databank Building" url="{node27}"/>
-      <hotspot description="" distance="6.87833" id="Point04" pan="-128.93" skinid="ht_node" target="51.9/-0.2/100.0" tilt="-2.41" title="Couryard Mini" url="{node29}"/>
-      <hotspot description="" distance="31.3464" id="Point05" pan="-113.58" skinid="ht_node" target="-87.0/7.9/100.0" tilt="1.04" title="APT 217" url="{node35}"/>
+      <hotspot description="" distance="6.87833" id="Point04" pan="-128.93" skinid="ht_node" target="51.9/-0.2/100.0" tilt="-2.41" title="Couryard_Mini" url="{node29}"/>
+      <hotspot description="" distance="31.3464" id="Point05" pan="-113.58" skinid="ht_node" target="-87.0/7.9/100.0" tilt="1.04" title="APT_217" url="{node35}"/>
     </hotspots>
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
@@ -598,7 +598,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="342.30" author="" capturedatetime="2026-03-12T14:41:39" comment="" copyright="" customnodeid="couryard_mini" datetime="12/03/2026 2:41 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75938889" longitude="-0.22005556" nodeid="node29" source="" tags="all|Location" title="Couryard Mini"/>
+    <userdata altitude="342.30" author="" capturedatetime="2026-03-12T14:41:39" comment="" copyright="" customnodeid="couryard_mini" datetime="12/03/2026 2:41 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75938889" longitude="-0.22005556" nodeid="node29" source="" tags="all|Location" title="Couryard_Mini"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -628,10 +628,10 @@
       <max fov="120" fovfisheye="360" fovstereographic="270" pan="360" scaletofit="0" tilt="90"/>
     </view>
     <hotspots>
-      <hotspot description="" distance="15.3945" id="Point01" pan="-73.95" skinid="ht_node" target="-174.0/-1.8/100.0" tilt="-10.09" title="Couryard Mini" url="{node29}"/>
+      <hotspot description="" distance="15.3945" id="Point01" pan="-73.95" skinid="ht_node" target="-174.0/-1.8/100.0" tilt="-10.09" title="Couryard_Mini" url="{node29}"/>
       <hotspot description="" distance="33.2433" id="Point02" pan="-123.21" skinid="ht_node" target="-70.6/0.7/100.0" tilt="-5.72" title="IMG_20260312_143052_00_126.insp" url="{node24}"/>
       <hotspot description="" distance="4.35592" id="Point03" pan="4.74" skinid="ht_node" target="-59.2/-3.2/100.0" tilt="-7.36" title="IMG_20260312_144313_00_161.insp" url="{node31}"/>
-      <hotspot description="" distance="22.2381" id="Point04" pan="176.14" skinid="ht_node" target="-106.2/1.6/100.0" tilt="-5.53" title="APT 217" url="{node35}"/>
+      <hotspot description="" distance="22.2381" id="Point04" pan="176.75" skinid="ht_node" target="-106.2/1.6/100.0" tilt="-6.7" title="APT_217" url="{node35}"/>
     </hotspots>
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
@@ -652,9 +652,9 @@
     </view>
     <hotspots>
       <hotspot description="" distance="4.35592" id="Point01" pan="78.47" skinid="ht_node" target="173.3/10.3/100.0" tilt="-2.74" title="IMG_20260312_144239_00_156.insp" url="{node30}"/>
-      <hotspot description="" distance="16.5614" id="Point02" pan="149.73" skinid="ht_node" target="122.4/-4.2/100.0" tilt="-10.05" title="Couryard Mini" url="{node29}"/>
+      <hotspot description="" distance="16.5614" id="Point02" pan="149.73" skinid="ht_node" target="122.4/-4.2/100.0" tilt="-10.05" title="Couryard_Mini" url="{node29}"/>
       <hotspot description="" distance="3.08788" id="Point03" pan="-45.8" skinid="ht_node" target="19.5/8.8/100.0" tilt="-5.15" title="IMG_20260312_144355_00_166.insp" url="{node32}"/>
-      <hotspot description="" distance="17.9868" id="Point04" pan="88.02" skinid="ht_node" target="-83.3/-4.6/100.0" tilt="-2.46" title="APT 217" url="{node35}"/>
+      <hotspot description="" distance="17.9868" id="Point04" pan="88.02" skinid="ht_node" target="-83.3/-4.6/100.0" tilt="-2.46" title="APT_217" url="{node35}"/>
     </hotspots>
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
@@ -675,7 +675,7 @@
     </view>
     <hotspots>
       <hotspot description="" distance="3.08788" id="Point01" pan="-135.29" skinid="ht_node" target="114.1/11.3/100.0" tilt="-11.47" title="IMG_20260312_144313_00_161.insp" url="{node31}"/>
-      <hotspot description="" distance="15.7465" id="Point02" pan="5.72" skinid="ht_node" target="108.9/2.7/100.0" tilt="-5.41" title="Ashesi Shop" url="{node33}"/>
+      <hotspot description="" distance="15.7465" id="Point02" pan="5.72" skinid="ht_node" target="108.9/2.7/100.0" tilt="-5.41" title="Ashesi_Shop" url="{node33}"/>
     </hotspots>
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
@@ -687,7 +687,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="346.10" author="" capturedatetime="2026-03-12T14:45:42" comment="" copyright="" customnodeid="ashesi_shop" datetime="12/03/2026 2:45 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75916667" longitude="-0.21994444" nodeid="node33" source="" tags="all|Location|ROAD" title="Ashesi Shop"/>
+    <userdata altitude="346.10" author="" capturedatetime="2026-03-12T14:45:42" comment="" copyright="" customnodeid="ashesi_shop" datetime="12/03/2026 2:45 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75916667" longitude="-0.21994444" nodeid="node33" source="" tags="all|Location|ROAD" title="Ashesi_Shop"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="105.967" projection="4" tilt="2.69719"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -717,7 +717,7 @@
     </view>
     <hotspots>
       <hotspot description="" distance="26.3735" id="Point01" pan="-86.32" skinid="ht_node" target="-82.7/5.9/100.0" tilt="-1.09" title="IMG_20260312_144239_00_156.insp" url="{node30}"/>
-      <hotspot description="" distance="6.90024" id="Point02" pan="-156.97" skinid="ht_node" target="-26.6/11.3/100.0" tilt="-1.3" title="APT 217" url="{node35}"/>
+      <hotspot description="" distance="6.90024" id="Point02" pan="-156.97" skinid="ht_node" target="-26.6/11.3/100.0" tilt="-1.3" title="APT_217" url="{node35}"/>
     </hotspots>
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
@@ -729,7 +729,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="343.20" author="" capturedatetime="2026-03-12T14:49:03" comment="" copyright="" customnodeid="apt_217" datetime="12/03/2026 2:49 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75947222" longitude="-0.21983333" nodeid="node35" source="" tags="all|Location|ROAD" title="APT 217"/>
+    <userdata altitude="343.20" author="" capturedatetime="2026-03-12T14:49:03" comment="" copyright="" customnodeid="apt_217" datetime="12/03/2026 2:49 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75947222" longitude="-0.21983333" nodeid="node35" source="" tags="all|Location|ROAD" title="APT_217"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -738,11 +738,11 @@
     </view>
     <hotspots>
       <hotspot description="" distance="22.2381" id="Point01" pan="99.03" skinid="ht_node" target="3.7/0.3/100.0" tilt="-5.37" title="IMG_20260312_144239_00_156.insp" url="{node30}"/>
-      <hotspot description="" distance="26.2742" id="Point02" pan="71.91" skinid="ht_node" target="-116.1/5.5/100.0" tilt="-5.61" title="Couryard Mini" url="{node29}"/>
+      <hotspot description="" distance="26.2742" id="Point02" pan="71.91" skinid="ht_node" target="-116.1/5.5/100.0" tilt="-5.61" title="Couryard_Mini" url="{node29}"/>
       <hotspot description="" distance="27.5158" id="Point03" pan="22.69" skinid="ht_node" target="31.7/7.4/100.0" tilt="-6.2" title="IMG_20260312_143052_00_126.insp" url="{node24}"/>
       <hotspot description="" distance="22.239" id="Point04" pan="-40.8" skinid="ht_node" target="139.2/2.8/100.0" tilt="-5.72" title="Courtyard" url="{node38}"/>
       <hotspot description="" distance="6.90024" id="Point05" pan="177.43" skinid="ht_node" target="90.3/-2.1/100.0" tilt="-3.1" title="IMG_20260312_144814_00_176.insp" url="{node34}"/>
-      <hotspot description="" distance="12.6747" id="Point06" pan="-96.01" skinid="ht_node" target="-95.9/10.5/100.0" tilt="-10.48" title="APT 216" url="{node36}"/>
+      <hotspot description="" distance="12.6747" id="Point06" pan="-96.01" skinid="ht_node" target="-95.9/10.5/100.0" tilt="-10.48" title="APT_216" url="{node36}"/>
     </hotspots>
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
@@ -754,7 +754,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="344.30" author="" capturedatetime="2026-03-12T14:50:57" comment="" copyright="" customnodeid="apt_216" datetime="12/03/2026 2:50 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75950000" longitude="-0.21972222" nodeid="node36" source="" tags="all|Location|ROAD" title="APT 216"/>
+    <userdata altitude="344.30" author="" capturedatetime="2026-03-12T14:50:57" comment="" copyright="" customnodeid="apt_216" datetime="12/03/2026 2:50 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75950000" longitude="-0.21972222" nodeid="node36" source="" tags="all|Location|ROAD" title="APT_216"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -762,7 +762,7 @@
       <max fov="120" fovfisheye="360" fovstereographic="270" pan="360" scaletofit="0" tilt="90"/>
     </view>
     <hotspots>
-      <hotspot description="" distance="12.6747" id="Point01" pan="91.19" skinid="ht_node" target="67.3/6.6/100.0" tilt="-4.1" title="APT 217" url="{node35}"/>
+      <hotspot description="" distance="12.6747" id="Point01" pan="91.19" skinid="ht_node" target="67.3/6.6/100.0" tilt="-4.1" title="APT_217" url="{node35}"/>
       <hotspot description="" distance="13.7995" id="Point02" pan="-94.63" skinid="ht_node" target="81.2/-1.7/100.0" tilt="-8.37" title="IMG_20260312_145144_00_191.insp" url="{node37}"/>
       <hotspot description="" distance="38.0248" id="Point03" pan="53.88" skinid="ht_node" target="55.0/3.5/100.0" tilt="-2.6" title="IMG_20260312_143052_00_126.insp" url="{node24}"/>
       <hotspot description="" distance="29.0333" id="Point04" pan="-11.9" skinid="ht_node" target="169.3/13.2/100.0" tilt="-8.22" title="Courtyard" url="{node38}"/>
@@ -786,10 +786,11 @@
     </view>
     <hotspots>
       <hotspot description="" distance="30.8867" id="Point01" pan="-129.02" skinid="ht_node" target="53.5/7.3/100.0" tilt="-2.51" title="IMG_20260312_143052_00_126.insp" url="{node24}"/>
-      <hotspot description="" distance="13.7995" id="Point02" pan="94.85" skinid="ht_node" target="49.2/8.2/100.0" tilt="-7.65" title="Todd Library" url="{node9}"/>
+      <hotspot description="" distance="13.7995" id="Point02" pan="94.85" skinid="ht_node" target="49.2/8.2/100.0" tilt="-7.65" title="Todd_Library" url="{node9}"/>
       <hotspot description="" distance="18.6952" id="Point03" pan="-171.94" skinid="ht_node" target="165.1/13.6/100.0" tilt="-8.37" title="Courtyard" url="{node38}"/>
       <hotspot description="" distance="6.87932" id="Point04" pan="21.75" skinid="ht_node" target="-154.1/2.1/100.0" tilt="-3.66" title="IMG_20260312_164103_00_357.insp" url="{node70}"/>
-      <hotspot description="" distance="13.7572" id="Point05" pan="-29.92" skinid="ht_node" target="-128.3/7.1/100.0" tilt="-0.98" title="IMG_20260312_172052_00_402.insp" url="{node78}"/>
+      <hotspot description="" distance="13.7572" id="Point05" pan="-29.92" skinid="ht_node" target="-128.3/7.1/100.0" tilt="-0.98" title="Student_Hangout" url="{node78}"/>
+      <hotspot description="" distance="13.7995" id="Point06" pan="-93.83" skinid="ht_node" target="87.5/8.0/100.0" tilt="-8.06" title="APT_216" url="{node36}"/>
     </hotspots>
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
@@ -809,22 +810,22 @@
       <max fov="120" fovfisheye="360" fovstereographic="270" pan="360" scaletofit="0" tilt="90"/>
     </view>
     <hotspots>
-      <hotspot description="" distance="26.2731" id="Point01" pan="25.23" skinid="ht_node" target="" tilt="1.92" title="Todd Library" url="{node9}"/>
+      <hotspot description="" distance="26.2731" id="Point01" pan="25.23" skinid="ht_node" target="" tilt="1.92" title="Todd_Library" url="{node9}"/>
       <hotspot description="" distance="18.6952" id="Point02" pan="-8.29" skinid="ht_node" target="-15.1/0.2/100.0" tilt="0.08" title="IMG_20260312_145144_00_191.insp" url="{node37}"/>
-      <hotspot description="" distance="22.239" id="Point03" pan="-59.37" skinid="ht_node" target="116.9/4.9/100.0" tilt="-0.32" title="APT 217" url="{node35}"/>
+      <hotspot description="" distance="22.239" id="Point03" pan="-59.37" skinid="ht_node" target="116.9/4.9/100.0" tilt="-0.32" title="APT_217" url="{node35}"/>
       <hotspot description="" distance="13.7586" id="Point04" pan="-98.12" skinid="ht_node" target="110.4/9.9/100.0" tilt="-1.16" title="IMG_20260312_143052_00_126.insp" url="{node24}"/>
       <hotspot description="" distance="22.3822" id="Point05" pan="-123.56" skinid="ht_node" target="157.2/0.9/100.0" tilt="0.63" title="IMG_20260312_142812_00_121.insp" url="{node23}"/>
-      <hotspot description="" distance="25.3504" id="Point06" pan="-143.46" skinid="ht_node" target="-129.4/4.9/100.0" tilt="0.47" title="IMG_20260312_142448_00_111.insp" url="{node21}"/>
+      <hotspot description="" distance="25.3504" id="Point06" pan="-143.46" skinid="ht_node" target="-129.4/4.9/100.0" tilt="0.47" title="Computer_Lab_221" url="{node21}"/>
       <hotspot description="" distance="33.1223" id="Point07" pan="-172.31" skinid="ht_node" target="24.9/10.4/100.0" tilt="0.14" title="IMG_20260312_142231_00_096.insp" url="{node18}"/>
-      <hotspot description="" distance="32.0983" id="Point08" pan="-159.06" skinid="ht_node" target="-143.4/2.2/100.0" tilt="0.49" title="IMG_20260312_142323_00_101.insp" url="{node19}"/>
+      <hotspot description="" distance="32.0983" id="Point08" pan="-159.06" skinid="ht_node" target="-143.4/2.2/100.0" tilt="0.49" title="Computer_Lab_222" url="{node19}"/>
       <hotspot description="" distance="26.5248" id="Point09" pan="162.62" skinid="ht_node" target="22.6/4.6/100.0" tilt="2.07" title="IMG_20260312_142019_00_091.insp" url="{node17}"/>
-      <hotspot description="" distance="35.973" id="Point10" pan="134.96" skinid="ht_node" target="175.0/2.1/100.0" tilt="1.64" title="Career Services Office" url="{node16}"/>
+      <hotspot description="" distance="35.973" id="Point10" pan="134.96" skinid="ht_node" target="175.0/2.1/100.0" tilt="1.64" title="Career_Services_Office" url="{node16}"/>
       <hotspot description="" distance="47.2401" id="Point11" pan="123.33" skinid="ht_node" target="-132.5/7.1/100.0" tilt="1.99" title="IMG_20260312_141330_00_071.insp" url="{node13}"/>
-      <hotspot description="" distance="34.1143" id="Point12" pan="106.82" skinid="ht_node" target="26.7/5.7/100.0" tilt="2.18" title="Registry-Counselling" url="{node12}"/>
+      <hotspot description="" distance="34.1143" id="Point12" pan="106.82" skinid="ht_node" target="26.7/5.7/100.0" tilt="2.18" title="Registry_Office-Counselling_Office" url="{node12}"/>
       <hotspot description="" distance="35.2042" id="Point13" pan="79.13" skinid="ht_node" target="168.1/2.9/100.0" tilt="1.19" title="Road-small-green-gate" url="{node10}"/>
       <hotspot description="" distance="25.3504" id="Point14" pan="-173" skinid="ht_node" target="72.8/1.7/100.0" tilt="-6.61" title="IMG_20260312_150040_00_221.insp" url="{node43}"/>
-      <hotspot description="" distance="21.5127" id="Point15" pan="-162.61" skinid="ht_node" target="-157.4/-0.8/100.0" tilt="-6.6" title="IMG_20260312_150143_00_226.insp" url="{node44}"/>
-      <hotspot description="" distance="26.5248" id="Point16" pan="168.76" skinid="ht_node" target="-29.8/4.6/100.0" tilt="-8.23" title="IMG_20260312_150336_00_231.insp" url="{node45}"/>
+      <hotspot description="" distance="21.5127" id="Point15" pan="-162.61" skinid="ht_node" target="-157.4/-0.8/100.0" tilt="-6.6" title="Jackson_Hall_115" url="{node44}"/>
+      <hotspot description="" distance="26.5248" id="Point16" pan="168.76" skinid="ht_node" target="-29.8/4.6/100.0" tilt="-8.23" title="Admission_Office" url="{node45}"/>
       <hotspot description="" distance="19.5256" id="Point17" pan="153.8" skinid="ht_node" target="-33.9/4.1/100.0" tilt="-7.91" title="IMG_20260312_150527_00_236.insp" url="{node46}"/>
     </hotspots>
     <media/>
@@ -846,7 +847,7 @@
     </view>
     <hotspots>
       <hotspot description="" distance="12.6744" id="Point01" pan="-44.98" skinid="ht_node" target="-34.6/6.0/100.0" tilt="8.78" title="IMG_20260312_142812_00_121.insp" url="{node23}"/>
-      <hotspot description="" distance="6.1457" id="Point02" pan="-6.07" skinid="ht_node" target="101.6/-1.8/100.0" tilt="-34.13" title="IMG_20260312_145720_00_206.insp" url="{node40}"/>
+      <hotspot description="" distance="6.1457" id="Point02" pan="-6.07" skinid="ht_node" target="101.6/-1.8/100.0" tilt="-34.13" title="Note" url="{node40}"/>
     </hotspots>
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
@@ -858,7 +859,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="349.80" author="" capturedatetime="2026-03-12T14:57:20" comment="" copyright="" customnodeid="" datetime="12/03/2026 2:57 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75955556" longitude="-0.22008333" nodeid="node40" source="" tags="all" title="IMG_20260312_145720_00_206.insp"/>
+    <userdata altitude="349.80" author="" capturedatetime="2026-03-12T14:57:20" comment="" copyright="" customnodeid="" datetime="12/03/2026 2:57 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75955556" longitude="-0.22008333" nodeid="node40" source="" tags="all|ROAD" title="Note"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="144.531" projection="4" tilt="-7.21125"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -879,7 +880,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="340.50" author="" capturedatetime="2026-03-12T14:58:46" comment="" copyright="" customnodeid="" datetime="12/03/2026 2:58 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75961111" longitude="-0.22027778" nodeid="node41" source="" tags="all" title="IMG_20260312_145846_00_211.insp"/>
+    <userdata altitude="340.50" author="" capturedatetime="2026-03-12T14:58:46" comment="" copyright="" customnodeid="" datetime="12/03/2026 2:58 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75961111" longitude="-0.22027778" nodeid="node41" source="" tags="all|Location|ROAD" title="Jackson_Hall_116"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -887,7 +888,7 @@
       <max fov="120" fovfisheye="360" fovstereographic="270" pan="360" scaletofit="0" tilt="90"/>
     </view>
     <hotspots>
-      <hotspot description="" distance="22.3819" id="Point01" pan="92.11" skinid="ht_node" target="-109.9/13.5/100.0" tilt="-6.79" title="IMG_20260312_145720_00_206.insp" url="{node40}"/>
+      <hotspot description="" distance="22.3819" id="Point01" pan="92.11" skinid="ht_node" target="-109.9/13.5/100.0" tilt="-6.79" title="Note" url="{node40}"/>
       <hotspot description="" distance="6.87932" id="Point02" pan="4.34" skinid="ht_node" target="-102.8/16.9/100.0" tilt="-12.4" title="IMG_20260312_145927_00_216.insp" url="{node42}"/>
     </hotspots>
     <media/>
@@ -908,8 +909,8 @@
       <max fov="120" fovfisheye="360" fovstereographic="270" pan="360" scaletofit="0" tilt="90"/>
     </view>
     <hotspots>
-      <hotspot description="" distance="6.87932" id="Point01" pan="27.93" skinid="ht_node" target="-124.2/18.8/100.0" tilt="-2.96" title="IMG_20260312_145846_00_211.insp" url="{node41}"/>
-      <hotspot description="" distance="9.2191" id="Point02" pan="105.55" skinid="ht_node" target="94.0/3.5/100.0" tilt="-3.07" title="IMG_20260312_150143_00_226.insp" url="{node44}"/>
+      <hotspot description="" distance="6.87932" id="Point01" pan="27.93" skinid="ht_node" target="-124.2/18.8/100.0" tilt="-2.96" title="Jackson_Hall_116" url="{node41}"/>
+      <hotspot description="" distance="9.2191" id="Point02" pan="105.55" skinid="ht_node" target="94.0/3.5/100.0" tilt="-3.07" title="Jackson_Hall_115" url="{node44}"/>
     </hotspots>
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
@@ -921,7 +922,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="341.50" author="" capturedatetime="2026-03-12T15:00:40" comment="" copyright="" customnodeid="" datetime="12/03/2026 3:00 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75958333" longitude="-0.22016667" nodeid="node43" source="" tags="all" title="IMG_20260312_150040_00_221.insp"/>
+    <userdata altitude="341.50" author="" capturedatetime="2026-03-12T15:00:40" comment="" copyright="" customnodeid="" datetime="12/03/2026 3:00 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75958333" longitude="-0.22016667" nodeid="node43" source="" tags="all|ROAD" title="IMG_20260312_150040_00_221.insp"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -931,9 +932,9 @@
     <hotspots>
       <hotspot description="" distance="8.71419" id="Point01" pan="137.49" skinid="ht_node" target="-132.8/12.7/100.0" tilt="-1.63" title="IMG_20260312_145927_00_216.insp" url="{node42}"/>
       <hotspot description="" distance="25.3504" id="Point02" pan="-104.04" skinid="ht_node" target="28.7/5.8/100.0" tilt="1.1" title="Courtyard" url="{node38}"/>
-      <hotspot description="" distance="38.8931" id="Point03" pan="-138.85" skinid="ht_node" target="-137.4/11.3/100.0" tilt="3.56" title="APT 217" url="{node35}"/>
-      <hotspot description="" distance="6.90024" id="Point04" pan="145.43" skinid="ht_node" target="-44.1/-3.3/100.0" tilt="-14.24" title="IMG_20260312_150143_00_226.insp" url="{node44}"/>
-      <hotspot description="" distance="29.2879" id="Point05" pan="-29.73" skinid="ht_node" target="-49.2/15.9/100.0" tilt="-10.61" title="IMG_20260312_150336_00_231.insp" url="{node45}"/>
+      <hotspot description="" distance="38.8931" id="Point03" pan="-138.85" skinid="ht_node" target="-137.4/11.3/100.0" tilt="3.56" title="APT_217" url="{node35}"/>
+      <hotspot description="" distance="6.90024" id="Point04" pan="145.43" skinid="ht_node" target="-44.1/-3.3/100.0" tilt="-14.24" title="Jackson_Hall_115" url="{node44}"/>
+      <hotspot description="" distance="29.2879" id="Point05" pan="-29.73" skinid="ht_node" target="-49.2/15.9/100.0" tilt="-10.61" title="Admission_Office" url="{node45}"/>
       <hotspot description="" distance="27.5995" id="Point06" pan="68.12" skinid="ht_node" target="-150.5/16.9/100.0" tilt="-9.37" title="IMG_20260312_161244_00_291.insp" url="{node57}"/>
     </hotspots>
     <media/>
@@ -946,7 +947,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="341.30" author="" capturedatetime="2026-03-12T15:01:43" comment="" copyright="" customnodeid="" datetime="12/03/2026 3:01 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75963889" longitude="-0.22013889" nodeid="node44" source="" tags="all" title="IMG_20260312_150143_00_226.insp"/>
+    <userdata altitude="341.30" author="" capturedatetime="2026-03-12T15:01:43" comment="" copyright="" customnodeid="" datetime="12/03/2026 3:01 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75963889" longitude="-0.22013889" nodeid="node44" source="" tags="all|Location|ROAD" title="Jackson_Hall_115"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -955,9 +956,9 @@
     </view>
     <hotspots>
       <hotspot description="" distance="9.2191" id="Point01" pan="-108.15" skinid="ht_node" target="-73.1/2.3/100.0" tilt="-4" title="IMG_20260312_145927_00_216.insp" url="{node42}"/>
-      <hotspot description="" distance="38.552" id="Point02" pan="-9.81" skinid="ht_node" target="-141.0/6.6/100.0" tilt="4.26" title="APT 217" url="{node35}"/>
+      <hotspot description="" distance="38.552" id="Point02" pan="-9.81" skinid="ht_node" target="-141.0/6.6/100.0" tilt="4.26" title="APT_217" url="{node35}"/>
       <hotspot description="" distance="6.90024" id="Point03" pan="106.79" skinid="ht_node" target="46.6/7.8/100.0" tilt="-14.66" title="IMG_20260312_150040_00_221.insp" url="{node43}"/>
-      <hotspot description="" distance="22.4775" id="Point04" pan="86.76" skinid="ht_node" target="-49.4/12.7/100.0" tilt="-5.45" title="IMG_20260312_150336_00_231.insp" url="{node45}"/>
+      <hotspot description="" distance="22.4775" id="Point04" pan="86.76" skinid="ht_node" target="-49.4/12.7/100.0" tilt="-5.45" title="Admission_Office" url="{node45}"/>
     </hotspots>
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
@@ -969,7 +970,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="342.20" author="" capturedatetime="2026-03-12T15:03:36" comment="" copyright="" customnodeid="" datetime="12/03/2026 3:03 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75983333" longitude="-0.22008333" nodeid="node45" source="" tags="all" title="IMG_20260312_150336_00_231.insp"/>
+    <userdata altitude="342.20" author="" capturedatetime="2026-03-12T15:03:36" comment="" copyright="" customnodeid="" datetime="12/03/2026 3:03 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75983333" longitude="-0.22008333" nodeid="node45" source="" tags="all|Location|ROAD" title="Admission_Office"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -992,7 +993,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="352.00" author="" capturedatetime="2026-03-12T15:05:27" comment="" copyright="" customnodeid="" datetime="12/03/2026 3:05 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75980556" longitude="-0.22000000" nodeid="node46" source="" tags="all" title="IMG_20260312_150527_00_236.insp"/>
+    <userdata altitude="352.00" author="" capturedatetime="2026-03-12T15:05:27" comment="" copyright="" customnodeid="" datetime="12/03/2026 3:05 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75980556" longitude="-0.22000000" nodeid="node46" source="" tags="all|ROAD" title="IMG_20260312_150527_00_236.insp"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -1001,8 +1002,8 @@
     </view>
     <hotspots>
       <hotspot description="" distance="19.5256" id="Point01" pan="166.12" skinid="ht_node" target="-49.5/13.4/100.0" tilt="3.26" title="Courtyard" url="{node38}"/>
-      <hotspot description="" distance="9.72248" id="Point02" pan="82.02" skinid="ht_node" target="113.5/21.5/100.0" tilt="-3.15" title="IMG_20260312_150336_00_231.insp" url="{node45}"/>
-      <hotspot description="" distance="9.72248" id="Point03" pan="74.13" skinid="ht_node" target="78.4/1.6/100.0" tilt="-9.46" title="IMG_20260312_150336_00_231.insp" url="{node45}"/>
+      <hotspot description="" distance="9.72248" id="Point02" pan="82.02" skinid="ht_node" target="113.5/21.5/100.0" tilt="-3.15" title="Admission_Office" url="{node45}"/>
+      <hotspot description="" distance="9.72248" id="Point03" pan="74.13" skinid="ht_node" target="78.4/1.6/100.0" tilt="-9.46" title="Admission_Office" url="{node45}"/>
       <hotspot description="" distance="13.0709" id="Point04" pan="-25.4" skinid="ht_node" target="155.3/1.3/100.0" tilt="-13.91" title="IMG_20260312_150616_00_241.insp" url="{node47}"/>
       <hotspot description="" distance="6.89925" id="Point05" pan="-84.51" skinid="ht_node" target="-91.7/7.3/100.0" tilt="-7.22" title="IMG_20260312_150715_00_246.insp" url="{node48}"/>
     </hotspots>
@@ -1038,7 +1039,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="358.30" author="" capturedatetime="2026-03-12T15:07:15" comment="" copyright="" customnodeid="" datetime="12/03/2026 3:07 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75986111" longitude="-0.22002778" nodeid="node48" source="" tags="all" title="IMG_20260312_150715_00_246.insp"/>
+    <userdata altitude="358.30" author="" capturedatetime="2026-03-12T15:07:15" comment="" copyright="" customnodeid="" datetime="12/03/2026 3:07 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75986111" longitude="-0.22002778" nodeid="node48" source="" tags="all|ROAD" title="IMG_20260312_150715_00_246.insp"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="-97.0987" projection="4" tilt="13.339"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -1061,7 +1062,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="342.30" author="" capturedatetime="2026-03-12T15:08:01" comment="" copyright="" customnodeid="" datetime="12/03/2026 3:08 PM" description="" heading="0" hideinlist="0" info="" latitude="5.76002778" longitude="-0.21997222" nodeid="node49" source="" tags="all" title="IMG_20260312_150801_00_251.insp"/>
+    <userdata altitude="342.30" author="" capturedatetime="2026-03-12T15:08:01" comment="" copyright="" customnodeid="" datetime="12/03/2026 3:08 PM" description="" heading="0" hideinlist="0" info="" latitude="5.76002778" longitude="-0.21997222" nodeid="node49" source="" tags="all|ROAD" title="IMG_20260312_150801_00_251.insp"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -1070,8 +1071,8 @@
     </view>
     <hotspots>
       <hotspot description="" distance="19.5256" id="Point01" pan="-92.86" skinid="ht_node" target="91.6/16.5/100.0" tilt="-7.99" title="IMG_20260312_150715_00_246.insp" url="{node48}"/>
-      <hotspot description="" distance="8.71418" id="Point02" pan="90.52" skinid="ht_node" target="64.4/12.6/100.0" tilt="-6.44" title="IMG_20260312_150836_00_256.insp" url="{node50}"/>
-      <hotspot description="" distance="13.799" id="Point03" pan="7.2" skinid="ht_node" target="-79.2/18.5/100.0" tilt="-11.91" title="IMG_20260312_151025_00_261.insp" url="{node51}"/>
+      <hotspot description="" distance="8.71418" id="Point02" pan="90.52" skinid="ht_node" target="64.4/12.6/100.0" tilt="-6.44" title="Down_Office_NA" url="{node50}"/>
+      <hotspot description="" distance="13.799" id="Point03" pan="7.2" skinid="ht_node" target="-79.2/18.5/100.0" tilt="-11.91" title="Down_Office_NA_2" url="{node51}"/>
     </hotspots>
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
@@ -1083,7 +1084,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="352.80" author="" capturedatetime="2026-03-12T15:08:36" comment="" copyright="" customnodeid="" datetime="12/03/2026 3:08 PM" description="" heading="0" hideinlist="0" info="" latitude="5.76008333" longitude="-0.22002778" nodeid="node50" source="" tags="all" title="IMG_20260312_150836_00_256.insp"/>
+    <userdata altitude="352.80" author="" capturedatetime="2026-03-12T15:08:36" comment="" copyright="" customnodeid="" datetime="12/03/2026 3:08 PM" description="" heading="0" hideinlist="0" info="" latitude="5.76008333" longitude="-0.22002778" nodeid="node50" source="" tags="all|Location|ROAD" title="Down_Office_NA"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -1103,7 +1104,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="345.30" author="" capturedatetime="2026-03-12T15:10:25" comment="" copyright="" customnodeid="" datetime="12/03/2026 3:10 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75991667" longitude="-0.21991667" nodeid="node51" source="" tags="all" title="IMG_20260312_151025_00_261.insp"/>
+    <userdata altitude="345.30" author="" capturedatetime="2026-03-12T15:10:25" comment="" copyright="" customnodeid="" datetime="12/03/2026 3:10 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75991667" longitude="-0.21991667" nodeid="node51" source="" tags="all|Location|ROAD" title="Down_Office_NA_2"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -1125,7 +1126,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="343.60" author="" capturedatetime="2026-03-12T15:12:46" comment="" copyright="" customnodeid="" datetime="12/03/2026 3:12 PM" description="" heading="0" hideinlist="0" info="" latitude="5.76000000" longitude="-0.21980556" nodeid="node52" source="" tags="all" title="IMG_20260312_151246_00_266.insp"/>
+    <userdata altitude="343.60" author="" capturedatetime="2026-03-12T15:12:46" comment="" copyright="" customnodeid="" datetime="12/03/2026 3:12 PM" description="" heading="0" hideinlist="0" info="" latitude="5.76000000" longitude="-0.21980556" nodeid="node52" source="" tags="all|ROAD" title="IMG_20260312_151246_00_266.insp"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -1133,8 +1134,8 @@
       <max fov="120" fovfisheye="360" fovstereographic="270" pan="360" scaletofit="0" tilt="90"/>
     </view>
     <hotspots>
-      <hotspot description="" distance="9.26587" id="Point01" pan="34.53" skinid="ht_node" target="8.1/2.1/100.0" tilt="-25.58" title="IMG_20260312_151401_00_271.insp" url="{node53}"/>
-      <hotspot description="" distance="15.3936" id="Point02" pan="170.72" skinid="ht_node" target="101.3/14.1/100.0" tilt="-6.95" title="IMG_20260312_151025_00_261.insp" url="{node51}"/>
+      <hotspot description="" distance="9.26587" id="Point01" pan="34.53" skinid="ht_node" target="8.1/2.1/100.0" tilt="-25.58" title="Essentials" url="{node53}"/>
+      <hotspot description="" distance="15.3936" id="Point02" pan="170.72" skinid="ht_node" target="101.3/14.1/100.0" tilt="-6.95" title="Down_Office_NA_2" url="{node51}"/>
     </hotspots>
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
@@ -1146,7 +1147,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="343.30" author="" capturedatetime="2026-03-12T15:14:01" comment="" copyright="" customnodeid="" datetime="12/03/2026 3:14 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75991667" longitude="-0.21980556" nodeid="node53" source="" tags="all" title="IMG_20260312_151401_00_271.insp"/>
+    <userdata altitude="343.30" author="" capturedatetime="2026-03-12T15:14:01" comment="" copyright="" customnodeid="" datetime="12/03/2026 3:14 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75991667" longitude="-0.21980556" nodeid="node53" source="" tags="all|Location|ROAD" title="Essentials"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -1176,7 +1177,7 @@
       <max fov="120" fovfisheye="360" fovstereographic="270" pan="360" scaletofit="0" tilt="90"/>
     </view>
     <hotspots>
-      <hotspot description="" distance="11.0971" id="Point01" pan="119.95" skinid="ht_node" target="-150.2/15.7/100.0" tilt="-9.47" title="IMG_20260312_151401_00_271.insp" url="{node53}"/>
+      <hotspot description="" distance="11.0971" id="Point01" pan="119.95" skinid="ht_node" target="-150.2/15.7/100.0" tilt="-9.47" title="Essentials" url="{node53}"/>
     </hotspots>
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
@@ -1188,7 +1189,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="343.50" author="" capturedatetime="2026-03-12T16:09:40" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:09 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75986111" longitude="-0.21991667" nodeid="node55" source="" tags="all" title="IMG_20260312_160940_00_281.insp"/>
+    <userdata altitude="343.50" author="" capturedatetime="2026-03-12T16:09:40" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:09 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75986111" longitude="-0.21991667" nodeid="node55" source="" tags="all|ROAD" title="IMG_20260312_160940_00_281.insp"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -1196,7 +1197,7 @@
       <max fov="120" fovfisheye="360" fovstereographic="270" pan="360" scaletofit="0" tilt="90"/>
     </view>
     <hotspots>
-      <hotspot description="" distance="13.7576" id="Point01" pan="-31.47" skinid="ht_node" target="-140.2/-5.3/100.0" tilt="-31.32" title="IMG_20260312_151401_00_271.insp" url="{node53}"/>
+      <hotspot description="" distance="13.7576" id="Point01" pan="-31.47" skinid="ht_node" target="-140.2/-5.3/100.0" tilt="-31.32" title="Essentials" url="{node53}"/>
       <hotspot description="" distance="11.0986" id="Point02" pan="0.190006" skinid="ht_node" target="45.7/9.5/100.0" tilt="8.94" title="Road II" url="{node11}"/>
     </hotspots>
     <media/>
@@ -1209,7 +1210,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="361.50" author="" capturedatetime="2026-03-12T16:11:27" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:11 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75977778" longitude="-0.21997222" nodeid="node56" source="" tags="all" title="IMG_20260312_161127_00_286.insp"/>
+    <userdata altitude="361.50" author="" capturedatetime="2026-03-12T16:11:27" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:11 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75977778" longitude="-0.21997222" nodeid="node56" source="" tags="all|ROAD" title="IMG_20260312_161127_00_286.insp"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -1217,7 +1218,7 @@
       <max fov="120" fovfisheye="360" fovstereographic="270" pan="360" scaletofit="0" tilt="90"/>
     </view>
     <hotspots>
-      <hotspot description="" distance="13.7572" id="Point01" pan="-179.42" skinid="ht_node" target="117.7/19.6/100.0" tilt="-26.46" title="IMG_20260312_150336_00_231.insp" url="{node45}"/>
+      <hotspot description="" distance="13.7572" id="Point01" pan="-179.42" skinid="ht_node" target="117.7/19.6/100.0" tilt="-26.46" title="Admission_Office" url="{node45}"/>
       <hotspot description="" distance="30.5008" id="Point02" pan="-178.35" skinid="ht_node" target="159.6/12.6/100.0" tilt="-11.51" title="IMG_20260312_150040_00_221.insp" url="{node43}"/>
       <hotspot description="" distance="13.7572" id="Point03" pan="-7.68" skinid="ht_node" target="-116.4/15.7/100.0" tilt="8.67" title="IMG_20260312_142019_00_091.insp" url="{node17}"/>
     </hotspots>
@@ -1231,7 +1232,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="340.60" author="" capturedatetime="2026-03-12T16:12:44" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:12 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75980556" longitude="-0.22027778" nodeid="node57" source="" tags="all" title="IMG_20260312_161244_00_291.insp"/>
+    <userdata altitude="340.60" author="" capturedatetime="2026-03-12T16:12:44" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:12 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75980556" longitude="-0.22027778" nodeid="node57" source="" tags="all|ROAD" title="IMG_20260312_161244_00_291.insp"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -1251,7 +1252,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="340.50" author="" capturedatetime="2026-03-12T16:14:37" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:14 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75958333" longitude="-0.22027778" nodeid="node58" source="" tags="all" title="IMG_20260312_161437_00_296.insp"/>
+    <userdata altitude="340.50" author="" capturedatetime="2026-03-12T16:14:37" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:14 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75958333" longitude="-0.22027778" nodeid="node58" source="" tags="all|ROAD" title="IMG_20260312_161437_00_296.insp"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -1275,7 +1276,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="341.90" author="" capturedatetime="2026-03-12T16:18:18" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:18 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75997222" longitude="-0.22016667" nodeid="node61" source="" tags="all" title="IMG_20260312_161818_00_311.insp"/>
+    <userdata altitude="341.90" author="" capturedatetime="2026-03-12T16:18:18" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:18 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75997222" longitude="-0.22016667" nodeid="node61" source="" tags="all|Location" title="African_Cultural_Center"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -1295,7 +1296,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="341.60" author="" capturedatetime="2026-03-12T16:17:20" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:17 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75997222" longitude="-0.22013889" nodeid="node60" source="" tags="all" title="IMG_20260312_161720_00_306.insp"/>
+    <userdata altitude="341.60" author="" capturedatetime="2026-03-12T16:17:20" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:17 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75997222" longitude="-0.22013889" nodeid="node60" source="" tags="all|ROAD" title="IMG_20260312_161720_00_306.insp"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -1303,7 +1304,7 @@
       <max fov="120" fovfisheye="360" fovstereographic="270" pan="360" scaletofit="0" tilt="90"/>
     </view>
     <hotspots>
-      <hotspot description="" distance="3.0734" id="Point01" pan="-93.7" skinid="ht_node" target="10.9/0.9/100.0" tilt="-8.02" title="IMG_20260312_161818_00_311.insp" url="{node61}"/>
+      <hotspot description="" distance="3.0734" id="Point01" pan="-93.7" skinid="ht_node" target="10.9/0.9/100.0" tilt="-8.02" title="African_Cultural_Center" url="{node61}"/>
       <hotspot description="" distance="19.4464" id="Point02" pan="177.06" skinid="ht_node" target="145.4/11.5/100.0" tilt="-5.24" title="IMG_20260312_161624_00_301.insp" url="{node59}"/>
     </hotspots>
     <media/>
@@ -1316,7 +1317,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="341.30" author="" capturedatetime="2026-03-12T16:16:24" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:16 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75991667" longitude="-0.22030556" nodeid="node59" source="" tags="all" title="IMG_20260312_161624_00_301.insp"/>
+    <userdata altitude="341.30" author="" capturedatetime="2026-03-12T16:16:24" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:16 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75991667" longitude="-0.22030556" nodeid="node59" source="" tags="all|ROAD" title="IMG_20260312_161624_00_301.insp"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -1338,7 +1339,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="339.70" author="" capturedatetime="2026-03-12T16:19:23" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:19 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75997222" longitude="-0.22044444" nodeid="node62" source="" tags="all" title="IMG_20260312_161923_00_316.insp"/>
+    <userdata altitude="339.70" author="" capturedatetime="2026-03-12T16:19:23" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:19 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75997222" longitude="-0.22044444" nodeid="node62" source="" tags="all|ROAD" title="IMG_20260312_161923_00_316.insp"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -1346,7 +1347,7 @@
       <max fov="120" fovfisheye="360" fovstereographic="270" pan="360" scaletofit="0" tilt="90"/>
     </view>
     <hotspots>
-      <hotspot description="" distance="27.599" id="Point01" pan="101.97" skinid="ht_node" target="91.5/12.0/100.0" tilt="-3.47" title="IMG_20260312_162205_00_321.insp" url="{node63}"/>
+      <hotspot description="" distance="27.599" id="Point01" pan="101.97" skinid="ht_node" target="91.5/12.0/100.0" tilt="-3.47" title="School_Main_Car_Park" url="{node63}"/>
       <hotspot description="" distance="16.5599" id="Point02" pan="-167.7" skinid="ht_node" target="-149.6/1.9/100.0" tilt="-3.52" title="IMG_20260312_161624_00_301.insp" url="{node59}"/>
       <hotspot description="" distance="33.8041" id="Point03" pan="-128.07" skinid="ht_node" target="-50.9/13.9/100.0" tilt="-0.61" title="IMG_20260312_161720_00_306.insp" url="{node60}"/>
     </hotspots>
@@ -1360,7 +1361,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="340.50" author="" capturedatetime="2026-03-12T16:22:05" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:22 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75975000" longitude="-0.22055556" nodeid="node63" source="" tags="all" title="IMG_20260312_162205_00_321.insp"/>
+    <userdata altitude="340.50" author="" capturedatetime="2026-03-12T16:22:05" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:22 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75975000" longitude="-0.22055556" nodeid="node63" source="" tags="all|Location|ROAD" title="School_Main_Car_Park"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="-87.8344" projection="4" tilt="6.74737"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -1382,7 +1383,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="338.50" author="" capturedatetime="2026-03-12T16:23:13" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:23 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75941667" longitude="-0.22066667" nodeid="node64" source="" tags="all" title="IMG_20260312_162313_00_326.insp"/>
+    <userdata altitude="338.50" author="" capturedatetime="2026-03-12T16:23:13" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:23 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75941667" longitude="-0.22066667" nodeid="node64" source="" tags="all|ROAD" title="IMG_20260312_162313_00_326.insp"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="-67.0823" projection="4" tilt="0.110329"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -1390,7 +1391,7 @@
       <max fov="120" fovfisheye="360" fovstereographic="270" pan="360" scaletofit="0" tilt="90"/>
     </view>
     <hotspots>
-      <hotspot description="" distance="39.0498" id="Point01" pan="-96.32" skinid="ht_node" target="-92.5/14.1/100.0" tilt="-3.04" title="IMG_20260312_162205_00_321.insp" url="{node63}"/>
+      <hotspot description="" distance="39.0498" id="Point01" pan="-96.32" skinid="ht_node" target="-92.5/14.1/100.0" tilt="-3.04" title="School_Main_Car_Park" url="{node63}"/>
       <hotspot description="" distance="12.6747" id="Point02" pan="115.61" skinid="ht_node" target="172.2/3.5/100.0" tilt="-6.08" title="IMG_20260312_162435_00_331.insp" url="{node65}"/>
     </hotspots>
     <media/>
@@ -1403,7 +1404,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="343.90" author="" capturedatetime="2026-03-12T16:24:35" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:24 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75938889" longitude="-0.22055556" nodeid="node65" source="" tags="all" title="IMG_20260312_162435_00_331.insp"/>
+    <userdata altitude="343.90" author="" capturedatetime="2026-03-12T16:24:35" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:24 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75938889" longitude="-0.22055556" nodeid="node65" source="" tags="all|ROAD" title="IMG_20260312_162435_00_331.insp"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -1423,7 +1424,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="340.50" author="" capturedatetime="2026-03-12T16:25:59" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:25 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75936111" longitude="-0.22041667" nodeid="node66" source="" tags="all" title="IMG_20260312_162559_00_336.insp"/>
+    <userdata altitude="340.50" author="" capturedatetime="2026-03-12T16:25:59" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:25 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75936111" longitude="-0.22041667" nodeid="node66" source="" tags="all|ROAD" title="IMG_20260312_162559_00_336.insp"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -1445,7 +1446,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="340.80" author="" capturedatetime="2026-03-12T16:27:03" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:27 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75966667" longitude="-0.22033333" nodeid="node67" source="" tags="all" title="IMG_20260312_162703_00_341.insp"/>
+    <userdata altitude="340.80" author="" capturedatetime="2026-03-12T16:27:03" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:27 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75966667" longitude="-0.22033333" nodeid="node67" source="" tags="all|ROAD" title="IMG_20260312_162703_00_341.insp"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="-172.881" projection="4" tilt="1.46559"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -1453,7 +1454,7 @@
       <max fov="120" fovfisheye="360" fovstereographic="270" pan="360" scaletofit="0" tilt="90"/>
     </view>
     <hotspots>
-      <hotspot description="" distance="26.2742" id="Point01" pan="130.96" skinid="ht_node" target="-40.8/6.1/100.0" tilt="-10.29" title="IMG_20260312_162205_00_321.insp" url="{node63}"/>
+      <hotspot description="" distance="26.2742" id="Point01" pan="130.96" skinid="ht_node" target="-40.8/6.1/100.0" tilt="-10.29" title="School_Main_Car_Park" url="{node63}"/>
       <hotspot description="" distance="11.1196" id="Point02" pan="53.79" skinid="ht_node" target="-159.9/7.3/100.0" tilt="0.28" title="IMG_20260312_161437_00_296.insp" url="{node58}"/>
     </hotspots>
     <media/>
@@ -1510,7 +1511,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="344.80" author="" capturedatetime="2026-03-12T16:41:03" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:41 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75958333" longitude="-0.21972222" nodeid="node70" source="" tags="all" title="IMG_20260312_164103_00_357.insp"/>
+    <userdata altitude="344.80" author="" capturedatetime="2026-03-12T16:41:03" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:41 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75958333" longitude="-0.21972222" nodeid="node70" source="" tags="all|ROAD" title="IMG_20260312_164103_00_357.insp"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -1520,9 +1521,9 @@
     <hotspots>
       <hotspot description="" distance="6.87932" id="Point01" pan="30.52" skinid="ht_node" target="-139.7/1.6/100.0" tilt="-9.85" title="IMG_20260312_145144_00_191.insp" url="{node37}"/>
       <hotspot description="" distance="25.3493" id="Point02" pan="11.38" skinid="ht_node" target="165.4/7.9/100.0" tilt="-4.63" title="Courtyard" url="{node38}"/>
-      <hotspot description="" distance="15.4439" id="Point03" pan="-18.7" skinid="ht_node" target="93.6/6.5/100.0" tilt="-7.29" title="Todd Library" url="{node9}"/>
-      <hotspot description="" distance="6.87783" id="Point04" pan="97.75" skinid="ht_node" target="88.1/-5.1/100.0" tilt="-9.29" title="IMG_20260312_172052_00_402.insp" url="{node78}"/>
-      <hotspot description="" distance="22.3809" id="Point05" pan="-167.68" skinid="ht_node" target="-99.1/6.4/100.0" tilt="-4.19" title="IMG_20260312_164410_00_372.insp" url="{node73}"/>
+      <hotspot description="" distance="15.4439" id="Point03" pan="-18.7" skinid="ht_node" target="93.6/6.5/100.0" tilt="-7.29" title="Todd_Library" url="{node9}"/>
+      <hotspot description="" distance="6.87783" id="Point04" pan="97.75" skinid="ht_node" target="88.1/-5.1/100.0" tilt="-9.29" title="Student_Hangout" url="{node78}"/>
+      <hotspot description="" distance="22.3809" id="Point05" pan="-167.68" skinid="ht_node" target="-99.1/6.4/100.0" tilt="-4.19" title="Engineering_Courtyard" url="{node73}"/>
     </hotspots>
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
@@ -1534,7 +1535,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="347.20" author="" capturedatetime="2026-03-12T16:44:10" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:44 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75952778" longitude="-0.21952778" nodeid="node73" source="" tags="all" title="IMG_20260312_164410_00_372.insp"/>
+    <userdata altitude="347.20" author="" capturedatetime="2026-03-12T16:44:10" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:44 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75952778" longitude="-0.21952778" nodeid="node73" source="" tags="all|Location|ROAD" title="Engineering_Courtyard"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -1556,7 +1557,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="358.10" author="" capturedatetime="2026-03-12T16:45:41" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:45 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75952778" longitude="-0.21933333" nodeid="node74" source="" tags="all" title="IMG_20260312_164541_00_377.insp"/>
+    <userdata altitude="358.10" author="" capturedatetime="2026-03-12T16:45:41" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:45 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75952778" longitude="-0.21933333" nodeid="node74" source="" tags="all|ROAD" title="IMG_20260312_164541_00_377.insp"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -1564,7 +1565,7 @@
       <max fov="120" fovfisheye="360" fovstereographic="270" pan="360" scaletofit="0" tilt="90"/>
     </view>
     <hotspots>
-      <hotspot description="" distance="21.5127" id="Point01" pan="15.18" skinid="ht_node" target="110.2/6.2/100.0" tilt="-5.59" title="IMG_20260312_164410_00_372.insp" url="{node73}"/>
+      <hotspot description="" distance="21.5127" id="Point01" pan="15.18" skinid="ht_node" target="110.2/6.2/100.0" tilt="-5.59" title="Engineering_Courtyard" url="{node73}"/>
     </hotspots>
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
@@ -1576,7 +1577,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="432.80" author="" capturedatetime="2026-03-12T16:47:11" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:47 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75969444" longitude="-0.21944444" nodeid="node75" source="" tags="all" title="IMG_20260312_164711_00_382.insp"/>
+    <userdata altitude="432.80" author="" capturedatetime="2026-03-12T16:47:11" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:47 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75969444" longitude="-0.21944444" nodeid="node75" source="" tags="all|ROAD" title="IMG_20260312_164711_00_382.insp"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -1585,8 +1586,8 @@
     </view>
     <hotspots>
       <hotspot description="" distance="22.2381" id="Point01" pan="82.5" skinid="ht_node" target="22.0/10.2/100.0" tilt="-5.98" title="IMG_20260312_164541_00_377.insp" url="{node74}"/>
-      <hotspot description="" distance="37.0885" id="Point02" pan="176.08" skinid="ht_node" target="-100.8/0.6/99.5" tilt="-9.12" title="IMG_20260312_164813_00_387.insp" url="{node76}"/>
-      <hotspot description="" distance="23.5042" id="Point03" pan="-21.34" skinid="ht_node" target="-172.4/0.7/100.0" tilt="-18.66" title="IMG_20260313_131500_00_508.insp" url="{node99}"/>
+      <hotspot description="" distance="37.0885" id="Point02" pan="176.08" skinid="ht_node" target="-100.8/0.6/99.5" tilt="-9.12" title="IT_Support_Center" url="{node76}"/>
+      <hotspot description="" distance="23.5042" id="Point03" pan="-21.34" skinid="ht_node" target="-172.4/0.7/100.0" tilt="-18.66" title="Engineering_Lab_225" url="{node99}"/>
     </hotspots>
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
@@ -1598,7 +1599,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="348.30" author="" capturedatetime="2026-03-13T13:15:00" comment="" copyright="" customnodeid="" datetime="13/03/2026 1:15 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75950000" longitude="-0.21936111" nodeid="node99" source="" tags="all" title="IMG_20260313_131500_00_508.insp"/>
+    <userdata altitude="348.30" author="" capturedatetime="2026-03-13T13:15:00" comment="" copyright="" customnodeid="" datetime="13/03/2026 1:15 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75950000" longitude="-0.21936111" nodeid="node99" source="" tags="all|Location|ROAD" title="Engineering_Lab_225"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -1607,7 +1608,7 @@
     </view>
     <hotspots>
       <hotspot description="" distance="23.5042" id="Point01" pan="41.46" skinid="ht_node" target="162.6/2.1/100.0" tilt="-20.66" title="IMG_20260312_164711_00_382.insp" url="{node75}"/>
-      <hotspot description="" distance="18.6963" id="Point02" pan="51.34" skinid="ht_node" target="-103.1/2.7/99.5" tilt="-5.21" title="IMG_20260312_164813_00_387.insp" url="{node76}"/>
+      <hotspot description="" distance="18.6963" id="Point02" pan="51.34" skinid="ht_node" target="-103.1/2.7/99.5" tilt="-5.21" title="IT_Support_Center" url="{node76}"/>
       <hotspot description="" distance="12.6747" id="Point03" pan="-120.94" skinid="ht_node" target="179.7/7.0/100.0" tilt="-5.4" title="IMG_20260313_131557_00_513.insp" url="{node100}"/>
       <hotspot description="" distance="6.90024" id="Point04" pan="143.54" skinid="ht_node" target="-75.1/-0.1/100.0" tilt="5.54" title="IMG_20260313_131700_00_518.insp" url="{node101}"/>
     </hotspots>
@@ -1621,7 +1622,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="350.30" author="" capturedatetime="2026-03-13T13:17:00" comment="" copyright="" customnodeid="" datetime="13/03/2026 1:17 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75955556" longitude="-0.21938889" nodeid="node101" source="" tags="all" title="IMG_20260313_131700_00_518.insp"/>
+    <userdata altitude="350.30" author="" capturedatetime="2026-03-13T13:17:00" comment="" copyright="" customnodeid="" datetime="13/03/2026 1:17 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75955556" longitude="-0.21938889" nodeid="node101" source="" tags="all|ROAD" title="IMG_20260313_131700_00_518.insp"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -1629,7 +1630,7 @@
       <max fov="120" fovfisheye="360" fovstereographic="270" pan="360" scaletofit="0" tilt="90"/>
     </view>
     <hotspots>
-      <hotspot description="" distance="6.90024" id="Point01" pan="-108.29" skinid="ht_node" target="13.8/-13.2/100.0" tilt="-36.8" title="IMG_20260313_131500_00_508.insp" url="{node99}"/>
+      <hotspot description="" distance="6.90024" id="Point01" pan="-108.29" skinid="ht_node" target="13.8/-13.2/100.0" tilt="-36.8" title="Engineering_Lab_225" url="{node99}"/>
       <hotspot description="" distance="11.1187" id="Point02" pan="-83.44" skinid="ht_node" target="16.5/9.6/100.0" tilt="11.57" title="IMG_20260313_131924_00_523.insp" url="{node102}"/>
     </hotspots>
     <media/>
@@ -1642,7 +1643,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="346.90" author="" capturedatetime="2026-03-13T13:19:24" comment="" copyright="" customnodeid="" datetime="13/03/2026 1:19 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75963889" longitude="-0.21944444" nodeid="node102" source="" tags="all" title="IMG_20260313_131924_00_523.insp"/>
+    <userdata altitude="346.90" author="" capturedatetime="2026-03-13T13:19:24" comment="" copyright="" customnodeid="" datetime="13/03/2026 1:19 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75963889" longitude="-0.21944444" nodeid="node102" source="" tags="all|ROAD" title="IMG_20260313_131924_00_523.insp"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="32.6338" projection="4" tilt="10.5988"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -1651,8 +1652,8 @@
     </view>
     <hotspots>
       <hotspot description="" distance="11.1187" id="Point01" pan="-179.53" skinid="ht_node" target="-103.8/-23.9/100.0" tilt="-28.07" title="IMG_20260313_131700_00_518.insp" url="{node101}"/>
-      <hotspot description="" distance="6.1457" id="Point02" pan="-108.2" skinid="ht_node" target="142.9/2.0/100.0" tilt="-20.18" title="IMG_20260313_132109_00_528.insp" url="{node103}"/>
-      <hotspot description="" distance="23.5052" id="Point03" pan="87.09" skinid="ht_node" target="0.0/0.0/100.0" tilt="-5.78" title="IMG_20260313_132404_00_533.insp" url="{node104}"/>
+      <hotspot description="" distance="6.1457" id="Point02" pan="-108.2" skinid="ht_node" target="142.9/2.0/100.0" tilt="-20.18" title="Washroom_Kings_1" url="{node103}"/>
+      <hotspot description="" distance="23.5052" id="Point03" pan="87.09" skinid="ht_node" target="0.0/0.0/100.0" tilt="-5.78" title="Master_Class_A" url="{node104}"/>
     </hotspots>
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
@@ -1664,7 +1665,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="347.60" author="" capturedatetime="2026-03-13T13:21:09" comment="" copyright="" customnodeid="" datetime="13/03/2026 1:21 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75963889" longitude="-0.21938889" nodeid="node103" source="" tags="all" title="IMG_20260313_132109_00_528.insp"/>
+    <userdata altitude="347.60" author="" capturedatetime="2026-03-13T13:21:09" comment="" copyright="" customnodeid="" datetime="13/03/2026 1:21 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75963889" longitude="-0.21938889" nodeid="node103" source="" tags="all|Location|ROAD" title="Washroom_Kings_1"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -1692,8 +1693,8 @@
       <max fov="120" fovfisheye="360" fovstereographic="270" pan="360" scaletofit="0" tilt="90"/>
     </view>
     <hotspots>
-      <hotspot description="" distance="12.6747" id="Point01" pan="-50.79" skinid="ht_node" target="103.4/3.4/100.0" tilt="-1.18" title="IMG_20260313_131500_00_508.insp" url="{node99}"/>
-      <hotspot description="" distance="20.6992" id="Point02" pan="-39.19" skinid="ht_node" target="" tilt="-2.65" title="IMG_20260313_132109_00_528.insp" url="{node103}"/>
+      <hotspot description="" distance="12.6747" id="Point01" pan="-50.79" skinid="ht_node" target="103.4/3.4/100.0" tilt="-1.18" title="Engineering_Lab_225" url="{node99}"/>
+      <hotspot description="" distance="20.6992" id="Point02" pan="-39.19" skinid="ht_node" target="" tilt="-2.65" title="Washroom_Kings_1" url="{node103}"/>
     </hotspots>
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
@@ -1705,7 +1706,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="360.90" author="" capturedatetime="2026-03-12T16:48:13" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:48 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75947222" longitude="-0.21919444" nodeid="node76" source="" tags="all" title="IMG_20260312_164813_00_387.insp"/>
+    <userdata altitude="360.90" author="" capturedatetime="2026-03-12T16:48:13" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:48 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75947222" longitude="-0.21919444" nodeid="node76" source="" tags="all|Location|ROAD" title="IT_Support_Center"/>
     <view fovmode="2" pannorth="0">
       <start fov="99.4776" pan="-124.398" projection="4" tilt="-7.5701"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -1714,8 +1715,8 @@
     </view>
     <hotspots>
       <hotspot description="" distance="37.0885" id="Point01" pan="95.44" skinid="ht_node" target="34.8/3.2/100.0" tilt="-10.05" title="IMG_20260312_164711_00_382.insp" url="{node75}"/>
-      <hotspot description="" distance="26.2746" id="Point02" pan="-101.59" skinid="ht_node" target="42.1/7.2/100.0" tilt="-10.52" title="IMG_20260312_164947_00_392.insp" url="{node77}"/>
-      <hotspot description="" distance="18.6963" id="Point03" pan="83.16" skinid="ht_node" target="-146.1/0.8/100.0" tilt="-4.05" title="IMG_20260313_131500_00_508.insp" url="{node99}"/>
+      <hotspot description="" distance="26.2746" id="Point02" pan="-101.59" skinid="ht_node" target="42.1/7.2/100.0" tilt="-10.52" title="FI_Office_Hours_Offices" url="{node77}"/>
+      <hotspot description="" distance="18.6963" id="Point03" pan="83.16" skinid="ht_node" target="-146.1/0.8/100.0" tilt="-4.05" title="Engineering_Lab_225" url="{node99}"/>
     </hotspots>
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
@@ -1727,7 +1728,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="350.10" author="" capturedatetime="2026-03-12T16:49:47" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:49 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75955556" longitude="-0.21941667" nodeid="node77" source="" tags="all" title="IMG_20260312_164947_00_392.insp"/>
+    <userdata altitude="350.10" author="" capturedatetime="2026-03-12T16:49:47" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:49 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75955556" longitude="-0.21941667" nodeid="node77" source="" tags="all|Location" title="FI_Office_Hours_Offices"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="143.958" projection="4" tilt="-6.71516"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -1735,7 +1736,7 @@
       <max fov="120" fovfisheye="360" fovstereographic="270" pan="360" scaletofit="0" tilt="90"/>
     </view>
     <hotspots>
-      <hotspot description="" distance="26.2746" id="Point01" pan="146.48" skinid="ht_node" target="89.0/5.8/99.5" tilt="-9.61" title="IMG_20260312_164813_00_387.insp" url="{node76}"/>
+      <hotspot description="" distance="26.2746" id="Point01" pan="146.48" skinid="ht_node" target="89.0/5.8/99.5" tilt="-9.61" title="IT_Support_Center" url="{node76}"/>
     </hotspots>
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
@@ -1747,7 +1748,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="352.20" author="" capturedatetime="2026-03-12T17:20:52" comment="" copyright="" customnodeid="" datetime="12/03/2026 5:20 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75955556" longitude="-0.21966667" nodeid="node78" source="" tags="all" title="IMG_20260312_172052_00_402.insp"/>
+    <userdata altitude="352.20" author="" capturedatetime="2026-03-12T17:20:52" comment="" copyright="" customnodeid="" datetime="12/03/2026 5:20 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75955556" longitude="-0.21966667" nodeid="node78" source="" tags="all|Location" title="Student_Hangout"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -1768,7 +1769,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="360.70" author="" capturedatetime="2026-03-12T17:22:48" comment="" copyright="" customnodeid="" datetime="12/03/2026 5:22 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75963889" longitude="-0.21961111" nodeid="node79" source="" tags="all" title="IMG_20260312_172248_00_407.insp"/>
+    <userdata altitude="360.70" author="" capturedatetime="2026-03-12T17:22:48" comment="" copyright="" customnodeid="" datetime="12/03/2026 5:22 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75963889" longitude="-0.21961111" nodeid="node79" source="" tags="all|ROAD" title="IMG_20260312_172248_00_407.insp"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -1776,7 +1777,7 @@
       <max fov="120" fovfisheye="360" fovstereographic="270" pan="360" scaletofit="0" tilt="90"/>
     </view>
     <hotspots>
-      <hotspot description="" distance="15.4154" id="Point01" pan="43.56" skinid="ht_node" target="-168.3/8.2/100.0" tilt="-3.06" title="IMG_20260312_164410_00_372.insp" url="{node73}"/>
+      <hotspot description="" distance="15.4154" id="Point01" pan="43.56" skinid="ht_node" target="-168.3/8.2/100.0" tilt="-3.06" title="Engineering_Courtyard" url="{node73}"/>
       <hotspot description="" distance="33.1223" id="Point02" pan="78.95" skinid="ht_node" target="85.3/18.5/100.0" tilt="-0.51" title="IMG_20260312_164541_00_377.insp" url="{node74}"/>
       <hotspot description="" distance="19.4464" id="Point03" pan="120.85" skinid="ht_node" target="-150.3/3.0/100.0" tilt="0.25" title="IMG_20260312_164711_00_382.insp" url="{node75}"/>
       <hotspot description="" distance="25.4628" id="Point04" pan="-67.73" skinid="ht_node" target="-91.4/4.6/100.0" tilt="-2.04" title="Library Ground Floor II" url="{node2}"/>
@@ -1828,7 +1829,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="346.60" author="" capturedatetime="2026-03-13T12:39:17" comment="" copyright="" customnodeid="" datetime="13/03/2026 12:39 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75941667" longitude="-0.21966667" nodeid="node84" source="" tags="all" title="IMG_20260313_123917_00_432.insp"/>
+    <userdata altitude="346.60" author="" capturedatetime="2026-03-13T12:39:17" comment="" copyright="" customnodeid="" datetime="13/03/2026 12:39 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75941667" longitude="-0.21966667" nodeid="node84" source="" tags="all|ROAD" title="IMG_20260313_123917_00_432.insp"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -1836,7 +1837,7 @@
       <max fov="120" fovfisheye="360" fovstereographic="270" pan="360" scaletofit="0" tilt="90"/>
     </view>
     <hotspots>
-      <hotspot description="" distance="19.7168" id="Point01" pan="-171.69" skinid="ht_node" target="0.0/0.0/100.0" tilt="-8.94" title="IMG_20260312_164410_00_372.insp" url="{node73}"/>
+      <hotspot description="" distance="19.7168" id="Point01" pan="-171.69" skinid="ht_node" target="0.0/0.0/100.0" tilt="-8.94" title="Engineering_Courtyard" url="{node73}"/>
       <hotspot description="" distance="38.8931" id="Point02" pan="157.44" skinid="ht_node" target="-174.3/6.6/100.0" tilt="-2.33" title="IMG_20260312_164541_00_377.insp" url="{node74}"/>
       <hotspot description="" distance="19.5242" id="Point03" pan="-124.87" skinid="ht_node" target="0.4/4.8/100.0" tilt="-5.94" title="IMG_20260312_164103_00_357.insp" url="{node70}"/>
       <hotspot description="" distance="26.1434" id="Point04" pan="55.89" skinid="ht_node" target="143.1/5.0/100.0" tilt="4.82" title="IMG_20260313_125655_00_438.insp" url="{node85}"/>
@@ -1852,7 +1853,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="348.30" author="" capturedatetime="2026-03-13T13:11:43" comment="" copyright="" customnodeid="" datetime="13/03/2026 1:11 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75936111" longitude="-0.21961111" nodeid="node96" source="" tags="all" title="IMG_20260313_131143_00_493.insp"/>
+    <userdata altitude="348.30" author="" capturedatetime="2026-03-13T13:11:43" comment="" copyright="" customnodeid="" datetime="13/03/2026 1:11 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75936111" longitude="-0.21961111" nodeid="node96" source="" tags="all|ROAD" title="IMG_20260313_131143_00_493.insp"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="-95.0394" projection="4" tilt="-2.75559"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -1861,7 +1862,7 @@
     </view>
     <hotspots>
       <hotspot description="" distance="8.71497" id="Point01" pan="-72.01" skinid="ht_node" target="-174.2/4.9/100.0" tilt="-8.79" title="IMG_20260313_123917_00_432.insp" url="{node84}"/>
-      <hotspot description="" distance="20.6992" id="Point02" pan="-81.02" skinid="ht_node" target="0.0/0.0/100.0" tilt="-6.29" title="IMG_20260312_164410_00_372.insp" url="{node73}"/>
+      <hotspot description="" distance="20.6992" id="Point02" pan="-81.02" skinid="ht_node" target="0.0/0.0/100.0" tilt="-6.29" title="Engineering_Courtyard" url="{node73}"/>
       <hotspot description="" distance="35.8875" id="Point03" pan="-92.39" skinid="ht_node" target="-163.0/-0.1/100.0" tilt="-4.5" title="IMG_20260312_164541_00_377.insp" url="{node74}"/>
       <hotspot description="" distance="17.4284" id="Point04" pan="179.94" skinid="ht_node" target="154.7/20.3/100.0" tilt="5.74" title="IMG_20260313_125655_00_438.insp" url="{node85}"/>
       <hotspot description="" distance="11.0971" id="Point05" pan="124.92" skinid="ht_node" target="-37.5/7.9/100.0" tilt="9.54" title="IMG_20260312_174121_00_417.insp" url="{node81}"/>
@@ -1878,7 +1879,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="350.20" author="" capturedatetime="2026-03-13T12:56:55" comment="" copyright="" customnodeid="" datetime="13/03/2026 12:56 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75925000" longitude="-0.21950000" nodeid="node85" source="" tags="all" title="IMG_20260313_125655_00_438.insp"/>
+    <userdata altitude="350.20" author="" capturedatetime="2026-03-13T12:56:55" comment="" copyright="" customnodeid="" datetime="13/03/2026 12:56 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75925000" longitude="-0.21950000" nodeid="node85" source="" tags="all|ROAD" title="IMG_20260313_125655_00_438.insp"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -1900,7 +1901,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="348.80" author="" capturedatetime="2026-03-13T12:58:38" comment="" copyright="" customnodeid="" datetime="13/03/2026 12:58 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75933333" longitude="-0.21950000" nodeid="node86" source="" tags="all" title="IMG_20260313_125838_00_443.insp"/>
+    <userdata altitude="348.80" author="" capturedatetime="2026-03-13T12:58:38" comment="" copyright="" customnodeid="" datetime="13/03/2026 12:58 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75933333" longitude="-0.21950000" nodeid="node86" source="" tags="all|ROAD" title="IMG_20260313_125838_00_443.insp"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -1908,7 +1909,7 @@
       <max fov="120" fovfisheye="360" fovstereographic="270" pan="360" scaletofit="0" tilt="90"/>
     </view>
     <hotspots>
-      <hotspot description="" distance="3.0734" id="Point01" pan="35.85" skinid="ht_node" target="132.9/-0.7/100.0" tilt="-10.78" title="IMG_20260313_125913_00_448.insp" url="{node87}"/>
+      <hotspot description="" distance="3.0734" id="Point01" pan="35.85" skinid="ht_node" target="132.9/-0.7/100.0" tilt="-10.78" title="Norton_Multulsky_B" url="{node87}"/>
       <hotspot description="" distance="9.26587" id="Point02" pan="-23.43" skinid="ht_node" target="-29.6/10.8/100.0" tilt="-25.8" title="IMG_20260313_125655_00_438.insp" url="{node85}"/>
       <hotspot description="" distance="20.637" id="Point03" pan="-30.35" skinid="ht_node" target="-137.9/14.5/100.0" tilt="-10.11" title="IMG_20260313_123917_00_432.insp" url="{node84}"/>
       <hotspot description="" distance="6.17799" id="Point04" pan="-115.87" skinid="ht_node" target="-62.7/1.0/100.0" tilt="-12.59" title="IMG_20260313_133208_00_568.insp" url="{node111}"/>
@@ -1923,7 +1924,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="348.50" author="" capturedatetime="2026-03-13T12:59:13" comment="" copyright="" customnodeid="" datetime="13/03/2026 12:59 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75933333" longitude="-0.21952778" nodeid="node87" source="" tags="all" title="IMG_20260313_125913_00_448.insp"/>
+    <userdata altitude="348.50" author="" capturedatetime="2026-03-13T12:59:13" comment="" copyright="" customnodeid="" datetime="13/03/2026 12:59 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75933333" longitude="-0.21952778" nodeid="node87" source="" tags="all|Location|ROAD" title="Norton_Multulsky_B"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -1954,7 +1955,7 @@
       <max fov="120" fovfisheye="360" fovstereographic="270" pan="360" scaletofit="0" tilt="90"/>
     </view>
     <hotspots>
-      <hotspot description="" distance="8.71341" id="Point01" pan="52.3" skinid="ht_node" target="-46.7/11.4/100.0" tilt="-4.16" title="IMG_20260313_125913_00_448.insp" url="{node87}"/>
+      <hotspot description="" distance="8.71341" id="Point01" pan="52.3" skinid="ht_node" target="-46.7/11.4/100.0" tilt="-4.16" title="Norton_Multulsky_B" url="{node87}"/>
       <hotspot description="" distance="3.0734" id="Point02" pan="-20.82" skinid="ht_node" target="20.9/3.6/100.0" tilt="-4.26" title="IMG_20260313_130135_00_458.insp" url="{node89}"/>
     </hotspots>
     <media/>
@@ -1967,7 +1968,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="347.60" author="" capturedatetime="2026-03-13T13:01:35" comment="" copyright="" customnodeid="" datetime="13/03/2026 1:01 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75927778" longitude="-0.21961111" nodeid="node89" source="" tags="all" title="IMG_20260313_130135_00_458.insp"/>
+    <userdata altitude="347.60" author="" capturedatetime="2026-03-13T13:01:35" comment="" copyright="" customnodeid="" datetime="13/03/2026 1:01 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75927778" longitude="-0.21961111" nodeid="node89" source="" tags="all|ROAD" title="IMG_20260313_130135_00_458.insp"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -1976,8 +1977,8 @@
     </view>
     <hotspots>
       <hotspot description="" distance="3.0734" id="Point01" pan="-67.01" skinid="ht_node" target="140.8/5.1/100.0" tilt="-13.24" title="IMG_20260313_130039_00_453.insp" url="{node88}"/>
-      <hotspot description="" distance="11.0971" id="Point02" pan="164.5" skinid="ht_node" target="-13.0/0.4/100.0" tilt="-10.99" title="IMG_20260313_125913_00_448.insp" url="{node87}"/>
-      <hotspot description="" distance="19.7388" id="Point03" pan="-4.69" skinid="ht_node" target="-1.0/3.4/100.0" tilt="-9.78" title="IMG_20260313_130201_00_463.insp" url="{node90}"/>
+      <hotspot description="" distance="11.0971" id="Point02" pan="164.5" skinid="ht_node" target="-13.0/0.4/100.0" tilt="-10.99" title="Norton_Multulsky_B" url="{node87}"/>
+      <hotspot description="" distance="19.7388" id="Point03" pan="-4.69" skinid="ht_node" target="-1.0/3.4/100.0" tilt="-9.78" title="Norton_Multulsky_A" url="{node90}"/>
     </hotspots>
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
@@ -1989,7 +1990,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="349.60" author="" capturedatetime="2026-03-13T13:02:01" comment="" copyright="" customnodeid="" datetime="13/03/2026 1:02 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75913889" longitude="-0.21972222" nodeid="node90" source="" tags="all" title="IMG_20260313_130201_00_463.insp"/>
+    <userdata altitude="349.60" author="" capturedatetime="2026-03-13T13:02:01" comment="" copyright="" customnodeid="" datetime="13/03/2026 1:02 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75913889" longitude="-0.21972222" nodeid="node90" source="" tags="all|ROAD" title="Norton_Multulsky_A"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -1997,7 +1998,7 @@
       <max fov="120" fovfisheye="360" fovstereographic="270" pan="360" scaletofit="0" tilt="90"/>
     </view>
     <hotspots>
-      <hotspot description="" distance="30.4993" id="Point01" pan="178.53" skinid="ht_node" target="6.6/-0.4/100.0" tilt="-5.65" title="IMG_20260313_125913_00_448.insp" url="{node87}"/>
+      <hotspot description="" distance="30.4993" id="Point01" pan="178.53" skinid="ht_node" target="6.6/-0.4/100.0" tilt="-5.65" title="Norton_Multulsky_B" url="{node87}"/>
       <hotspot description="" distance="19.7388" id="Point02" pan="-179" skinid="ht_node" target="166.7/5.5/100.0" tilt="-19.44" title="IMG_20260313_130135_00_458.insp" url="{node89}"/>
       <hotspot description="" distance="12.6747" id="Point03" pan="-94.94" skinid="ht_node" target="-64.6/7.5/100.0" tilt="-12.37" title="IMG_20260313_130515_00_473.insp" url="{node92}"/>
       <hotspot description="" distance="13.7572" id="Point04" pan="6.19" skinid="ht_node" target="2.2/6.4/100.0" tilt="-9.04" title="IMG_20260313_130708_00_478.insp" url="{node93}"/>
@@ -2012,7 +2013,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="350.00" author="" capturedatetime="2026-03-13T13:24:04" comment="" copyright="" customnodeid="" datetime="13/03/2026 1:24 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75944444" longitude="-0.21936111" nodeid="node104" source="" tags="all" title="IMG_20260313_132404_00_533.insp"/>
+    <userdata altitude="350.00" author="" capturedatetime="2026-03-13T13:24:04" comment="" copyright="" customnodeid="" datetime="13/03/2026 1:24 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75944444" longitude="-0.21936111" nodeid="node104" source="" tags="all|Location|ROAD" title="Master_Class_A"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -2033,7 +2034,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="361.80" author="" capturedatetime="2026-03-13T13:24:55" comment="" copyright="" customnodeid="" datetime="13/03/2026 1:24 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75950000" longitude="-0.21944444" nodeid="node105" source="" tags="all" title="IMG_20260313_132455_00_538.insp"/>
+    <userdata altitude="361.80" author="" capturedatetime="2026-03-13T13:24:55" comment="" copyright="" customnodeid="" datetime="13/03/2026 1:24 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75950000" longitude="-0.21944444" nodeid="node105" source="" tags="all|ROAD" title="IMG_20260313_132455_00_538.insp"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -2041,8 +2042,8 @@
       <max fov="120" fovfisheye="360" fovstereographic="270" pan="360" scaletofit="0" tilt="90"/>
     </view>
     <hotspots>
-      <hotspot description="" distance="11.0977" id="Point01" pan="177.02" skinid="ht_node" target="175.8/3.6/100.0" tilt="-10.74" title="IMG_20260313_132404_00_533.insp" url="{node104}"/>
-      <hotspot description="" distance="9.76194" id="Point02" pan="87.05" skinid="ht_node" target="118.9/11.0/100.0" tilt="-7.18" title="IMG_20260313_132602_00_543.insp" url="{node106}"/>
+      <hotspot description="" distance="11.0977" id="Point01" pan="177.02" skinid="ht_node" target="175.8/3.6/100.0" tilt="-10.74" title="Master_Class_A" url="{node104}"/>
+      <hotspot description="" distance="9.76194" id="Point02" pan="87.05" skinid="ht_node" target="118.9/11.0/100.0" tilt="-7.18" title="Green_Lounge" url="{node106}"/>
       <hotspot description="" distance="8.71497" id="Point03" pan="24.13" skinid="ht_node" target="41.5/5.7/100.0" tilt="-2.14" title="IMG_20260313_133010_00_558.insp" url="{node109}"/>
     </hotspots>
     <media/>
@@ -2055,7 +2056,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="349.40" author="" capturedatetime="2026-03-13T13:26:02" comment="" copyright="" customnodeid="" datetime="13/03/2026 1:26 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75941667" longitude="-0.21941667" nodeid="node106" source="" tags="all" title="IMG_20260313_132602_00_543.insp"/>
+    <userdata altitude="349.40" author="" capturedatetime="2026-03-13T13:26:02" comment="" copyright="" customnodeid="" datetime="13/03/2026 1:26 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75941667" longitude="-0.21941667" nodeid="node106" source="" tags="all|Location" title="Green_Lounge"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="145.037" projection="4" tilt="4.82055"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -2075,7 +2076,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="356.30" author="" capturedatetime="2026-03-13T13:31:35" comment="" copyright="" customnodeid="" datetime="13/03/2026 1:31 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75947222" longitude="-0.21941667" nodeid="node110" source="" tags="all" title="IMG_20260313_133135_00_563.insp"/>
+    <userdata altitude="356.30" author="" capturedatetime="2026-03-13T13:31:35" comment="" copyright="" customnodeid="" datetime="13/03/2026 1:31 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75947222" longitude="-0.21941667" nodeid="node110" source="" tags="all|Location|ROAD" title="Masters Class B"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -2104,7 +2105,7 @@
       <max fov="120" fovfisheye="360" fovstereographic="270" pan="360" scaletofit="0" tilt="90"/>
     </view>
     <hotspots>
-      <hotspot description="" distance="9.72284" id="Point01" pan="-43.72" skinid="ht_node" target="41.2/12.2/100.0" tilt="-1.7" title="IMG_20260313_133135_00_563.insp" url="{node110}"/>
+      <hotspot description="" distance="9.72284" id="Point01" pan="-43.72" skinid="ht_node" target="41.2/12.2/100.0" tilt="-1.7" title="Masters Class B" url="{node110}"/>
     </hotspots>
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
@@ -2116,7 +2117,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="348.80" author="" capturedatetime="2026-03-13T13:32:08" comment="" copyright="" customnodeid="" datetime="13/03/2026 1:32 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75938889" longitude="-0.21950000" nodeid="node111" source="" tags="all" title="IMG_20260313_133208_00_568.insp"/>
+    <userdata altitude="348.80" author="" capturedatetime="2026-03-13T13:32:08" comment="" copyright="" customnodeid="" datetime="13/03/2026 1:32 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75938889" longitude="-0.21950000" nodeid="node111" source="" tags="all|ROAD" title="IMG_20260313_133208_00_568.insp"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -2124,7 +2125,7 @@
       <max fov="120" fovfisheye="360" fovstereographic="270" pan="360" scaletofit="0" tilt="90"/>
     </view>
     <hotspots>
-      <hotspot description="" distance="13.0709" id="Point01" pan="-60.85" skinid="ht_node" target="-110.7/18.9/100.0" tilt="-7.27" title="IMG_20260313_133135_00_563.insp" url="{node110}"/>
+      <hotspot description="" distance="13.0709" id="Point01" pan="-60.85" skinid="ht_node" target="-110.7/18.9/100.0" tilt="-7.27" title="Masters Class B" url="{node110}"/>
       <hotspot description="" distance="6.17799" id="Point02" pan="81.04" skinid="ht_node" target="-0.7/-6.0/100.0" tilt="-15.03" title="IMG_20260313_125838_00_443.insp" url="{node86}"/>
       <hotspot description="" distance="12.6747" id="Point03" pan="33.73" skinid="ht_node" target="37.2/8.5/100.0" tilt="-11.34" title="IMG_20260313_131143_00_493.insp" url="{node96}"/>
     </hotspots>
@@ -2146,7 +2147,7 @@
       <max fov="120" fovfisheye="360" fovstereographic="270" pan="360" scaletofit="0" tilt="90"/>
     </view>
     <hotspots>
-      <hotspot description="" distance="12.6747" id="Point01" pan="130.7" skinid="ht_node" target="147.1/-1.2/100.0" tilt="-2.85" title="IMG_20260313_130201_00_463.insp" url="{node90}"/>
+      <hotspot description="" distance="12.6747" id="Point01" pan="130.7" skinid="ht_node" target="147.1/-1.2/100.0" tilt="-2.85" title="Norton_Multulsky_A" url="{node90}"/>
       <hotspot description="" distance="3.08788" id="Point02" pan="55.79" skinid="ht_node" target="82.6/17.6/100.0" tilt="-3.91" title="IMG_20260313_130708_00_478.insp" url="{node93}"/>
     </hotspots>
     <media/>
@@ -2159,7 +2160,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="360.40" author="" capturedatetime="2026-03-13T13:07:08" comment="" copyright="" customnodeid="" datetime="13/03/2026 1:07 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75919444" longitude="-0.21961111" nodeid="node93" source="" tags="all" title="IMG_20260313_130708_00_478.insp"/>
+    <userdata altitude="360.40" author="" capturedatetime="2026-03-13T13:07:08" comment="" copyright="" customnodeid="" datetime="13/03/2026 1:07 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75919444" longitude="-0.21961111" nodeid="node93" source="" tags="all|ROAD" title="IMG_20260313_130708_00_478.insp"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -2167,7 +2168,7 @@
       <max fov="120" fovfisheye="360" fovstereographic="270" pan="360" scaletofit="0" tilt="90"/>
     </view>
     <hotspots>
-      <hotspot description="" distance="13.7572" id="Point01" pan="-169.71" skinid="ht_node" target="169.6/10.7/100.0" tilt="-11.21" title="IMG_20260313_130201_00_463.insp" url="{node90}"/>
+      <hotspot description="" distance="13.7572" id="Point01" pan="-169.71" skinid="ht_node" target="169.6/10.7/100.0" tilt="-11.21" title="Norton_Multulsky_A" url="{node90}"/>
       <hotspot description="" distance="3.08788" id="Point02" pan="-34.46" skinid="ht_node" target="-135.1/5.1/100.0" tilt="-7.38" title="IMG_20260313_130515_00_473.insp" url="{node92}"/>
     </hotspots>
     <media/>
@@ -2180,7 +2181,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="351.80" author="" capturedatetime="2026-03-13T13:09:12" comment="" copyright="" customnodeid="" datetime="13/03/2026 1:09 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75900000" longitude="-0.21963889" nodeid="node94" source="" tags="all" title="IMG_20260313_130912_00_483.insp"/>
+    <userdata altitude="351.80" author="" capturedatetime="2026-03-13T13:09:12" comment="" copyright="" customnodeid="" datetime="13/03/2026 1:09 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75900000" longitude="-0.21963889" nodeid="node94" source="" tags="all|ROAD" title="IMG_20260313_130912_00_483.insp"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -2189,7 +2190,7 @@
     </view>
     <hotspots>
       <hotspot description="" distance="21.8381" id="Point01" pan="-62.19" skinid="ht_node" target="-176.8/11.7/100.0" tilt="-6.97" title="IMG_20260313_130708_00_478.insp" url="{node93}"/>
-      <hotspot description="" distance="17.9862" id="Point02" pan="-62.76" skinid="ht_node" target="178.5/8.9/100.0" tilt="1.54" title="IMG_20260313_130201_00_463.insp" url="{node90}"/>
+      <hotspot description="" distance="17.9862" id="Point02" pan="-62.76" skinid="ht_node" target="178.5/8.9/100.0" tilt="1.54" title="Norton_Multulsky_A" url="{node90}"/>
       <hotspot description="" distance="22.239" id="Point03" pan="27.21" skinid="ht_node" target="126.0/9.5/100.0" tilt="-8.97" title="IMG_20260313_131023_00_488.insp" url="{node95}"/>
     </hotspots>
     <media/>
@@ -2202,7 +2203,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="348.40" author="" capturedatetime="2026-03-13T13:10:23" comment="" copyright="" customnodeid="" datetime="13/03/2026 1:10 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75916667" longitude="-0.21975000" nodeid="node95" source="" tags="all" title="IMG_20260313_131023_00_488.insp"/>
+    <userdata altitude="348.40" author="" capturedatetime="2026-03-13T13:10:23" comment="" copyright="" customnodeid="" datetime="13/03/2026 1:10 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75916667" longitude="-0.21975000" nodeid="node95" source="" tags="all|ROAD" title="IMG_20260313_131023_00_488.insp"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="15.0298" projection="4" tilt="-5.32452"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -2213,7 +2214,7 @@
       <hotspot description="" distance="22.239" id="Point01" pan="-67.14" skinid="ht_node" target="-94.9/2.1/100.0" tilt="0.73" title="IMG_20260313_130912_00_483.insp" url="{node94}"/>
       <hotspot description="" distance="29.2876" id="Point02" pan="23.76" skinid="ht_node" target="-179.4/3.8/100.0" tilt="-5.35" title="IMG_20260313_123917_00_432.insp" url="{node84}"/>
       <hotspot description="" distance="27.7987" id="Point03" pan="-162.33" skinid="ht_node" target="-4.9/6.6/100.0" tilt="-3.65" title="IMG_20260313_143055_00_603.insp" url="{node118}"/>
-      <hotspot description="" distance="21.5116" id="Point04" pan="130.31" skinid="ht_node" target="-28.9/-5.2/100.0" tilt="-11.52" title="Ashesi Shop" url="{node33}"/>
+      <hotspot description="" distance="21.5116" id="Point04" pan="130.31" skinid="ht_node" target="-28.9/-5.2/100.0" tilt="-11.52" title="Ashesi_Shop" url="{node33}"/>
     </hotspots>
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
@@ -2225,7 +2226,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="350.90" author="" capturedatetime="2026-03-13T14:30:55" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:30 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75891667" longitude="-0.21975000" nodeid="node118" source="" tags="all" title="IMG_20260313_143055_00_603.insp"/>
+    <userdata altitude="350.90" author="" capturedatetime="2026-03-13T14:30:55" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:30 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75891667" longitude="-0.21975000" nodeid="node118" source="" tags="all|ROAD" title="IMG_20260313_143055_00_603.insp"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -2234,7 +2235,7 @@
     </view>
     <hotspots>
       <hotspot description="" distance="27.7987" id="Point01" pan="166.77" skinid="ht_node" target="15.5/17.1/100.0" tilt="-3.72" title="IMG_20260313_131023_00_488.insp" url="{node95}"/>
-      <hotspot description="" distance="19.4464" id="Point02" pan="80.75" skinid="ht_node" target="14.9/6.0/100.0" tilt="5.05" title="IMG_20260313_142752_00_598.insp" url="{node117}"/>
+      <hotspot description="" distance="19.4464" id="Point02" pan="80.75" skinid="ht_node" target="14.9/6.0/100.0" tilt="5.05" title="sadfsadf" url="{node117}"/>
       <hotspot description="" distance="34.3942" id="Point03" pan="-1.42" skinid="ht_node" target="85.5/5.8/100.0" tilt="-2.83" title="IMG_20260313_143241_00_608.insp" url="{node119}"/>
       <hotspot description="" distance="40.1279" id="Point04" pan="-102.48" skinid="ht_node" target="73.4/15.3/100.0" tilt="-11.91" title="IMG_20260312_143835_00_146.insp" url="{node28}"/>
     </hotspots>
@@ -2248,7 +2249,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="347.90" author="" capturedatetime="2026-03-13T14:27:52" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:27 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75897222" longitude="-0.21991667" nodeid="node117" source="" tags="all" title="IMG_20260313_142752_00_598.insp"/>
+    <userdata altitude="347.90" author="" capturedatetime="2026-03-13T14:27:52" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:27 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75897222" longitude="-0.21991667" nodeid="node117" source="" tags="all|ROAD" title="sadfsadf"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -2256,7 +2257,7 @@
       <max fov="120" fovfisheye="360" fovstereographic="270" pan="360" scaletofit="0" tilt="90"/>
     </view>
     <hotspots>
-      <hotspot description="" distance="13.0717" id="Point01" pan="18.96" skinid="ht_node" target="135.0/10.1/100.0" tilt="-8.37" title="IMG_20260313_142649_00_593.insp" url="{node116}"/>
+      <hotspot description="" distance="13.0717" id="Point01" pan="18.96" skinid="ht_node" target="135.0/10.1/100.0" tilt="-8.37" title="Patrick_Nutor_115-RB_100" url="{node116}"/>
     </hotspots>
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
@@ -2268,7 +2269,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="349.20" author="" capturedatetime="2026-03-13T14:26:49" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:26 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75888889" longitude="-0.21983333" nodeid="node116" source="" tags="all" title="IMG_20260313_142649_00_593.insp"/>
+    <userdata altitude="349.20" author="" capturedatetime="2026-03-13T14:26:49" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:26 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75888889" longitude="-0.21983333" nodeid="node116" source="" tags="all|Location|ROAD" title="Patrick_Nutor_115-RB_100"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -2276,7 +2277,7 @@
       <max fov="120" fovfisheye="360" fovstereographic="270" pan="360" scaletofit="0" tilt="90"/>
     </view>
     <hotspots>
-      <hotspot description="" distance="13.0717" id="Point01" pan="-39.55" skinid="ht_node" target="-160.8/10.7/100.0" tilt="-13.79" title="IMG_20260313_142752_00_598.insp" url="{node117}"/>
+      <hotspot description="" distance="13.0717" id="Point01" pan="-39.55" skinid="ht_node" target="-160.8/10.7/100.0" tilt="-13.79" title="sadfsadf" url="{node117}"/>
     </hotspots>
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
@@ -2288,7 +2289,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="348.10" author="" capturedatetime="2026-03-13T14:32:41" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:32 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75877778" longitude="-0.22002778" nodeid="node119" source="" tags="all" title="IMG_20260313_143241_00_608.insp"/>
+    <userdata altitude="348.10" author="" capturedatetime="2026-03-13T14:32:41" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:32 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75877778" longitude="-0.22002778" nodeid="node119" source="" tags="all|ROAD" title="IMG_20260313_143241_00_608.insp"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -2310,7 +2311,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="349.00" author="" capturedatetime="2026-03-13T14:38:15" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:38 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75880556" longitude="-0.21986111" nodeid="node123" source="" tags="all" title="IMG_20260313_143815_00_628.insp"/>
+    <userdata altitude="349.00" author="" capturedatetime="2026-03-13T14:38:15" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:38 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75880556" longitude="-0.21986111" nodeid="node123" source="" tags="all|ROAD" title="IMG_20260313_143815_00_628.insp"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -2334,7 +2335,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="349.00" author="" capturedatetime="2026-03-13T14:35:30" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:35 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75858333" longitude="-0.21988889" nodeid="node120" source="" tags="all" title="IMG_20260313_143530_00_613.insp"/>
+    <userdata altitude="349.00" author="" capturedatetime="2026-03-13T14:35:30" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:35 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75858333" longitude="-0.21988889" nodeid="node120" source="" tags="all|ROAD" title="IMG_20260313_143530_00_613.insp"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -2356,7 +2357,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="348.60" author="" capturedatetime="2026-03-13T14:36:15" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:36 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75863889" longitude="-0.21991667" nodeid="node121" source="" tags="all" title="IMG_20260313_143615_00_618.insp"/>
+    <userdata altitude="348.60" author="" capturedatetime="2026-03-13T14:36:15" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:36 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75863889" longitude="-0.21991667" nodeid="node121" source="" tags="all|ROAD" title="IMG_20260313_143615_00_618.insp"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -2376,7 +2377,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="312.50" author="" capturedatetime="2026-03-13T14:36:58" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:36 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75838889" longitude="-0.21991667" nodeid="node122" source="" tags="all" title="IMG_20260313_143658_00_623.insp"/>
+    <userdata altitude="312.50" author="" capturedatetime="2026-03-13T14:36:58" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:36 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75838889" longitude="-0.21991667" nodeid="node122" source="" tags="all|ROAD" title="IMG_20260313_143658_00_623.insp"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -2393,7 +2394,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="351.50" author="" capturedatetime="2026-03-13T14:39:27" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:39 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75880556" longitude="-0.21980556" nodeid="node124" source="" tags="all" title="IMG_20260313_143927_00_633.insp"/>
+    <userdata altitude="351.50" author="" capturedatetime="2026-03-13T14:39:27" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:39 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75880556" longitude="-0.21980556" nodeid="node124" source="" tags="all|ROAD" title="IMG_20260313_143927_00_633.insp"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -2403,27 +2404,10 @@
     <hotspots>
       <hotspot description="" distance="24.7783" id="Point01" pan="172.43" skinid="ht_node" target="-89.4/14.1/100.0" tilt="-9.23" title="IMG_20260313_143241_00_608.insp" url="{node119}"/>
       <hotspot description="" distance="6.1457" id="Point02" pan="-174.81" skinid="ht_node" target="-128.7/2.2/100.0" tilt="-11.26" title="IMG_20260313_143815_00_628.insp" url="{node123}"/>
-    </hotspots>
-    <media/>
-    <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
-  </panorama>
-  <panorama hideabout="1" id="node125">
-    <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node125/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
-      <level height="1520" predecode="0" preload="0" width="1520"/>
-      <level height="760" predecode="0" preload="0" width="760"/>
-      <level height="380" predecode="1" preload="1" width="380"/>
-      <preview color="0x808080" strip="1"/>
-    </input>
-    <userdata altitude="350.90" author="" capturedatetime="2026-03-13T14:39:45" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:39 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75880556" longitude="-0.21983333" nodeid="node125" source="" tags="all" title="IMG_20260313_143945_00_638.insp"/>
-    <view fovmode="2" pannorth="0">
-      <start fov="100" pan="0" projection="4" tilt="0"/>
-      <flyin fov="170" pan="0" projection="9" tilt="-90"/>
-      <min fov="1" pan="0" tilt="-90"/>
-      <max fov="120" fovfisheye="360" fovstereographic="270" pan="360" scaletofit="0" tilt="90"/>
-    </view>
-    <hotspots>
-      <hotspot description="" distance="3.08788" id="Point01" pan="-3.56" skinid="ht_node" target="-174.8/5.3/100.0" tilt="-4.58" title="IMG_20260313_144023_00_643.insp" url="{node126}"/>
-      <hotspot description="" distance="3.08788" id="Point02" pan="-93.06" skinid="ht_node" target="-175.4/8.2/100.0" tilt="-10.7" title="IMG_20260313_144230_00_663.insp" url="{node130}"/>
+      <hotspot description="" distance="4.35592" id="Point03" pan="-2.29" skinid="ht_node" target="173.4/-7.3/100.0" tilt="-6.56" title="IMG_20260313_144023_00_643.insp" url="{node126}"/>
+      <hotspot description="" distance="4.35592" id="Point04" pan="-6.85" skinid="ht_node" target="-176.1/4.9/100.0" tilt="1.77" title="IMG_20260313_144147_00_658.insp" url="{node129}"/>
+      <hotspot description="" distance="23.5057" id="Point05" pan="-63.63" skinid="ht_node" target="43.9/5.0/100.0" tilt="5.72" title="IMG_20260313_145249_00_728.insp" url="{node143}"/>
+      <hotspot description="" distance="4.35592" id="Point06" pan="-95.66" skinid="ht_node" target="-163.3/4.4/100.0" tilt="-8.88" title="IMG_20260313_144230_00_663.insp" url="{node130}"/>
     </hotspots>
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
@@ -2435,7 +2419,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="350.40" author="" capturedatetime="2026-03-13T14:40:23" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:40 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75883333" longitude="-0.21983333" nodeid="node126" source="" tags="all" title="IMG_20260313_144023_00_643.insp"/>
+    <userdata altitude="350.40" author="" capturedatetime="2026-03-13T14:40:23" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:40 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75883333" longitude="-0.21983333" nodeid="node126" source="" tags="all|ROAD" title="IMG_20260313_144023_00_643.insp"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -2443,10 +2427,10 @@
       <max fov="120" fovfisheye="360" fovstereographic="270" pan="360" scaletofit="0" tilt="90"/>
     </view>
     <hotspots>
-      <hotspot description="" distance="3.08788" id="Point01" pan="6.71" skinid="ht_node" target="173.6/14.7/100.0" tilt="-14.93" title="IMG_20260313_143945_00_638.insp" url="{node125}"/>
       <hotspot description="" distance="22.3819" id="Point02" pan="6.29" skinid="ht_node" target="-82.6/11.5/100.0" tilt="-6.8" title="IMG_20260313_143241_00_608.insp" url="{node119}"/>
       <hotspot description="" id="Point03" pan="-178.52" skinid="ht_node" target="-174.7/12.9/100.0" tilt="-5.03" title="IMG_20260313_144147_00_658.insp" url="{node129}"/>
       <hotspot description="" distance="27.5985" id="Point04" pan="86.12" skinid="ht_node" target="-71.6/1.4/100.0" tilt="3.3" title="IMG_20260313_145249_00_728.insp" url="{node143}"/>
+      <hotspot description="" id="Point01" pan="-90.23" skinid="ht_node" target="1.7/5.8/100.0" tilt="-8.67" title="IMG_20260313_144111_00_653.insp" url="{node128}"/>
     </hotspots>
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
@@ -2458,7 +2442,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="350.50" author="" capturedatetime="2026-03-13T14:41:11" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:41 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75883333" longitude="-0.21983333" nodeid="node128" source="" tags="all" title="IMG_20260313_144111_00_653.insp"/>
+    <userdata altitude="350.50" author="" capturedatetime="2026-03-13T14:41:11" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:41 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75883333" longitude="-0.21983333" nodeid="node128" source="" tags="all|ROAD" title="IMG_20260313_144111_00_653.insp"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -2467,7 +2451,6 @@
     </view>
     <hotspots>
       <hotspot description="" id="Point01" pan="-174.46" skinid="ht_node" target="88.4/20.5/100.0" tilt="-14.75" title="IMG_20260313_144023_00_643.insp" url="{node126}"/>
-      <hotspot description="" distance="3.08788" id="Point02" pan="146.75" skinid="ht_node" target="-140.1/-1.0/100.0" tilt="-9.27" title="IMG_20260313_143945_00_638.insp" url="{node125}"/>
     </hotspots>
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
@@ -2479,7 +2462,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="351.10" author="" capturedatetime="2026-03-13T14:41:47" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:41 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75883333" longitude="-0.21983333" nodeid="node129" source="" tags="all" title="IMG_20260313_144147_00_658.insp"/>
+    <userdata altitude="351.10" author="" capturedatetime="2026-03-13T14:41:47" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:41 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75883333" longitude="-0.21983333" nodeid="node129" source="" tags="all|ROAD" title="IMG_20260313_144147_00_658.insp"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -2489,8 +2472,8 @@
     <hotspots>
       <hotspot description="" id="Point01" pan="15.62" skinid="ht_node" target="5.1/-3.9/100.0" tilt="-16.59" title="IMG_20260313_144023_00_643.insp" url="{node126}"/>
       <hotspot description="" distance="22.3819" id="Point02" pan="16.52" skinid="ht_node" target="-95.7/15.1/100.0" tilt="-5.71" title="IMG_20260313_143241_00_608.insp" url="{node119}"/>
-      <hotspot description="" distance="3.08788" id="Point03" pan="22.33" skinid="ht_node" target="-160.4/0.1/100.0" tilt="-10.07" title="IMG_20260313_143945_00_638.insp" url="{node125}"/>
       <hotspot description="" id="Point04" pan="44.79" skinid="ht_node" target="134.2/7.4/100.0" tilt="-7.42" title="IMG_20260313_144230_00_663.insp" url="{node130}"/>
+      <hotspot description="" distance="31.7629" id="Point05" pan="97.92" skinid="ht_node" target="52.3/-2.2/100.0" tilt="1.79" title="IMG_20260314_080656_00_798.insp" url="{node157}"/>
     </hotspots>
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
@@ -2502,7 +2485,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="350.60" author="" capturedatetime="2026-03-13T14:42:30" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:42 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75883333" longitude="-0.21983333" nodeid="node130" source="" tags="all" title="IMG_20260313_144230_00_663.insp"/>
+    <userdata altitude="350.60" author="" capturedatetime="2026-03-13T14:42:30" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:42 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75883333" longitude="-0.21983333" nodeid="node130" source="" tags="all|ROAD" title="IMG_20260313_144230_00_663.insp"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -2510,10 +2493,10 @@
       <max fov="120" fovfisheye="360" fovstereographic="270" pan="360" scaletofit="0" tilt="90"/>
     </view>
     <hotspots>
-      <hotspot description="" distance="3.08788" id="Point01" pan="6.4" skinid="ht_node" target="77.2/16.5/100.0" tilt="-11" title="IMG_20260313_143945_00_638.insp" url="{node125}"/>
       <hotspot description="" id="Point02" pan="-32.02" skinid="ht_node" target="-133.4/11.3/100.0" tilt="-3.39" title="IMG_20260313_144023_00_643.insp" url="{node126}"/>
       <hotspot description="" id="Point03" pan="-55.34" skinid="ht_node" target="-128.7/16.5/100.0" tilt="-1.58" title="IMG_20260313_144147_00_658.insp" url="{node129}"/>
       <hotspot description="" distance="9.26587" id="Point04" pan="-178.97" skinid="ht_node" target="154.8/12.0/100.0" tilt="-12.14" title="IMG_20260313_144323_00_673.insp" url="{node132}"/>
+      <hotspot description="" distance="4.35592" id="Point01" pan="6.81" skinid="ht_node" target="77.5/-4.4/100.0" tilt="-11.79" title="IMG_20260313_143927_00_633.insp" url="{node124}"/>
     </hotspots>
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
@@ -2525,7 +2508,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="350.60" author="" capturedatetime="2026-03-13T14:43:23" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:43 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75875000" longitude="-0.21983333" nodeid="node132" source="" tags="all" title="IMG_20260313_144323_00_673.insp"/>
+    <userdata altitude="350.60" author="" capturedatetime="2026-03-13T14:43:23" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:43 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75875000" longitude="-0.21983333" nodeid="node132" source="" tags="all|ROAD" title="IMG_20260313_144323_00_673.insp"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -2570,7 +2553,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="351.40" author="" capturedatetime="2026-03-13T14:45:25" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:45 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75863889" longitude="-0.21983333" nodeid="node134" source="" tags="all" title="IMG_20260313_144525_00_683.insp"/>
+    <userdata altitude="351.40" author="" capturedatetime="2026-03-13T14:45:25" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:45 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75863889" longitude="-0.21983333" nodeid="node134" source="" tags="all|ROAD" title="IMG_20260313_144525_00_683.insp"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -2581,6 +2564,7 @@
       <hotspot description="" distance="18.786" id="Point01" pan="24.6" skinid="ht_node" target="81.3/17.3/100.0" tilt="-6.87" title="IMG_20260313_143815_00_628.insp" url="{node123}"/>
       <hotspot description="" distance="6.87834" id="Point02" pan="-15.53" skinid="ht_node" target="150.2/12.4/100.0" tilt="-5.21" title="IMG_20260313_144418_00_678.insp" url="{node133}"/>
       <hotspot description="" distance="12.3549" id="Point03" pan="-75.01" skinid="ht_node" target="-125.1/2.0/100.0" tilt="-10.51" title="IMG_20260313_144323_00_673.insp" url="{node132}"/>
+      <hotspot description="" distance="9.76194" id="Point04" pan="-168.56" skinid="ht_node" target="-177.0/8.6/100.0" tilt="-8.47" title="IMG_20260313_144614_00_688.insp" url="{node135}"/>
     </hotspots>
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
@@ -2592,7 +2576,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="360.00" author="" capturedatetime="2026-03-13T14:46:14" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:46 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75855556" longitude="-0.21980556" nodeid="node135" source="" tags="all" title="IMG_20260313_144614_00_688.insp"/>
+    <userdata altitude="360.00" author="" capturedatetime="2026-03-13T14:46:14" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:46 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75855556" longitude="-0.21980556" nodeid="node135" source="" tags="all|ROAD" title="IMG_20260313_144614_00_688.insp"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -2605,7 +2589,7 @@
       <hotspot description="" distance="6.89925" id="Point03" pan="-2.46" skinid="ht_node" target="168.4/20.5/100.0" tilt="-2.77" title="IMG_20260313_144418_00_678.insp" url="{node133}"/>
       <hotspot description="" distance="9.7225" id="Point04" pan="49.57" skinid="ht_node" target="36.7/10.2/100.0" tilt="-8.49" title="IMG_20260313_143530_00_613.insp" url="{node120}"/>
       <hotspot description="" distance="28.47" id="Point05" pan="16.86" skinid="ht_node" target="75.9/3.4/100.0" tilt="-4.29" title="IMG_20260313_143815_00_628.insp" url="{node123}"/>
-      <hotspot description="" distance="8.71341" id="Point06" pan="-174.39" skinid="ht_node" target="-161.4/-3.4/100.0" tilt="-10.39" title="IMG_20260313_144710_00_693.insp" url="{node136}"/>
+      <hotspot description="" distance="8.71341" id="Point06" pan="-174.39" skinid="ht_node" target="-161.4/-3.4/100.0" tilt="-10.39" title="Hallmark_Cafeteria" url="{node136}"/>
     </hotspots>
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
@@ -2617,7 +2601,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="349.60" author="" capturedatetime="2026-03-13T14:47:10" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:47 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75861111" longitude="-0.21986111" nodeid="node136" source="" tags="all" title="IMG_20260313_144710_00_693.insp"/>
+    <userdata altitude="349.60" author="" capturedatetime="2026-03-13T14:47:10" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:47 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75861111" longitude="-0.21986111" nodeid="node136" source="" tags="all|Location|ROAD" title="Hallmark_Cafeteria"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -2628,6 +2612,7 @@
       <hotspot description="" distance="8.71341" id="Point01" pan="34.38" skinid="ht_node" target="20.5/5.0/100.0" tilt="-13.95" title="IMG_20260313_144614_00_688.insp" url="{node135}"/>
       <hotspot description="" distance="15.7467" id="Point02" pan="-11.86" skinid="ht_node" target="-47.8/-2.7/100.0" tilt="-5.28" title="IMG_20260313_144323_00_673.insp" url="{node132}"/>
       <hotspot description="" distance="4.35749" id="Point03" pan="25.95" skinid="ht_node" target="15.5/5.1/100.0" tilt="-6.51" title="IMG_20260313_144525_00_683.insp" url="{node134}"/>
+      <hotspot description="" distance="13.799" id="Point04" pan="-145.21" skinid="ht_node" target="-153.4/1.6/100.0" tilt="-11.61" title="IMG_20260313_144805_00_698.insp" url="{node137}"/>
     </hotspots>
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
@@ -2639,7 +2624,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="352.40" author="" capturedatetime="2026-03-13T14:48:05" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:48 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75850000" longitude="-0.21980556" nodeid="node137" source="" tags="all" title="IMG_20260313_144805_00_698.insp"/>
+    <userdata altitude="352.40" author="" capturedatetime="2026-03-13T14:48:05" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:48 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75850000" longitude="-0.21980556" nodeid="node137" source="" tags="all|ROAD" title="IMG_20260313_144805_00_698.insp"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -2647,7 +2632,7 @@
       <max fov="120" fovfisheye="360" fovstereographic="270" pan="360" scaletofit="0" tilt="90"/>
     </view>
     <hotspots>
-      <hotspot description="" distance="13.799" id="Point01" pan="15" skinid="ht_node" target="28.8/-0.9/100.0" tilt="-7.69" title="IMG_20260313_144710_00_693.insp" url="{node136}"/>
+      <hotspot description="" distance="13.799" id="Point01" pan="15" skinid="ht_node" target="28.8/-0.9/100.0" tilt="-7.69" title="Hallmark_Cafeteria" url="{node136}"/>
       <hotspot description="" distance="6.14571" id="Point02" pan="-112.91" skinid="ht_node" target="-179.5/3.2/100.0" tilt="-12.64" title="IMG_20260313_144854_00_703.insp" url="{node138}"/>
     </hotspots>
     <media/>
@@ -2660,7 +2645,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="351.20" author="" capturedatetime="2026-03-13T14:48:54" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:48 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75850000" longitude="-0.21986111" nodeid="node138" source="" tags="all" title="IMG_20260313_144854_00_703.insp"/>
+    <userdata altitude="351.20" author="" capturedatetime="2026-03-13T14:48:54" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:48 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75850000" longitude="-0.21986111" nodeid="node138" source="" tags="all|ROAD" title="IMG_20260313_144854_00_703.insp"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -2681,7 +2666,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="352.80" author="" capturedatetime="2026-03-13T14:49:35" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:49 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75844444" longitude="-0.21980556" nodeid="node139" source="" tags="all" title="IMG_20260313_144935_00_708.insp"/>
+    <userdata altitude="352.80" author="" capturedatetime="2026-03-13T14:49:35" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:49 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75844444" longitude="-0.21980556" nodeid="node139" source="" tags="all|ROAD" title="IMG_20260313_144935_00_708.insp"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -2691,6 +2676,7 @@
     <hotspots>
       <hotspot description="" distance="8.7142" id="Point01" pan="90.41" skinid="ht_node" target="89.1/-5.2/100.0" tilt="-21.5" title="IMG_20260313_144854_00_703.insp" url="{node138}"/>
       <hotspot description="" distance="9.22022" id="Point02" pan="-175.31" skinid="ht_node" target="154.1/18.9/100.0" tilt="-9.11" title="IMG_20260313_145542_00_738.insp" url="{node145}"/>
+      <hotspot description="" distance="6.17799" id="Point03" pan="-113.69" skinid="ht_node" target="7.7/7.7/100.0" tilt="-7.88" title="Hive_Courtyard" url="{node140}"/>
     </hotspots>
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
@@ -2702,7 +2688,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="353.80" author="" capturedatetime="2026-03-13T14:50:44" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:50 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75850000" longitude="-0.21980556" nodeid="node140" source="" tags="all" title="IMG_20260313_145044_00_713.insp"/>
+    <userdata altitude="353.80" author="" capturedatetime="2026-03-13T14:50:44" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:50 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75850000" longitude="-0.21980556" nodeid="node140" source="" tags="all|Location|ROAD" title="Hive_Courtyard"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -2712,10 +2698,10 @@
     <hotspots>
       <hotspot description="" distance="6.17799" id="Point01" pan="176.59" skinid="ht_node" target="70.6/-8.5/100.0" tilt="-8" title="IMG_20260313_144935_00_708.insp" url="{node139}"/>
       <hotspot description="" distance="3.089" id="Point02" pan="132.92" skinid="ht_node" target="-39.8/14.4/100.0" tilt="2.21" title="IMG_20260313_145134_00_718.insp" url="{node141}"/>
-      <hotspot description="" distance="15.7467" id="Point03" pan="46.08" skinid="ht_node" target="2.5/4.5/100.0" tilt="-8.58" title="IMG_20260313_145208_00_723.insp" url="{node142}"/>
+      <hotspot description="" distance="15.7467" id="Point03" pan="46.08" skinid="ht_node" target="2.5/4.5/100.0" tilt="-8.58" title="The_Box_2" url="{node142}"/>
       <hotspot description="" distance="11.0987" id="Point04" pan="-148.48" skinid="ht_node" target="51.4/5.3/100.0" tilt="-9.58" title="IMG_20260313_145542_00_738.insp" url="{node145}"/>
       <hotspot description="" distance="11.1193" id="Point05" pan="-125.46" skinid="ht_node" target="-42.6/15.8/100.0" tilt="8.28" title="IMG_20260314_075724_00_753.insp" url="{node148}"/>
-      <hotspot description="" distance="11.0987" id="Point06" pan="-83.42" skinid="ht_node" target="154.1/2.4/100.0" tilt="7.72" title="IMG_20260314_075840_00_758.insp" url="{node149}"/>
+      <hotspot description="" distance="11.0987" id="Point06" pan="-83.42" skinid="ht_node" target="154.1/2.4/100.0" tilt="7.72" title="Akorno_Cafeteria" url="{node149}"/>
       <hotspot description="" distance="15.3945" id="Point07" pan="-49.71" skinid="ht_node" target="-159.5/10.7/100.0" tilt="8.11" title="IMG_20260314_075931_00_763.insp" url="{node150}"/>
       <hotspot description="" distance="15.3945" id="Point08" pan="-17.54" skinid="ht_node" target="-66.9/4.7/100.0" tilt="9.45" title="IMG_20260314_080503_00_793.insp" url="{node156}"/>
     </hotspots>
@@ -2729,7 +2715,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="355.20" author="" capturedatetime="2026-03-13T14:55:42" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:55 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75844444" longitude="-0.21972222" nodeid="node145" source="" tags="all" title="IMG_20260313_145542_00_738.insp"/>
+    <userdata altitude="355.20" author="" capturedatetime="2026-03-13T14:55:42" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:55 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75844444" longitude="-0.21972222" nodeid="node145" source="" tags="all|ROAD" title="IMG_20260313_145542_00_738.insp"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="-163.754" projection="4" tilt="12.2516"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -2739,10 +2725,10 @@
     <hotspots>
       <hotspot description="" distance="9.22022" id="Point01" pan="-15.59" skinid="ht_node" target="31.9/-15.8/100.0" tilt="-10.96" title="IMG_20260313_144935_00_708.insp" url="{node139}"/>
       <hotspot description="" distance="9.72391" id="Point02" pan="-44.25" skinid="ht_node" target="-101.8/9.4/100.0" tilt="1.58" title="IMG_20260313_145134_00_718.insp" url="{node141}"/>
-      <hotspot description="" distance="11.0987" id="Point03" pan="-99.79" skinid="ht_node" target="33.7/7.2/100.0" tilt="-11.58" title="IMG_20260313_145044_00_713.insp" url="{node140}"/>
-      <hotspot description="" distance="22.4786" id="Point04" pan="-91.35" skinid="ht_node" target="7.8/5.9/100.0" tilt="-5.41" title="IMG_20260313_145208_00_723.insp" url="{node142}"/>
+      <hotspot description="" distance="11.0987" id="Point03" pan="-99.79" skinid="ht_node" target="33.7/7.2/100.0" tilt="-11.58" title="Hive_Courtyard" url="{node140}"/>
+      <hotspot description="" distance="22.4786" id="Point04" pan="-91.35" skinid="ht_node" target="7.8/5.9/100.0" tilt="-5.41" title="The_Box_2" url="{node142}"/>
       <hotspot description="" distance="4.3567" id="Point05" pan="174.68" skinid="ht_node" target="39.3/25.1/100.0" tilt="28.46" title="IMG_20260314_075724_00_753.insp" url="{node148}"/>
-      <hotspot description="" distance="9.76229" id="Point06" pan="65.98" skinid="ht_node" target="-0.7/-0.2/100.0" tilt="-13.94" title="IMG_20260313_145605_00_743.insp" url="{node146}"/>
+      <hotspot description="" distance="9.76229" id="Point06" pan="65.98" skinid="ht_node" target="-0.7/-0.2/100.0" tilt="-13.94" title="The_Box_1" url="{node146}"/>
     </hotspots>
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
@@ -2754,7 +2740,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="354.10" author="" capturedatetime="2026-03-13T14:56:05" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:56 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75836111" longitude="-0.21975000" nodeid="node146" source="" tags="all" title="IMG_20260313_145605_00_743.insp"/>
+    <userdata altitude="354.10" author="" capturedatetime="2026-03-13T14:56:05" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:56 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75836111" longitude="-0.21975000" nodeid="node146" source="" tags="all|Location|ROAD" title="The_Box_1"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="170.091" projection="4" tilt="3.14076"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -2785,8 +2771,8 @@
       <max fov="120" fovfisheye="360" fovstereographic="270" pan="360" scaletofit="0" tilt="90"/>
     </view>
     <hotspots>
-      <hotspot description="" distance="3.089" id="Point01" pan="124.57" skinid="ht_node" target="-76.4/21.9/100.0" tilt="-24.24" title="IMG_20260313_145044_00_713.insp" url="{node140}"/>
-      <hotspot description="" distance="18.786" id="Point02" pan="-168.06" skinid="ht_node" target="-57.0/8.6/100.0" tilt="-13.36" title="IMG_20260313_145208_00_723.insp" url="{node142}"/>
+      <hotspot description="" distance="3.089" id="Point01" pan="124.57" skinid="ht_node" target="-76.4/21.9/100.0" tilt="-24.24" title="Hive_Courtyard" url="{node140}"/>
+      <hotspot description="" distance="18.786" id="Point02" pan="-168.06" skinid="ht_node" target="-57.0/8.6/100.0" tilt="-13.36" title="The_Box_2" url="{node142}"/>
       <hotspot description="" distance="9.72391" id="Point03" pan="82.92" skinid="ht_node" target="138.1/14.3/100.0" tilt="-12.77" title="IMG_20260313_145542_00_738.insp" url="{node145}"/>
       <hotspot description="" distance="8.71419" id="Point04" pan="101.8" skinid="ht_node" target="21.2/-2.6/100.0" tilt="-1.22" title="IMG_20260314_075724_00_753.insp" url="{node148}"/>
       <hotspot description="" distance="17.4292" id="Point05" pan="163.59" skinid="ht_node" target="142.4/4.4/100.0" tilt="-1.79" title="IMG_20260314_080656_00_798.insp" url="{node157}"/>
@@ -2801,7 +2787,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="352.60" author="" capturedatetime="2026-03-13T14:52:08" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:52 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75863889" longitude="-0.21977778" nodeid="node142" source="" tags="all" title="IMG_20260313_145208_00_723.insp"/>
+    <userdata altitude="352.60" author="" capturedatetime="2026-03-13T14:52:08" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:52 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75863889" longitude="-0.21977778" nodeid="node142" source="" tags="all|Location|ROAD" title="The_Box_2"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -2809,11 +2795,12 @@
       <max fov="120" fovfisheye="360" fovstereographic="270" pan="360" scaletofit="0" tilt="90"/>
     </view>
     <hotspots>
-      <hotspot description="" distance="15.7467" id="Point01" pan="178.8" skinid="ht_node" target="-156.2/4.9/100.0" tilt="-11.33" title="IMG_20260313_145044_00_713.insp" url="{node140}"/>
+      <hotspot description="" distance="15.7467" id="Point01" pan="178.8" skinid="ht_node" target="-156.2/4.9/100.0" tilt="-11.33" title="Hive_Courtyard" url="{node140}"/>
       <hotspot description="" distance="18.786" id="Point02" pan="134.48" skinid="ht_node" target="20.2/15.4/100.0" tilt="2.38" title="IMG_20260313_145134_00_718.insp" url="{node141}"/>
       <hotspot description="" distance="6.87933" id="Point03" pan="18.27" skinid="ht_node" target="179.9/1.6/100.0" tilt="-6.18" title="IMG_20260313_145249_00_728.insp" url="{node143}"/>
       <hotspot description="" distance="22.4786" id="Point04" pan="173.77" skinid="ht_node" target="73.3/15.6/100.0" tilt="-5" title="IMG_20260313_145542_00_738.insp" url="{node145}"/>
       <hotspot description="" distance="11.0986" id="Point05" pan="-117.41" skinid="ht_node" target="83.7/13.2/100.0" tilt="17.24" title="IMG_20260314_080656_00_798.insp" url="{node157}"/>
+      <hotspot description="" distance="9.7239" id="Point06" pan="-50.8" skinid="ht_node" target="-86.7/-2.9/100.0" tilt="-9.03" title="IMG_20260313_145328_00_733.insp" url="{node144}"/>
     </hotspots>
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
@@ -2833,7 +2820,7 @@
       <max fov="120" fovfisheye="360" fovstereographic="270" pan="360" scaletofit="0" tilt="90"/>
     </view>
     <hotspots>
-      <hotspot description="" distance="6.87933" id="Point01" pan="-4.4" skinid="ht_node" target="169.0/19.2/100.0" tilt="-8.08" title="IMG_20260313_145208_00_723.insp" url="{node142}"/>
+      <hotspot description="" distance="6.87933" id="Point01" pan="-4.4" skinid="ht_node" target="169.0/19.2/100.0" tilt="-8.08" title="The_Box_2" url="{node142}"/>
       <hotspot description="" distance="3.07341" id="Point02" pan="60.63" skinid="ht_node" target="-175.8/16.3/100.0" tilt="-9.44" title="IMG_20260313_145328_00_733.insp" url="{node144}"/>
       <hotspot description="" distance="27.5985" id="Point03" pan="-148.08" skinid="ht_node" target="-96.1/21.5/100.0" tilt="-5.81" title="IMG_20260313_144023_00_643.insp" url="{node126}"/>
     </hotspots>
@@ -2847,7 +2834,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="355.10" author="" capturedatetime="2026-03-13T14:53:28" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:53 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75861111" longitude="-0.21969444" nodeid="node144" source="" tags="all" title="IMG_20260313_145328_00_733.insp"/>
+    <userdata altitude="355.10" author="" capturedatetime="2026-03-13T14:53:28" comment="" copyright="" customnodeid="" datetime="13/03/2026 2:53 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75861111" longitude="-0.21969444" nodeid="node144" source="" tags="all|ROAD" title="IMG_20260313_145328_00_733.insp"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -2856,9 +2843,10 @@
     </view>
     <hotspots>
       <hotspot description="" distance="3.07341" id="Point01" pan="-0.3" skinid="ht_node" target="-108.9/11.8/100.0" tilt="-10.91" title="IMG_20260313_145249_00_728.insp" url="{node143}"/>
-      <hotspot description="" distance="17.4292" id="Point02" pan="146.89" skinid="ht_node" target="-173.3/8.4/100.0" tilt="-7.25" title="IMG_20260313_145044_00_713.insp" url="{node140}"/>
+      <hotspot description="" distance="17.4292" id="Point02" pan="146.89" skinid="ht_node" target="-173.3/8.4/100.0" tilt="-7.25" title="Hive_Courtyard" url="{node140}"/>
       <hotspot description="" distance="19.7395" id="Point03" pan="126.63" skinid="ht_node" target="-17.4/5.0/100.0" tilt="1.02" title="IMG_20260313_145134_00_718.insp" url="{node141}"/>
       <hotspot description="" distance="3.089" id="Point04" pan="179.84" skinid="ht_node" target="66.7/-0.9/100.0" tilt="9.25" title="IMG_20260314_080656_00_798.insp" url="{node157}"/>
+      <hotspot description="" distance="9.7239" id="Point05" pan="99.91" skinid="ht_node" target="122.8/-0.6/100.0" tilt="-9.93" title="The_Box_2" url="{node142}"/>
     </hotspots>
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
@@ -2878,7 +2866,7 @@
       <max fov="120" fovfisheye="360" fovstereographic="270" pan="360" scaletofit="0" tilt="90"/>
     </view>
     <hotspots>
-      <hotspot description="" distance="15.7467" id="Point01" pan="62.82" skinid="ht_node" target="-169.5/6.6/100.0" tilt="-11.49" title="IMG_20260313_145605_00_743.insp" url="{node146}"/>
+      <hotspot description="" distance="15.7467" id="Point01" pan="62.82" skinid="ht_node" target="-169.5/6.6/100.0" tilt="-11.49" title="The_Box_1" url="{node146}"/>
     </hotspots>
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
@@ -2890,7 +2878,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="353.70" author="" capturedatetime="2026-03-14T07:57:24" comment="" copyright="" customnodeid="" datetime="14/03/2026 7:57 AM" description="" heading="0" hideinlist="0" info="" latitude="5.75841667" longitude="-0.21975000" nodeid="node148" source="" tags="all" title="IMG_20260314_075724_00_753.insp"/>
+    <userdata altitude="353.70" author="" capturedatetime="2026-03-14T07:57:24" comment="" copyright="" customnodeid="" datetime="14/03/2026 7:57 AM" description="" heading="0" hideinlist="0" info="" latitude="5.75841667" longitude="-0.21975000" nodeid="node148" source="" tags="all|ROAD" title="IMG_20260314_075724_00_753.insp"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -2898,12 +2886,12 @@
       <max fov="120" fovfisheye="360" fovstereographic="270" pan="360" scaletofit="0" tilt="90"/>
     </view>
     <hotspots>
-      <hotspot description="" distance="6.17799" id="Point01" pan="-83.59" skinid="ht_node" target="-64.3/-1.7/100.0" tilt="-27.32" title="IMG_20260313_145605_00_743.insp" url="{node146}"/>
+      <hotspot description="" distance="6.17799" id="Point01" pan="-83.59" skinid="ht_node" target="-64.3/-1.7/100.0" tilt="-27.32" title="The_Box_1" url="{node146}"/>
       <hotspot description="" distance="8.71419" id="Point02" pan="-170.12" skinid="ht_node" target="-95.2/6.4/100.0" tilt="-8.46" title="IMG_20260313_145134_00_718.insp" url="{node141}"/>
-      <hotspot description="" distance="24.9001" id="Point03" pan="146.91" skinid="ht_node" target="29.7/3.9/100.0" tilt="-11.24" title="IMG_20260313_145208_00_723.insp" url="{node142}"/>
-      <hotspot description="" distance="11.1193" id="Point04" pan="153.15" skinid="ht_node" target="76.5/9.1/100.0" tilt="-29.81" title="IMG_20260313_145044_00_713.insp" url="{node140}"/>
+      <hotspot description="" distance="24.9001" id="Point03" pan="146.91" skinid="ht_node" target="29.7/3.9/100.0" tilt="-11.24" title="The_Box_2" url="{node142}"/>
+      <hotspot description="" distance="11.1193" id="Point04" pan="153.15" skinid="ht_node" target="76.5/9.1/100.0" tilt="-29.81" title="Hive_Courtyard" url="{node140}"/>
       <hotspot description="" distance="4.3567" id="Point05" pan="-155.49" skinid="ht_node" target="-24.3/3.0/100.0" tilt="-37.54" title="IMG_20260313_145542_00_738.insp" url="{node145}"/>
-      <hotspot description="" distance="4.3567" id="Point06" pan="39.99" skinid="ht_node" target="170.6/-0.5/100.0" tilt="-10.25" title="IMG_20260314_075840_00_758.insp" url="{node149}"/>
+      <hotspot description="" distance="4.3567" id="Point06" pan="39.99" skinid="ht_node" target="170.6/-0.5/100.0" tilt="-10.25" title="Akorno_Cafeteria" url="{node149}"/>
     </hotspots>
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
@@ -2915,7 +2903,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="354.00" author="" capturedatetime="2026-03-14T07:58:40" comment="" copyright="" customnodeid="" datetime="14/03/2026 7:58 AM" description="" heading="0" hideinlist="0" info="" latitude="5.75844444" longitude="-0.21972222" nodeid="node149" source="" tags="all" title="IMG_20260314_075840_00_758.insp"/>
+    <userdata altitude="354.00" author="" capturedatetime="2026-03-14T07:58:40" comment="" copyright="" customnodeid="" datetime="14/03/2026 7:58 AM" description="" heading="0" hideinlist="0" info="" latitude="5.75844444" longitude="-0.21972222" nodeid="node149" source="" tags="all|Location|ROAD" title="Akorno_Cafeteria"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -2924,7 +2912,9 @@
     </view>
     <hotspots>
       <hotspot description="" distance="4.3567" id="Point01" pan="2.49" skinid="ht_node" target="-141.7/-18.1/100.0" tilt="-10.12" title="IMG_20260314_075724_00_753.insp" url="{node148}"/>
-      <hotspot description="" distance="11.0987" id="Point02" pan="-26.3" skinid="ht_node" target="94.0/5.0/100.0" tilt="-13.16" title="IMG_20260313_145044_00_713.insp" url="{node140}"/>
+      <hotspot description="" distance="11.0987" id="Point02" pan="-26.3" skinid="ht_node" target="94.0/5.0/100.0" tilt="-13.16" title="Hive_Courtyard" url="{node140}"/>
+      <hotspot description="" distance="15.7467" id="Point03" pan="-129.94" skinid="ht_node" target="-94.5/0.7/100.0" tilt="-11.27" title="IMG_20260314_075931_00_763.insp" url="{node150}"/>
+      <hotspot description="" distance="19.5256" id="Point04" pan="-111.37" skinid="ht_node" target="-160.1/2.2/100.0" tilt="-5.54" title="IMG_20260314_080303_00_778.insp" url="{node153}"/>
     </hotspots>
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
@@ -2936,7 +2926,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="354.40" author="" capturedatetime="2026-03-14T07:59:31" comment="" copyright="" customnodeid="" datetime="14/03/2026 7:59 AM" description="" heading="0" hideinlist="0" info="" latitude="5.75858333" longitude="-0.21969444" nodeid="node150" source="" tags="all" title="IMG_20260314_075931_00_763.insp"/>
+    <userdata altitude="354.40" author="" capturedatetime="2026-03-14T07:59:31" comment="" copyright="" customnodeid="" datetime="14/03/2026 7:59 AM" description="" heading="0" hideinlist="0" info="" latitude="5.75858333" longitude="-0.21969444" nodeid="node150" source="" tags="all|ROAD" title="IMG_20260314_075931_00_763.insp"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -2944,8 +2934,11 @@
       <max fov="120" fovfisheye="360" fovstereographic="270" pan="360" scaletofit="0" tilt="90"/>
     </view>
     <hotspots>
-      <hotspot description="" distance="15.7467" id="Point01" pan="63.83" skinid="ht_node" target="36.8/2.8/100.0" tilt="-12.39" title="IMG_20260314_075840_00_758.insp" url="{node149}"/>
-      <hotspot description="" distance="15.3945" id="Point02" pan="11.93" skinid="ht_node" target="106.4/0.5/100.0" tilt="-10.12" title="IMG_20260313_145044_00_713.insp" url="{node140}"/>
+      <hotspot description="" distance="15.7467" id="Point01" pan="63.83" skinid="ht_node" target="36.8/2.8/100.0" tilt="-12.39" title="Akorno_Cafeteria" url="{node149}"/>
+      <hotspot description="" distance="15.3945" id="Point02" pan="11.93" skinid="ht_node" target="106.4/0.5/100.0" tilt="-10.12" title="Hive_Courtyard" url="{node140}"/>
+      <hotspot description="" distance="6.14681" id="Point03" pan="-94.83" skinid="ht_node" target="172.6/4.0/100.0" tilt="-8.46" title="IMG_20260314_080117_00_773.insp" url="{node152}"/>
+      <hotspot description="" distance="9.72391" id="Point04" pan="-58.78" skinid="ht_node" target="-145.8/5.0/100.0" tilt="-11.74" title="IMG_20260314_080303_00_778.insp" url="{node153}"/>
+      <hotspot description="" id="Point05" pan="-33.35" skinid="ht_node" target="6.4/4.1/100.0" tilt="-7.64" title="IMG_20260314_080503_00_793.insp" url="{node156}"/>
     </hotspots>
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
@@ -2957,7 +2950,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="354.90" author="" capturedatetime="2026-03-14T08:01:17" comment="" copyright="" customnodeid="" datetime="14/03/2026 8:01 AM" description="" heading="0" hideinlist="0" info="" latitude="5.75858333" longitude="-0.21975000" nodeid="node152" source="" tags="all" title="IMG_20260314_080117_00_773.insp"/>
+    <userdata altitude="354.90" author="" capturedatetime="2026-03-14T08:01:17" comment="" copyright="" customnodeid="" datetime="14/03/2026 8:01 AM" description="" heading="0" hideinlist="0" info="" latitude="5.75858333" longitude="-0.21975000" nodeid="node152" source="" tags="all|ROAD" title="IMG_20260314_080117_00_773.insp"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -2966,7 +2959,7 @@
     </view>
     <hotspots>
       <hotspot description="" distance="6.14681" id="Point01" pan="-13.06" skinid="ht_node" target="83.7/10.1/100.0" tilt="-12.54" title="IMG_20260314_075931_00_763.insp" url="{node150}"/>
-      <hotspot description="" distance="15.7467" id="Point02" pan="-18.19" skinid="ht_node" target="43.2/7.2/100.0" tilt="-5.31" title="IMG_20260314_075840_00_758.insp" url="{node149}"/>
+      <hotspot description="" distance="15.7467" id="Point02" pan="-18.19" skinid="ht_node" target="43.2/7.2/100.0" tilt="-5.31" title="Akorno_Cafeteria" url="{node149}"/>
       <hotspot description="" distance="4.35749" id="Point03" pan="-80.61" skinid="ht_node" target="-77.6/6.1/100.0" tilt="-24.37" title="IMG_20260314_080303_00_778.insp" url="{node153}"/>
     </hotspots>
     <media/>
@@ -2979,7 +2972,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="353.50" author="" capturedatetime="2026-03-14T08:03:03" comment="" copyright="" customnodeid="" datetime="14/03/2026 8:03 AM" description="" heading="0" hideinlist="0" info="" latitude="5.75861111" longitude="-0.21977778" nodeid="node153" source="" tags="all" title="IMG_20260314_080303_00_778.insp"/>
+    <userdata altitude="353.50" author="" capturedatetime="2026-03-14T08:03:03" comment="" copyright="" customnodeid="" datetime="14/03/2026 8:03 AM" description="" heading="0" hideinlist="0" info="" latitude="5.75861111" longitude="-0.21977778" nodeid="node153" source="" tags="all|ROAD" title="IMG_20260314_080303_00_778.insp"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -2988,6 +2981,10 @@
     </view>
     <hotspots>
       <hotspot description="" distance="4.35749" id="Point01" pan="103.65" skinid="ht_node" target="72.8/6.4/100.0" tilt="-17.85" title="IMG_20260314_080117_00_773.insp" url="{node152}"/>
+      <hotspot description="" distance="9.72391" id="Point02" pan="47.95" skinid="ht_node" target="82.4/6.0/100.0" tilt="-7.97" title="IMG_20260314_075931_00_763.insp" url="{node150}"/>
+      <hotspot description="" distance="19.5256" id="Point03" pan="22.33" skinid="ht_node" target="54.2/2.0/100.0" tilt="-4.8" title="Akorno_Cafeteria" url="{node149}"/>
+      <hotspot description="" distance="9.72391" id="Point04" pan="-72.09" skinid="ht_node" target="43.7/5.4/100.0" tilt="-14.1" title="IMG_20260314_080503_00_793.insp" url="{node156}"/>
+      <hotspot description="" distance="9.72391" id="Point05" pan="-62.82" skinid="ht_node" target="-55.4/9.1/100.0" tilt="-7.93" title="IMG_20260314_080656_00_798.insp" url="{node157}"/>
     </hotspots>
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
@@ -3030,6 +3027,7 @@
     <hotspots>
       <hotspot description="" distance="9.22022" id="Point01" pan="39.96" skinid="ht_node" target="65.0/8.5/100.0" tilt="-8.54" title="IMG_20260314_080303_00_778.insp" url="{node153}"/>
       <hotspot description="" distance="3.089" id="Point02" pan="52.73" skinid="ht_node" target="40.0/4.8/100.0" tilt="-18.41" title="IMG_20260314_080345_00_783.insp" url="{node154}"/>
+      <hotspot description="" distance="3.089" id="Point03" pan="-26.38" skinid="ht_node" target="102.1/1.0/100.0" tilt="-9.02" title="IMG_20260314_080503_00_793.insp" url="{node156}"/>
     </hotspots>
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
@@ -3041,7 +3039,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="354.40" author="" capturedatetime="2026-03-14T08:05:03" comment="" copyright="" customnodeid="" datetime="14/03/2026 8:05 AM" description="" heading="0" hideinlist="0" info="" latitude="5.75858333" longitude="-0.21969444" nodeid="node156" source="" tags="all" title="IMG_20260314_080503_00_793.insp"/>
+    <userdata altitude="354.40" author="" capturedatetime="2026-03-14T08:05:03" comment="" copyright="" customnodeid="" datetime="14/03/2026 8:05 AM" description="" heading="0" hideinlist="0" info="" latitude="5.75858333" longitude="-0.21969444" nodeid="node156" source="" tags="all|ROAD" title="IMG_20260314_080503_00_793.insp"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -3051,7 +3049,10 @@
     <hotspots>
       <hotspot description="" distance="9.72391" id="Point01" pan="-147.49" skinid="ht_node" target="108.3/4.7/100.0" tilt="-15.14" title="IMG_20260314_080303_00_778.insp" url="{node153}"/>
       <hotspot description="" distance="6.14681" id="Point02" pan="-145.42" skinid="ht_node" target="77.5/-4.4/100.0" tilt="-6.87" title="IMG_20260314_080117_00_773.insp" url="{node152}"/>
-      <hotspot description="" distance="15.3945" id="Point03" pan="96.95" skinid="ht_node" target="-166.0/7.5/100.0" tilt="-15.37" title="IMG_20260313_145044_00_713.insp" url="{node140}"/>
+      <hotspot description="" distance="15.3945" id="Point03" pan="96.95" skinid="ht_node" target="-166.0/7.5/100.0" tilt="-15.37" title="Hive_Courtyard" url="{node140}"/>
+      <hotspot description="" distance="3.089" id="Point04" pan="-50.2" skinid="ht_node" target="144.1/9.5/100.0" tilt="-6.83" title="IMG_20260314_080414_00_788.insp" url="{node155}"/>
+      <hotspot description="" id="Point05" pan="34.7" skinid="ht_node" target="-109.2/-15.3/100.0" tilt="-20.03" title="IMG_20260314_080656_00_798.insp" url="{node157}"/>
+      <hotspot description="" id="Point06" pan="-175.38" skinid="ht_node" target="123.5/-0.6/100.0" tilt="-7.76" title="IMG_20260314_075931_00_763.insp" url="{node150}"/>
     </hotspots>
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
@@ -3063,7 +3064,7 @@
       <level height="380" predecode="1" preload="1" width="380"/>
       <preview color="0x808080" strip="1"/>
     </input>
-    <userdata altitude="354.80" author="" capturedatetime="2026-03-14T08:06:56" comment="" copyright="" customnodeid="" datetime="14/03/2026 8:06 AM" description="" heading="0" hideinlist="0" info="" latitude="5.75858333" longitude="-0.21969444" nodeid="node157" source="" tags="all" title="IMG_20260314_080656_00_798.insp"/>
+    <userdata altitude="354.80" author="" capturedatetime="2026-03-14T08:06:56" comment="" copyright="" customnodeid="" datetime="14/03/2026 8:06 AM" description="" heading="0" hideinlist="0" info="" latitude="5.75858333" longitude="-0.21969444" nodeid="node157" source="" tags="all|ROAD" title="IMG_20260314_080656_00_798.insp"/>
     <view fovmode="2" pannorth="0">
       <start fov="100" pan="0" projection="4" tilt="0"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
@@ -3071,10 +3072,13 @@
       <max fov="120" fovfisheye="360" fovstereographic="270" pan="360" scaletofit="0" tilt="90"/>
     </view>
     <hotspots>
-      <hotspot description="" distance="15.3945" id="Point01" pan="-7.01" skinid="ht_node" target="-169.3/4.3/100.0" tilt="-17.9" title="IMG_20260313_145044_00_713.insp" url="{node140}"/>
+      <hotspot description="" distance="15.3945" id="Point01" pan="-7.01" skinid="ht_node" target="-169.3/4.3/100.0" tilt="-17.9" title="Hive_Courtyard" url="{node140}"/>
       <hotspot description="" distance="17.4292" id="Point02" pan="-45.94" skinid="ht_node" target="-5.6/11.5/100.0" tilt="-7.11" title="IMG_20260313_145134_00_718.insp" url="{node141}"/>
       <hotspot description="" id="Point03" pan="110.05" skinid="ht_node" target="-147.7/-4.1/100.0" tilt="-28.26" title="IMG_20260314_080503_00_793.insp" url="{node156}"/>
       <hotspot description="" distance="9.72391" id="Point04" pan="100.25" skinid="ht_node" target="107.2/7.7/100.0" tilt="-7.4" title="IMG_20260314_080303_00_778.insp" url="{node153}"/>
+      <hotspot description="" distance="3.089" id="Point05" pan="-148.78" skinid="ht_node" target="0.0/4.4/100.0" tilt="-24.92" title="IMG_20260313_145328_00_733.insp" url="{node144}"/>
+      <hotspot description="" distance="11.0986" id="Point06" pan="-104.27" skinid="ht_node" target="48.3/17.1/100.0" tilt="-20.58" title="The_Box_2" url="{node142}"/>
+      <hotspot description="" distance="31.7629" id="Point07" pan="-171.3" skinid="ht_node" target="-58.8/-10.1/100.0" tilt="-7.64" title="IMG_20260313_144147_00_658.insp" url="{node129}"/>
     </hotspots>
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
