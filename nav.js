@@ -25,7 +25,7 @@
   // ─────────────────────────────────────────────────────────────────────────────
 
   var nodes       = {};     // nodeId → NodeData
-  var graph       = {};     // nodeId → Edge[]
+  var graph       = {};     // nodeId → Edge[] — includes all nodes, ROAD edges prioritized
   var activeRoute = null;   // Route | null — only set while navigating
   var stepIndex   = 0;      // index into activeRoute.path for CURRENT position
   var navActive   = false;  // master flag — canvas draws nothing when false
@@ -54,12 +54,12 @@
   }
 
   function initNav() {
-    fetch('pano.xml?ts=51710039')
+    fetch('pano.xml?ts=81265970')
       .then(function (r) { return r.text(); })
       .then(function (xmlText) {
         var doc = new DOMParser().parseFromString(xmlText, 'application/xml');
         nodes = parseNodes(doc);
-        graph = buildGraph(nodes);
+        graph = buildGraph(nodes);  // Single graph with ROAD priority built-in
         buildSearchIndex();
         injectStyles();
         injectUI();
@@ -119,35 +119,104 @@
   }
 
   // ─────────────────────────────────────────────────────────────────────────────
-  // Graph — adjacency list of ROAD-only nodes
+  // Graph — includes ALL nodes and ALL edges
+  // ROAD edges get priority through lower distance weights in Dijkstra
   // ─────────────────────────────────────────────────────────────────────────────
 
   function buildGraph(nodeMap) {
     var g = {};
+    console.log('[nav.js] Building graph with', Object.keys(nodeMap).length, 'nodes');
 
     Object.keys(nodeMap).forEach(function (id) {
       var node = nodeMap[id];
-      if (!node.isRoad) return;
       g[id] = [];
+
+      console.log('[nav.js] Building edges for node', id, '(' + node.title + '), isRoad:', node.isRoad);
 
       node.hotspots.forEach(function (hs) {
         var neighbor = nodeMap[hs.targetId];
-        if (!neighbor || !neighbor.isRoad) return;
+        if (!neighbor) {
+          console.warn('[nav.js] Hotspot', hs.id, 'references unknown node', hs.targetId);
+          return;
+        }
+
         var dist = hs.distance > 0 ? hs.distance : haversine(
           node.lat, node.lng, neighbor.lat, neighbor.lng
         );
+
+        // ROAD edges get priority by reducing their distance weight
+        // This makes Dijkstra prefer ROAD paths while still allowing non-ROAD
+        var priorityWeight = neighbor.isRoad ? 0.1 : 1.0;  // ROAD edges are 90% cheaper (very strong preference)
+        var weightedDist = dist * priorityWeight;
+
+        console.log('[nav.js] Adding edge', id, '->', hs.targetId, 'distance:', dist.toFixed(1), 'weighted:', weightedDist.toFixed(1), 'isRoad:', neighbor.isRoad);
+
         g[id].push({
           neighborId: hs.targetId,
           pan:        hs.pan,
           tilt:       hs.tilt,
           hotspotId:  hs.id,
           title:      hs.title,
-          distance:   dist
+          distance:   weightedDist,  // Use weighted distance for priority
+          rawDistance: dist         // Keep original for display
         });
       });
+
+      console.log('[nav.js] Node', id, 'has', g[id].length, 'edges');
     });
 
+    console.log('[nav.js] Graph built with', Object.keys(g).length, 'nodes');
+    
+    // Debug: check if key nodes are in the graph
+    var keyNodes = ['node9', 'node61', 'node60', 'node59'];
+    keyNodes.forEach(function (nodeId) {
+      if (g[nodeId]) {
+        console.log('[nav.js] Node', nodeId, 'has', g[nodeId].length, 'edges');
+      } else {
+        console.warn('[nav.js] Node', nodeId, 'is missing from graph!');
+      }
+    });
+    
+    // Debug: check graph connectivity
+    checkGraphConnectivity(g);
+    
     return g;
+  }
+
+  function checkGraphConnectivity(graph) {
+    console.log('[nav.js] Checking graph connectivity...');
+    
+    // Find all nodes reachable from node9 (Todd Library)
+    var visited = {};
+    var queue = ['node9'];
+    visited['node9'] = true;
+    
+    while (queue.length > 0) {
+      var current = queue.shift();
+      var edges = graph[current] || [];
+      
+      edges.forEach(function (edge) {
+        if (!visited[edge.neighborId]) {
+          visited[edge.neighborId] = true;
+          queue.push(edge.neighborId);
+        }
+      });
+    }
+    
+    var reachableCount = Object.keys(visited).length;
+    var totalCount = Object.keys(graph).length;
+    
+    console.log('[nav.js] Graph connectivity: ' + reachableCount + '/' + totalCount + ' nodes reachable from node9');
+    
+    // Check if key nodes are reachable
+    var keyNodes = ['node9', 'node61', 'node60', 'node59'];
+    keyNodes.forEach(function (nodeId) {
+      if (visited[nodeId]) {
+        console.log('[nav.js] ✓ Node', nodeId, 'is reachable from node9');
+      } else {
+        console.warn('[nav.js] ✗ Node', nodeId, 'is NOT reachable from node9');
+      }
+    });
   }
 
   function haversine(lat1, lng1, lat2, lng2) {
@@ -161,34 +230,51 @@
   }
 
   // ─────────────────────────────────────────────────────────────────────────────
-  // Dijkstra — finds shortest path through ROAD nodes
+  // Dijkstra — finds shortest path (using specified graph)
   // ─────────────────────────────────────────────────────────────────────────────
 
   function dijkstra(startId, endId) {
+    console.log('[nav.js] Dijkstra: searching from', startId, 'to', endId);
+
     var dist    = {};
     var prev    = {};
     var visited = {};
 
     Object.keys(graph).forEach(function (id) { dist[id] = Infinity; prev[id] = null; });
-    if (dist[startId] === undefined || dist[endId] === undefined) return null;
+    if (dist[startId] === undefined || dist[endId] === undefined) {
+      console.warn('[nav.js] Dijkstra: start or end node not in graph');
+      return null;
+    }
 
     dist[startId] = 0;
     var queue = [{ id: startId, d: 0 }];
+    var iterations = 0;
 
-    while (queue.length > 0) {
+    while (queue.length > 0 && iterations < 1000) {  // Prevent infinite loops
+      iterations++;
       queue.sort(function (a, b) { return a.d - b.d; });
       var curr = queue.shift();
       var u    = curr.id;
 
       if (visited[u]) continue;
       visited[u] = true;
-      if (u === endId) break;
+
+      console.log('[nav.js] Dijkstra: visiting', u, 'distance:', dist[u]);
+
+      if (u === endId) {
+        console.log('[nav.js] Dijkstra: found path to destination!');
+        break;
+      }
 
       var edges = graph[u] || [];
+      console.log('[nav.js] Dijkstra: node', u, 'has', edges.length, 'edges');
+
       for (var ei = 0; ei < edges.length; ei++) {
         var edge = edges[ei];
-        if (visited[edge.neighborId]) continue;
         var newDist = dist[u] + edge.distance;
+
+        console.log('[nav.js] Dijkstra: considering edge', u, '->', edge.neighborId, 'newDist:', newDist, 'current:', dist[edge.neighborId]);
+
         if (newDist < dist[edge.neighborId]) {
           dist[edge.neighborId] = newDist;
           prev[edge.neighborId] = {
@@ -203,7 +289,12 @@
       }
     }
 
-    if (dist[endId] === Infinity) return null;
+    if (dist[endId] === Infinity) {
+      console.warn('[nav.js] Dijkstra: no path found, final distance to end:', dist[endId]);
+      return null;
+    }
+
+    console.log('[nav.js] Dijkstra: reconstructing path...');
 
     // Reconstruct path
     var path = [];
@@ -221,6 +312,90 @@
       cur = info ? info.fromId : null;
     }
 
+    console.log('[nav.js] Dijkstra: path reconstructed with', path.length, 'steps');
+    return { path: path, totalDistance: dist[endId] };
+  }
+
+  function dijkstraUnweighted(startId, endId) {
+    console.log('[nav.js] DijkstraUnweighted: searching from', startId, 'to', endId);
+
+    var dist    = {};
+    var prev    = {};
+    var visited = {};
+
+    Object.keys(graph).forEach(function (id) { dist[id] = Infinity; prev[id] = null; });
+    if (dist[startId] === undefined || dist[endId] === undefined) {
+      console.warn('[nav.js] DijkstraUnweighted: start or end node not in graph');
+      return null;
+    }
+
+    dist[startId] = 0;
+    var queue = [{ id: startId, d: 0 }];
+    var iterations = 0;
+
+    while (queue.length > 0 && iterations < 1000) {  // Prevent infinite loops
+      iterations++;
+      queue.sort(function (a, b) { return a.d - b.d; });
+      var curr = queue.shift();
+      var u    = curr.id;
+
+      if (visited[u]) continue;
+      visited[u] = true;
+
+      console.log('[nav.js] DijkstraUnweighted: visiting', u, 'distance:', dist[u]);
+
+      if (u === endId) {
+        console.log('[nav.js] DijkstraUnweighted: found path to destination!');
+        break;
+      }
+
+      var edges = graph[u] || [];
+      console.log('[nav.js] DijkstraUnweighted: node', u, 'has', edges.length, 'edges');
+
+      for (var ei = 0; ei < edges.length; ei++) {
+        var edge = edges[ei];
+        var newDist = dist[u] + edge.rawDistance;  // Use raw distance without weighting
+
+        console.log('[nav.js] DijkstraUnweighted: considering edge', u, '->', edge.neighborId, 'newDist:', newDist, 'current:', dist[edge.neighborId]);
+
+        if (newDist < dist[edge.neighborId]) {
+          dist[edge.neighborId] = newDist;
+          prev[edge.neighborId] = {
+            fromId:       u,
+            pan:          edge.pan,
+            tilt:         edge.tilt,
+            hotspotId:    edge.hotspotId,
+            hotspotTitle: edge.title
+          };
+          queue.push({ id: edge.neighborId, d: newDist });
+        }
+      }
+    }
+
+    if (dist[endId] === Infinity) {
+      console.warn('[nav.js] DijkstraUnweighted: no path found, final distance to end:', dist[endId]);
+      return null;
+    }
+
+    console.log('[nav.js] DijkstraUnweighted: reconstructing path...');
+
+    // Reconstruct path
+    var path = [];
+    var cur  = endId;
+    while (cur !== null) {
+      var info = prev[cur];
+      path.unshift({
+        nodeId:       cur,
+        title:        nodes[cur] ? nodes[cur].title : cur,
+        pan:          info ? info.pan          : null,
+        tilt:         info ? info.tilt         : null,
+        hotspotId:    info ? info.hotspotId    : null,
+        hotspotTitle: info ? info.hotspotTitle : null
+      });
+      cur = info ? info.fromId : null;
+    }
+
+    console.log('[nav.js] DijkstraUnweighted: path reconstructed with', path.length, 'steps');
     return { path: path, totalDistance: dist[endId] };
   }
 
@@ -236,8 +411,34 @@
       return;
     }
 
+    console.log('[nav.js] Starting navigation from', currentId, 'to', destId);
+    console.log('[nav.js] Current node exists in graph:', !!graph[currentId]);
+    console.log('[nav.js] Destination exists in graph:', !!graph[destId]);
+    console.log('[nav.js] Graph nodes:', Object.keys(graph).length);
+
+    // Single Dijkstra run with built-in ROAD prioritization
     var route = dijkstra(currentId, destId);
+
+    console.log('[nav.js] Route found:', !!route);
+    if (route) {
+      console.log('[nav.js] Route path length:', route.path.length);
+      console.log('[nav.js] Route path:', route.path.map(p => p.nodeId + ' (' + p.title + ')'));
+    }
+
+    // If no path found with ROAD priority, try without any weighting
     if (!route || route.path.length < 2) {
+      console.log('[nav.js] ROAD-weighted path failed, trying unweighted...');
+      route = dijkstraUnweighted(currentId, destId);
+      
+      console.log('[nav.js] Unweighted route found:', !!route);
+      if (route) {
+        console.log('[nav.js] Unweighted route path length:', route.path.length);
+        console.log('[nav.js] Unweighted route path:', route.path.map(p => p.nodeId + ' (' + p.title + ')'));
+      }
+    }
+
+    if (!route || route.path.length < 2) {
+      console.warn('[nav.js] No path found from', currentId, 'to', destId, 'even without weighting');
       showToast('No path found. Try navigating closer first.', 3000, null);
       return;
     }
@@ -907,6 +1108,7 @@
   function rerouteFrom(fromNodeId) {
     if (!activeRoute) return;
     var destId   = activeRoute.path[activeRoute.path.length - 1].nodeId;
+    // Single Dijkstra run with built-in ROAD prioritization
     var newRoute = dijkstra(fromNodeId, destId);
     if (!newRoute || newRoute.path.length < 2) {
       showToast('No path from here. Navigate manually.', 3000, null);
@@ -946,11 +1148,15 @@
   var searchIndex = [];   // { label, nodeId, cat }
 
   function buildSearchIndex() {
+    console.log('[nav.js] Building search index...');
+    
     var SKIP = { 'location': 1, 'road': 1, 'all': 1 };
 
     Object.keys(nodes).forEach(function (id) {
       var n = nodes[id];
       if (!n.isLocation) return;
+
+      console.log('[nav.js] Adding to search:', id, n.title, 'tags:', n.tags.join(','));
 
       var cat = n.tags.find(function (t) {
         var tl = t.toLowerCase();
@@ -980,9 +1186,12 @@
         if (seen[key]) return;
         seen[key] = true;
         searchIndex.push({ label: label, nodeId: id, cat: cat || null });
+        console.log('[nav.js] Added search entry:', label, '->', id);
       });
     });
 
+    console.log('[nav.js] Search index built with', searchIndex.length, 'entries');
+    
     // Sort the whole index alphabetically once
     searchIndex.sort(function (a, b) { return a.label.localeCompare(b.label); });
   }

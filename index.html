@@ -36,9 +36,9 @@
 	</head>
 	<body>
 <!-- - - - - - - 8<- - - - - - cut here - - - - - 8<- - - - - - - -->
-		<script type="text/javascript" src="pano2vr_player.js?ts=51710039">
+		<script type="text/javascript" src="pano2vr_player.js?ts=81890874">
 		</script>
-		<script type="text/javascript" src="skin.js?ts=51710039">
+		<script type="text/javascript" src="skin.js?ts=81890874">
 		</script>
 		<div id="container" style="width:100%;height:100%;overflow:hidden;">
 		<br>Loading...<br><br>
@@ -89,12 +89,12 @@
 			pano=new pano2vrPlayer("container");
 			pano.startNode = startNode;
 			pano.startView = startView;
-			pano.setQueryParameter("ts=51710039")
+			pano.setQueryParameter("ts=81890874")
 			// add the skin object
 			skin=new pano2vrSkin(pano);
 			// load the configuration
 			window.addEventListener("load", function() {
-				pano.readConfigUrlAsync("pano.xml?ts=51710039");
+				pano.readConfigUrlAsync("pano.xml?ts=81890874");
 			});
 			if (window.navigator.userAgent.match(/Safari/i)) {
 				// fix for white borders, rotation on iPhone
@@ -125,8 +125,6 @@
 		<noscript>
 			<p><b>Please enable Javascript!</b></p>
 		</noscript>
-		<!-- In-panorama navigation — re-add after every Pano2VR re-export -->
-		<script type="text/javascript" src="nav.js?ts=51710039"></script>
 <!-- - - - - - - 8<- - - - - - cut here - - - - - 8<- - - - - - - -->
 	</body>
 </html>
