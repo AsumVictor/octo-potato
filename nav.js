@@ -29,18 +29,24 @@
   var activeRoute = null;   // Route | null — only set while navigating
   var stepIndex   = 0;      // index into activeRoute.path for CURRENT position
   var navActive   = false;  // master flag — canvas draws nothing when false
+  var navMode     = 'manual'; // manual or live
+  var liveStatus  = 'off';
   var overlayCanvas = null;
   var autoRafId   = null;
   var idleTimer   = null;
   var autoRotateDone = false;
   var activeToast = null;
   var lastCamPan  = null;   // previous frame camera pan — used for wrong-direction detection
+  var appLoadingOverlay = null;
+  var navReady = false;
 
   // ─────────────────────────────────────────────────────────────────────────────
   // Boot: wait for player + configloaded, then initialise
   // ─────────────────────────────────────────────────────────────────────────────
 
   window.addEventListener('load', function () {
+    createLoadingOverlay();
+    showLoadingOverlay('Waiting for panorama player...');
     waitForPlayer(function () {
       pano.addListener('configloaded', function () {
         initNav();
@@ -53,8 +59,165 @@
     setTimeout(function () { waitForPlayer(cb); }, 50);
   }
 
+  function showLoadingOverlay(message) {
+    if (!appLoadingOverlay) return;
+    var status = appLoadingOverlay.querySelector('#nav-loading-status');
+    if (status) status.textContent = message || 'Loading tour...';
+    appLoadingOverlay.classList.add('active');
+    disableNavUI(true);
+  }
+
+  function hideLoadingOverlay() {
+    if (!appLoadingOverlay) return;
+    appLoadingOverlay.classList.remove('active');
+    disableNavUI(false);
+  }
+
+  function setLoadingOverlayMessage(message) {
+    if (!appLoadingOverlay) return;
+    var status = appLoadingOverlay.querySelector('#nav-loading-status');
+    if (status) status.textContent = message;
+  }
+
+  function disableNavUI(disabled) {
+    var btn = document.getElementById('nav-open-btn');
+    if (!btn) return;
+    btn.disabled = !!disabled;
+    btn.style.pointerEvents = disabled ? 'none' : 'auto';
+    btn.style.opacity = disabled ? '0.3' : '1';
+  }
+
+  function createLoadingOverlay() {
+    if (appLoadingOverlay) return;
+    var body = document.body || document.getElementsByTagName('body')[0];
+    if (!body) return;
+    var overlay = document.createElement('div');
+    overlay.id = 'nav-loading-overlay';
+    overlay.className = 'nav-loading-overlay';
+    overlay.innerHTML =
+      '<div class="nav-loading-box">' +
+        '<div class="nav-loading-spinner"></div>' +
+        '<div class="nav-loading-title">Preparing the tour</div>' +
+        '<div id="nav-loading-status" class="nav-loading-status">Loading navigation data...</div>' +
+      '</div>';
+    body.appendChild(overlay);
+    appLoadingOverlay = overlay;
+  }
+
+  function waitForPanoramaReady() {
+    return new Promise(function (resolve) {
+      var finished = false;
+      function done() {
+        if (finished) return;
+        finished = true;
+        resolve();
+      }
+
+      setTimeout(function () {
+        console.log('[nav.js] Initial panorama ready timeout expired');
+        done();
+      }, 1800);
+
+      if (pano && typeof pano.addListener === 'function') {
+        pano.addListener('changenode', function () {
+          console.log('[nav.js] Initial panorama ready via changenode event');
+          done();
+        });
+      }
+    });
+  }
+
+  function preloadAllNodeImages(doc) {
+    var urls = collectAllNodeImageUrls(doc);
+    if (!urls.length) {
+      console.log('[nav.js] No image URLs found for preload');
+      return Promise.resolve();
+    }
+
+    console.log('[nav.js] Preloading', urls.length, 'node images');
+    var loaded = 0;
+    setLoadingOverlayMessage('Preloading images 0/' + urls.length);
+
+    return new Promise(function (resolve) {
+      var concurrency = 12;
+      var index = 0;
+      var active = 0;
+
+      function next() {
+        if (index >= urls.length && active === 0) {
+          resolve();
+          return;
+        }
+
+        while (active < concurrency && index < urls.length) {
+          let url = urls[index++];
+          active += 1;
+          loadImage(url).then(function () {
+            loaded += 1;
+            setLoadingOverlayMessage('Preloading images ' + loaded + '/' + urls.length);
+          }).catch(function (err) {
+            loaded += 1;
+            setLoadingOverlayMessage('Preloading images ' + loaded + '/' + urls.length + ' (some failed)');
+            console.warn('[nav.js] Image preload failed:', url, err);
+          }).finally(function () {
+            active -= 1;
+            next();
+          });
+        }
+      }
+
+      next();
+    });
+  }
+
+  function collectAllNodeImageUrls(doc) {
+    var urls = [];
+    var panos = doc.querySelectorAll('panorama');
+    panos.forEach(function (panorama) {
+      var input = panorama.querySelector('input');
+      if (!input) return;
+
+      var template = input.getAttribute('leveltileurl');
+      if (!template) return;
+
+      var tileSize = parseInt(input.getAttribute('leveltilesize'), 10) || 512;
+      var levels = panorama.querySelectorAll('level');
+      levels.forEach(function (level, levelIndex) {
+        if (level.getAttribute('preload') !== '1') return;
+        var width = parseInt(level.getAttribute('width'), 10) || 0;
+        var tileCount = Math.max(1, Math.ceil(width / tileSize));
+        for (var c = 0; c < 6; c++) {
+          for (var x = 0; x < tileCount; x++) {
+            for (var y = 0; y < tileCount; y++) {
+              var url = template
+                .replace(/%c/g, c)
+                .replace(/%l/g, levelIndex)
+                .replace(/%x/g, x)
+                .replace(/%y/g, y);
+              urls.push(url);
+            }
+          }
+        }
+      });
+    });
+    // Keep only unique URLs
+    return urls.filter(function (value, index) {
+      return urls.indexOf(value) === index;
+    });
+  }
+
+  function loadImage(url) {
+    return new Promise(function (resolve, reject) {
+      var img = new Image();
+      img.onload = function () { resolve(url); };
+      img.onerror = function (err) { reject(err || new Error('Image failed to load')); };
+      img.src = url;
+    });
+  }
+
   function initNav() {
-    fetch('pano.xml?ts=81265970')
+    showLoadingOverlay('Loading tour data...');
+    fetch('pano.xml?ts=81890874')
       .then(function (r) { return r.text(); })
       .then(function (xmlText) {
         var doc = new DOMParser().parseFromString(xmlText, 'application/xml');
@@ -66,9 +229,19 @@
         createOverlayCanvas();
         bindPlayerEvents();
         startRenderLoop();
+        initLiveLocationModule();
+
+        setLoadingOverlayMessage('Preloading node images...');
+        Promise.all([ waitForPanoramaReady(), preloadAllNodeImages(doc) ])
+          .then(function () {
+            navReady = true;
+            hideLoadingOverlay();
+            console.log('[nav.js] Navigation ready');
+          });
       })
       .catch(function (err) {
         console.warn('[nav.js] Failed to load pano.xml:', err);
+        setLoadingOverlayMessage('Failed to load tour data.');
       });
   }
 
@@ -83,6 +256,11 @@
     panos.forEach(function (panorama) {
       var ud = panorama.querySelector('userdata');
       if (!ud) return;
+
+      var startView = panorama.querySelector('view start');
+      var startPan  = startView ? parseFloat(startView.getAttribute('pan'))  || 0 : 0;
+      var startTilt = startView ? parseFloat(startView.getAttribute('tilt')) || 0 : 0;
+      var startFov  = startView ? parseFloat(startView.getAttribute('fov'))  || 100 : 100;
 
       var id      = panorama.getAttribute('id');
       var rawTags = ud.getAttribute('tags') || '';
@@ -108,6 +286,9 @@
         title:      ud.getAttribute('title') || id,
         lat:        parseFloat(ud.getAttribute('latitude')),
         lng:        parseFloat(ud.getAttribute('longitude')),
+        startPan:   startPan,
+        startTilt:  startTilt,
+        startFov:   startFov,
         tags:       tags,
         isRoad:     tags.indexOf('ROAD')     !== -1,
         isLocation: tags.indexOf('Location') !== -1,
@@ -404,7 +585,16 @@
   // ─────────────────────────────────────────────────────────────────────────────
 
   function startNavigation(destId) {
+    if (!navReady) {
+      showToast('Please wait while the panorama finishes loading.', 2500, null);
+      return;
+    }
+
     var currentId = pano.getCurrentNode();
+    if (navMode === 'live' && window.LiveLocation && LiveLocation.getLiveNodeId()) {
+      currentId = LiveLocation.getLiveNodeId();
+      console.log('[nav.js] Live mode route origin from GPS node', currentId);
+    }
 
     if (currentId === destId) {
       showToast('You are already here!', 2500, null);
@@ -448,6 +638,10 @@
     navActive   = true;
     autoRotateDone = false;
 
+    if (window.LiveLocation && LiveLocation.setRoute) {
+      LiveLocation.setRoute(activeRoute, stepIndex);
+    }
+
     closeSearchPanel();
     updateHUD();
     pano.stopAutorotate();
@@ -467,6 +661,10 @@
     navActive      = false;
     autoRotateDone = false;
     lastCamPan     = null;
+
+    if (window.LiveLocation && LiveLocation.clearRoute) {
+      LiveLocation.clearRoute();
+    }
 
     if (autoRafId)  { cancelAnimationFrame(autoRafId); autoRafId = null; }
     if (idleTimer)  { clearTimeout(idleTimer); idleTimer = null; }
@@ -1118,9 +1316,62 @@
     activeRoute    = newRoute;
     stepIndex      = 0;
     autoRotateDone = false;
+
+    if (window.LiveLocation && LiveLocation.setRoute) {
+      LiveLocation.setRoute(activeRoute, stepIndex);
+    }
+
     updateHUD();
     var nextStep = newRoute.path[1];
     if (nextStep) autoRotateTo(nextStep.pan, nextStep.tilt);
+  }
+
+  function initLiveLocationModule() {
+    if (!window.LiveLocation) return;
+    LiveLocation.init({
+      nodes: Object.keys(nodes).map(function (id) { return nodes[id]; }),
+      onStatus: handleLiveStatusUpdate,
+      onNodeChange: handleLiveNodeChange,
+      onRouteAdvance: handleLiveRouteAdvance,
+      onError: handleLiveLocationError
+    });
+  }
+
+  function handleLiveStatusUpdate(status) {
+    liveStatus = status;
+    var statusEl = document.getElementById('nav-mode-status');
+    if (statusEl) {
+      var label = status === 'watching' ? 'Tracking' :
+                  status === 'searching' ? 'Searching GPS' :
+                  status === 'denied' ? 'GPS denied' :
+                  status === 'unsupported' ? 'GPS unavailable' :
+                  status === 'error' ? 'GPS error' :
+                  status === 'off' ? 'Live GPS off' :
+                  status;
+      statusEl.textContent = 'Live mode: ' + label;
+    }
+  }
+
+  function handleLiveNodeChange(nodeId, node, distance) {
+    if (!nodeId) return;
+    showToast('GPS mapped to ' + node.title + ' (' + Math.round(distance) + 'm)', 2200, null);
+    if (navMode !== 'live') return;
+    if (pano.getCurrentNode() === nodeId) return;
+    if (node.startPan == null || node.startTilt == null) return;
+    pano.openNext('{' + nodeId + '}', { pan: node.startPan, tilt: node.startTilt, fov: node.startFov });
+  }
+
+  function handleLiveRouteAdvance(nodeId, node, distance) {
+    if (!activeRoute) return;
+    var advanced = advanceStep(nodeId);
+    if (!advanced) {
+      console.log('[nav.js] Live route advance candidate not on expected next step:', nodeId);
+    }
+  }
+
+  function handleLiveLocationError(err) {
+    if (!err) return;
+    showToast('GPS error: ' + (err.message || 'Unable to get location'), 3200, null);
   }
 
   // ─────────────────────────────────────────────────────────────────────────────
@@ -1477,6 +1728,56 @@
       '  padding: 2px 4px;',
       '}',
       '#nav-search-close:hover { color: white; }',
+
+      '#nav-loading-overlay {',
+      '  position: fixed;',
+      '  inset: 0;',
+      '  z-index: 10000;',
+      '  display: flex;',
+      '  align-items: center;',
+      '  justify-content: center;',
+      '  background: rgba(0,0,0,0.78);',
+      '  opacity: 0;',
+      '  pointer-events: none;',
+      '  transition: opacity 0.25s ease;',
+      '}',
+      '#nav-loading-overlay.active {',
+      '  opacity: 1;',
+      '  pointer-events: auto;',
+      '}',
+      '.nav-loading-box {',
+      '  width: min(320px, calc(100% - 40px));',
+      '  padding: 24px 24px 22px;',
+      '  border-radius: 18px;',
+      '  background: rgba(12,14,18,0.96);',
+      '  box-shadow: 0 18px 36px rgba(0,0,0,0.45);',
+      '  text-align: center;',
+      '  color: white;',
+      '  font-family: Montserrat, Arial, sans-serif;',
+      '}',
+      '.nav-loading-spinner {',
+      '  width: 42px;',
+      '  height: 42px;',
+      '  border-radius: 50%;',
+      '  border: 4px solid rgba(255,255,255,0.12);',
+      '  border-top-color: #4FB5C2;',
+      '  margin: 0 auto 16px;',
+      '  animation: nav-loading-spin 1s linear infinite;',
+      '}',
+      '.nav-loading-title {',
+      '  font-size: 16px;',
+      '  font-weight: 700;',
+      '  margin-bottom: 8px;',
+      '}',
+      '.nav-loading-status {',
+      '  font-size: 13px;',
+      '  color: rgba(255,255,255,0.78);',
+      '  line-height: 1.5;',
+      '}',
+      '@keyframes nav-loading-spin {',
+      '  0%   { transform: rotate(0deg); }',
+      '  100% { transform: rotate(360deg); }',
+      '}',
       '#nav-search-results {',
       '  list-style: none;',
       '  margin: 0;',
