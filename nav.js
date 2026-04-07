@@ -21,26 +21,34 @@
   'use strict';
 
   // ─────────────────────────────────────────────────────────────────────────────
-  // State
+  // MODULE: STATE MANAGEMENT
   // ─────────────────────────────────────────────────────────────────────────────
 
+  var NODE_SELECT_RADIUS = 50;      // meters
+  var MAX_ACCEPTABLE_ACCURACY = 40; // meters
   var nodes       = {};     // nodeId → NodeData
-  var graph       = {};     // nodeId → Edge[]
+  var graph       = {};     // nodeId → Edge[] — includes all nodes, ROAD edges prioritized
   var activeRoute = null;   // Route | null — only set while navigating
   var stepIndex   = 0;      // index into activeRoute.path for CURRENT position
   var navActive   = false;  // master flag — canvas draws nothing when false
+  var navMode     = 'manual'; // manual or live
+  var liveStatus  = 'off';
   var overlayCanvas = null;
   var autoRafId   = null;
   var idleTimer   = null;
   var autoRotateDone = false;
   var activeToast = null;
   var lastCamPan  = null;   // previous frame camera pan — used for wrong-direction detection
+  var appLoadingOverlay = null;
+  var navReady = false;
 
   // ─────────────────────────────────────────────────────────────────────────────
-  // Boot: wait for player + configloaded, then initialise
+  // MODULE: INITIALIZATION
   // ─────────────────────────────────────────────────────────────────────────────
 
   window.addEventListener('load', function () {
+    createLoadingOverlay();
+    showLoadingOverlay('Waiting for panorama player...');
     waitForPlayer(function () {
       pano.addListener('configloaded', function () {
         initNav();
@@ -53,23 +61,293 @@
     setTimeout(function () { waitForPlayer(cb); }, 50);
   }
 
+  // ─────────────────────────────────────────────────────────────────────────────
+  // MODULE: LOADING OVERLAY
+  // ─────────────────────────────────────────────────────────────────────────────
+
+  function showLoadingOverlay(message) {
+    if (!appLoadingOverlay) return;
+    var status = appLoadingOverlay.querySelector('#nav-loading-status');
+    if (status) status.textContent = message || 'Loading tour...';
+    appLoadingOverlay.classList.add('active');
+    disableNavUI(true);
+  }
+
+  function hideLoadingOverlay() {
+    if (!appLoadingOverlay) return;
+    appLoadingOverlay.classList.remove('active');
+    disableNavUI(false);
+  }
+
+  function setLoadingOverlayMessage(message) {
+    if (!appLoadingOverlay) return;
+    var status = appLoadingOverlay.querySelector('#nav-loading-status');
+    if (status) status.textContent = message;
+  }
+
+  function disableNavUI(disabled) {
+    var btn = document.getElementById('nav-open-btn');
+    if (!btn) return;
+    btn.disabled = !!disabled;
+    btn.style.pointerEvents = disabled ? 'none' : 'auto';
+    btn.style.opacity = disabled ? '0.3' : '1';
+  }
+
+  function createLoadingOverlay() {
+    if (appLoadingOverlay) return;
+    var body = document.body || document.getElementsByTagName('body')[0];
+    if (!body) return;
+    var overlay = document.createElement('div');
+    overlay.id = 'nav-loading-overlay';
+    overlay.className = 'nav-loading-overlay';
+    overlay.innerHTML =
+      '<div class="nav-loading-box">' +
+        '<div class="nav-loading-spinner"></div>' +
+        '<div class="nav-loading-title">Preparing the tour</div>' +
+        '<div id="nav-loading-status" class="nav-loading-status">Loading navigation data...</div>' +
+      '</div>';
+    body.appendChild(overlay);
+    appLoadingOverlay = overlay;
+  }
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // MODULE: PANORAMA READY WAITING
+  // ─────────────────────────────────────────────────────────────────────────────
+
+  function waitForPanoramaReady() {
+    return new Promise(function (resolve) {
+      var finished = false;
+      function done() {
+        if (finished) return;
+        finished = true;
+        resolve();
+      }
+
+      setTimeout(function () {
+        console.log('[nav.js] Initial panorama ready timeout expired');
+        done();
+      }, 1800);
+
+      if (pano && typeof pano.addListener === 'function') {
+        pano.addListener('changenode', function () {
+          console.log('[nav.js] Initial panorama ready via changenode event');
+          done();
+        });
+      }
+    });
+  }
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // MODULE: IMAGE PRELOADING
+  // ─────────────────────────────────────────────────────────────────────────────
+
+  function preloadAllNodeImages(doc) {
+    var urls = collectAllNodeImageUrls(doc);
+    if (!urls.length) {
+      console.log('[nav.js] No image URLs found for preload');
+      return Promise.resolve();
+    }
+
+    console.log('[nav.js] Preloading', urls.length, 'node images');
+    var loaded = 0;
+    setLoadingOverlayMessage('Preloading images 0/' + urls.length);
+
+    return new Promise(function (resolve) {
+      var concurrency = 12;
+      var index = 0;
+      var active = 0;
+
+      function next() {
+        if (index >= urls.length && active === 0) {
+          resolve();
+          return;
+        }
+
+        while (active < concurrency && index < urls.length) {
+          let url = urls[index++];
+          active += 1;
+          loadImage(url).then(function () {
+            loaded += 1;
+            setLoadingOverlayMessage('Preloading images ' + loaded + '/' + urls.length);
+          }).catch(function (err) {
+            loaded += 1;
+            setLoadingOverlayMessage('Preloading images ' + loaded + '/' + urls.length + ' (some failed)');
+            console.warn('[nav.js] Image preload failed:', url, err);
+          }).finally(function () {
+            active -= 1;
+            next();
+          });
+        }
+      }
+
+      next();
+    });
+  }
+
+  function collectAllNodeImageUrls(doc) {
+    var urls = [];
+    var panos = doc.querySelectorAll('panorama');
+    forEachNode(panos, function (panorama) {
+      var input = panorama.querySelector('input');
+      if (!input) return;
+
+      var template = input.getAttribute('leveltileurl');
+      if (!template) return;
+
+      var tileSize = parseInt(input.getAttribute('leveltilesize'), 10) || 512;
+      var levels = panorama.querySelectorAll('level');
+      forEachNode(levels, function (level, levelIndex) {
+        if (level.getAttribute('preload') !== '1') return;
+        var width = parseInt(level.getAttribute('width'), 10) || 0;
+        var tileCount = Math.max(1, Math.ceil(width / tileSize));
+        for (var c = 0; c < 6; c++) {
+          for (var x = 0; x < tileCount; x++) {
+            for (var y = 0; y < tileCount; y++) {
+              var url = template
+                .replace(/%c/g, c)
+                .replace(/%l/g, levelIndex)
+                .replace(/%x/g, x)
+                .replace(/%y/g, y);
+              urls.push(url);
+            }
+          }
+        }
+      });
+    });
+    // Keep only unique URLs
+    return urls.filter(function (value, index) {
+      return urls.indexOf(value) === index;
+    });
+  }
+
+  function loadImage(url) {
+    return new Promise(function (resolve, reject) {
+      var img = new Image();
+      img.onload = function () { resolve(url); };
+      img.onerror = function (err) { reject(err || new Error('Image failed to load')); };
+      img.src = url;
+    });
+  }
+
   function initNav() {
-    fetch('pano.xml?ts=51710039')
-      .then(function (r) { return r.text(); })
-      .then(function (xmlText) {
-        var doc = new DOMParser().parseFromString(xmlText, 'application/xml');
+    console.log('[nav.js] initNav: Starting navigation initialization');
+    showLoadingOverlay('Loading tour data...');
+    loadXML(resolveNavUrl('pano.xml'))
+      .then(function (doc) {
+        console.log('[nav.js] initNav: pano.xml loaded successfully');
         nodes = parseNodes(doc);
-        graph = buildGraph(nodes);
+        console.log('[nav.js] initNav: Parsed nodes:', Object.keys(nodes).length);
+        graph = buildGraph(nodes);  // Single graph with ROAD priority built-in
         buildSearchIndex();
+        console.log('[nav.js] initNav: Search index built with', searchIndex.length, 'entries');
         injectStyles();
         injectUI();
         createOverlayCanvas();
         bindPlayerEvents();
         startRenderLoop();
+        initLiveLocationModule();
+
+        setLoadingOverlayMessage('Preloading node images...');
+        Promise.all([ waitForPanoramaReady(), preloadAllNodeImages(doc) ])
+          .then(function () {
+            navReady = true;
+            hideLoadingOverlay();
+            console.log('[nav.js] Navigation ready');
+          });
       })
       .catch(function (err) {
-        console.warn('[nav.js] Failed to load pano.xml:', err);
+        console.error('[nav.js] initNav: Failed to load pano.xml:', err);
+        setLoadingOverlayMessage('Failed to load tour data. ' + (err && err.message ? err.message : 'See console.'));
       });
+  }
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // MODULE: XML LOADING AND PARSING
+  // ─────────────────────────────────────────────────────────────────────────────
+
+  function forEachNode(nodeList, fn) {
+    if (!nodeList) return;
+    if (typeof nodeList.forEach === 'function') {
+      nodeList.forEach(fn);
+      return;
+    }
+    for (var i = 0; i < nodeList.length; i++) {
+      fn(nodeList[i], i, nodeList);
+    }
+  }
+
+  function loadXML(url) {
+    console.log('[nav.js] loadXML: Attempting to load', url);
+    if (window.fetch) {
+      return fetch(url)
+        .then(function (response) {
+          console.log('[nav.js] loadXML: fetch response status:', response.status);
+          if (!response.ok) {
+            throw new Error('HTTP ' + response.status + ': ' + response.statusText);
+          }
+          return response.text();
+        })
+        .then(function (text) {
+          console.log('[nav.js] loadXML: fetch text length:', text.length);
+          var doc = new DOMParser().parseFromString(text, 'application/xml');
+          if (doc.querySelector('parsererror')) {
+            throw new Error('XML parse error while loading ' + url);
+          }
+          console.log('[nav.js] loadXML: XML parsed successfully');
+          return doc;
+        })
+        .catch(function (err) {
+          console.warn('[nav.js] loadXML: fetch failed, retrying with XHR:', err);
+          return loadXMLFallback(url);
+        });
+    }
+    return loadXMLFallback(url);
+  }
+
+  function getCurrentScriptQuery() {
+    if (!document || !document.getElementsByTagName) return '';
+    var scripts = document.getElementsByTagName('script');
+    for (var i = 0; i < scripts.length; i++) {
+      var src = scripts[i].src || '';
+      if (src.indexOf('nav.js') !== -1) {
+        var q = src.indexOf('?');
+        return q !== -1 ? src.slice(q) : '';
+      }
+    }
+    return '';
+  }
+
+  function resolveNavUrl(url) {
+    var query = getCurrentScriptQuery();
+    return query ? url + query : url;
+  }
+
+  function loadXMLFallback(url) {
+    console.log('[nav.js] loadXMLFallback: Using XHR for', url);
+    return new Promise(function (resolve, reject) {
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', url, true);
+      xhr.overrideMimeType('text/xml');
+      xhr.onload = function () {
+        console.log('[nav.js] loadXMLFallback: XHR onload, status:', xhr.status, 'readyState:', xhr.readyState);
+        if ((xhr.status >= 200 && xhr.status < 300) || (xhr.status === 0 && (xhr.responseXML || xhr.responseText))) {
+          var doc = xhr.responseXML || new DOMParser().parseFromString(xhr.responseText, 'application/xml');
+          if (doc.querySelector('parsererror')) {
+            reject(new Error('XML parse error while loading ' + url));
+            return;
+          }
+          console.log('[nav.js] loadXMLFallback: XML parsed successfully');
+          resolve(doc);
+        } else {
+          reject(new Error('XHR ' + xhr.status + ': ' + xhr.statusText));
+        }
+      };
+      xhr.onerror = function () {
+        console.error('[nav.js] loadXMLFallback: XHR network error for', url);
+        reject(new Error('XHR network error while loading ' + url));
+      };
+      xhr.send();
+    });
   }
 
   // ─────────────────────────────────────────────────────────────────────────────
@@ -77,19 +355,29 @@
   // ─────────────────────────────────────────────────────────────────────────────
 
   function parseNodes(doc) {
+    console.log('[nav.js] parseNodes: Starting to parse XML document');
     var result = {};
     var panos  = doc.querySelectorAll('panorama');
+    console.log('[nav.js] parseNodes: Found', panos.length, 'panorama elements');
 
-    panos.forEach(function (panorama) {
+    forEachNode(panos, function (panorama) {
       var ud = panorama.querySelector('userdata');
-      if (!ud) return;
+      if (!ud) {
+        console.warn('[nav.js] parseNodes: Panorama missing userdata');
+        return;
+      }
+
+      var startView = panorama.querySelector('view start');
+      var startPan  = startView ? parseFloat(startView.getAttribute('pan'))  || 0 : 0;
+      var startTilt = startView ? parseFloat(startView.getAttribute('tilt')) || 0 : 0;
+      var startFov  = startView ? parseFloat(startView.getAttribute('fov'))  || 100 : 100;
 
       var id      = panorama.getAttribute('id');
       var rawTags = ud.getAttribute('tags') || '';
       var tags    = rawTags.split('|').map(function (t) { return t.trim(); }).filter(Boolean);
 
       var hotspots = [];
-      panorama.querySelectorAll('hotspot').forEach(function (hs) {
+      forEachNode(panorama.querySelectorAll('hotspot'), function (hs) {
         var url      = hs.getAttribute('url') || '';
         var targetId = url.replace(/[{}]/g, '');   // "{node10}" → "node10"
         if (!targetId) return;
@@ -108,6 +396,9 @@
         title:      ud.getAttribute('title') || id,
         lat:        parseFloat(ud.getAttribute('latitude')),
         lng:        parseFloat(ud.getAttribute('longitude')),
+        startPan:   startPan,
+        startTilt:  startTilt,
+        startFov:   startFov,
         tags:       tags,
         isRoad:     tags.indexOf('ROAD')     !== -1,
         isLocation: tags.indexOf('Location') !== -1,
@@ -115,39 +406,113 @@
       };
     });
 
+    console.log('[nav.js] parseNodes: Parsed', Object.keys(result).length, 'nodes');
     return result;
   }
 
   // ─────────────────────────────────────────────────────────────────────────────
-  // Graph — adjacency list of ROAD-only nodes
+  // Graph — includes ALL nodes and ALL edges
+  // ROAD edges get priority through lower distance weights in Dijkstra
+  // ─────────────────────────────────────────────────────────────────────────────
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // MODULE: GRAPH BUILDING
   // ─────────────────────────────────────────────────────────────────────────────
 
   function buildGraph(nodeMap) {
     var g = {};
+    console.log('[nav.js] Building graph with', Object.keys(nodeMap).length, 'nodes');
 
     Object.keys(nodeMap).forEach(function (id) {
       var node = nodeMap[id];
-      if (!node.isRoad) return;
       g[id] = [];
+
+      console.log('[nav.js] Building edges for node', id, '(' + node.title + '), isRoad:', node.isRoad);
 
       node.hotspots.forEach(function (hs) {
         var neighbor = nodeMap[hs.targetId];
-        if (!neighbor || !neighbor.isRoad) return;
+        if (!neighbor) {
+          console.warn('[nav.js] Hotspot', hs.id, 'references unknown node', hs.targetId);
+          return;
+        }
+
         var dist = hs.distance > 0 ? hs.distance : haversine(
           node.lat, node.lng, neighbor.lat, neighbor.lng
         );
+
+        // ROAD edges get priority by reducing their distance weight
+        // This makes Dijkstra prefer ROAD paths while still allowing non-ROAD
+        var priorityWeight = neighbor.isRoad ? 0.1 : 1.0;  // ROAD edges are 90% cheaper (very strong preference)
+        var weightedDist = dist * priorityWeight;
+
+        console.log('[nav.js] Adding edge', id, '->', hs.targetId, 'distance:', dist.toFixed(1), 'weighted:', weightedDist.toFixed(1), 'isRoad:', neighbor.isRoad);
+
         g[id].push({
           neighborId: hs.targetId,
           pan:        hs.pan,
           tilt:       hs.tilt,
           hotspotId:  hs.id,
           title:      hs.title,
-          distance:   dist
+          distance:   weightedDist,  // Use weighted distance for priority
+          rawDistance: dist         // Keep original for display
         });
       });
+
+      console.log('[nav.js] Node', id, 'has', g[id].length, 'edges');
     });
 
+    console.log('[nav.js] Graph built with', Object.keys(g).length, 'nodes');
+    
+    // Debug: check if key nodes are in the graph
+    var keyNodes = ['node9', 'node61', 'node60', 'node59'];
+    keyNodes.forEach(function (nodeId) {
+      if (g[nodeId]) {
+        console.log('[nav.js] Node', nodeId, 'has', g[nodeId].length, 'edges');
+      } else {
+        console.warn('[nav.js] Node', nodeId, 'is missing from graph!');
+      }
+    });
+    
+    // Debug: check graph connectivity
+    checkGraphConnectivity(g);
+    
     return g;
+  }
+
+  function checkGraphConnectivity(graph) {
+    console.log('[nav.js] Checking graph connectivity...');
+    
+    // Find all nodes reachable from node9 (Todd Library)
+    var visited = {};
+    var queue = ['node9'];
+    visited['node9'] = true;
+    
+    while (queue.length > 0) {
+      var current = queue.shift();
+      var edges = graph[current] || [];
+      
+      edges.forEach(function (edge) {
+        if (!visited[edge.neighborId]) {
+          visited[edge.neighborId] = true;
+          queue.push(edge.neighborId);
+        }
+      });
+    }
+    
+    var reachableCount = Object.keys(visited).length;
+    var totalCount = Object.keys(graph).length;
+    
+    console.log('[nav.js] Graph connectivity: ' + reachableCount + '/' + totalCount + ' nodes reachable from node9');
+    
+    // Check if key nodes are reachable
+    var keyNodes = ['node9', 'node61', 'node60', 'node59'];
+    keyNodes.forEach(function (nodeId) {
+      if (visited[nodeId]) {
+        console.log('[nav.js] ✓ Node', nodeId, 'is reachable from node9');
+      } else {
+        console.warn('[nav.js] ✗ Node', nodeId, 'is NOT reachable from node9');
+      }
+    });
   }
 
   function haversine(lat1, lng1, lat2, lng2) {
@@ -161,34 +526,55 @@
   }
 
   // ─────────────────────────────────────────────────────────────────────────────
-  // Dijkstra — finds shortest path through ROAD nodes
+  // Dijkstra — finds shortest path (using specified graph)
+  // ─────────────────────────────────────────────────────────────────────────────
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // MODULE: DIJKSTRA PATHFINDING
   // ─────────────────────────────────────────────────────────────────────────────
 
   function dijkstra(startId, endId) {
+    console.log('[nav.js] Dijkstra: searching from', startId, 'to', endId);
+
     var dist    = {};
     var prev    = {};
     var visited = {};
 
     Object.keys(graph).forEach(function (id) { dist[id] = Infinity; prev[id] = null; });
-    if (dist[startId] === undefined || dist[endId] === undefined) return null;
+    if (dist[startId] === undefined || dist[endId] === undefined) {
+      console.warn('[nav.js] Dijkstra: start or end node not in graph');
+      return null;
+    }
 
     dist[startId] = 0;
     var queue = [{ id: startId, d: 0 }];
+    var iterations = 0;
 
-    while (queue.length > 0) {
+    while (queue.length > 0 && iterations < 1000) {  // Prevent infinite loops
+      iterations++;
       queue.sort(function (a, b) { return a.d - b.d; });
       var curr = queue.shift();
       var u    = curr.id;
 
       if (visited[u]) continue;
       visited[u] = true;
-      if (u === endId) break;
+
+      console.log('[nav.js] Dijkstra: visiting', u, 'distance:', dist[u]);
+
+      if (u === endId) {
+        console.log('[nav.js] Dijkstra: found path to destination!');
+        break;
+      }
 
       var edges = graph[u] || [];
+      console.log('[nav.js] Dijkstra: node', u, 'has', edges.length, 'edges');
+
       for (var ei = 0; ei < edges.length; ei++) {
         var edge = edges[ei];
-        if (visited[edge.neighborId]) continue;
         var newDist = dist[u] + edge.distance;
+
+        console.log('[nav.js] Dijkstra: considering edge', u, '->', edge.neighborId, 'newDist:', newDist, 'current:', dist[edge.neighborId]);
+
         if (newDist < dist[edge.neighborId]) {
           dist[edge.neighborId] = newDist;
           prev[edge.neighborId] = {
@@ -203,7 +589,12 @@
       }
     }
 
-    if (dist[endId] === Infinity) return null;
+    if (dist[endId] === Infinity) {
+      console.warn('[nav.js] Dijkstra: no path found, final distance to end:', dist[endId]);
+      return null;
+    }
+
+    console.log('[nav.js] Dijkstra: reconstructing path...');
 
     // Reconstruct path
     var path = [];
@@ -221,6 +612,90 @@
       cur = info ? info.fromId : null;
     }
 
+    console.log('[nav.js] Dijkstra: path reconstructed with', path.length, 'steps');
+    return { path: path, totalDistance: dist[endId] };
+  }
+
+  function dijkstraUnweighted(startId, endId) {
+    console.log('[nav.js] DijkstraUnweighted: searching from', startId, 'to', endId);
+
+    var dist    = {};
+    var prev    = {};
+    var visited = {};
+
+    Object.keys(graph).forEach(function (id) { dist[id] = Infinity; prev[id] = null; });
+    if (dist[startId] === undefined || dist[endId] === undefined) {
+      console.warn('[nav.js] DijkstraUnweighted: start or end node not in graph');
+      return null;
+    }
+
+    dist[startId] = 0;
+    var queue = [{ id: startId, d: 0 }];
+    var iterations = 0;
+
+    while (queue.length > 0 && iterations < 1000) {  // Prevent infinite loops
+      iterations++;
+      queue.sort(function (a, b) { return a.d - b.d; });
+      var curr = queue.shift();
+      var u    = curr.id;
+
+      if (visited[u]) continue;
+      visited[u] = true;
+
+      console.log('[nav.js] DijkstraUnweighted: visiting', u, 'distance:', dist[u]);
+
+      if (u === endId) {
+        console.log('[nav.js] DijkstraUnweighted: found path to destination!');
+        break;
+      }
+
+      var edges = graph[u] || [];
+      console.log('[nav.js] DijkstraUnweighted: node', u, 'has', edges.length, 'edges');
+
+      for (var ei = 0; ei < edges.length; ei++) {
+        var edge = edges[ei];
+        var newDist = dist[u] + edge.rawDistance;  // Use raw distance without weighting
+
+        console.log('[nav.js] DijkstraUnweighted: considering edge', u, '->', edge.neighborId, 'newDist:', newDist, 'current:', dist[edge.neighborId]);
+
+        if (newDist < dist[edge.neighborId]) {
+          dist[edge.neighborId] = newDist;
+          prev[edge.neighborId] = {
+            fromId:       u,
+            pan:          edge.pan,
+            tilt:         edge.tilt,
+            hotspotId:    edge.hotspotId,
+            hotspotTitle: edge.title
+          };
+          queue.push({ id: edge.neighborId, d: newDist });
+        }
+      }
+    }
+
+    if (dist[endId] === Infinity) {
+      console.warn('[nav.js] DijkstraUnweighted: no path found, final distance to end:', dist[endId]);
+      return null;
+    }
+
+    console.log('[nav.js] DijkstraUnweighted: reconstructing path...');
+
+    // Reconstruct path
+    var path = [];
+    var cur  = endId;
+    while (cur !== null) {
+      var info = prev[cur];
+      path.unshift({
+        nodeId:       cur,
+        title:        nodes[cur] ? nodes[cur].title : cur,
+        pan:          info ? info.pan          : null,
+        tilt:         info ? info.tilt         : null,
+        hotspotId:    info ? info.hotspotId    : null,
+        hotspotTitle: info ? info.hotspotTitle : null
+      });
+      cur = info ? info.fromId : null;
+    }
+
+    console.log('[nav.js] DijkstraUnweighted: path reconstructed with', path.length, 'steps');
     return { path: path, totalDistance: dist[endId] };
   }
 
@@ -228,16 +703,55 @@
   // Navigation Control
   // ─────────────────────────────────────────────────────────────────────────────
 
+  // ─────────────────────────────────────────────────────────────────────────────
+  // MODULE: NAVIGATION CONTROL
+  // ─────────────────────────────────────────────────────────────────────────────
+
   function startNavigation(destId) {
+    if (!navReady) {
+      showToast('Please wait while the panorama finishes loading.', 2500, null);
+      return;
+    }
+
     var currentId = pano.getCurrentNode();
+    if (navMode === 'live' && window.LiveLocation && LiveLocation.getLiveNodeId()) {
+      currentId = LiveLocation.getLiveNodeId();
+      console.log('[nav.js] Live mode route origin from GPS node', currentId);
+    }
 
     if (currentId === destId) {
       showToast('You are already here!', 2500, null);
       return;
     }
 
+    console.log('[nav.js] Starting navigation from', currentId, 'to', destId);
+    console.log('[nav.js] Current node exists in graph:', !!graph[currentId]);
+    console.log('[nav.js] Destination exists in graph:', !!graph[destId]);
+    console.log('[nav.js] Graph nodes:', Object.keys(graph).length);
+
+    // Single Dijkstra run with built-in ROAD prioritization
     var route = dijkstra(currentId, destId);
+
+    console.log('[nav.js] Route found:', !!route);
+    if (route) {
+      console.log('[nav.js] Route path length:', route.path.length);
+      console.log('[nav.js] Route path:', route.path.map(p => p.nodeId + ' (' + p.title + ')'));
+    }
+
+    // If no path found with ROAD priority, try without any weighting
     if (!route || route.path.length < 2) {
+      console.log('[nav.js] ROAD-weighted path failed, trying unweighted...');
+      route = dijkstraUnweighted(currentId, destId);
+      
+      console.log('[nav.js] Unweighted route found:', !!route);
+      if (route) {
+        console.log('[nav.js] Unweighted route path length:', route.path.length);
+        console.log('[nav.js] Unweighted route path:', route.path.map(p => p.nodeId + ' (' + p.title + ')'));
+      }
+    }
+
+    if (!route || route.path.length < 2) {
+      console.warn('[nav.js] No path found from', currentId, 'to', destId, 'even without weighting');
       showToast('No path found. Try navigating closer first.', 3000, null);
       return;
     }
@@ -246,6 +760,10 @@
     stepIndex   = 0;
     navActive   = true;
     autoRotateDone = false;
+
+    if (window.LiveLocation && LiveLocation.setRoute) {
+      LiveLocation.setRoute(activeRoute, stepIndex);
+    }
 
     closeSearchPanel();
     updateHUD();
@@ -266,6 +784,10 @@
     navActive      = false;
     autoRotateDone = false;
     lastCamPan     = null;
+
+    if (window.LiveLocation && LiveLocation.clearRoute) {
+      LiveLocation.clearRoute();
+    }
 
     if (autoRafId)  { cancelAnimationFrame(autoRafId); autoRafId = null; }
     if (idleTimer)  { clearTimeout(idleTimer); idleTimer = null; }
@@ -423,6 +945,10 @@
 
   // ─────────────────────────────────────────────────────────────────────────────
   // Canvas Overlay + Render Loop
+  // ─────────────────────────────────────────────────────────────────────────────
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // MODULE: RENDERING
   // ─────────────────────────────────────────────────────────────────────────────
 
   function createOverlayCanvas() {
@@ -879,6 +1405,7 @@
   // ─────────────────────────────────────────────────────────────────────────────
 
   function bindPlayerEvents() {
+    if (!pano || typeof pano.addListener !== 'function') return;
     pano.addListener('changenode', function () {
       if (!navActive || !activeRoute) return;
       var newId    = pano.getCurrentNode();
@@ -888,6 +1415,7 @@
 
     // Reset idle timer on any user interaction inside the panorama
     var container = document.getElementById('container');
+    if (!container) return;
     ['mousedown', 'touchstart', 'mousemove'].forEach(function (evt) {
       container.addEventListener(evt, function () {
         if (!navActive || !activeRoute || !autoRotateDone) return;
@@ -907,6 +1435,7 @@
   function rerouteFrom(fromNodeId) {
     if (!activeRoute) return;
     var destId   = activeRoute.path[activeRoute.path.length - 1].nodeId;
+    // Single Dijkstra run with built-in ROAD prioritization
     var newRoute = dijkstra(fromNodeId, destId);
     if (!newRoute || newRoute.path.length < 2) {
       showToast('No path from here. Navigate manually.', 3000, null);
@@ -916,19 +1445,243 @@
     activeRoute    = newRoute;
     stepIndex      = 0;
     autoRotateDone = false;
+
+    if (window.LiveLocation && LiveLocation.setRoute) {
+      LiveLocation.setRoute(activeRoute, stepIndex);
+    }
+
     updateHUD();
     var nextStep = newRoute.path[1];
     if (nextStep) autoRotateTo(nextStep.pan, nextStep.tilt);
   }
 
   // ─────────────────────────────────────────────────────────────────────────────
+  // MODULE: LIVE LOCATION
+  // ─────────────────────────────────────────────────────────────────────────────
+
+  function initLiveLocationModule() {
+    if (!window.LiveLocation) return;
+    LiveLocation.init({
+      nodes: Object.keys(nodes).map(function (id) { return nodes[id]; }),
+      onStatus: handleLiveStatusUpdate,
+      onNodeChange: handleLiveNodeChange,
+      onRouteAdvance: handleLiveRouteAdvance,
+      onError: handleLiveLocationError
+    });
+  }
+
+  function handleLiveStatusUpdate(status) {
+    liveStatus = status;
+    var statusEl = document.getElementById('nav-mode-status');
+    if (statusEl) {
+      var label = status === 'watching' ? 'Tracking' :
+                  status === 'searching' ? 'Searching GPS' :
+                  status === 'tracking' ? 'Live tracking active' :
+                  status === 'out_of_coverage' ? 'Out of coverage' :
+                  status === 'denied' ? 'GPS denied' :
+                  status === 'unavailable' ? 'GPS unavailable' :
+                  status === 'unsupported' ? 'GPS unsupported' :
+                  status === 'error' ? 'GPS error' :
+                  status === 'stopped' ? 'Live GPS off' :
+                  status;
+      statusEl.textContent = 'Live mode: ' + label;
+    }
+
+    if (status === 'out_of_coverage') {
+      showToast('You are out of coverage areas to use live location.', 0, null);
+    } else if (status === 'unsupported') {
+      showToast('Live location requires a secure browser environment (HTTPS or localhost).', 0, null);
+    } else if (status === 'unavailable') {
+      showToast('GPS unavailable. Try moving to a location with better signal.', 0, null);
+    } else if (status === 'denied') {
+      showToast('GPS permission denied. Please allow location access.', 0, null);
+    } else if (status === 'error') {
+      showToast('Live GPS error. Check browser location settings.', 0, null);
+    }
+  }
+
+  function handleLiveNodeChange(nodeId, node, distance) {
+    if (!nodeId) return;
+    showToast('GPS mapped to ' + node.title + ' (' + Math.round(distance) + 'm)', 2200, null);
+    if (navMode !== 'live') return;
+    if (pano.getCurrentNode() === nodeId) return;
+    if (node.startPan == null || node.startTilt == null) return;
+    pano.openNext('{' + nodeId + '}', { pan: node.startPan, tilt: node.startTilt, fov: node.startFov });
+  }
+
+  function handleLiveRouteAdvance(nodeId, node, distance) {
+    if (!activeRoute) return;
+    var advanced = advanceStep(nodeId);
+    if (!advanced) {
+      console.log('[nav.js] Live route advance candidate not on expected next step:', nodeId);
+    }
+  }
+
+  function handleLiveLocationError(err) {
+    if (!err) return;
+    showToast('GPS error: ' + (err.message || 'Unable to get location'), 3200, null);
+  }
+
+  function openDetectionModal() {
+    var modal = document.getElementById('nav-detection-modal');
+    if (!modal) return;
+    var statusEl = document.getElementById('nav-detection-status');
+    var closeBtn = document.getElementById('nav-detection-close');
+    if (statusEl) statusEl.textContent = 'Requesting location permission...';
+    if (closeBtn) closeBtn.style.display = 'none';
+    modal.classList.add('active');
+
+    // Start detection
+    detectLocationForLive();
+  }
+
+  function closeDetectionModal() {
+    var modal = document.getElementById('nav-detection-modal');
+    if (modal) modal.classList.remove('active');
+  }
+
+  function detectLocationForLive() {
+    if (!navigator.geolocation) {
+      showDetectionError('Geolocation not supported.');
+      return;
+    }
+
+    var statusEl = document.getElementById('nav-detection-status');
+    if (statusEl) statusEl.textContent = 'Detecting your location...';
+
+    navigator.geolocation.getCurrentPosition(
+      function (position) {
+        var lat = position.coords.latitude;
+        var lng = position.coords.longitude;
+        var accuracy = position.coords.accuracy;
+
+        // Check if near a node
+        var closest = findClosestNodeForDetection(lat, lng);
+        if (closest && closest.distance <= NODE_SELECT_RADIUS && (accuracy <= MAX_ACCEPTABLE_ACCURACY || closest.distance <= accuracy * 1.5 + 10)) {
+          // Near a node, start live mode
+          setNavigationMode('live');
+          if (window.LiveLocation) {
+            LiveLocation.start();
+          }
+          closeDetectionModal();
+          setTimeout(openSearchPanel, 250);
+        } else {
+          showDetectionError('You are not near any mapped location. Please move closer or choose Mechanical mode.');
+        }
+      },
+      function (error) {
+        var msg = 'Unable to get location.';
+        if (error.code === 1) msg = 'Location permission denied.';
+        else if (error.code === 2) msg = 'Location unavailable.';
+        else if (error.code === 3) msg = 'Location request timed out.';
+        showDetectionError(msg);
+      },
+      {
+        enableHighAccuracy: true,
+        timeout: 10000,
+        maximumAge: 0
+      }
+    );
+  }
+
+  function showDetectionError(message) {
+    var statusEl = document.getElementById('nav-detection-status');
+    var closeBtn = document.getElementById('nav-detection-close');
+    if (statusEl) statusEl.textContent = message;
+    if (closeBtn) closeBtn.style.display = 'block';
+  }
+
+  function findClosestNodeForDetection(lat, lng) {
+    var best = null;
+    var knownNodes = Object.keys(nodes).map(function (id) { return nodes[id]; }).filter(function (node) {
+      return node && typeof node.lat === 'number' && typeof node.lng === 'number';
+    });
+    knownNodes.forEach(function (node) {
+      var distance = haversine(lat, lng, node.lat, node.lng);
+      if (best === null || distance < best.distance) {
+        best = { nodeId: node.id, node: node, distance: distance };
+      }
+    });
+    return best;
+  }
+
+  function setNavigationMode(mode) {
+    if (mode !== 'manual' && mode !== 'live') return;
+    if (navMode === mode) return;
+    navMode = mode;
+
+    var manualBtn = document.getElementById('nav-mode-manual');
+    var liveBtn   = document.getElementById('nav-mode-live');
+    if (manualBtn && liveBtn) {
+      manualBtn.classList.toggle('active', mode === 'manual');
+      liveBtn.classList.toggle('active', mode === 'live');
+    }
+
+    if (mode === 'live') {
+      if (!window.LiveLocation || !LiveLocation.isSupported()) {
+        handleLiveStatusUpdate('unsupported');
+        showToast('Live GPS is not supported in this browser/environment.', 3200, null);
+      } else {
+        showToast('Requesting location permission…', 2200, null);
+        LiveLocation.start();
+      }
+    } else {
+      if (window.LiveLocation) {
+        LiveLocation.stop();
+      }
+    }
+
+    handleLiveStatusUpdate(window.LiveLocation ? LiveLocation.getStatus() : 'off');
+    showToast('Navigation mode: ' + (mode === 'live' ? 'Live GPS' : 'Manual'), 2200, null);
+  }
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // MODULE: UI COMPONENTS
+  // ─────────────────────────────────────────────────────────────────────────────
+
+  function openModeChooser() {
+    var chooser = document.getElementById('nav-mode-chooser');
+    if (!chooser) return;
+    chooser.classList.add('active');
+  }
+
+  function closeModeChooser() {
+    var chooser = document.getElementById('nav-mode-chooser');
+    if (!chooser) return;
+    chooser.classList.remove('active');
+  }
+
+  function chooseModeAndOpen(mode) {
+    console.log('[nav.js] chooseModeAndOpen:', mode);
+    setNavigationMode(mode);
+    closeModeChooser();
+    window.requestAnimationFrame(function () {
+      openSearchPanel();
+    });
+  }
+
+  // ─────────────────────────────────────────────────────────────────────────────
   // Search UI
   // ─────────────────────────────────────────────────────────────────────────────
 
+  // ─────────────────────────────────────────────────────────────────────────────
+  // MODULE: SEARCH UI
+  // ─────────────────────────────────────────────────────────────────────────────
+
   function openSearchPanel() {
+    console.log('[nav.js] openSearchPanel');
+    closeModeChooser();
     var panel = document.getElementById('nav-search-panel');
-    if (!panel) return;
-    panel.classList.add('open');
+    if (!panel) {
+      console.warn('[nav.js] openSearchPanel: nav-search-panel not found');
+      return;
+    }
+    panel.style.display = 'block';
+    panel.style.visibility = 'visible';
+    panel.style.pointerEvents = 'auto';
+    window.requestAnimationFrame(function () {
+      panel.classList.add('open');
+    });
     var input = document.getElementById('nav-search-input');
     if (input) { input.value = ''; input.focus(); }
     renderSearchResults('');
@@ -936,7 +1689,11 @@
 
   function closeSearchPanel() {
     var panel = document.getElementById('nav-search-panel');
-    if (panel) panel.classList.remove('open');
+    if (!panel) return;
+    panel.classList.remove('open');
+    panel.style.pointerEvents = 'none';
+    panel.style.visibility = 'hidden';
+    panel.style.display = 'none';
   }
 
   // Build the flat search index once after nodes are parsed.
@@ -946,11 +1703,15 @@
   var searchIndex = [];   // { label, nodeId, cat }
 
   function buildSearchIndex() {
+    console.log('[nav.js] Building search index...');
+    
     var SKIP = { 'location': 1, 'road': 1, 'all': 1 };
 
     Object.keys(nodes).forEach(function (id) {
       var n = nodes[id];
-      if (!n.isLocation) return;
+      if (!n || !n.title || !n.isLocation) return;
+
+      console.log('[nav.js] Adding to search:', id, n.title, 'tags:', n.tags.join(','), 'isLocation:', n.isLocation);
 
       var cat = n.tags.find(function (t) {
         var tl = t.toLowerCase();
@@ -980,9 +1741,12 @@
         if (seen[key]) return;
         seen[key] = true;
         searchIndex.push({ label: label, nodeId: id, cat: cat || null });
+        console.log('[nav.js] Added search entry:', label, '->', id);
       });
     });
 
+    console.log('[nav.js] Search index built with', searchIndex.length, 'entries');
+    
     // Sort the whole index alphabetically once
     searchIndex.sort(function (a, b) { return a.label.localeCompare(b.label); });
   }
@@ -995,6 +1759,8 @@
     var filtered = q
       ? searchIndex.filter(function (e) { return e.label.toLowerCase().indexOf(q) !== -1; })
       : searchIndex;
+
+    console.log('[nav.js] renderSearchResults:', filtered.length, 'results for query:', q);
 
     list.innerHTML = '';
 
@@ -1029,6 +1795,10 @@
 
   // ─────────────────────────────────────────────────────────────────────────────
   // HUD — step counter strip at bottom-left
+  // ─────────────────────────────────────────────────────────────────────────────
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // MODULE: HUD (HEADS-UP DISPLAY)
   // ─────────────────────────────────────────────────────────────────────────────
 
   function updateHUD() {
@@ -1081,6 +1851,10 @@
   // Toast notification
   // ─────────────────────────────────────────────────────────────────────────────
 
+  // ─────────────────────────────────────────────────────────────────────────────
+  // MODULE: TOAST NOTIFICATIONS
+  // ─────────────────────────────────────────────────────────────────────────────
+
   function showToast(msg, duration, actions) {
     if (activeToast) { activeToast.remove(); activeToast = null; }
 
@@ -1120,6 +1894,10 @@
   // Inject HTML — button, search panel, HUD
   // ─────────────────────────────────────────────────────────────────────────────
 
+  // ─────────────────────────────────────────────────────────────────────────────
+  // MODULE: UI INJECTION
+  // ─────────────────────────────────────────────────────────────────────────────
+
   function injectUI() {
     var container = document.getElementById('container');
 
@@ -1133,11 +1911,38 @@
       'stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">' +
       '<polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>';
     btn.addEventListener('click', function () {
-      var p = document.getElementById('nav-search-panel');
-      if (p && p.classList.contains('open')) closeSearchPanel();
-      else openSearchPanel();
+      openModeChooser();
     });
     container.appendChild(btn);
+
+    var overlayRoot = document.body || document.documentElement || container;
+
+    // ── Mode chooser modal ─────────────────────────────────────────────────────
+    var chooser = document.createElement('div');
+    chooser.id = 'nav-mode-chooser';
+    chooser.innerHTML =
+      '<div class="nav-mode-chooser-card">' +
+        '<div class="nav-mode-chooser-title">Choose navigation mode</div>' +
+        '<div class="nav-mode-chooser-copy">Use live GPS to map your current node or choose manual mode to browse from the current panorama.</div>' +
+        '<div class="nav-mode-chooser-buttons">' +
+          '<button id="nav-chooser-live" type="button" class="nav-mode-chooser-btn nav-mode-live-btn">Live location</button>' +
+          '<button id="nav-chooser-manual" type="button" class="nav-mode-chooser-btn nav-mode-manual-btn">Mechanical mode</button>' +
+        '</div>' +
+        '<button id="nav-chooser-cancel" class="nav-mode-chooser-close" type="button">Cancel</button>' +
+      '</div>';
+    overlayRoot.appendChild(chooser);
+
+    // ── Detection modal for live mode ───────────────────────────────────────────
+    var detection = document.createElement('div');
+    detection.id = 'nav-detection-modal';
+    detection.innerHTML =
+      '<div class="nav-detection-card">' +
+        '<div class="nav-detection-title">Detecting Location</div>' +
+        '<div class="nav-detection-copy" id="nav-detection-status">Requesting location permission...</div>' +
+        '<div class="nav-detection-spinner"></div>' +
+        '<button id="nav-detection-close" class="nav-detection-close" type="button" style="display:none;">Close</button>' +
+      '</div>';
+    overlayRoot.appendChild(detection);
 
     // ── Search panel ──────────────────────────────────────────────────────────
     var panel = document.createElement('div');
@@ -1150,8 +1955,13 @@
         '<input id="nav-search-input" type="text" placeholder="Where do you want to go?" autocomplete="off"/>' +
         '<button id="nav-search-close" title="Close">&#x2715;</button>' +
       '</div>' +
+      '<div class="nav-mode-toggle">' +
+        '<button id="nav-mode-manual" class="nav-mode-button active" type="button">Manual</button>' +
+        '<button id="nav-mode-live" class="nav-mode-button" type="button">Live</button>' +
+      '</div>' +
+      '<div id="nav-mode-status" class="nav-mode-status">Live mode: off</div>' +
       '<ul id="nav-search-results"></ul>';
-    container.appendChild(panel);
+    overlayRoot.appendChild(panel);
 
     // ── Navigation HUD ────────────────────────────────────────────────────────
     var hud = document.createElement('div');
@@ -1166,21 +1976,36 @@
         '<span id="nav-hud-dist"></span>' +
         '<span id="nav-hud-dots"></span>' +
       '</div>';
-    container.appendChild(hud);
+    overlayRoot.appendChild(hud);
 
     // ── Event bindings ────────────────────────────────────────────────────────
     document.getElementById('nav-search-input').addEventListener('input', function () {
       renderSearchResults(this.value);
     });
     document.getElementById('nav-search-close').addEventListener('click', closeSearchPanel);
+    document.getElementById('nav-mode-manual').addEventListener('click', function () { setNavigationMode('manual'); });
+    document.getElementById('nav-mode-live').addEventListener('click', function () { setNavigationMode('live'); });
+    document.getElementById('nav-chooser-live').addEventListener('click', function () { chooseModeAndOpen('live'); });
+    document.getElementById('nav-chooser-manual').addEventListener('click', function () { chooseModeAndOpen('manual'); });
+    document.getElementById('nav-chooser-cancel').addEventListener('click', closeModeChooser);
+    document.getElementById('nav-detection-close').addEventListener('click', closeDetectionModal);
     document.getElementById('nav-hud-cancel').addEventListener('click',   cancelNavigation);
 
     // Close search panel on click outside
     document.addEventListener('click', function (e) {
-      var p   = document.getElementById('nav-search-panel');
-      var btn = document.getElementById('nav-open-btn');
+      var p       = document.getElementById('nav-search-panel');
+      var btn     = document.getElementById('nav-open-btn');
+      var chooser = document.getElementById('nav-mode-chooser');
+      var detection = document.getElementById('nav-detection-modal');
+      var target = e.target;
+
+      var isInSearch = p && p.contains(target);
+      var isOpenButton = btn && (target === btn || btn.contains(target));
+      var isInChooser = chooser && chooser.contains(target);
+      var isInDetection = detection && detection.contains(target);
+
       if (p && p.classList.contains('open') &&
-          !p.contains(e.target) && e.target !== btn && !btn.contains(e.target)) {
+          !isInSearch && !isOpenButton && !isInChooser && !isInDetection) {
         closeSearchPanel();
       }
     });
@@ -1188,6 +2013,10 @@
 
   // ─────────────────────────────────────────────────────────────────────────────
   // Inject CSS
+  // ─────────────────────────────────────────────────────────────────────────────
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // MODULE: CSS INJECTION
   // ─────────────────────────────────────────────────────────────────────────────
 
   function injectStyles() {
@@ -1222,10 +2051,10 @@
 
       /* ── Search panel ────────────────────────────────────────────────────── */
       '#nav-search-panel {',
-      '  position: absolute;',
+      '  position: fixed;',
       '  bottom: 84px;',
       '  right: 16px;',
-      '  z-index: 500;',
+      '  z-index: 10020;',
       '  width: 290px;',
       '  background: rgba(10,10,10,0.92);',
       '  border-radius: 14px;',
@@ -1233,6 +2062,8 @@
       '  overflow: hidden;',
       '  transform: translateY(10px) scale(0.97);',
       '  opacity: 0;',
+      '  visibility: hidden;',
+      '  display: none;',
       '  pointer-events: none;',
       '  transition: opacity 0.18s ease, transform 0.18s ease;',
       '  backdrop-filter: blur(8px);',
@@ -1248,6 +2079,158 @@
       '  gap: 8px;',
       '  padding: 10px 12px;',
       '  border-bottom: 1px solid rgba(255,255,255,0.08);',
+      '}',
+      '.nav-mode-toggle {',
+      '  display: flex;',
+      '  gap: 6px;',
+      '  padding: 10px 12px;',
+      '  background: rgba(255,255,255,0.04);',
+      '}',
+      '.nav-mode-button {',
+      '  flex: 1;',
+      '  border: 1px solid rgba(255,255,255,0.14);',
+      '  border-radius: 10px;',
+      '  background: transparent;',
+      '  color: rgba(255,255,255,0.78);',
+      '  padding: 8px 10px;',
+      '  cursor: pointer;',
+      '  font-size: 12px;',
+      '  transition: background 0.15s, border-color 0.15s, color 0.15s;',
+      '}',
+      '.nav-mode-button.active {',
+      '  background: rgba(79,181,194,0.18);',
+      '  border-color: rgba(79,181,194,0.35);',
+      '  color: #fff;',
+      '}',
+      '.nav-mode-status {',
+      '  padding: 0 12px 10px;',
+      '  color: rgba(255,255,255,0.62);',
+      '  font-size: 11px;',
+      '  letter-spacing: 0.02em;',
+      '}',
+      '#nav-mode-chooser {',
+      '  position: fixed;',
+      '  inset: 0;',
+      '  z-index: 10030;',
+      '  display: flex;',
+      '  align-items: center;',
+      '  justify-content: center;',
+      '  background: rgba(0,0,0,0.65);',
+      '  opacity: 0;',
+      '  pointer-events: none;',
+      '  transition: opacity 0.22s ease;',
+      '}',
+      '#nav-mode-chooser.active {',
+      '  opacity: 1;',
+      '  pointer-events: auto;',
+      '}',
+      '.nav-mode-chooser-card {',
+      '  width: min(360px, calc(100% - 40px));',
+      '  padding: 24px;',
+      '  border-radius: 18px;',
+      '  background: rgba(12,14,18,0.98);',
+      '  box-shadow: 0 20px 40px rgba(0,0,0,0.5);',
+      '  text-align: center;',
+      '  color: white;',
+      '}',
+      '.nav-mode-chooser-title {',
+      '  margin-bottom: 12px;',
+      '  font-size: 18px;',
+      '  font-weight: 700;',
+      '}',
+      '.nav-mode-chooser-copy {',
+      '  font-size: 13px;',
+      '  color: rgba(255,255,255,0.76);',
+      '  line-height: 1.5;',
+      '  margin-bottom: 22px;',
+      '}',
+      '.nav-mode-chooser-buttons {',
+      '  display: grid;',
+      '  gap: 12px;',
+      '  margin-bottom: 16px;',
+      '}',
+      '.nav-mode-chooser-btn {',
+      '  width: 100%;',
+      '  border: none;',
+      '  border-radius: 12px;',
+      '  padding: 12px 14px;',
+      '  font-size: 14px;',
+      '  cursor: pointer;',
+      '  transition: transform 0.16s ease, background 0.16s ease;',
+      '}',
+      '.nav-mode-chooser-btn:hover {',
+      '  transform: translateY(-1px);',
+      '}',
+      '.nav-mode-live-btn {',
+      '  background: rgba(79,181,194,0.18);',
+      '  color: white;',
+      '}',
+      '.nav-mode-manual-btn {',
+      '  background: rgba(255,255,255,0.08);',
+      '  color: white;',
+      '}',
+      '.nav-mode-chooser-close {',
+      '  width: 100%;',
+      '  border: 1px solid rgba(255,255,255,0.12);',
+      '  border-radius: 12px;',
+      '  background: transparent;',
+      '  color: rgba(255,255,255,0.8);',
+      '  padding: 10px 14px;',
+      '  cursor: pointer;',
+      '}',
+      '#nav-detection-modal {',
+      '  position: fixed;',
+      '  inset: 0;',
+      '  z-index: 1003;',
+      '  display: flex;',
+      '  align-items: center;',
+      '  justify-content: center;',
+      '  background: rgba(0,0,0,0.65);',
+      '  opacity: 0;',
+      '  pointer-events: none;',
+      '  transition: opacity 0.22s ease;',
+      '}',
+      '#nav-detection-modal.active {',
+      '  opacity: 1;',
+      '  pointer-events: auto;',
+      '}',
+      '.nav-detection-card {',
+      '  width: min(360px, calc(100% - 40px));',
+      '  padding: 24px;',
+      '  border-radius: 18px;',
+      '  background: rgba(12,14,18,0.98);',
+      '  box-shadow: 0 20px 40px rgba(0,0,0,0.5);',
+      '  text-align: center;',
+      '  color: white;',
+      '}',
+      '.nav-detection-title {',
+      '  margin-bottom: 12px;',
+      '  font-size: 18px;',
+      '  font-weight: 700;',
+      '}',
+      '.nav-detection-copy {',
+      '  font-size: 13px;',
+      '  color: rgba(255,255,255,0.76);',
+      '  line-height: 1.5;',
+      '  margin-bottom: 16px;',
+      '}',
+      '.nav-detection-spinner {',
+      '  width: 42px;',
+      '  height: 42px;',
+      '  border-radius: 50%;',
+      '  border: 4px solid rgba(255,255,255,0.12);',
+      '  border-top-color: #4FB5C2;',
+      '  margin: 0 auto 16px;',
+      '  animation: nav-loading-spin 1s linear infinite;',
+      '}',
+      '.nav-detection-close {',
+      '  width: 100%;',
+      '  border: 1px solid rgba(255,255,255,0.12);',
+      '  border-radius: 12px;',
+      '  background: transparent;',
+      '  color: rgba(255,255,255,0.8);',
+      '  padding: 10px 14px;',
+      '  cursor: pointer;',
       '}',
       '#nav-search-input {',
       '  flex: 1;',
@@ -1268,6 +2251,56 @@
       '  padding: 2px 4px;',
       '}',
       '#nav-search-close:hover { color: white; }',
+
+      '#nav-loading-overlay {',
+      '  position: fixed;',
+      '  inset: 0;',
+      '  z-index: 10000;',
+      '  display: flex;',
+      '  align-items: center;',
+      '  justify-content: center;',
+      '  background: rgba(0,0,0,0.78);',
+      '  opacity: 0;',
+      '  pointer-events: none;',
+      '  transition: opacity 0.25s ease;',
+      '}',
+      '#nav-loading-overlay.active {',
+      '  opacity: 1;',
+      '  pointer-events: auto;',
+      '}',
+      '.nav-loading-box {',
+      '  width: min(320px, calc(100% - 40px));',
+      '  padding: 24px 24px 22px;',
+      '  border-radius: 18px;',
+      '  background: rgba(12,14,18,0.96);',
+      '  box-shadow: 0 18px 36px rgba(0,0,0,0.45);',
+      '  text-align: center;',
+      '  color: white;',
+      '  font-family: Montserrat, Arial, sans-serif;',
+      '}',
+      '.nav-loading-spinner {',
+      '  width: 42px;',
+      '  height: 42px;',
+      '  border-radius: 50%;',
+      '  border: 4px solid rgba(255,255,255,0.12);',
+      '  border-top-color: #4FB5C2;',
+      '  margin: 0 auto 16px;',
+      '  animation: nav-loading-spin 1s linear infinite;',
+      '}',
+      '.nav-loading-title {',
+      '  font-size: 16px;',
+      '  font-weight: 700;',
+      '  margin-bottom: 8px;',
+      '}',
+      '.nav-loading-status {',
+      '  font-size: 13px;',
+      '  color: rgba(255,255,255,0.78);',
+      '  line-height: 1.5;',
+      '}',
+      '@keyframes nav-loading-spin {',
+      '  0%   { transform: rotate(0deg); }',
+      '  100% { transform: rotate(360deg); }',
+      '}',
       '#nav-search-results {',
       '  list-style: none;',
       '  margin: 0;',
@@ -1492,6 +2525,10 @@
 
   // ─────────────────────────────────────────────────────────────────────────────
   // Utility
+  // ─────────────────────────────────────────────────────────────────────────────
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // MODULE: UTILITIES
   // ─────────────────────────────────────────────────────────────────────────────
 
   function escapeHtml(s) {
