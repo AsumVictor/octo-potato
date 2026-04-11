@@ -5,7 +5,6 @@
 set -e
 
 HTML="$(dirname "$0")/index.html"
-NAVJS="$(dirname "$0")/nav.js"
 
 # ── 1. Read the timestamp Pano2VR just wrote into index.html ──────────────────
 TS=$(grep -o 'ts=[0-9]*' "$HTML" | head -1 | cut -d= -f2)
@@ -17,20 +16,17 @@ fi
 
 echo "Detected Pano2VR timestamp: ts=$TS"
 
-# ── 2. Inject nav.js script tag into index.html (if not already there) ────────
-if grep -q 'nav.js' "$HTML"; then
-  # Already present — just update the timestamp
+# ── 2. Inject nav script tags into index.html (if not already there) ─────────
+if grep -q 'modules/core/EventBus.js' "$HTML"; then
+  # Already present — update nav.js timestamp only
   sed -i '' "s/nav\.js?ts=[0-9]*/nav.js?ts=$TS/" "$HTML"
   echo "Updated nav.js timestamp in index.html"
 else
-  # Insert before </body>
-  sed -i '' "s|</noscript>|</noscript>\n\t\t<!-- In-panorama navigation — re-add after every Pano2VR re-export -->\n\t\t<script type=\"text/javascript\" src=\"nav.js?ts=$TS\"></script>|" "$HTML"
-  echo "Injected nav.js script tag into index.html"
+  # Insert all module script tags before </noscript>
+  SCRIPTS='<!-- In-panorama navigation — re-add after every Pano2VR re-export -->\n\t\t<!-- core -->\n\t\t<script src="modules\/core\/EventBus.js"><\/script>\n\t\t<script src="modules\/core\/AppState.js"><\/script>\n\t\t<!-- utils -->\n\t\t<script src="modules\/utils\/Utils.js"><\/script>\n\t\t<!-- data -->\n\t\t<script src="modules\/data\/XmlLoader.js"><\/script>\n\t\t<script src="modules\/data\/NodeParser.js"><\/script>\n\t\t<script src="modules\/data\/GraphBuilder.js"><\/script>\n\t\t<script src="modules\/data\/Preloader.js"><\/script>\n\t\t<!-- pathfinding -->\n\t\t<script src="modules\/pathfinding\/Pathfinder.js"><\/script>\n\t\t<!-- navigation -->\n\t\t<script src="modules\/navigation\/AutoRotator.js"><\/script>\n\t\t<script src="modules\/navigation\/Navigator.js"><\/script>\n\t\t<!-- rendering -->\n\t\t<script src="modules\/rendering\/Projector.js"><\/script>\n\t\t<script src="modules\/rendering\/Renderer.js"><\/script>\n\t\t<!-- sensors -->\n\t\t<script src="modules\/sensors\/Gyroscope.js"><\/script>\n\t\t<!-- ui -->\n\t\t<script src="modules\/ui\/StyleInjector.js"><\/script>\n\t\t<script src="modules\/ui\/Toast.js"><\/script>\n\t\t<script src="modules\/ui\/LoadingOverlay.js"><\/script>\n\t\t<script src="modules\/ui\/HUD.js"><\/script>\n\t\t<script src="modules\/ui\/SearchPanel.js"><\/script>\n\t\t<script src="modules\/ui\/ModeChooser.js"><\/script>\n\t\t<script src="modules\/ui\/UIBuilder.js"><\/script>\n\t\t<!-- live location -->\n\t\t<script src="modules\/live-location.js"><\/script>\n\t\t<script src="modules\/live\/LiveController.js"><\/script>\n\t\t<!-- app bootstrap -->\n\t\t<script src="modules\/App.js"><\/script>\n\t\t<!-- entry point -->\n\t\t<script src="nav.js?ts='"$TS"'"><\/script>'
+  sed -i '' "s|</noscript>|</noscript>\n\t\t$SCRIPTS|" "$HTML"
+  echo "Injected nav module script tags into index.html"
 fi
-
-# ── 3. Update the pano.xml fetch timestamp inside nav.js ──────────────────────
-sed -i '' "s/pano\.xml?ts=[0-9]*/pano.xml?ts=$TS/" "$NAVJS"
-echo "Updated pano.xml timestamp in nav.js"
 
 echo ""
 echo "Done. Ready to run with ts=$TS"
