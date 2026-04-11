@@ -1,12 +1,33 @@
 /**
  * ModeChooser — Mode chooser modal + live-location detection modal.
  * Pattern: Singleton
- * Handles the chooser overlay, detection flow (one-shot GPS), and nav mode toggle.
+ *
+ * GPS detection strategy (precise node placement):
+ *   1. watchPosition runs immediately with enableHighAccuracy + maximumAge:0.
+ *   2. Samples are collected for up to MAX_COLLECT_MS (15 s).
+ *      Collection stops early when accuracy ≤ EXCELLENT_ACCURACY_M (8 m)
+ *      AND at least MIN_GOOD_SAMPLES quality readings have been gathered.
+ *   3. Only samples with accuracy ≤ MAX_SAMPLE_ACCURACY_M (50 m) are kept.
+ *   4. A weighted centroid is computed: each sample is weighted by 1/accuracy².
+ *      This averages out GPS jitter — multiple readings cancel each other's error.
+ *   5. Search ALL nodes (no radius cap) — sorted nearest-first from the centroid.
+ *   6. If nearest node > OUT_OF_AREA_M (200 m) → "out of area".
+ *   7. Auto-select the nearest node — no picker.
  */
 (function (Nav) {
   'use strict';
 
-  function ModeChooser() {}
+  var MAX_COLLECT_MS        = 15000;  // max collection window (ms)
+  var EXCELLENT_ACCURACY_M  = 8;      // stop early if this accurate AND enough samples
+  var MIN_GOOD_SAMPLES      = 3;      // minimum samples needed to stop early
+  var MAX_SAMPLE_ACCURACY_M = 50;     // discard readings worse than this before averaging
+  var OUT_OF_AREA_M         = 200;    // nearest node must be within this
+
+  function ModeChooser() {
+    this._gpsWatchId  = null;
+    this._gpsTimeout  = null;
+    this._gpsSamples  = [];
+  }
 
   // ── Chooser modal ────────────────────────────────────────────────────────────
 
@@ -23,17 +44,27 @@
   // ── Detection modal ──────────────────────────────────────────────────────────
 
   ModeChooser.prototype.openDetection = function () {
+    this._resetDetection();
     var modal    = document.getElementById('nav-detection-modal');
-    var statusEl = document.getElementById('nav-detection-status');
-    var closeBtn = document.getElementById('nav-detection-close');
-    if (!modal) return;
-    if (statusEl) statusEl.textContent = 'Requesting location permission...';
-    if (closeBtn) closeBtn.style.display = 'none';
+    var card     = document.querySelector('.nav-detection-card');
+    if (!modal || !card) return;
+
+    // Restore default card layout (in case a picker was rendered before)
+    card.innerHTML =
+      '<div class="nav-detection-title">Detecting Location</div>' +
+      '<div class="nav-detection-copy" id="nav-detection-status">Requesting location permission...</div>' +
+      '<div class="nav-detection-spinner" id="nav-detection-spinner"></div>' +
+      '<button id="nav-detection-close" class="nav-detection-close" type="button" style="display:none;">Close</button>';
+
+    document.getElementById('nav-detection-close').addEventListener('click',
+      this.closeDetection.bind(this));
+
     modal.classList.add('active');
-    this._detectLocation();
+    this._startGpsCollection();
   };
 
   ModeChooser.prototype.closeDetection = function () {
+    this._resetDetection();
     var modal = document.getElementById('nav-detection-modal');
     if (modal) modal.classList.remove('active');
   };
@@ -66,84 +97,192 @@
     Nav.Toast.show('Navigation mode: ' + (mode === 'live' ? 'Live GPS' : 'Manual'), 2200);
   };
 
-  // ── Private: one-shot GPS detection ─────────────────────────────────────────
+  // ── GPS collection ───────────────────────────────────────────────────────────
 
-  ModeChooser.prototype._detectLocation = function () {
+  ModeChooser.prototype._startGpsCollection = function () {
     var self = this;
+    this._gpsSamples = [];
 
     if (!navigator.geolocation) {
       this._showDetectionError('Geolocation is not supported by your browser.');
       return;
     }
 
-    var statusEl = document.getElementById('nav-detection-status');
-    if (statusEl) statusEl.textContent = 'Detecting your location...';
+    this._setStatus('Acquiring GPS signal...');
 
-    navigator.geolocation.getCurrentPosition(
-      function (position) {
-        var lat      = position.coords.latitude;
-        var lng      = position.coords.longitude;
-        var accuracy = (position.coords.accuracy > 0) ? position.coords.accuracy : 0;
-        var state    = Nav.AppState;
-
-        var closest = findClosestNode(lat, lng, state.nodes);
-        var inRange = closest &&
-                      closest.distance <= state.NODE_SELECT_RADIUS &&
-                      (accuracy === 0 ||
-                       accuracy <= state.MAX_ACCEPTABLE_ACCURACY ||
-                       closest.distance <= accuracy * 1.5 + 10);
-
-        if (inRange) {
-          var node   = closest.node;
-          var nodeId = closest.nodeId;
-
-          if (pano && pano.openNext) {
-            pano.openNext('{' + nodeId + '}', {
-              pan:  node.startPan  != null ? node.startPan  : 0,
-              tilt: node.startTilt != null ? node.startTilt : 0,
-              fov:  node.startFov  || 100
-            });
-          }
-
-          self.setMode('live');
-          self.closeDetection();
-          Nav.Toast.show('Live: placed at ' + node.title, 2500);
-          setTimeout(function () { Nav.SearchPanel.open(); }, 400);
-        } else {
-          var msg = 'You are not near any mapped location on campus.';
-          if (closest) msg += ' (nearest is ' + Math.round(closest.distance) + 'm away)';
-          self._showDetectionError(msg);
-        }
-      },
-      function (error) {
-        var msg = 'Unable to get your location.';
-        if (error.code === 1) msg = 'Location permission was denied. Please allow access in your browser settings.';
-        else if (error.code === 2) msg = 'Location is currently unavailable. Check your GPS signal.';
-        else if (error.code === 3) msg = 'Location request timed out. Move to an open area and try again.';
-        self._showDetectionError(msg);
-      },
-      { enableHighAccuracy: true, timeout: 15000, maximumAge: 0 }
+    // Start watching immediately — first reading can come from cache but
+    // subsequent ones will be from live satellite data
+    this._gpsWatchId = navigator.geolocation.watchPosition(
+      function (pos) { self._onSample(pos); },
+      function (err) { self._onGpsError(err); },
+      {
+        enableHighAccuracy: true,
+        timeout:     10000,
+        maximumAge:  0       
+      }
     );
+
+    // Hard deadline — use best sample collected so far
+    this._gpsTimeout = setTimeout(function () {
+      self._finalize();
+    }, MAX_COLLECT_MS);
+  };
+
+  ModeChooser.prototype._onSample = function (pos) {
+    var accuracy = pos.coords.accuracy > 0 ? pos.coords.accuracy : 999;
+
+    // Only keep readings good enough to be useful for averaging
+    if (accuracy <= MAX_SAMPLE_ACCURACY_M) {
+      this._gpsSamples.push({
+        lat:      pos.coords.latitude,
+        lng:      pos.coords.longitude,
+        accuracy: accuracy
+      });
+    }
+
+    var goodCount = this._gpsSamples.length;
+    this._setStatus(
+      'Acquiring GPS\u2026 (\u00B1' + Math.round(accuracy) + '\u202fm' +
+      (goodCount > 0 ? ', ' + goodCount + ' reading' + (goodCount !== 1 ? 's' : '') : '') + ')'
+    );
+
+    // Stop early only when accuracy is excellent AND we have enough samples to average
+    if (accuracy <= EXCELLENT_ACCURACY_M && goodCount >= MIN_GOOD_SAMPLES) {
+      this._finalize();
+    }
+  };
+
+  ModeChooser.prototype._onGpsError = function (err) {
+    this._resetDetection();
+    var msg = 'Unable to get your location.';
+    if (err.code === 1) msg = 'Location permission was denied. Please allow access in your browser settings.';
+    else if (err.code === 2) msg = 'Location is currently unavailable. Check your GPS signal.';
+    else if (err.code === 3) msg = 'Location request timed out. Move to an open area and try again.';
+    this._showDetectionError(msg);
+  };
+
+  ModeChooser.prototype._finalize = function () {
+    // Save samples BEFORE _resetDetection wipes them
+    var samples = this._gpsSamples.slice();
+    this._resetDetection();
+
+    if (samples.length === 0) {
+      this._showDetectionError('No GPS reading received. Move to an open area and try again.');
+      return;
+    }
+
+    this._setStatus('Locating you on the map\u2026');
+
+    // Weighted centroid: weight each sample by 1/accuracy²
+    // Better readings (smaller accuracy circle) pull the result harder.
+    // This cancels out GPS jitter far better than picking a single reading.
+    var totalWeight = 0;
+    var weightedLat = 0;
+    var weightedLng = 0;
+    var bestAccuracy = Infinity;
+
+    samples.forEach(function (s) {
+      var w = 1 / (s.accuracy * s.accuracy);
+      totalWeight += w;
+      weightedLat += s.lat * w;
+      weightedLng += s.lng * w;
+      if (s.accuracy < bestAccuracy) bestAccuracy = s.accuracy;
+    });
+
+    var lat = weightedLat / totalWeight;
+    var lng = weightedLng / totalWeight;
+
+    this._resolvePosition(lat, lng, bestAccuracy);
+  };
+
+  // ── Node resolution ──────────────────────────────────────────────────────────
+
+  ModeChooser.prototype._resolvePosition = function (lat, lng, accuracy) {
+    // Search ALL nodes — no radius cap — pick the single nearest one.
+    var all = findAllNodesSorted(lat, lng, Nav.AppState.nodes);
+
+    if (all.length === 0) {
+      this._showDetectionError('No mapped locations found. Check that nodes have GPS coordinates set in Pano2VR.');
+      return;
+    }
+
+    var nearest = all[0];
+
+    if (nearest.distance > OUT_OF_AREA_M) {
+      this._showDetectionError(
+        'You are not near any mapped location on campus. ' +
+        '(nearest: ' + Math.round(nearest.distance) + '\u202fm away)'
+      );
+      return;
+    }
+
+    // Always auto-select the nearest node — user never needs to choose their location.
+    this._selectNode(nearest);
+  };
+
+  ModeChooser.prototype._selectNode = function (candidate) {
+    var node   = candidate.node;
+    var nodeId = candidate.nodeId;
+
+    if (pano && pano.openNext) {
+      pano.openNext('{' + nodeId + '}', {
+        pan:  node.startPan  != null ? node.startPan  : 0,
+        tilt: node.startTilt != null ? node.startTilt : 0,
+        fov:  node.startFov  || 100
+      });
+    }
+
+    this.setMode('live');
+    this.closeDetection();
+    Nav.Toast.show('Live: placed at ' + node.title + ' (\u00B1' + Math.round(candidate.distance) + '\u202fm)', 3000);
+    setTimeout(function () { Nav.SearchPanel.open(); }, 400);
+  };
+
+  // ── Private helpers ───────────────────────────────────────────────────────────
+
+  ModeChooser.prototype._resetDetection = function () {
+    if (this._gpsWatchId !== null) {
+      navigator.geolocation.clearWatch(this._gpsWatchId);
+      this._gpsWatchId = null;
+    }
+    if (this._gpsTimeout !== null) {
+      clearTimeout(this._gpsTimeout);
+      this._gpsTimeout = null;
+    }
+    this._gpsSamples = [];
+  };
+
+  ModeChooser.prototype._setStatus = function (msg) {
+    var el = document.getElementById('nav-detection-status');
+    if (el) el.textContent = msg;
   };
 
   ModeChooser.prototype._showDetectionError = function (message) {
-    var statusEl = document.getElementById('nav-detection-status');
+    var spinner  = document.getElementById('nav-detection-spinner');
     var closeBtn = document.getElementById('nav-detection-close');
-    if (statusEl) statusEl.textContent = message;
+    if (spinner)  spinner.style.display  = 'none';
     if (closeBtn) closeBtn.style.display = 'block';
+    this._setStatus(message);
   };
 
-  // ── Utility ──────────────────────────────────────────────────────────────────
+  // ── Node search ───────────────────────────────────────────────────────────────
 
-  function findClosestNode(lat, lng, nodes) {
-    var best = null;
+  /**
+   * Returns ALL nodes with valid GPS coordinates, sorted nearest-first.
+   * No radius cap — the caller decides what distance is acceptable.
+   */
+  function findAllNodesSorted(lat, lng, nodes) {
+    var results = [];
     Object.keys(nodes).forEach(function (id) {
       var node = nodes[id];
-      if (node.lat == null || node.lng == null) return;
+      // Must have real numeric lat/lng (not null, undefined, or NaN)
+      if (typeof node.lat !== 'number' || typeof node.lng !== 'number') return;
+      if (isNaN(node.lat) || isNaN(node.lng)) return;
       var d = Nav.haversine(lat, lng, node.lat, node.lng);
-      if (!best || d < best.distance) best = { nodeId: id, node: node, distance: d };
+      if (!isNaN(d)) results.push({ nodeId: id, node: node, distance: d });
     });
-    return best;
+    results.sort(function (a, b) { return a.distance - b.distance; });
+    return results;
   }
 
   Nav.ModeChooser = new ModeChooser();

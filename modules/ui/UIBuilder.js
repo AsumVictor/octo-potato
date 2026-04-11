@@ -23,6 +23,24 @@
     btn.addEventListener('click', function () { Nav.ModeChooser.open(); });
     container.appendChild(btn);
 
+    // ── Gyroscope toggle button ───────────────────────────────────────────────
+    if (Nav.Gyroscope && Nav.Gyroscope.isSupported()) {
+      var gyroBtn   = document.createElement('button');
+      gyroBtn.id    = 'nav-gyro-btn';
+      gyroBtn.title = 'Use gyroscope to look around';
+      // Simple compass/rotation icon
+      gyroBtn.innerHTML =
+        '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" ' +
+        'stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">' +
+        '<circle cx="12" cy="12" r="10"/>' +
+        '<polyline points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>' +
+        '</svg>';
+      gyroBtn.addEventListener('click', function () {
+        if (Nav.Gyroscope) Nav.Gyroscope.toggle();
+      });
+      container.appendChild(gyroBtn);
+    }
+
     // ── Mode chooser ──────────────────────────────────────────────────────────
     var chooser = document.createElement('div');
     chooser.id  = 'nav-mode-chooser';

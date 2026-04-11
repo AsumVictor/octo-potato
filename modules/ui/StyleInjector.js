@@ -112,6 +112,7 @@
     '  background: transparent; color: rgba(255,255,255,0.8); padding: 10px 14px; cursor: pointer;',
     '}',
 
+
     /* ── Search inputs / results ─────────────────────────────────────────────── */
     '#nav-search-input {',
     '  flex: 1; background: transparent; border: none; outline: none;',
@@ -176,6 +177,19 @@
     '.nav-dot.done   { background: #4FB5C2; }',
     '.nav-dot.active { background: #FF6B35; width: 8px; height: 8px; }',
     '.nav-dot-more   { font-size: 9px; color: rgba(255,255,255,0.35); margin-left: 2px; }',
+
+    /* ── Gyroscope button ────────────────────────────────────────────────────── */
+    '#nav-gyro-btn {',
+    '  position: absolute; bottom: 80px; right: 24px; z-index: 500;',
+    '  width: 44px; height: 44px; border-radius: 50%; border: none;',
+    '  background: rgba(0,0,0,0.75); color: rgba(255,255,255,0.55); cursor: pointer;',
+    '  display: flex; align-items: center; justify-content: center;',
+    '  box-shadow: 0 2px 12px rgba(0,0,0,0.5);',
+    '  transition: background 0.2s, color 0.2s, transform 0.15s;',
+    '  backdrop-filter: blur(4px);',
+    '}',
+    '#nav-gyro-btn:hover { background: rgba(79,181,194,0.22); color: #4FB5C2; transform: scale(1.08); }',
+    '#nav-gyro-btn.active { background: rgba(79,181,194,0.28); color: #4FB5C2; border: 1.5px solid rgba(79,181,194,0.5); }',
 
     /* ── Toast ───────────────────────────────────────────────────────────────── */
     '.nav-toast {',

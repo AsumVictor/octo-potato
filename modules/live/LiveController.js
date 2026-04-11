@@ -57,10 +57,20 @@
       Nav.Toast.show('Live: moved to ' + node.title + ' (' + Math.round(data.distance) + 'm)', 2200);
     });
 
-    // GPS auto-advanced a route step
+    // GPS auto-advanced a route step → open the panorama node if not already there.
+    // Do NOT call Navigator.handleNodeChange() here — the changenode event from
+    // pano.openNext() triggers it via _bindPlayerEvents, avoiding double-advance.
     Nav.EventBus.on('live:route-advance', function (data) {
       if (!Nav.AppState.activeRoute) return;
-      Nav.Navigator.handleNodeChange(data.nodeId);
+      if (!data || !data.nodeId) return;
+      if (pano.getCurrentNode() === data.nodeId) return; // already there, changenode already fired
+
+      var node = data.node;
+      pano.openNext('{' + data.nodeId + '}', {
+        pan:  node.startPan  != null ? node.startPan  : 0,
+        tilt: node.startTilt != null ? node.startTilt : 0,
+        fov:  node.startFov  || 100
+      });
     });
 
     // GPS status changed → update status label + show toasts

@@ -91,6 +91,8 @@
     pano.addListener('changenode', function () {
       if (!Nav.AppState.navActive || !Nav.AppState.activeRoute) return;
       var newId = pano.getCurrentNode();
+      // In live mode the GPS drives navigation — suppress off-route prompts
+      // unless the user manually clicked a hotspot (handled by reroute toast).
       Nav.Navigator.handleNodeChange(newId);
     });
 
