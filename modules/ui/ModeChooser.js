@@ -232,6 +232,12 @@
       });
     }
 
+    // Seed LiveLocation with this node BEFORE starting GPS tracking so the
+    // first watchPosition reading can't immediately jump to a different node.
+    if (window.LiveLocation && LiveLocation.setCurrentNode) {
+      LiveLocation.setCurrentNode(nodeId);
+    }
+
     this.setMode('live');
     this.closeDetection();
     Nav.Toast.show('Live: placed at ' + node.title + ' (\u00B1' + Math.round(candidate.distance) + '\u202fm)', 3000);

@@ -258,6 +258,18 @@
 
   function getLiveNodeId() { return liveNodeId; }
 
+  /**
+   * Seed the current node from external placement (e.g. GPS detection modal).
+   * Prevents the first watchPosition reading from immediately jumping to a
+   * different node due to GPS jitter — hysteresis will apply from the start.
+   */
+  function setCurrentNode(nodeId) {
+    liveNodeId       = nodeId;
+    liveNodeDistance = 0;
+    candidateNodeId  = null;
+    candidateCount   = 0;
+  }
+
   function isActive() { return watchId !== null; }
 
   function haversine(lat1, lon1, lat2, lon2) {
@@ -273,15 +285,16 @@
   // ── Export ───────────────────────────────────────────────────────────────────
 
   window.LiveLocation = {
-    init:         init,
-    start:        start,
-    stop:         stop,
-    setRoute:     setRoute,
-    clearRoute:   clearRoute,
-    getLiveNodeId: getLiveNodeId,
-    isActive:     isActive,
-    isSupported:  isSupported,
-    getStatus:    function () { return liveStatus; }
+    init:           init,
+    start:          start,
+    stop:           stop,
+    setRoute:       setRoute,
+    clearRoute:     clearRoute,
+    setCurrentNode: setCurrentNode,
+    getLiveNodeId:  getLiveNodeId,
+    isActive:       isActive,
+    isSupported:    isSupported,
+    getStatus:      function () { return liveStatus; }
   };
 
 })(window);
