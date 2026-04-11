@@ -126,8 +126,39 @@
 			<p><b>Please enable Javascript!</b></p>
 		</noscript>
 		<!-- In-panorama navigation — re-add after every Pano2VR re-export -->
-		<script type="text/javascript" src="modules/live-location.js"></script>
-		<script type="text/javascript" src="nav.js?ts=81890874"></script>
+		<!-- core -->
+		<script src="modules/core/EventBus.js"></script>
+		<script src="modules/core/AppState.js"></script>
+		<!-- utils -->
+		<script src="modules/utils/Utils.js"></script>
+		<!-- data -->
+		<script src="modules/data/XmlLoader.js"></script>
+		<script src="modules/data/NodeParser.js"></script>
+		<script src="modules/data/GraphBuilder.js"></script>
+		<script src="modules/data/Preloader.js"></script>
+		<!-- pathfinding -->
+		<script src="modules/pathfinding/Pathfinder.js"></script>
+		<!-- navigation -->
+		<script src="modules/navigation/AutoRotator.js"></script>
+		<script src="modules/navigation/Navigator.js"></script>
+		<!-- rendering -->
+		<script src="modules/rendering/Projector.js"></script>
+		<script src="modules/rendering/Renderer.js"></script>
+		<!-- ui -->
+		<script src="modules/ui/StyleInjector.js"></script>
+		<script src="modules/ui/Toast.js"></script>
+		<script src="modules/ui/LoadingOverlay.js"></script>
+		<script src="modules/ui/HUD.js"></script>
+		<script src="modules/ui/SearchPanel.js"></script>
+		<script src="modules/ui/ModeChooser.js"></script>
+		<script src="modules/ui/UIBuilder.js"></script>
+		<!-- live location -->
+		<script src="modules/live-location.js"></script>
+		<script src="modules/live/LiveController.js"></script>
+		<!-- app bootstrap -->
+		<script src="modules/App.js"></script>
+		<!-- entry point -->
+		<script src="nav.js?ts=81890874"></script>
 <!-- - - - - - - 8<- - - - - - cut here - - - - - 8<- - - - - - - -->
 	</body>
 </html>
