@@ -95,7 +95,7 @@
     if (!position || !position.coords) return;
     var lat = position.coords.latitude;
     var lng = position.coords.longitude;
-    var accuracy = position.coords.accuracy || 0;
+    var accuracy = (position.coords.accuracy > 0) ? position.coords.accuracy : 0;
     var timestamp = position.timestamp || Date.now();
 
     options.callbacks.onPosition({
@@ -119,7 +119,8 @@
     }
 
     var distance = closest.distance;
-    var valid = distance <= NODE_SELECT_RADIUS && (accuracy <= MAX_ACCEPTABLE_ACCURACY || distance <= accuracy * 1.5 + 10);
+    var valid = distance <= NODE_SELECT_RADIUS &&
+                (accuracy === 0 || accuracy <= MAX_ACCEPTABLE_ACCURACY || distance <= accuracy * 1.5 + 10);
     if (!valid) {
       setStatus('searching');
       return;

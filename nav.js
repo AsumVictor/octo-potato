@@ -1502,11 +1502,14 @@
 
   function handleLiveNodeChange(nodeId, node, distance) {
     if (!nodeId) return;
-    showToast('GPS mapped to ' + node.title + ' (' + Math.round(distance) + 'm)', 2200, null);
     if (navMode !== 'live') return;
     if (pano.getCurrentNode() === nodeId) return;
-    if (node.startPan == null || node.startTilt == null) return;
-    pano.openNext('{' + nodeId + '}', { pan: node.startPan, tilt: node.startTilt, fov: node.startFov });
+    pano.openNext('{' + nodeId + '}', {
+      pan:  node.startPan  != null ? node.startPan  : 0,
+      tilt: node.startTilt != null ? node.startTilt : 0,
+      fov:  node.startFov  || 100
+    });
+    showToast('Live: moved to ' + node.title + ' (' + Math.round(distance) + 'm)', 2200, null);
   }
 
   function handleLiveRouteAdvance(nodeId, node, distance) {
@@ -1542,7 +1545,7 @@
 
   function detectLocationForLive() {
     if (!navigator.geolocation) {
-      showDetectionError('Geolocation not supported.');
+      showDetectionError('Geolocation is not supported by your browser.');
       return;
     }
 
@@ -1551,34 +1554,52 @@
 
     navigator.geolocation.getCurrentPosition(
       function (position) {
-        var lat = position.coords.latitude;
-        var lng = position.coords.longitude;
-        var accuracy = position.coords.accuracy;
+        var lat      = position.coords.latitude;
+        var lng      = position.coords.longitude;
+        var accuracy = position.coords.accuracy || 0;
 
-        // Check if near a node
         var closest = findClosestNodeForDetection(lat, lng);
-        if (closest && closest.distance <= NODE_SELECT_RADIUS && (accuracy <= MAX_ACCEPTABLE_ACCURACY || closest.distance <= accuracy * 1.5 + 10)) {
-          // Near a node, start live mode
-          setNavigationMode('live');
-          if (window.LiveLocation) {
-            LiveLocation.start();
+        var inRange  = closest &&
+                       closest.distance <= NODE_SELECT_RADIUS &&
+                       (accuracy <= MAX_ACCEPTABLE_ACCURACY || closest.distance <= accuracy * 1.5 + 10);
+
+        if (inRange) {
+          var node   = closest.node;
+          var nodeId = closest.nodeId;
+
+          // Jump the panorama to the matched node
+          if (pano && pano.openNext) {
+            pano.openNext('{' + nodeId + '}', {
+              pan:  node.startPan  != null ? node.startPan  : 0,
+              tilt: node.startTilt != null ? node.startTilt : 0,
+              fov:  node.startFov  || 100
+            });
           }
+
+          // Start continuous GPS tracking
+          setNavigationMode('live');
+
           closeDetectionModal();
-          setTimeout(openSearchPanel, 250);
+          showToast('Live: placed at ' + node.title, 2500, null);
+          setTimeout(openSearchPanel, 400);
         } else {
-          showDetectionError('You are not near any mapped location. Please move closer or choose Mechanical mode.');
+          var msg = 'You are not near any mapped location on campus.';
+          if (closest) {
+            msg += ' (nearest is ' + Math.round(closest.distance) + 'm away)';
+          }
+          showDetectionError(msg);
         }
       },
       function (error) {
-        var msg = 'Unable to get location.';
-        if (error.code === 1) msg = 'Location permission denied.';
-        else if (error.code === 2) msg = 'Location unavailable.';
-        else if (error.code === 3) msg = 'Location request timed out.';
+        var msg = 'Unable to get your location.';
+        if (error.code === 1) msg = 'Location permission was denied. Please allow access in your browser settings.';
+        else if (error.code === 2) msg = 'Location is currently unavailable. Check your GPS signal.';
+        else if (error.code === 3) msg = 'Location request timed out. Move to an open area and try again.';
         showDetectionError(msg);
       },
       {
         enableHighAccuracy: true,
-        timeout: 10000,
+        timeout: 15000,
         maximumAge: 0
       }
     );
@@ -1652,12 +1673,13 @@
   }
 
   function chooseModeAndOpen(mode) {
-    console.log('[nav.js] chooseModeAndOpen:', mode);
-    setNavigationMode(mode);
     closeModeChooser();
-    window.requestAnimationFrame(function () {
-      openSearchPanel();
-    });
+    if (mode === 'live') {
+      openDetectionModal();
+    } else {
+      setNavigationMode(mode);
+      window.requestAnimationFrame(openSearchPanel);
+    }
   }
 
   // ─────────────────────────────────────────────────────────────────────────────
