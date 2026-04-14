@@ -1,21 +1,13 @@
 /**
- * Projector — Converts spherical pan/tilt angles to screen pixel coordinates.
- * Pure math, no side-effects. Exposed as Nav.Projector.
+ * Projector — given a hotspot's pan/tilt and the current camera state, works
+ * out where on screen (x, y) the hotspot lands, and whether it's actually in
+ * the viewport. The Renderer uses this every frame to place arrows and labels.
  */
 (function (Nav) {
   'use strict';
 
   function Projector() {}
 
-  /**
-   * Project a hotspot at (hsPan, hsTilt) onto the screen given the current camera.
-   * @param {number} hsPan   - hotspot pan angle (degrees)
-   * @param {number} hsTilt  - hotspot tilt angle (degrees)
-   * @param {{ pan, tilt, fov }} cam - current camera state
-   * @param {number} W - viewport width  (CSS pixels)
-   * @param {number} H - viewport height (CSS pixels)
-   * @returns {{ x, y, dPan, dTilt, inView }}
-   */
   Projector.prototype.project = function (hsPan, hsTilt, cam, W, H) {
     var dPan  = hsPan  - cam.pan;
     var dTilt = hsTilt - cam.tilt;
@@ -34,9 +26,7 @@
     return { x: x, y: y, dPan: dPan, dTilt: dTilt, inView: inView };
   };
 
-  /**
-   * Normalise angle to [-180, 180].
-   */
+  // Normalise any angle to [-180, 180] — used when comparing pan deltas.
   Projector.prototype.normAngle = function (a) {
     return ((a + 180) % 360 + 360) % 360 - 180;
   };

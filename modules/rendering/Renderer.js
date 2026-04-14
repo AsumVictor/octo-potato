@@ -1,10 +1,4 @@
-/**
- * Renderer — Canvas overlay + RAF render loop + all draw functions.
- * Pattern: Singleton
- * Creates a full-viewport canvas above the pano2vr player (z-index 9999).
- * Reads state from Nav.AppState and camera from the global pano object.
- * Each frame delegates to draw functions that are private to this module.
- */
+
 (function (Nav) {
   'use strict';
 
@@ -13,7 +7,7 @@
     this._rafId  = null;
   }
 
-  // ── Public API ───────────────────────────────────────────────────────────────
+  //  Public API 
 
   Renderer.prototype.init = function () {
     this._canvas = document.createElement('canvas');

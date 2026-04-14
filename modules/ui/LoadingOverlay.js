@@ -1,7 +1,8 @@
 /**
- * LoadingOverlay — Full-screen loading modal shown during init.
- * Pattern: Singleton
- * Disables the nav button while active.
+ * LoadingOverlay — the full-screen spinner shown while the app boots.
+ *
+ * Also disables the nav open button so the user can't try to navigate before
+ * the graph and search index are ready. Call hide() once init completes.
  */
 (function (Nav) {
   'use strict';

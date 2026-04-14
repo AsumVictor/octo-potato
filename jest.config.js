@@ -9,7 +9,6 @@ module.exports = {
   ],
   coverageDirectory: 'coverage',
   coverageReporters: ['text', 'lcov'],
-  // jest-junit writes junit.xml for Jenkins to consume
   reporters: [
     'default',
     ['jest-junit', { outputDirectory: '.', outputName: 'junit.xml' }]

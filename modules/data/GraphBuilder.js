@@ -1,8 +1,13 @@
 /**
- * GraphBuilder — Converts parsed NodeData map into a weighted adjacency graph.
- * ROAD-tagged nodes get a 0.1× weight multiplier so Dijkstra strongly prefers
- * them while still falling back to non-road paths when needed.
- * Also exposes haversine() for geographic distance calculations.
+ * GraphBuilder — turns the flat node map from NodeParser into an adjacency graph
+ * that Pathfinder can run Dijkstra on.
+ *
+ * ROAD-tagged nodes get a 0.1× weight multiplier so the pathfinder strongly
+ * prefers proper walkways over cutting through buildings. It'll still use
+ * non-road edges if there's no other path.
+ *
+ * Also exports Nav.haversine so any module can calculate GPS distances without
+ * having its own copy of the formula.
  */
 (function (Nav) {
   'use strict';
@@ -42,10 +47,8 @@
     return g;
   };
 
-  /**
-   * Validates graph connectivity from a seed node via BFS.
-   * Returns { reachable, total, isolated[] }.
-   */
+  // BFS from a seed node to find any nodes that can't be reached.
+  // App.js logs isolated nodes at startup — useful for catching broken hotspot links.
   GraphBuilder.prototype.checkConnectivity = function (graph, seedId) {
     seedId = seedId || Object.keys(graph)[0];
     var visited = {};

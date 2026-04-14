@@ -1,7 +1,11 @@
 /**
- * Preloader — Concurrent image tile preloader.
- * Reads pano.xml for level tile URLs and preloads them with bounded concurrency.
- * Progress is reported via a callback so the LoadingOverlay can update.
+ * Preloader — kicks off parallel image tile downloads before the user starts
+ * navigating so panoramas load instantly when they arrive at a node.
+ *
+ * Reads the tile URL templates from pano.xml, expands them across all faces/
+ * levels/tiles, and fires up to CONCURRENCY (12) downloads at once. Calls
+ * onProgress(loaded, total) on each completion so the loading overlay can
+ * show a progress count.
  */
 (function (Nav) {
   'use strict';
@@ -10,11 +14,6 @@
 
   function Preloader() {}
 
-  /**
-   * @param {Document} doc   - parsed pano.xml
-   * @param {Function} onProgress - (loaded, total) callback
-   * @returns {Promise}
-   */
   Preloader.prototype.preload = function (doc, onProgress) {
     var urls = collectUrls(doc);
     if (!urls.length) return Promise.resolve();

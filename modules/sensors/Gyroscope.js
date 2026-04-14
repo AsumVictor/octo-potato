@@ -1,19 +1,20 @@
 /**
- * Gyroscope — DeviceOrientationEvent → panorama pan/tilt control.
- * Pattern: Singleton
+ * Gyroscope — lets the user look around the panorama by physically moving
+ * their device. Maps DeviceOrientationEvent angles to pan/tilt:
  *
- * Maps device orientation to panorama view:
- *   alpha  (0–360°, compass heading)  → panorama pan
- *   beta   (–180–180°, front-to-back) → panorama tilt
+ *   alpha (0–360°, compass)     → panorama pan
+ *   beta  (–180–180°, tilt)     → panorama tilt (upright phone = 0° tilt)
  *
- * Tilt formula: targetTilt = 90 – beta  (holding phone upright = 0° tilt)
- * Calibration: on first reading the current panorama pan is saved as the
- *   offset so the view doesn't jump to absolute compass north.
+ * On first reading we capture the offset between the device's compass heading
+ * and wherever the panorama is currently pointing, so activating gyro doesn't
+ * suddenly spin the view to magnetic north.
  *
- * Low-pass filter (SMOOTHING ~0.15) keeps movement smooth without lag.
+ * A low-pass filter (SMOOTHING=0.15) smooths out sensor jitter without adding
+ * noticeable lag.
  *
- * iOS 13+ requires an explicit DeviceOrientationEvent.requestPermission() call
- * that MUST originate from a user gesture (tap).  The toggle button wires this.
+ * iOS 13+ requires DeviceOrientationEvent.requestPermission() which must be
+ * called directly from a user tap — that's why toggle() is wired to the button
+ * click rather than called programmatically.
  */
 (function (Nav) {
   'use strict';
@@ -41,11 +42,6 @@
     return typeof DeviceOrientationEvent !== 'undefined';
   };
 
-  /**
-   * Toggle gyroscope on/off.
-   * On iOS 13+ this must be called from a user-gesture handler so that
-   * requestPermission() is allowed to fire.
-   */
   Gyroscope.prototype.toggle = function () {
     if (_active) {
       this.stop();
@@ -148,9 +144,7 @@
     pano.setPanTiltFov(_smoothPan, _smoothTilt, pano.getFov());
   }
 
-  /**
-   * Returns the signed shortest arc from `from` to `to` (handles 0/360 wrap).
-   */
+  // Handles the 0/360 wrap so pan smoothing doesn't spin the long way around.
   function _shortestArc(from, to) {
     var diff = ((to - from) % 360 + 540) % 360 - 180;
     return diff;

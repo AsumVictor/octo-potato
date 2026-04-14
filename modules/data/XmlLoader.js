@@ -1,8 +1,11 @@
 /**
- * XmlLoader — Loads and parses pano.xml.
- * Tries fetch() first, falls back to XHR for local-file / older environments.
- * Resolves the URL query string from the nav.js script tag so cache-busting
- * timestamps stay in sync with Pano2VR's re-exports.
+ * XmlLoader — fetches and parses pano.xml.
+ *
+ * Tries fetch() first, falls back to XHR for local-file access or older
+ * browsers that don't support fetch. Pano2VR appends a cache-buster query
+ * string to nav.js on every export (e.g. ?t=1234567890). We read that same
+ * query off the script tag and attach it to the pano.xml request so both files
+ * stay in sync when the tour is re-exported.
  */
 (function (Nav) {
   'use strict';

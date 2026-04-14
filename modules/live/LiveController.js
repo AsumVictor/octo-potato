@@ -1,15 +1,11 @@
 /**
- * LiveController — Adapts window.LiveLocation to the Nav EventBus.
- * Pattern: Adapter (Singleton)
- * Bridges the existing LiveLocation module (live-location.js) into the
- * Nav architecture. All GPS events flow out as EventBus emissions so the
- * rest of the app doesn't hold a direct reference to window.LiveLocation.
+ * LiveController — wires live-location.js into the Nav EventBus.
  *
- * Events emitted:
- *   live:status(status)          – tracking status changed
- *   live:node-change(nodeId, node, distance)
- *   live:route-advance(nodeId, node, distance)
- *   live:error(err)
+ * live-location.js uses plain callbacks; everything else in Nav talks via
+ * EventBus. This module sits between them: it initialises LiveLocation with
+ * the node list, translates each callback into an EventBus emit, and listens
+ * for EventBus events that need to be forwarded back into LiveLocation (e.g.
+ * when a new route starts, LiveLocation needs to know what step we're on).
  */
 (function (Nav) {
   'use strict';
@@ -39,10 +35,8 @@
     });
   };
 
-  // ── Wire EventBus → LiveLocation responses ───────────────────────────────────
-
   LiveController.prototype.bindEvents = function () {
-    // GPS found a new node while in live mode → teleport panorama
+    // GPS found a new closest node while in live mode → jump the panorama there
     Nav.EventBus.on('live:node-change', function (data) {
       if (Nav.AppState.navMode !== 'live') return;
       if (!data || !data.nodeId) return;

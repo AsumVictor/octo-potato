@@ -1,8 +1,10 @@
 /**
- * AppState — Singleton reactive state store.
- * Pattern: Singleton
- * Single source of truth for all shared runtime state.
- * Calling set(key, value) also emits 'state:<key>' on EventBus.
+ * AppState — everything the app needs to share between modules lives here.
+ *
+ * Nodes, the current route, step index, nav mode — all of it. If two modules
+ * both need to know something, it goes in here rather than one module calling
+ * into the other. set(key, value) also fires a 'state:<key>' event on EventBus
+ * so any module can react to changes without polling.
  */
 (function (Nav) {
   'use strict';

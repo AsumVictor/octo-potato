@@ -1,7 +1,8 @@
 /**
- * HUD — Heads-up display strip shown at bottom-left during navigation.
- * Pattern: Singleton
- * Reads route state from Nav.AppState.
+ * HUD — the small navigation strip at the bottom-left that shows destination,
+ * remaining distance, and step dots while a route is active.
+ *
+ * Call update() whenever the route advances. Call hide() on cancel/arrival.
  */
 (function (Nav) {
   'use strict';

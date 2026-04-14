@@ -1,7 +1,9 @@
 /**
- * NodeParser — Parses pano.xml DOM into NodeData objects.
- * Pattern: Factory (createNode builds structured NodeData)
- * Returns a nodeId → NodeData map.
+ * NodeParser — reads the pano.xml DOM and turns it into a plain JS object map
+ * (nodeId → NodeData) that the rest of the app can work with.
+ *
+ * The XML has a lot of attributes we don't care about; this extracts only what
+ * navigation actually needs: id, title, GPS coords, tags, hotspot targets.
  */
 (function (Nav) {
   'use strict';
@@ -20,8 +22,6 @@
     });
     return result;
   };
-
-  // ── Factory ──────────────────────────────────────────────────────────────────
 
   function createNode(panorama, ud) {
     var id = panorama.getAttribute('id');
