@@ -313,7 +313,8 @@
     '.report-btn-cancel { background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.75); }',
     '.report-btn-cancel:hover { background: rgba(255,255,255,0.12); }',
     '.report-btn-send { background: #FF6B35; color: white; }',
-    '.report-btn-send:hover { background: #ff7f4d; }',
+    '.report-btn-send:hover:not(:disabled) { background: #ff7f4d; }',
+    '.report-btn-send:disabled { background: rgba(255,107,53,0.4); cursor: not-allowed; transform: none; }',
 
     /* ── Shake animation for invalid fields ─────────────────────────────────── */
     '@keyframes report-shake {',

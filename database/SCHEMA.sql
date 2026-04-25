@@ -26,19 +26,22 @@ CREATE TABLE issue_statuses (
     updated_at TIMESTAMP DEFAULT now()
 );
 
--- Seed common school issue categories
+-- Seed issue categories — names match Nav.IssueTypes ids in IssueTypes.js
 INSERT INTO issue_types (name, description)
 VALUES
-    ('plumbing', 'Water leaks, clogged drains, toilets, and sanitation systems'),
-    ('electrical', 'Power outages, lighting issues, outlets, and wiring problems'),
-    ('internet', 'Wi-Fi, network connectivity, and classroom internet issues'),
-    ('security', 'Door locks, cameras, alarms, and campus safety concerns'),
-    ('sanitation', 'Cleaning, waste disposal, restrooms, and hygiene facilities'),
-    ('grounds_maintenance', 'Garden, lawn, pathways, and exterior grounds problems'),
-    ('hvac', 'Heating, ventilation, and air conditioning issues'),
-    ('academic_services', 'Library, lab equipment, and classroom resources problems'),
-    ('transportation', 'Shuttle, parking, and campus transport issues'),
-    ('health_safety', 'Health, first aid, and emergency response issues')
+    ('safety',        'General safety hazards on campus'),
+    ('fire',          'Fire or emergency situations'),
+    ('damage',        'Physical damage to buildings or property'),
+    ('flooding',      'Flooding or water leaks'),
+    ('electrical',    'Electrical faults, power outages, or lighting issues'),
+    ('accessibility', 'Barriers preventing accessible access'),
+    ('cleanliness',   'Cleaning or hygiene issues'),
+    ('signage',       'Missing, damaged, or confusing signs'),
+    ('equipment',     'Broken furniture or equipment'),
+    ('lighting',      'Insufficient or faulty lighting'),
+    ('security',      'Security concerns — locks, cameras, or campus safety'),
+    ('noise',         'Noise disturbances'),
+    ('other',         'Any issue not covered by the above categories')
 ON CONFLICT (name) DO NOTHING;
 
 -- Seed issue workflow statuses
@@ -94,10 +97,10 @@ CREATE POLICY "Users can update own profile" ON users
 CREATE POLICY "Users can view all issues" ON issues
     FOR SELECT USING (true);
 
+-- No auth flow in the client — enforce email domain via the column CHECK constraint only
 CREATE POLICY "Users can create issues with ashesi email" ON issues
     FOR INSERT WITH CHECK (
-        auth.jwt() ->> 'email' = reporter_email AND
-        (auth.jwt() ->> 'email' LIKE '%@ashesi.edu.gh' OR auth.jwt() ->> 'email' LIKE '%ashesi%')
+        reporter_email LIKE '%@ashesi.edu.gh' OR reporter_email LIKE '%ashesi%'
     );
 
 -- RLS Policies for resolves

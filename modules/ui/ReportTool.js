@@ -1,17 +1,4 @@
-/**
- * ReportTool — Lets the user draw a region on the panorama, then submits a
- * structured issue report (name, email, pictures?, type, description).
- *
- * Flow:
- *  1. User clicks the Report button  → drawing canvas activates
- *  2. User drags to draw a rectangle → canvas deactivates, dialog opens
- *  3. User fills the form + clicks Send → report is logged to console
- *
- * Location data captured:
- *  - nodeId   : current panorama node
- *  - pan/tilt/fov : viewer angles at the moment drawing ended
- *  - drawRect : { x, y, w, h } in normalised [0–1] viewport fractions
- */
+
 (function (Nav) {
   'use strict';
 
@@ -207,9 +194,9 @@
     // Resolve full issue type metadata from schema
     var issueSchema = (Nav.IssueTypes || []).filter(function (t) { return t.id === issueType; })[0] || { id: issueType, label: issueType, icon: '', severity: 'low' };
 
-    // Build report object
+    // Build report object — pass File objects so IssueService can upload them
     var report = {
-      timestamp:   new Date().toISOString(),
+      timestamp: new Date().toISOString(),
       reporter: {
         name:  name.trim(),
         email: email.trim()
@@ -221,24 +208,23 @@
         description: desc.trim()
       },
       location: _location || {},
-      pictures: files.map(function (f) { return { name: f.name, size: f.size, type: f.type }; })
+      pictures: files
     };
 
-    console.group('%c[Report Tool] Issue Report Submitted', 'color:#FF6B35;font-weight:bold;font-size:13px');
-    console.log('Timestamp   :', report.timestamp);
-    console.log('Reporter    :', report.reporter);
-    console.log('Issue Type  :', issueSchema.icon, issueSchema.label, '(' + issueSchema.severity + ')');
-    console.log('Description :', report.issue.description);
-    console.log('Location    :', report.location);
-    if (report.pictures.length) {
-      console.log('Pictures    :', report.pictures);
-    }
-    console.log('Full report :', report);
-    console.groupEnd();
+    // Loading state
+    var sendBtn = document.getElementById('report-send-btn');
+    if (sendBtn) { sendBtn.disabled = true; sendBtn.textContent = 'Sending…'; }
 
-    Nav.ReportTool.closeDialog();
-    _playSuccessChime();
-    _showSuccessPopup(6000);
+    Nav.IssueService.submit(report, function () {
+      if (sendBtn) { sendBtn.disabled = false; sendBtn.textContent = 'Send Report'; }
+      Nav.ReportTool.closeDialog();
+      _playSuccessChime();
+      _showSuccessPopup(6000);
+    }, function (err) {
+      if (sendBtn) { sendBtn.disabled = false; sendBtn.textContent = 'Send Report'; }
+      Nav.Toast && Nav.Toast.show('Failed to submit — please try again.', null, 5000);
+      console.error('[ReportTool] submit error:', err);
+    });
   };
 
   // ── Helpers ───────────────────────────────────────────────────────────────────
