@@ -1,16 +1,10 @@
 /**
- * Navigator — Route control Singleton.
- * Pattern: Singleton
- * Owns: start, cancel, advanceStep, reroute, arrival.
- * Communicates upstream via EventBus only.
+ * Navigator — owns the navigation lifecycle: start, advance, reroute, cancel,
+ * and arrival. Everything else in the app reacts to what this emits on EventBus.
  *
- * Events emitted:
- *   nav:started(route)
- *   nav:step(stepIndex)
- *   nav:arrive(title)
- *   nav:cancel
- *   nav:reroute(newRoute)
- *   nav:off-route(nodeId)   — emitted when user clicks wrong node
+ * The pano player fires 'changenode' on every node transition. App.js catches
+ * that and calls handleNodeChange() here, which checks if we're on-route and
+ * advances the step or triggers the reroute prompt accordingly.
  */
 (function (Nav) {
   'use strict';
@@ -78,10 +72,7 @@
     Nav.EventBus.emit('nav:cancel');
   };
 
-  /**
-   * Called when the panorama changes node.
-   * Returns true if on-route, false if off-route.
-   */
+  // Called by App.js every time the panorama's 'changenode' event fires.
   Navigator.prototype.handleNodeChange = function (newNodeId) {
     var state = Nav.AppState;
     if (!state.navActive || !state.activeRoute) return;

@@ -2,7 +2,6 @@ pipeline {
   agent any
 
   tools {
-    // Requires "NodeJS-20" configured in Jenkins → Manage Jenkins → Tools
     nodejs 'NodeJS-20'
   }
 
@@ -22,10 +21,8 @@ pipeline {
 
   post {
     always {
-      // Publish JUnit XML so Jenkins shows per-test pass/fail
       junit 'junit.xml'
 
-      // Publish HTML coverage report (requires HTML Publisher plugin)
       publishHTML(target: [
         allowMissing:         true,
         alwaysLinkToLastBuild: true,

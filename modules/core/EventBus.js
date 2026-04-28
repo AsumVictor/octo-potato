@@ -1,23 +1,13 @@
 /**
- * EventBus — Observer / pub-sub for cross-module communication.
- * Pattern: Observer
- * All inter-module events flow through Nav.EventBus so modules never
- * hold direct references to each other.
+ * EventBus — modules talk to each other through here instead of holding
+ * direct references. Keeps everything loosely coupled: Navigator doesn't
+ * need to know LiveController exists, and vice versa.
  *
- * Key events:
- *   player:ready          – pano player + XML fully loaded
- *   nav:start(destId)     – user picked a destination
- *   nav:step(nodeId)      – panorama changed while navigating
- *   nav:arrive(title)     – reached destination
- *   nav:cancel            – navigation cancelled
- *   nav:reroute(nodeId)   – off-route, rerouting from nodeId
- *   mode:change(mode)     – 'manual' | 'live'
- *   live:node-change      – GPS found a new closest node
- *   live:status(status)   – GPS tracking status update
- *   live:route-advance    – GPS auto-advanced a route step
- *   live:error(err)       – GPS error
- *   ui:search-open        – search panel opened
- *   ui:search-close       – search panel closed
+ * Standard usage:
+ *   Nav.EventBus.on('nav:start', fn)   — subscribe
+ *   Nav.EventBus.emit('nav:start', id) — publish
+ *   Nav.EventBus.once(...)             — one-shot subscribe
+ *   Nav.EventBus.off(event, fn)        — unsubscribe
  */
 (function (Nav) {
   'use strict';

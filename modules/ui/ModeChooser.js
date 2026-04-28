@@ -1,18 +1,18 @@
 /**
- * ModeChooser — Mode chooser modal + live-location detection modal.
- * Pattern: Singleton
+ * ModeChooser — handles the "choose navigation mode" popup and the GPS
+ * detection flow that places the user on the map automatically.
  *
- * GPS detection strategy (precise node placement):
- *   1. watchPosition runs immediately with enableHighAccuracy + maximumAge:0.
- *   2. Samples are collected for up to MAX_COLLECT_MS (15 s).
- *      Collection stops early when accuracy ≤ EXCELLENT_ACCURACY_M (8 m)
- *      AND at least MIN_GOOD_SAMPLES quality readings have been gathered.
- *   3. Only samples with accuracy ≤ MAX_SAMPLE_ACCURACY_M (50 m) are kept.
- *   4. A weighted centroid is computed: each sample is weighted by 1/accuracy².
- *      This averages out GPS jitter — multiple readings cancel each other's error.
- *   5. Search ALL nodes (no radius cap) — sorted nearest-first from the centroid.
- *   6. If nearest node > OUT_OF_AREA_M (200 m) → "out of area".
- *   7. Auto-select the nearest node — no picker.
+ * How GPS placement works (so you know why the numbers are what they are):
+ *   1. watchPosition starts immediately — maximumAge:0 forces fresh readings.
+ *   2. We collect up to 15 s of samples, but stop early if accuracy hits ≤8 m
+ *      AND we have at least 3 good readings to average.
+ *   3. Readings worse than 50 m are thrown away before averaging.
+ *   4. We compute a weighted centroid: each reading's weight = 1/accuracy².
+ *      Accurate readings pull the result much harder than noisy ones. This
+ *      cancels out GPS jitter far better than just picking the single best fix.
+ *   5. All nodes are searched (no radius cap) — we pick the nearest one.
+ *   6. If the nearest node is >200 m away we tell the user they're out of range.
+ *   7. The nearest node is always auto-selected — the user never sees a picker.
  */
 (function (Nav) {
   'use strict';

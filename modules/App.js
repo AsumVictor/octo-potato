@@ -1,21 +1,4 @@
-/**
- * App — Bootstrap Facade (Singleton).
- * Pattern: Facade
- * Single entry point that initialises every module in the correct order.
- * All inter-module wiring happens here so individual modules stay decoupled.
- *
- * Boot sequence:
- *   1. DOM ready → create loading overlay
- *   2. Wait for pano2vr player
- *   3. Player fires 'configloaded' → start init
- *   4. Load pano.xml
- *   5. Parse nodes + build graph + build search index
- *   6. Inject styles + HTML + canvas overlay
- *   7. Bind player events
- *   8. Init LiveLocation module
- *   9. Parallel: wait for panorama ready + preload images
- *  10. Show nav button → ready
- */
+
 (function (Nav) {
   'use strict';
 
@@ -135,7 +118,7 @@
       }
     });
   }
-
+     
   Nav.App = new App();
 
 })(window.Nav = window.Nav || {});

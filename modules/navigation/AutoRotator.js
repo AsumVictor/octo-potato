@@ -1,9 +1,10 @@
 /**
- * AutoRotator — Smooth camera pan/tilt animation.
- * Pattern: Singleton
- * Drives pano.setPanTiltFov via requestAnimationFrame with easeInOut.
- * After animation completes, starts an idle timer that re-aims the camera
- * at the target if the user looks away.
+ * AutoRotator — animates the camera to face the next hotspot.
+ *
+ * When we advance a navigation step, we call rotateTo(pan, tilt) and it
+ * smoothly swings the view there over ~1.3 s using an ease-in-out curve.
+ * After the animation finishes, if the user looks away, an idle timer kicks
+ * in after 4 s and aims them back at the target.
  */
 (function (Nav) {
   'use strict';
@@ -16,10 +17,7 @@
     this._idleTimer = null;
   }
 
-  /**
-   * Animate camera to (targetPan, targetTilt).
-   * Cancels any in-progress rotation first.
-   */
+  // Cancels any in-flight animation before starting a new one — avoids fighting itself.
   AutoRotator.prototype.rotateTo = function (targetPan, targetTilt) {
     var self = this;
     this.cancel();

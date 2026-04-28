@@ -1,13 +1,10 @@
 /**
- * Pathfinder — Dijkstra shortest-path with Strategy pattern.
- * Pattern: Strategy
+ * Pathfinder — Dijkstra shortest path between two node IDs.
  *
- * Two strategies:
- *   WeightedStrategy   — uses edge.distance (ROAD edges 10× cheaper)
- *   UnweightedStrategy — uses edge.rawDistance (pure geographic distance)
- *
- * find() tries WeightedStrategy first. If no path found it falls back to
- * UnweightedStrategy so the user always gets a route if one exists.
+ * Runs weighted Dijkstra first (ROAD edges cost 10× less, so the path strongly
+ * prefers walkways). If that finds nothing it retries with raw geographic
+ * distances as a fallback so the user always gets some route rather than a dead
+ * end. find() returns null only if the nodes are genuinely disconnected.
  */
 (function (Nav) {
   'use strict';
@@ -91,11 +88,6 @@
     this._unweighted = new DijkstraStrategy(false);
   }
 
-  /**
-   * Find shortest path from startId to endId.
-   * Uses AppState for graph + nodes.
-   * @returns Route | null
-   */
   Pathfinder.prototype.find = function (startId, endId) {
     var state = Nav.AppState;
     var graph = state.graph;

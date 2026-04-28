@@ -125,6 +125,10 @@
 		<noscript>
 			<p><b>Please enable Javascript!</b></p>
 		</noscript>
+		<!-- Environment variables (gitignored — copy env.example.js → env.js and fill in values) -->
+		<script src="env.js"></script>
+		<!-- Supabase -->
+		<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
 		<!-- In-panorama navigation — re-add after every Pano2VR re-export -->
 		<!-- core -->
 		<script src="modules/core/EventBus.js"></script>
@@ -136,6 +140,9 @@
 		<script src="modules/data/NodeParser.js"></script>
 		<script src="modules/data/GraphBuilder.js"></script>
 		<script src="modules/data/Preloader.js"></script>
+		<script src="modules/data/IssueTypes.js"></script>
+		<script src="modules/data/SupabaseClient.js"></script>
+		<script src="modules/data/IssueService.js"></script>
 		<!-- pathfinding -->
 		<script src="modules/pathfinding/Pathfinder.js"></script>
 		<!-- navigation -->
@@ -153,6 +160,7 @@
 		<script src="modules/ui/HUD.js"></script>
 		<script src="modules/ui/SearchPanel.js"></script>
 		<script src="modules/ui/ModeChooser.js"></script>
+		<script src="modules/ui/ReportTool.js"></script>
 		<script src="modules/ui/UIBuilder.js"></script>
 		<!-- live location -->
 		<script src="modules/live-location.js"></script>
