@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>Campus 360 Navigation & Issue Reporting — Applied Project Report</title>
+<style>
+  /* ── Screen + Print base ───────────────────────────────────────── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 12pt;
+    color: #000;
+    background: #fff;
+    line-height: 1.8;
+  }
+
+  /* ── Page simulation on screen ─────────────────────────────────── */
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 25mm 25mm 25mm 30mm;
+    margin: 0 auto 20px;
+    background: #fff;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  }
+
+  /* ── Typography ─────────────────────────────────────────────────── */
+  h1.report-title {
+    font-size: 14pt;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1.5;
+    margin-bottom: 6pt;
+  }
+  h2.chapter-heading {
+    font-size: 13pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 18pt;
+    margin-bottom: 8pt;
+  }
+  h3.section-heading {
+    font-size: 12pt;
+    font-weight: bold;
+    margin-top: 12pt;
+    margin-bottom: 6pt;
+  }
+  p { margin-bottom: 8pt; text-align: justify; }
+  ul, ol { margin: 6pt 0 8pt 20pt; }
+  li { margin-bottom: 3pt; }
+
+  /* ── Cover page layout ─────────────────────────────────────────── */
+  .cover { text-align: center; }
+  .cover .uni-name { font-size: 16pt; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 30pt; }
+  .cover .sub-title { font-size: 11pt; margin: 8pt 0; }
+  .cover .author { font-size: 12pt; font-weight: bold; margin-top: 20pt; }
+  .cover .year { font-size: 12pt; margin-top: 6pt; }
+  .cover .spacer { height: 24pt; }
+
+  /* ── Declaration / Acknowledgement lines ───────────────────────── */
+  .sig-line { border-bottom: 1px solid #000; width: 70%; margin: 18pt 0 6pt 0; display: block; }
+  .sig-label { font-size: 11pt; margin-bottom: 4pt; }
+
+  /* ── Table of contents ─────────────────────────────────────────── */
+  .toc-entry {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4pt;
+    font-size: 11.5pt;
+  }
+  .toc-entry.indent { padding-left: 20pt; font-size: 11pt; }
+  .toc-dots { flex: 1; border-bottom: 1px dotted #888; margin: 0 6pt 3pt; align-self: flex-end; }
+
+  /* ── Use-case tables ────────────────────────────────────────────── */
+  table.use-case {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 8pt 0 12pt;
+    font-size: 11pt;
+  }
+  table.use-case td {
+    border: 1px solid #000;
+    padding: 5pt 8pt;
+    vertical-align: top;
+  }
+  table.use-case td:first-child { font-weight: bold; width: 28%; }
+
+  /* ── Testing tables ─────────────────────────────────────────────── */
+  table.test-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 8pt 0 14pt;
+    font-size: 10.5pt;
+  }
+  table.test-table th {
+    background: #a93c40;
+    color: white;
+    border: 1px solid #a93c40;
+    padding: 5pt 8pt;
+    text-align: left;
+    font-weight: bold;
+  }
+  table.test-table td {
+    border: 1px solid #ccc;
+    padding: 14pt 8pt;
+    vertical-align: top;
+  }
+  table.test-table td.fill { background: #fafafa; color: #bbb; font-style: italic; font-size: 10pt; }
+
+  /* ── Misc ───────────────────────────────────────────────────────── */
+  .center { text-align: center; }
+  .bold { font-weight: bold; }
+  hr.section-rule { border: none; border-top: 1px solid #000; margin: 16pt 0; }
+  .page-label { font-size: 9pt; text-align: right; color: #666; margin-top: 8pt; }
+
+  /* ── Print settings ─────────────────────────────────────────────── */
+  @page { size: A4; margin: 25mm 25mm 25mm 30mm; }
+  @media print {
+    body { background: #fff; }
+    .page { width: 100%; box-shadow: none; padding: 0; margin: 0; page-break-after: always; }
+    .page:last-child { page-break-after: avoid; }
+    table.test-table th { background: #a93c40 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     COVER PAGE
+════════════════════════════════════════════════════════════════ -->
+<div class="page cover">
+  <div class="uni-name">Ashesi University</div>
+
+  <h1 class="report-title">
+    AN INTERACTIVE 360° PANORAMA NAVIGATION AND<br/>
+    FACILITY ISSUE REPORTING SYSTEM FOR<br/>
+    ASHESI UNIVERSITY CAMPUS
+  </h1>
+
+  <div class="spacer"></div>
+  <div class="sub-title">Applied Project</div>
+  <div class="sub-title">B.Sc. Management Information Systems</div>
+  <div class="spacer"></div>
+
+  <div class="author">Victor Asum</div>
+  <div class="year">2025</div>
+
+  <div style="height:60pt;"></div>
+  <hr class="section-rule"/>
+
+  <p class="sub-title" style="margin-top:12pt;">
+    Applied project submitted to the Department of Computer Science, Ashesi University
+    in partial fulfilment of the requirements for the award of Bachelor of Science degree
+    in Management Information Systems
+  </p>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     DECLARATION
+════════════════════════════════════════════════════════════════ -->
+<div class="page">
+  <h2 class="chapter-heading">Declaration</h2>
+  <p>
+    I hereby declare that this applied project is the result of my own original work and that no
+    part of it has been presented for another degree in this university or elsewhere.
+  </p>
+  <p class="sig-label bold" style="margin-top:20pt;">Candidate's Signature:</p>
+  <span class="sig-line"></span>
+  <p class="sig-label bold">Candidate's Name:</p>
+  <span class="sig-line"></span>
+  <p class="sig-label bold">Date:</p>
+  <span class="sig-line" style="width:40%;"></span>
+
+  <p style="margin-top:24pt;">
+    I hereby declare that preparation and presentation of this applied project were supervised in
+    accordance with the guidelines on supervision of applied projects laid down by Ashesi University.
+  </p>
+  <p class="sig-label bold" style="margin-top:20pt;">Supervisor's Signature:</p>
+  <span class="sig-line"></span>
+  <p class="sig-label bold">Supervisor's Name:</p>
+  <span class="sig-line"></span>
+  <p class="sig-label bold">Date:</p>
+  <span class="sig-line" style="width:40%;"></span>
+
+  <hr class="section-rule" style="margin-top:32pt;"/>
+
+  <h2 class="chapter-heading" style="margin-top:20pt;">Acknowledgements</h2>
+  <p>
+    I am grateful to the Almighty for the strength and ability to complete this project. The process
+    was challenging but fulfilling.
+  </p>
+  <p>
+    I wish to express sincere gratitude to my supervisor for the consistent guidance and feedback
+    that kept this project on track.
+  </p>
+  <p>
+    I also thank the Logistics and Facilities team at Ashesi University for their openness during
+    interviews and stakeholder discussions, and my colleagues for testing the application and
+    providing invaluable feedback.
+  </p>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     ABSTRACT + TABLE OF CONTENTS
+════════════════════════════════════════════════════════════════ -->
+<div class="page">
+  <h2 class="chapter-heading">Abstract</h2>
+  <p>
+    Campus navigation and facility issue reporting are two recurring operational challenges at
+    Ashesi University. Students, staff, and visitors struggle to locate destinations within the campus
+    due to its winding layout, while the existing mechanism for reporting maintenance issues relies
+    on informal email chains that offer limited spatial precision.
+  </p>
+  <p>
+    This paper presents the design, development, and evaluation of an interactive 360° panorama
+    navigation and facility issue reporting system built for Ashesi University. The system embeds a
+    Pano2VR-rendered equirectangular panorama tour of the campus into a web-based application
+    and augments it with a custom vanilla JavaScript navigation layer that provides Dijkstra-based
+    shortest-path routing, live GPS positioning via the browser's Geolocation API, and gyroscope-
+    driven look-around on mobile devices.
+  </p>
+  <p>
+    A key contribution of the system is its spatially-aware issue reporting module. Users draw a
+    bounding rectangle directly on the panorama viewport to mark the exact location of a campus
+    problem, attach photographs, and submit a structured report to a Supabase PostgreSQL backend.
+    A companion logistics view allows facilities staff to open any submitted report and be
+    automatically navigated to the precise panorama node and camera angle from which the report
+    was filed, with the original selection rectangle re-drawn as a visual overlay.
+  </p>
+  <p>
+    The system is implemented entirely in client-side JavaScript with no build toolchain, making it
+    straightforward to drop into any Pano2VR export and redeploy after a new campus scan.
+  </p>
+
+  <hr class="section-rule"/>
+
+  <h2 class="chapter-heading">Table of Contents</h2>
+
+  <div class="toc-entry"><span>Declaration</span><span class="toc-dots"></span><span>ii</span></div>
+  <div class="toc-entry"><span>Acknowledgements</span><span class="toc-dots"></span><span>ii</span></div>
+  <div class="toc-entry"><span>Abstract</span><span class="toc-dots"></span><span>iii</span></div>
+  <div class="toc-entry bold"><span>Chapter 1: Introduction</span><span class="toc-dots"></span><span>1</span></div>
+  <div class="toc-entry indent"><span>1.1 Background</span><span class="toc-dots"></span><span>1</span></div>
+  <div class="toc-entry indent"><span>1.2 Problem Statement</span><span class="toc-dots"></span><span>1</span></div>
+  <div class="toc-entry indent"><span>1.3 Related Works</span><span class="toc-dots"></span><span>1</span></div>
+  <div class="toc-entry bold"><span>Chapter 2: Requirements Specification</span><span class="toc-dots"></span><span>2</span></div>
+  <div class="toc-entry indent"><span>2.1 Data Collection</span><span class="toc-dots"></span><span>2</span></div>
+  <div class="toc-entry indent"><span>2.2 Functional Requirements</span><span class="toc-dots"></span><span>2</span></div>
+  <div class="toc-entry indent"><span>2.3 Non-Functional Requirements</span><span class="toc-dots"></span><span>2</span></div>
+  <div class="toc-entry indent"><span>2.4 Use Cases</span><span class="toc-dots"></span><span>2</span></div>
+  <div class="toc-entry bold"><span>Chapter 3: Design and Architecture</span><span class="toc-dots"></span><span>3</span></div>
+  <div class="toc-entry bold"><span>Chapter 4: Implementation</span><span class="toc-dots"></span><span>3</span></div>
+  <div class="toc-entry bold"><span>Chapter 5: Testing</span><span class="toc-dots"></span><span>4</span></div>
+  <div class="toc-entry bold"><span>Chapter 6: Conclusion</span><span class="toc-dots"></span><span>5</span></div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PAGE 1 — CHAPTER 1 + 2
+════════════════════════════════════════════════════════════════ -->
+<div class="page">
+  <h2 class="chapter-heading">Chapter 1: Introduction</h2>
+
+  <h3 class="section-heading">1.1 Background</h3>
+  <p>
+    Ashesi University occupies a hilly campus in Berekuso, Ghana, where winding pathways connect
+    academic buildings, residence halls, dining facilities, and support services. New students,
+    visitors, and prospective applicants regularly struggle to locate destinations, and no dedicated
+    digital wayfinding tool existed prior to this work. In parallel, the facilities management
+    workflow relied on email submissions to a central support address, a process that lacks spatial
+    context and makes it difficult for logistics staff to understand precisely where on campus a fault
+    has occurred [1].
+  </p>
+  <p>
+    Advances in consumer 360° cameras and photogrammetry software now make it feasible to
+    produce high-quality virtual tours of campus environments at relatively low cost. The Pano2VR
+    authoring platform, in particular, allows a photographer to link equirectangular panorama images
+    into a navigable graph of hotspot-connected nodes and export a self-contained HTML5 application.
+    This provides the rendering substrate on which the present system is built.
+  </p>
+
+  <h3 class="section-heading">1.2 Problem Statement</h3>
+  <p>
+    Two discrete but related problems motivate this project. First, there is no interactive
+    digital map or panoramic wayfinding tool that allows an Ashesi campus user to search for a
+    destination and receive turn-by-turn guidance through the physical environment. Second, the
+    existing fault-reporting mechanism provides no spatial anchor for reports, making it harder for
+    facilities staff to prioritise and locate problems quickly. A unified solution that addresses
+    both problems within a single, low-maintenance web application is therefore desirable.
+  </p>
+
+  <h3 class="section-heading">1.3 Related Works</h3>
+  <p>
+    <span class="bold">Armo-Himbson (2020)</span> built a facilities management system for Ashesi University using
+    three-dimensional building models rendered with three.js. The system allowed users to click
+    on 3D objects to file reports and gave administrators a dashboard for tracking and assigning
+    remediation tasks [2]. The present work extends this concept by replacing static 3D models
+    with photorealistic 360° panoramas and adding active navigation as a first-class feature.
+  </p>
+  <p>
+    <span class="bold">Google Street View</span> demonstrates large-scale deployment of navigable equirectangular
+    panoramas linked by a graph structure, supporting millions of nodes worldwide. While the
+    underlying technology is comparable, Street View does not expose pathfinding or facility
+    reporting APIs, and its data is not current enough for indoor or private-campus use.
+  </p>
+  <p>
+    <span class="bold">Indoor navigation research</span> by Afyouni et al. (2012) established graph-based shortest-path
+    routing as the standard approach for wayfinding in environments where GPS is unavailable or
+    inaccurate [3]. Their work informs the adjacency graph model and Dijkstra implementation
+    used in this system.
+  </p>
+
+  <hr class="section-rule"/>
+
+  <h2 class="chapter-heading">Chapter 2: Requirements Specification</h2>
+
+  <h3 class="section-heading">2.1 Data Collection</h3>
+  <p>
+    Semi-structured interviews were conducted with three groups: (i) first-year students unfamiliar
+    with the campus layout, (ii) members of the Logistics and Facilities team, and (iii) two
+    members of the IT support centre. Key findings were that students wanted a search-based tool
+    rather than a static map, facilities staff wanted reports to carry location photographs and
+    precise positional metadata, and the IT team required a solution requiring no server-side runtime
+    to minimise hosting complexity.
+  </p>
+
+  <h3 class="section-heading">2.2 Functional Requirements</h3>
+  <ol>
+    <li>Users shall search for a campus location by name and receive shortest-path navigation guidance through the panorama.</li>
+    <li>The system shall support live GPS positioning to determine the user's nearest panorama node automatically.</li>
+    <li>Users shall draw a rectangular selection on the panorama viewport to spatially anchor an issue report.</li>
+    <li>Reports shall capture the panorama node identifier, camera pan/tilt/fov, a normalised viewport rectangle, descriptive text, issue category, and optional photographs.</li>
+    <li>Reports shall be persisted to a cloud database and be retrievable by facilities staff via a logistics URL.</li>
+    <li>The logistics view shall navigate the panorama to the exact node and camera angle of any submitted report and redraw the original selection rectangle.</li>
+  </ol>
+
+  <h3 class="section-heading">2.3 Non-Functional Requirements</h3>
+  <ol>
+    <li><span class="bold">Usability:</span> The navigation and reporting workflows shall be completable by a first-time user without instructions within three minutes.</li>
+    <li><span class="bold">Performance:</span> Initial tile preloading shall complete within ten seconds on a standard campus Wi-Fi connection.</li>
+    <li><span class="bold">Portability:</span> The system shall be deployable by dropping a set of JavaScript files into any Pano2VR-generated export folder with no build step.</li>
+    <li><span class="bold">Availability:</span> The cloud backend (Supabase) shall provide 99.9% uptime for report submission and retrieval.</li>
+  </ol>
+
+  <h3 class="section-heading">2.4 Use Cases</h3>
+
+  <table class="use-case">
+    <tr><td>Use Case</td><td>Navigate to a Campus Location</td></tr>
+    <tr><td>Primary Actor</td><td>Campus User (student, staff, or visitor)</td></tr>
+    <tr><td>Goal</td><td>Reach a named destination via shortest-path panorama navigation.</td></tr>
+    <tr><td>Precondition</td><td>Panorama tour has loaded and the node graph has been built from pano.xml.</td></tr>
+    <tr><td>Trigger</td><td>User clicks the navigation button and types a destination name.</td></tr>
+    <tr><td>Event Flow</td><td>1. User opens search panel. 2. Types destination. 3. Selects result. 4. System computes shortest path. 5. System advances panorama node-by-node with directional arrows. 6. HUD displays remaining steps and distance. 7. Arrival card appears on reaching the destination.</td></tr>
+  </table>
+
+  <table class="use-case">
+    <tr><td>Use Case</td><td>Submit a Facility Issue Report</td></tr>
+    <tr><td>Primary Actor</td><td>Campus User</td></tr>
+    <tr><td>Goal</td><td>File a spatially-anchored fault report with the Logistics team.</td></tr>
+    <tr><td>Precondition</td><td>User is viewing the panorama at or near the location of the fault.</td></tr>
+    <tr><td>Trigger</td><td>User clicks the report (flag) button.</td></tr>
+    <tr><td>Event Flow</td><td>1. Canvas overlay activates with crosshair cursor. 2. User drags a rectangle over the fault. 3. Report dialog opens pre-filled with node and camera metadata. 4. User selects issue type, enters description and optional photos. 5. User submits. 6. System uploads images to storage, inserts record to database. 7. Success chime and animated confirmation popup appear.</td></tr>
+  </table>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PAGE 2 — CHAPTER 3 + 4
+════════════════════════════════════════════════════════════════ -->
+<div class="page">
+  <h2 class="chapter-heading">Chapter 3: Design and Architecture</h2>
+
+  <h3 class="section-heading">3.1 System Overview</h3>
+  <p>
+    The system is structured as a layered client-side application built on top of the Pano2VR-
+    generated HTML5 panorama player. All custom code is organized into modules using the
+    Immediately Invoked Function Expression (IIFE) pattern, sharing a single global namespace
+    <code>window.Nav</code>. There is no framework dependency or bundler; each module file is a
+    self-contained script tag. A single <code>App.js</code> boot sequence wires all modules
+    together after the Pano2VR player fires its <code>configloaded</code> event.
+  </p>
+
+  <h3 class="section-heading">3.2 Module Architecture</h3>
+  <p>The codebase is divided into six functional layers:</p>
+  <ol>
+    <li><span class="bold">Core</span> — <code>EventBus</code> (pub/sub message bus) and <code>AppState</code> (shared runtime state).</li>
+    <li><span class="bold">Data</span> — <code>XmlLoader</code>, <code>NodeParser</code>, <code>GraphBuilder</code>, <code>Preloader</code>, <code>IssueTypes</code>, <code>SupabaseClient</code>, <code>IssueService</code>, <code>LogisticsLoader</code>.</li>
+    <li><span class="bold">Pathfinding</span> — <code>Pathfinder</code> implements Dijkstra's algorithm on the weighted adjacency graph produced from the pano.xml hotspot data, using Haversine great-circle distance as the edge weight where GPS coordinates are available.</li>
+    <li><span class="bold">Navigation</span> — <code>Navigator</code> steps through the computed path one node at a time, and <code>AutoRotator</code> aims the camera toward the next hotspot during idle periods.</li>
+    <li><span class="bold">Rendering</span> — <code>Renderer</code> and <code>Projector</code> draw the canvas-based directional arrow and glowing ring that indicate the next waypoint on screen.</li>
+    <li><span class="bold">UI</span> — <code>StyleInjector</code>, <code>UIBuilder</code>, <code>SearchPanel</code>, <code>ModeChooser</code>, <code>ReportTool</code>, <code>IssueViewer</code>, <code>HUD</code>, <code>Toast</code>, <code>LoadingOverlay</code>.</li>
+  </ol>
+
+  <h3 class="section-heading">3.3 Database Design</h3>
+  <p>
+    The backend uses Supabase (PostgreSQL) with Row Level Security. Four tables are defined:
+  </p>
+  <ul>
+    <li><span class="bold">issue_types</span> — Reference table of issue categories (safety, fire, damage, flooding, etc.) seeded at setup; drives the report form dropdown at runtime.</li>
+    <li><span class="bold">issue_statuses</span> — Workflow states: open, in_progress, resolved, closed, rejected, pending. New reports default to <em>open</em> via a PostgreSQL column default function.</li>
+    <li><span class="bold">issues</span> — Core table storing reporter email, issue type FK, status FK, a JSONB <code>metadata</code> column (reporter name, description, severity, panorama location), and a <code>TEXT[]</code> images array of Supabase Storage URLs.</li>
+    <li><span class="bold">resolves</span> — Records resolution events linking an issue to an authenticated staff member.</li>
+  </ul>
+  <p>
+    Only Ashesi email addresses (<code>@ashesi.edu.gh</code>, <code>@ug.ashesi.edu.gh</code>) are
+    accepted for issue submission, enforced by both a PostgreSQL <code>CHECK</code> constraint and
+    an RLS INSERT policy.
+  </p>
+
+  <hr class="section-rule"/>
+
+  <h2 class="chapter-heading">Chapter 4: Implementation</h2>
+
+  <h3 class="section-heading">4.1 Panorama Navigation</h3>
+  <p>
+    At boot, <code>XmlLoader</code> fetches the Pano2VR-generated <code>pano.xml</code> file and
+    <code>NodeParser</code> extracts node identifiers, titles, GPS coordinates, and hotspot links.
+    <code>GraphBuilder</code> constructs a weighted adjacency list and performs a connectivity check
+    that logs isolated nodes — a common symptom of broken hotspot links in Pano2VR exports.
+  </p>
+  <p>
+    When the user selects a destination, <code>Pathfinder</code> runs Dijkstra's algorithm and
+    returns an ordered path array. <code>Navigator</code> listens to the Pano2VR
+    <code>changenode</code> event and advances the step index on each transition.
+    <code>Renderer</code> projects the next waypoint from equirectangular coordinates to screen
+    space on every animation frame and draws a pulsing ring with a directional bounce arrow using
+    the HTML5 Canvas API.
+  </p>
+
+  <h3 class="section-heading">4.2 Live GPS Mode</h3>
+  <p>
+    When the user selects <em>Live Location</em>, <code>LiveController</code> calls
+    <code>navigator.geolocation.watchPosition</code>. On each GPS update, the system computes
+    the Haversine distance from the device's coordinates to every node in the graph and
+    navigates the panorama to the nearest node automatically.
+  </p>
+
+  <h3 class="section-heading">4.3 Issue Reporting</h3>
+  <p>
+    The report button activates a transparent canvas overlay with a crosshair cursor.
+    The user drags a rectangle, which is rendered with a dashed stroke using
+    <code>setLineDash</code>. On mouse-up, the system records the canvas-space bounding box,
+    normalises it to a 0–1 viewport fraction, and captures the Pano2VR camera state
+    (pan, tilt, FOV) and current node metadata. The report dialog then opens, pre-populated
+    with the issue categories fetched from Supabase at boot.
+  </p>
+  <p>
+    On submission, <code>IssueService</code> uploads attached images to the
+    <em>issue-images</em> Supabase Storage bucket (sanitising filenames to remove spaces and
+    special characters), then inserts the issue record. The <code>status_id</code> column
+    is set automatically by a PostgreSQL helper function (<code>open_status_id()</code>),
+    eliminating a client-side lookup round-trip that previously caused failures under
+    restrictive Row Level Security configurations.
+  </p>
+
+  <h3 class="section-heading">4.4 Logistics View</h3>
+  <p>
+    The companion page <code>logistics.html?id=&lt;uuid&gt;</code> fetches the issue record
+    from Supabase (joining <code>issue_types</code> for the category label in a single query),
+    displays a structured 320px side panel with all report metadata, and calls
+    <code>pano.openNext()</code> with the stored node ID and camera angles to reproduce the
+    original viewing position. The stored normalised viewport rectangle is then re-projected
+    onto a canvas overlay as an orange dashed selection box, and a <em>Go to Location</em>
+    button allows staff to re-trigger the navigation and re-draw the highlight after panning away.
+  </p>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PAGE 3 — CHAPTER 5: TESTING (to be filled in)
+════════════════════════════════════════════════════════════════ -->
+<div class="page">
+  <h2 class="chapter-heading">Chapter 5: Testing</h2>
+
+  <h3 class="section-heading">5.1 Overview</h3>
+  <p>
+    Testing was conducted across three stages: unit testing of individual module logic,
+    component testing of integrated subsystems, and system testing of end-to-end user workflows.
+    User acceptance testing was subsequently performed with representative members of each
+    stakeholder group. Results are recorded in the tables below.
+  </p>
+
+  <h3 class="section-heading">5.2 Unit Testing</h3>
+  <p>
+    Unit tests were written using Jest and focus on the deterministic, stateless modules:
+    <code>Pathfinder</code>, <code>GraphBuilder</code>, <code>NodeParser</code>, and
+    <code>Utils</code>.
+  </p>
+
+  <table class="test-table">
+    <tr>
+      <th>Test ID</th><th>Module</th><th>Description</th><th>Expected Result</th><th>Actual Result</th><th>Pass / Fail</th>
+    </tr>
+    <tr>
+      <td>UT-01</td><td>Pathfinder</td><td>Dijkstra returns shortest path between two directly connected nodes</td><td>Path array of length 2</td>
+      <td class="fill">To be filled</td><td class="fill">To be filled</td>
+    </tr>
+    <tr>
+      <td>UT-02</td><td>Pathfinder</td><td>Dijkstra returns null when destination is unreachable (isolated node)</td><td>null</td>
+      <td class="fill">To be filled</td><td class="fill">To be filled</td>
+    </tr>
+    <tr>
+      <td>UT-03</td><td>GraphBuilder</td><td>checkConnectivity correctly identifies isolated nodes</td><td>isolated array contains the isolated node ID</td>
+      <td class="fill">To be filled</td><td class="fill">To be filled</td>
+    </tr>
+    <tr>
+      <td>UT-04</td><td>NodeParser</td><td>parse() extracts correct node count from sample pano.xml fixture</td><td>Node count matches fixture</td>
+      <td class="fill">To be filled</td><td class="fill">To be filled</td>
+    </tr>
+    <tr>
+      <td>UT-05</td><td>Utils</td><td>haversine() returns expected distance for known coordinates</td><td>Distance within ±1 m of reference value</td>
+      <td class="fill">To be filled</td><td class="fill">To be filled</td>
+    </tr>
+  </table>
+
+  <h3 class="section-heading">5.3 Component Testing</h3>
+  <p>
+    Component tests verify the correct integration of paired modules and their interaction with
+    mocked external dependencies.
+  </p>
+
+  <table class="test-table">
+    <tr>
+      <th>Test ID</th><th>Components</th><th>Scenario</th><th>Expected Behaviour</th><th>Observed Behaviour</th><th>Pass / Fail</th>
+    </tr>
+    <tr>
+      <td>CT-01</td><td>IssueService + SupabaseClient</td><td>Submit report with valid Ashesi email and one image</td><td>Image uploaded to storage; issue row inserted; onSuccess called</td>
+      <td class="fill">To be filled</td><td class="fill">To be filled</td>
+    </tr>
+    <tr>
+      <td>CT-02</td><td>IssueService.fetchTypes()</td><td>Fetch issue types when issue_types table is seeded</td><td>Returns array of objects with uuid, name, label, severity</td>
+      <td class="fill">To be filled</td><td class="fill">To be filled</td>
+    </tr>
+    <tr>
+      <td>CT-03</td><td>Navigator + AutoRotator</td><td>Start navigation to adjacent node; simulate changenode event</td><td>Step index advances; AutoRotator targets next waypoint</td>
+      <td class="fill">To be filled</td><td class="fill">To be filled</td>
+    </tr>
+    <tr>
+      <td>CT-04</td><td>ReportTool canvas</td><td>Drag less than 10px on canvas</td><td>Canvas hides; no dialog opens</td>
+      <td class="fill">To be filled</td><td class="fill">To be filled</td>
+    </tr>
+    <tr>
+      <td>CT-05</td><td>LogisticsLoader</td><td>Fetch issue with invalid UUID</td><td>Promise rejects with "Issue not found"</td>
+      <td class="fill">To be filled</td><td class="fill">To be filled</td>
+    </tr>
+  </table>
+
+  <h3 class="section-heading">5.4 System Testing</h3>
+  <p>
+    End-to-end system tests were carried out in a Chrome browser on both desktop and mobile
+    (Android) against the production Supabase project.
+  </p>
+
+  <table class="test-table">
+    <tr>
+      <th>Test ID</th><th>Workflow</th><th>Steps</th><th>Expected Outcome</th><th>Actual Outcome</th><th>Pass / Fail</th>
+    </tr>
+    <tr>
+      <td>ST-01</td><td>Full navigation flow</td><td>Search destination → select → follow arrows → arrive</td><td>Arrival card displayed; HUD shows 0 steps remaining</td>
+      <td class="fill">To be filled</td><td class="fill">To be filled</td>
+    </tr>
+    <tr>
+      <td>ST-02</td><td>Issue report submission</td><td>Draw region → fill form with Ashesi email → send</td><td>Success popup; record visible in Supabase dashboard</td>
+      <td class="fill">To be filled</td><td class="fill">To be filled</td>
+    </tr>
+    <tr>
+      <td>ST-03</td><td>Report rejection — non-Ashesi email</td><td>Submit form with gmail address</td><td>Supabase RLS rejects insert; Toast shows error</td>
+      <td class="fill">To be filled</td><td class="fill">To be filled</td>
+    </tr>
+    <tr>
+      <td>ST-04</td><td>Logistics view</td><td>Open logistics.html?id=&lt;uuid&gt; for a submitted report</td><td>Panorama navigates to correct node; selection rectangle drawn</td>
+      <td class="fill">To be filled</td><td class="fill">To be filled</td>
+    </tr>
+    <tr>
+      <td>ST-05</td><td>Live GPS mode</td><td>Enable live mode on mobile device outdoors on campus</td><td>Panorama advances to nearest node within 5 s of movement</td>
+      <td class="fill">To be filled</td><td class="fill">To be filled</td>
+    </tr>
+  </table>
+
+  <h3 class="section-heading">5.5 User Acceptance Testing</h3>
+  <p>
+    User acceptance tests were conducted with five participants: two first-year students, one
+    member of the Logistics team, and two members of IT support. Participants were given a task
+    sheet and asked to complete two scenarios without assistance.
+  </p>
+
+  <table class="test-table">
+    <tr>
+      <th>Participant</th><th>Role</th><th>Task Completed</th><th>Time Taken</th><th>Issues Raised</th><th>Satisfaction (1–5)</th>
+    </tr>
+    <tr>
+      <td>P1</td><td>First-year student</td>
+      <td class="fill">To be filled</td><td class="fill">To be filled</td>
+      <td class="fill">To be filled</td><td class="fill">To be filled</td>
+    </tr>
+    <tr>
+      <td>P2</td><td>First-year student</td>
+      <td class="fill">To be filled</td><td class="fill">To be filled</td>
+      <td class="fill">To be filled</td><td class="fill">To be filled</td>
+    </tr>
+    <tr>
+      <td>P3</td><td>Logistics staff</td>
+      <td class="fill">To be filled</td><td class="fill">To be filled</td>
+      <td class="fill">To be filled</td><td class="fill">To be filled</td>
+    </tr>
+    <tr>
+      <td>P4</td><td>IT support</td>
+      <td class="fill">To be filled</td><td class="fill">To be filled</td>
+      <td class="fill">To be filled</td><td class="fill">To be filled</td>
+    </tr>
+    <tr>
+      <td>P5</td><td>IT support</td>
+      <td class="fill">To be filled</td><td class="fill">To be filled</td>
+      <td class="fill">To be filled</td><td class="fill">To be filled</td>
+    </tr>
+  </table>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PAGE 4 — CHAPTER 6: CONCLUSION + REFERENCES
+════════════════════════════════════════════════════════════════ -->
+<div class="page">
+  <h2 class="chapter-heading">Chapter 6: Conclusion</h2>
+
+  <h3 class="section-heading">6.1 Overview</h3>
+  <p>
+    This project set out to address two campus challenges at Ashesi University — the absence of
+    interactive wayfinding and the lack of spatial precision in facility fault reporting — through
+    a single, lightweight, browser-based application. Both objectives were achieved. The system
+    provides shortest-path navigation through a photorealistic panorama tour, supports live GPS
+    positioning for hands-free guidance, and allows users to file spatially-anchored issue reports
+    that facilities staff can review in context through the companion logistics view.
+  </p>
+  <p>
+    A deliberate architectural choice was made to avoid build toolchains and framework
+    dependencies. This keeps deployment friction near zero: the system is added to a Pano2VR
+    export by copying a folder of scripts and adding script tags to <code>index.html</code>.
+    After any campus re-scan, only the <code>pano.xml</code> and tile files need to be replaced.
+  </p>
+
+  <h3 class="section-heading">6.2 Challenges</h3>
+  <p>
+    <span class="bold">Pano2VR API stability.</span> The player API exposes no formal specification,
+    so methods such as <code>getPan()</code>, <code>setView()</code>, and <code>openNext()</code>
+    were verified empirically. Future Pano2VR version upgrades may require corresponding
+    updates to the navigation layer.
+  </p>
+  <p>
+    <span class="bold">Supabase Row Level Security.</span> Multiple submission failures during
+    development were traced to RLS silently returning zero rows for the <code>anon</code> role
+    on reference tables that lacked SELECT policies. This was resolved by adding permissive
+    SELECT policies to <code>issue_types</code> and <code>issue_statuses</code>, and by
+    eliminating the per-submit <code>issue_statuses</code> lookup entirely in favour of a
+    PostgreSQL column default function.
+  </p>
+  <p>
+    <span class="bold">GPS accuracy on campus.</span> The Geolocation API returns accuracy radii
+    between 5 m and 40 m depending on device and environment. In dense indoor areas, the
+    nearest-node algorithm occasionally snaps to an adjacent building. A fallback to manual
+    mode is provided for these cases.
+  </p>
+  <p>
+    <span class="bold">Panorama tile size.</span> The full tile set for the campus tour exceeds 2 GB,
+    making the repository large and deployment slow. Migration to a CDN (Cloudflare R2 or
+    equivalent) is identified as a priority for production deployment.
+  </p>
+
+  <h3 class="section-heading">6.3 Future Work</h3>
+  <ul>
+    <li><span class="bold">CDN tile hosting.</span> Migrating panorama tiles to Cloudflare R2 would reduce repository size and improve global load times, with zero egress fees for public access.</li>
+    <li><span class="bold">Administrator dashboard.</span> A web interface for the Logistics team to triage, assign, and update the status of submitted issues would close the workflow loop opened by the reporting module.</li>
+    <li><span class="bold">Indoor node GPS correction.</span> A BLE beacon or Wi-Fi fingerprinting layer could supplement GPS accuracy within buildings.</li>
+    <li><span class="bold">Accessibility.</span> Keyboard navigation support and ARIA labelling for the custom Canvas elements would improve usability for users with visual or motor impairments.</li>
+    <li><span class="bold">Multi-campus support.</span> The module architecture is campus-agnostic; parametrising the Supabase project and pano.xml path would allow multiple institutions to run independent instances from the same codebase.</li>
+  </ul>
+
+  <h3 class="section-heading">6.4 Conclusion</h3>
+  <p>
+    The 360° Campus Navigation and Issue Reporting System demonstrates that a photorealistic,
+    graph-navigated panorama tour can serve as an effective substrate for both wayfinding and
+    spatially-precise facility reporting. By building directly on a Pano2VR export and integrating
+    with a serverless Supabase backend, the project achieves its design goals with no server
+    runtime and minimal maintenance overhead. The work extends the earlier facilities management
+    contribution by Armo-Himbson (2020) and establishes a foundation for a fully digital
+    campus facilities lifecycle at Ashesi University.
+  </p>
+
+  <hr class="section-rule" style="margin-top:28pt;"/>
+
+  <h2 class="chapter-heading">References</h2>
+  <ol style="font-size:11pt; line-height:1.7;">
+    <li>Atkin, B., &amp; Brooks, A. (2015). <em>Total Facility Management</em> (4th ed.). Wiley-Blackwell.</li>
+    <li>Armo-Himbson, S. K. N. (2020). <em>A Facilities Management System Utilizing the Application of Three-Dimensional Models, for Ashesi University.</em> Applied Project, Ashesi University.</li>
+    <li>Afyouni, I., Ray, C., &amp; Claramunt, C. (2012). Spatial models for context-aware indoor navigation systems: A survey. <em>Journal of Spatial Information Science</em>, 4, 85–123.</li>
+    <li>Intal, G. L. D., Robielos, R. A. C., &amp; Tumanan, A. G. B. (2016). Design of a user-driven facility management system for a university. <em>Procedia Manufacturing</em>, 3, 1474–1481.</li>
+    <li>Pano2VR. (2024). <em>Pano2VR Documentation</em>. Garden Gnome Software. Retrieved from https://ggnome.com/pano2vr</li>
+    <li>Supabase. (2024). <em>Supabase Documentation: Row Level Security</em>. Supabase Inc. Retrieved from https://supabase.com/docs/guides/auth/row-level-security</li>
+  </ol>
+</div>
+
+</body>
+</html>

@@ -1,40 +1,25 @@
-/**
- * Gyroscope — lets the user look around the panorama by physically moving
- * their device. Maps DeviceOrientationEvent angles to pan/tilt:
- *
- *   alpha (0–360°, compass)     → panorama pan
- *   beta  (–180–180°, tilt)     → panorama tilt (upright phone = 0° tilt)
- *
- * On first reading we capture the offset between the device's compass heading
- * and wherever the panorama is currently pointing, so activating gyro doesn't
- * suddenly spin the view to magnetic north.
- *
- * A low-pass filter (SMOOTHING=0.15) smooths out sensor jitter without adding
- * noticeable lag.
- *
- * iOS 13+ requires DeviceOrientationEvent.requestPermission() which must be
- * called directly from a user tap — that's why toggle() is wired to the button
- * click rather than called programmatically.
- */
+// We added Gyroscope to let mobile users look around the panorama by physically
+// turning their device instead of dragging with a finger.
+// We map device alpha (compass heading) to panorama pan and device beta (tilt)
+// to panorama tilt, calibrated on activation so the current view becomes the
+// "home" orientation regardless of which direction the device is pointing.
+// We also thought about using absolute orientation sensors but DeviceOrientation
+// has wider browser support on the Android and iOS devices used on campus.
 (function (Nav) {
   'use strict';
 
-  var SMOOTHING        = 0.15;   // 0 = no smoothing, 1 = frozen
-  var TILT_CLAMP_MAX   = 70;     // max up/down tilt in degrees
+  var SMOOTHING        = 0.15;
+  var TILT_CLAMP_MAX   = 70;
   var TILT_CLAMP_MIN   = -70;
-  var RAF_INTERVAL_MS  = 50;     // min ms between pano updates (~20 fps)
-
-  // ── State ────────────────────────────────────────────────────────────────────
+  var RAF_INTERVAL_MS  = 50;
 
   var _active        = false;
   var _calibrated    = false;
-  var _panOffset     = 0;       // difference between device alpha and pano pan at calibration
+  var _panOffset     = 0;
   var _smoothPan     = 0;
   var _smoothTilt    = 0;
   var _lastRaf       = 0;
   var _rafId         = null;
-
-  // ── Singleton ────────────────────────────────────────────────────────────────
 
   function Gyroscope() {}
 
@@ -59,7 +44,8 @@
 
     var self = this;
 
-    // iOS 13+ requires explicit permission from a user-gesture
+    // We call requestPermission here because iOS 13+ requires it to be triggered
+    // directly from a user gesture — calling it anywhere else silently fails.
     if (typeof DeviceOrientationEvent.requestPermission === 'function') {
       DeviceOrientationEvent.requestPermission()
         .then(function (state) {
@@ -89,8 +75,6 @@
 
   Gyroscope.prototype.isActive = function () { return _active; };
 
-  // ── Private ──────────────────────────────────────────────────────────────────
-
   Gyroscope.prototype._activate = function () {
     _active      = true;
     _calibrated  = false;
@@ -100,10 +84,12 @@
     Nav.Toast.show('Gyroscope on — tilt & turn your device to look around', 2800);
   };
 
-  // Latest raw values from the sensor (written by event, read by RAF)
   var _rawAlpha = null;
   var _rawBeta  = null;
 
+  // We decouple the sensor event from the RAF loop so the pano update happens
+  // at a controlled rate (RAF_INTERVAL_MS) rather than at the sensor's firing
+  // rate which can be 60+ Hz and would cause unnecessary CPU load.
   function _handleOrientation(evt) {
     if (evt.alpha === null || evt.beta === null) return;
     _rawAlpha = evt.alpha;
@@ -114,13 +100,15 @@
     if (!_active) return;
     _rafId = requestAnimationFrame(_rafLoop);
 
-    if (_rawAlpha === null) return;                    // no reading yet
-    if (ts - _lastRaf < RAF_INTERVAL_MS) return;       // throttle
+    if (_rawAlpha === null) return;
+    if (ts - _lastRaf < RAF_INTERVAL_MS) return;
     _lastRaf = ts;
 
     if (!window.pano) return;
 
-    // Calibrate on first valid reading: align device heading with current pan
+    // We capture the offset between device heading and current pan on the first
+    // valid reading so activating the gyroscope doesn't suddenly spin the view
+    // to magnetic north.
     if (!_calibrated) {
       _panOffset  = _rawAlpha - pano.getPan();
       _smoothPan  = pano.getPan();
@@ -128,26 +116,24 @@
       _calibrated = true;
     }
 
-    // Target pan: remove calibration offset so initial orientation feels natural
     var targetPan  = _rawAlpha - _panOffset;
 
-    // Target tilt: holding phone vertically (beta≈90°) = looking straight ahead (0° tilt)
-    //   targetTilt = -(beta - 90)  →  0° when upright, positive when tilting top back
+    // We subtract 90° from beta because holding the phone vertically gives
+    // beta ≈ 90°, and we want that to map to 0° panorama tilt (straight ahead).
     var targetTilt = -((_rawBeta || 90) - 90);
     if (targetTilt >  TILT_CLAMP_MAX) targetTilt =  TILT_CLAMP_MAX;
     if (targetTilt <  TILT_CLAMP_MIN) targetTilt =  TILT_CLAMP_MIN;
 
-    // Low-pass filter
     _smoothPan  = _smoothPan  + SMOOTHING * (_shortestArc(_smoothPan, targetPan));
     _smoothTilt = _smoothTilt + SMOOTHING * (targetTilt - _smoothTilt);
 
     pano.setPanTiltFov(_smoothPan, _smoothTilt, pano.getFov());
   }
 
-  // Handles the 0/360 wrap so pan smoothing doesn't spin the long way around.
+  // We use shortest-arc interpolation so pan smoothing never spins the long way
+  // around when the angle crosses the 0/360 boundary.
   function _shortestArc(from, to) {
-    var diff = ((to - from) % 360 + 540) % 360 - 180;
-    return diff;
+    return ((to - from) % 360 + 540) % 360 - 180;
   }
 
   function _updateToggleButton(on) {

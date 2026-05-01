@@ -1,8 +1,7 @@
-/**
- * UIBuilder — Injects all navigation HTML into the DOM and binds events.
- * Pattern: Builder (constructs UI declaratively, wires all event handlers)
- * Called once during App.init(). After this, each module owns its own DOM.
- */
+// We put all DOM construction in UIBuilder so HTML is created exactly once at
+// init time and every module can assume its elements exist after build() returns.
+// We also thought about using innerHTML on a template string but building
+// elements programmatically avoids any XSS risk from node titles or categories.
 (function (Nav) {
   'use strict';
 
@@ -44,10 +43,11 @@
     container.appendChild(drawCanvas);
 
     // ── Report dialog ─────────────────────────────────────────────────────────
-    // Build issue type options from Nav.IssueTypes schema
+    // We use Nav.AppState.issueTypes (fetched from DB at boot) so the dropdown
+    // reflects whatever is in Supabase. Nav.IssueTypes is the offline fallback.
     var issueOpts = '<option value="">-- Select a type --</option>';
-    (Nav.IssueTypes || []).forEach(function (t) {
-      issueOpts += '<option value="' + t.id + '">' + t.icon + ' ' + t.label + '</option>';
+    (Nav.AppState.issueTypes || Nav.IssueTypes || []).forEach(function (t) {
+      issueOpts += '<option value="' + (t.uuid || t.id) + '">' + (t.label || t.name) + '</option>';
     });
 
     var reportDlg = document.createElement('div');
@@ -142,7 +142,7 @@
     panel.id  = 'nav-search-panel';
     panel.innerHTML =
       '<div class="nav-search-header">' +
-        '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#4FB5C2" stroke-width="2.5">' +
+        '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#a93c40" stroke-width="2.5">' +
           '<circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>' +
         '</svg>' +
         '<input id="nav-search-input" type="text" placeholder="Where do you want to go?" autocomplete="off"/>' +

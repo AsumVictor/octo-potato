@@ -1,9 +1,6 @@
-/**
- * LoadingOverlay — the full-screen spinner shown while the app boots.
- *
- * Also disables the nav open button so the user can't try to navigate before
- * the graph and search index are ready. Call hide() once init completes.
- */
+// We added LoadingOverlay to block interaction while the panorama XML and tile
+// images load at startup. We also disable the nav open button here so the user
+// cannot try to navigate before the graph and search index are ready.
 (function (Nav) {
   'use strict';
 
@@ -50,7 +47,7 @@
   LoadingOverlay.prototype._disableNavBtn = function (disabled) {
     var btn = document.getElementById('nav-open-btn');
     if (!btn) return;
-    btn.disabled          = !!disabled;
+    btn.disabled            = !!disabled;
     btn.style.pointerEvents = disabled ? 'none' : 'auto';
     btn.style.opacity       = disabled ? '0.3'  : '1';
   };

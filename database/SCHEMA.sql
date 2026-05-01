@@ -1,4 +1,5 @@
--- Create users table
+-- We store staff accounts here. Reporters do not need an account — they just
+-- provide their email in the report form.
 CREATE TABLE users (
     id UUID PRIMARY KEY,
     email TEXT UNIQUE NOT NULL,
@@ -8,7 +9,8 @@ CREATE TABLE users (
     FOREIGN KEY (id) REFERENCES auth.users(id)
 );
 
--- Create issue types table
+-- We keep issue categories in the DB so the report dropdown is driven by
+-- Supabase — no JS deploy needed to add or rename a category.
 CREATE TABLE issue_types (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     name TEXT UNIQUE NOT NULL,
@@ -17,7 +19,7 @@ CREATE TABLE issue_types (
     updated_at TIMESTAMP DEFAULT now()
 );
 
--- Create issue statuses table
+-- We track every workflow state an issue can be in.
 CREATE TABLE issue_statuses (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     name TEXT UNIQUE NOT NULL,
@@ -26,9 +28,9 @@ CREATE TABLE issue_statuses (
     updated_at TIMESTAMP DEFAULT now()
 );
 
--- Seed issue categories — names match Nav.IssueTypes ids in IssueTypes.js
-INSERT INTO issue_types (name, description)
-VALUES
+-- We seed the issue categories here. The name column must match the id values
+-- in modules/data/IssueTypes.js so the JS label lookup works correctly.
+INSERT INTO issue_types (name, description) VALUES
     ('safety',        'General safety hazards on campus'),
     ('fire',          'Fire or emergency situations'),
     ('damage',        'Physical damage to buildings or property'),
@@ -44,31 +46,42 @@ VALUES
     ('other',         'Any issue not covered by the above categories')
 ON CONFLICT (name) DO NOTHING;
 
--- Seed issue workflow statuses
-INSERT INTO issue_statuses (name, description)
-VALUES
-    ('open', 'Newly reported issue awaiting review or action'),
-    ('in_progress', 'Issue currently being worked on'),
-    ('resolved', 'Issue has been fixed and verified resolved'),
-    ('closed', 'Issue has been closed after resolution or follow-up'),
-    ('rejected', 'Issue reported but deemed invalid or not actionable'),
-    ('pending', 'Issue awaiting more information or approval')
+-- We seed workflow statuses here.
+INSERT INTO issue_statuses (name, description) VALUES
+    ('open',        'Newly reported, awaiting review'),
+    ('in_progress', 'Currently being worked on'),
+    ('resolved',    'Fixed and verified'),
+    ('closed',      'Closed after resolution or follow-up'),
+    ('rejected',    'Deemed invalid or not actionable'),
+    ('pending',     'Awaiting more information or approval')
 ON CONFLICT (name) DO NOTHING;
 
--- Create issues table
+-- We create this function so issues get status_id = 'open' automatically on insert.
+-- The client never has to query issue_statuses directly.
+CREATE OR REPLACE FUNCTION open_status_id()
+RETURNS uuid LANGUAGE sql STABLE AS $$
+    SELECT id FROM issue_statuses WHERE name = 'open' LIMIT 1;
+$$;
+
+-- We store every reported issue here. Only Ashesi email addresses can submit —
+-- this is enforced by both the CHECK constraint (data integrity) and the RLS
+-- INSERT policy (access control).
 CREATE TABLE issues (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     reporter_email TEXT NOT NULL,
     issue_type_id UUID NOT NULL REFERENCES issue_types(id),
-    status_id UUID NOT NULL REFERENCES issue_statuses(id),
+    status_id UUID NOT NULL REFERENCES issue_statuses(id) DEFAULT open_status_id(),
     metadata JSONB DEFAULT '{}'::jsonb,
     images TEXT[] DEFAULT ARRAY[]::TEXT[],
     created_at TIMESTAMP DEFAULT now(),
     updated_at TIMESTAMP DEFAULT now(),
-    CONSTRAINT ashesi_email_only CHECK (reporter_email LIKE '%@ashesi.edu.gh' OR reporter_email LIKE '%ashesi%')
+    CONSTRAINT ashesi_email_only CHECK (
+        reporter_email LIKE '%@ashesi.edu.gh' OR
+        reporter_email LIKE '%@ug.ashesi.edu.gh'
+    )
 );
 
--- Create resolves table
+-- We record how and by whom each issue was resolved.
 CREATE TABLE resolves (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     issue_id UUID NOT NULL REFERENCES issues(id) ON DELETE CASCADE,
@@ -78,34 +91,43 @@ CREATE TABLE resolves (
     created_at TIMESTAMP DEFAULT now()
 );
 
--- Enable RLS
-ALTER TABLE users ENABLE ROW LEVEL SECURITY;
-ALTER TABLE issues ENABLE ROW LEVEL SECURITY;
-ALTER TABLE resolves ENABLE ROW LEVEL SECURITY;
+-- We enable RLS on every table.
+ALTER TABLE issue_types    ENABLE ROW LEVEL SECURITY;
+ALTER TABLE issue_statuses ENABLE ROW LEVEL SECURITY;
+ALTER TABLE issues         ENABLE ROW LEVEL SECURITY;
+ALTER TABLE users          ENABLE ROW LEVEL SECURITY;
+ALTER TABLE resolves       ENABLE ROW LEVEL SECURITY;
 
--- RLS Policies for users
-CREATE POLICY "Users can view own profile" ON users
-    FOR SELECT USING (auth.uid() = id);
+-- We allow anyone (including unauthenticated visitors) to read lookup tables.
+CREATE POLICY "Public read" ON issue_types    FOR SELECT USING (true);
+CREATE POLICY "Public read" ON issue_statuses FOR SELECT USING (true);
 
-CREATE POLICY "Users can insert own profile" ON users
-    FOR INSERT WITH CHECK (auth.uid() = id AND auth.jwt() ->> 'email' = email);
-
-CREATE POLICY "Users can update own profile" ON users
-    FOR UPDATE USING (auth.uid() = id) WITH CHECK (auth.uid() = id);
-
--- RLS Policies for issues
-CREATE POLICY "Users can view all issues" ON issues
+-- We allow anyone to read issues but only Ashesi addresses can submit one.
+CREATE POLICY "Anyone can read issues" ON issues
     FOR SELECT USING (true);
 
--- No auth flow in the client — enforce email domain via the column CHECK constraint only
-CREATE POLICY "Users can create issues with ashesi email" ON issues
+CREATE POLICY "Ashesi members can submit issues" ON issues
     FOR INSERT WITH CHECK (
-        reporter_email LIKE '%@ashesi.edu.gh' OR reporter_email LIKE '%ashesi%'
+        reporter_email LIKE '%@ashesi.edu.gh' OR
+        reporter_email LIKE '%@ug.ashesi.edu.gh'
     );
 
--- RLS Policies for resolves
-CREATE POLICY "Users can view all resolves" ON resolves
+-- We restrict user profile access to the owner only.
+CREATE POLICY "Owner can read own profile" ON users
+    FOR SELECT USING (auth.uid() = id);
+
+CREATE POLICY "Owner can create own profile" ON users
+    FOR INSERT WITH CHECK (
+        auth.uid() = id AND auth.jwt() ->> 'email' = email
+    );
+
+CREATE POLICY "Owner can update own profile" ON users
+    FOR UPDATE USING (auth.uid() = id)
+    WITH CHECK (auth.uid() = id);
+
+-- We let anyone view resolves but only authenticated staff can create them.
+CREATE POLICY "Anyone can read resolves" ON resolves
     FOR SELECT USING (true);
 
-CREATE POLICY "Authorized users can create resolves" ON resolves
+CREATE POLICY "Staff can create resolves" ON resolves
     FOR INSERT WITH CHECK (auth.jwt() ->> 'email' = resolved_by);

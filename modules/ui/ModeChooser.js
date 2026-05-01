@@ -1,35 +1,23 @@
-/**
- * ModeChooser — handles the "choose navigation mode" popup and the GPS
- * detection flow that places the user on the map automatically.
- *
- * How GPS placement works (so you know why the numbers are what they are):
- *   1. watchPosition starts immediately — maximumAge:0 forces fresh readings.
- *   2. We collect up to 15 s of samples, but stop early if accuracy hits ≤8 m
- *      AND we have at least 3 good readings to average.
- *   3. Readings worse than 50 m are thrown away before averaging.
- *   4. We compute a weighted centroid: each reading's weight = 1/accuracy².
- *      Accurate readings pull the result much harder than noisy ones. This
- *      cancels out GPS jitter far better than just picking the single best fix.
- *   5. All nodes are searched (no radius cap) — we pick the nearest one.
- *   6. If the nearest node is >200 m away we tell the user they're out of range.
- *   7. The nearest node is always auto-selected — the user never sees a picker.
- */
+// We built ModeChooser to handle two things: the modal that lets the user pick
+// between Manual and Live GPS navigation, and the GPS detection flow that
+// collects multiple position samples and places the user on the nearest node.
+// We collect up to 15 s of samples and compute a weighted centroid rather than
+// taking the first fix — this cancels out GPS jitter much better than picking
+// the single best reading.
 (function (Nav) {
   'use strict';
 
-  var MAX_COLLECT_MS        = 15000;  // max collection window (ms)
-  var EXCELLENT_ACCURACY_M  = 8;      // stop early if this accurate AND enough samples
-  var MIN_GOOD_SAMPLES      = 3;      // minimum samples needed to stop early
-  var MAX_SAMPLE_ACCURACY_M = 50;     // discard readings worse than this before averaging
-  var OUT_OF_AREA_M         = 200;    // nearest node must be within this
+  var MAX_COLLECT_MS        = 15000;
+  var EXCELLENT_ACCURACY_M  = 8;
+  var MIN_GOOD_SAMPLES      = 3;
+  var MAX_SAMPLE_ACCURACY_M = 50;
+  var OUT_OF_AREA_M         = 200;
 
   function ModeChooser() {
-    this._gpsWatchId  = null;
-    this._gpsTimeout  = null;
-    this._gpsSamples  = [];
+    this._gpsWatchId = null;
+    this._gpsTimeout = null;
+    this._gpsSamples = [];
   }
-
-  // ── Chooser modal ────────────────────────────────────────────────────────────
 
   ModeChooser.prototype.open = function () {
     var el = document.getElementById('nav-mode-chooser');
@@ -41,15 +29,14 @@
     if (el) el.classList.remove('active');
   };
 
-  // ── Detection modal ──────────────────────────────────────────────────────────
-
   ModeChooser.prototype.openDetection = function () {
     this._resetDetection();
-    var modal    = document.getElementById('nav-detection-modal');
-    var card     = document.querySelector('.nav-detection-card');
+    var modal = document.getElementById('nav-detection-modal');
+    var card  = document.querySelector('.nav-detection-card');
     if (!modal || !card) return;
 
-    // Restore default card layout (in case a picker was rendered before)
+    // We rebuild the card HTML each time the modal opens in case a previous
+    // detection left error state or a node picker in the card.
     card.innerHTML =
       '<div class="nav-detection-title">Detecting Location</div>' +
       '<div class="nav-detection-copy" id="nav-detection-status">Requesting location permission...</div>' +
@@ -68,8 +55,6 @@
     var modal = document.getElementById('nav-detection-modal');
     if (modal) modal.classList.remove('active');
   };
-
-  // ── Navigation mode toggle ───────────────────────────────────────────────────
 
   ModeChooser.prototype.setMode = function (mode) {
     if (mode !== 'manual' && mode !== 'live') return;
@@ -97,8 +82,6 @@
     Nav.Toast.show('Navigation mode: ' + (mode === 'live' ? 'Live GPS' : 'Manual'), 2200);
   };
 
-  // ── GPS collection ───────────────────────────────────────────────────────────
-
   ModeChooser.prototype._startGpsCollection = function () {
     var self = this;
     this._gpsSamples = [];
@@ -110,19 +93,18 @@
 
     this._setStatus('Acquiring GPS signal...');
 
-    // Start watching immediately — first reading can come from cache but
-    // subsequent ones will be from live satellite data
     this._gpsWatchId = navigator.geolocation.watchPosition(
       function (pos) { self._onSample(pos); },
       function (err) { self._onGpsError(err); },
       {
         enableHighAccuracy: true,
         timeout:     10000,
-        maximumAge:  0       
+        maximumAge:  0
       }
     );
 
-    // Hard deadline — use best sample collected so far
+    // We set a hard deadline so the user never waits forever — at 15 s we
+    // finalise with whatever samples we have collected so far.
     this._gpsTimeout = setTimeout(function () {
       self._finalize();
     }, MAX_COLLECT_MS);
@@ -131,7 +113,6 @@
   ModeChooser.prototype._onSample = function (pos) {
     var accuracy = pos.coords.accuracy > 0 ? pos.coords.accuracy : 999;
 
-    // Only keep readings good enough to be useful for averaging
     if (accuracy <= MAX_SAMPLE_ACCURACY_M) {
       this._gpsSamples.push({
         lat:      pos.coords.latitude,
@@ -142,11 +123,12 @@
 
     var goodCount = this._gpsSamples.length;
     this._setStatus(
-      'Acquiring GPS\u2026 (\u00B1' + Math.round(accuracy) + '\u202fm' +
+      'Acquiring GPS… (±' + Math.round(accuracy) + ' m' +
       (goodCount > 0 ? ', ' + goodCount + ' reading' + (goodCount !== 1 ? 's' : '') : '') + ')'
     );
 
-    // Stop early only when accuracy is excellent AND we have enough samples to average
+    // We stop early when accuracy is excellent and we have enough samples so
+    // the user doesn't have to wait the full 15 s when GPS is working well.
     if (accuracy <= EXCELLENT_ACCURACY_M && goodCount >= MIN_GOOD_SAMPLES) {
       this._finalize();
     }
@@ -162,7 +144,6 @@
   };
 
   ModeChooser.prototype._finalize = function () {
-    // Save samples BEFORE _resetDetection wipes them
     var samples = this._gpsSamples.slice();
     this._resetDetection();
 
@@ -171,11 +152,10 @@
       return;
     }
 
-    this._setStatus('Locating you on the map\u2026');
+    this._setStatus('Locating you on the map…');
 
-    // Weighted centroid: weight each sample by 1/accuracy²
-    // Better readings (smaller accuracy circle) pull the result harder.
-    // This cancels out GPS jitter far better than picking a single reading.
+    // We weight each sample by 1/accuracy² so precise readings pull the result
+    // much harder than noisy ones — this is much more robust than a simple mean.
     var totalWeight = 0;
     var weightedLat = 0;
     var weightedLng = 0;
@@ -195,10 +175,7 @@
     this._resolvePosition(lat, lng, bestAccuracy);
   };
 
-  // ── Node resolution ──────────────────────────────────────────────────────────
-
   ModeChooser.prototype._resolvePosition = function (lat, lng, accuracy) {
-    // Search ALL nodes — no radius cap — pick the single nearest one.
     var all = findAllNodesSorted(lat, lng, Nav.AppState.nodes);
 
     if (all.length === 0) {
@@ -211,12 +188,11 @@
     if (nearest.distance > OUT_OF_AREA_M) {
       this._showDetectionError(
         'You are not near any mapped location on campus. ' +
-        '(nearest: ' + Math.round(nearest.distance) + '\u202fm away)'
+        '(nearest: ' + Math.round(nearest.distance) + ' m away)'
       );
       return;
     }
 
-    // Always auto-select the nearest node — user never needs to choose their location.
     this._selectNode(nearest);
   };
 
@@ -232,19 +208,18 @@
       });
     }
 
-    // Seed LiveLocation with this node BEFORE starting GPS tracking so the
-    // first watchPosition reading can't immediately jump to a different node.
+    // We seed LiveLocation before starting GPS tracking so the hysteresis
+    // logic has a starting node and does not immediately switch away on the
+    // first watchPosition reading due to GPS jitter.
     if (window.LiveLocation && LiveLocation.setCurrentNode) {
       LiveLocation.setCurrentNode(nodeId);
     }
 
     this.setMode('live');
     this.closeDetection();
-    Nav.Toast.show('Live: placed at ' + node.title + ' (\u00B1' + Math.round(candidate.distance) + '\u202fm)', 3000);
+    Nav.Toast.show('Live: placed at ' + node.title + ' (±' + Math.round(candidate.distance) + ' m)', 3000);
     setTimeout(function () { Nav.SearchPanel.open(); }, 400);
   };
-
-  // ── Private helpers ───────────────────────────────────────────────────────────
 
   ModeChooser.prototype._resetDetection = function () {
     if (this._gpsWatchId !== null) {
@@ -271,17 +246,12 @@
     this._setStatus(message);
   };
 
-  // ── Node search ───────────────────────────────────────────────────────────────
-
-  /**
-   * Returns ALL nodes with valid GPS coordinates, sorted nearest-first.
-   * No radius cap — the caller decides what distance is acceptable.
-   */
+  // We search all nodes with no radius cap so the nearest node is always
+  // returned — the caller decides whether that distance is acceptable.
   function findAllNodesSorted(lat, lng, nodes) {
     var results = [];
     Object.keys(nodes).forEach(function (id) {
       var node = nodes[id];
-      // Must have real numeric lat/lng (not null, undefined, or NaN)
       if (typeof node.lat !== 'number' || typeof node.lng !== 'number') return;
       if (isNaN(node.lat) || isNaN(node.lng)) return;
       var d = Nav.haversine(lat, lng, node.lat, node.lng);

@@ -1,9 +1,8 @@
-/**
- * Toast — Singleton notification banner.
- * Pattern: Singleton
- * Appends a toast to #container. duration=0 means persistent until dismissed.
- * Actions are [ { label, fn } ] objects for action buttons.
- */
+// We built Toast as a lightweight notification banner that appears inside the
+// panorama container so it overlays the scene without disrupting the layout.
+// We also thought about using browser alert() or a fixed-position element but
+// keeping it inside the container means it moves naturally if the container
+// is repositioned on different screen sizes.
 (function (Nav) {
   'use strict';
 
@@ -11,13 +10,15 @@
     this._active = null;
   }
 
+  // We dismiss any existing toast before showing a new one — two toasts
+  // stacked on top of each other would be confusing and overlap badly.
   Toast.prototype.show = function (msg, duration, actions) {
     if (this._active) { this._active.remove(); this._active = null; }
 
-    var toast    = document.createElement('div');
+    var toast = document.createElement('div');
     toast.className = 'nav-toast';
 
-    var span     = document.createElement('span');
+    var span = document.createElement('span');
     span.textContent = msg;
     toast.appendChild(span);
 

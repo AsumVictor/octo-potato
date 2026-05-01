@@ -1,17 +1,14 @@
-/**
- * Pathfinder — Dijkstra shortest path between two node IDs.
- *
- * Runs weighted Dijkstra first (ROAD edges cost 10× less, so the path strongly
- * prefers walkways). If that finds nothing it retries with raw geographic
- * distances as a fallback so the user always gets some route rather than a dead
- * end. find() returns null only if the nodes are genuinely disconnected.
- */
+// We implemented Dijkstra here to find the shortest walking path between two
+// nodes on the campus panorama graph.
+// We also thought about A* for better performance but the graph only has ~143
+// nodes so Dijkstra is fast enough and simpler to reason about.
+// We run the algorithm twice: first with ROAD weights (0.1× cost) so it
+// strongly prefers walkways, then again with raw distances as a fallback so
+// the user always gets some route rather than a dead end.
 (function (Nav) {
   'use strict';
 
   var MAX_ITER = 1000;
-
-  // ── Strategy base ────────────────────────────────────────────────────────────
 
   function DijkstraStrategy(useWeights) {
     this.useWeights = useWeights;
@@ -43,9 +40,9 @@
 
       var edges = graph[u] || [];
       for (var i = 0; i < edges.length; i++) {
-        var edge    = edges[i];
+        var edge     = edges[i];
         var edgeCost = useWeights ? edge.distance : edge.rawDistance;
-        var nd      = dist[u] + edgeCost;
+        var nd       = dist[u] + edgeCost;
         if (nd < dist[edge.neighborId]) {
           dist[edge.neighborId] = nd;
           prev[edge.neighborId] = {
@@ -62,7 +59,9 @@
 
     if (dist[endId] === Infinity) return null;
 
-    // Reconstruct path
+    // We reconstruct the path by walking backwards through prev[] from the
+    // destination — each step carries the pan/tilt the camera needs to face
+    // so AutoRotator can aim immediately when the user enters that node.
     var path = [];
     var cur  = endId;
     while (cur !== null) {
@@ -80,8 +79,6 @@
 
     return { path: path, totalDistance: dist[endId] };
   };
-
-  // ── Pathfinder Singleton ─────────────────────────────────────────────────────
 
   function Pathfinder() {
     this._weighted   = new DijkstraStrategy(true);

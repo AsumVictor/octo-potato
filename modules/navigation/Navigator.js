@@ -1,17 +1,12 @@
-/**
- * Navigator — owns the navigation lifecycle: start, advance, reroute, cancel,
- * and arrival. Everything else in the app reacts to what this emits on EventBus.
- *
- * The pano player fires 'changenode' on every node transition. App.js catches
- * that and calls handleNodeChange() here, which checks if we're on-route and
- * advances the step or triggers the reroute prompt accordingly.
- */
+// We built Navigator to own the full navigation lifecycle: starting a route,
+// advancing through steps, rerouting when the user goes off-path, and playing
+// the arrival animation at the destination.
+// We also thought about putting this logic in App.js, but separated it so the
+// lifecycle stays testable without needing the full app to be initialised.
 (function (Nav) {
   'use strict';
 
   function Navigator() {}
-
-  // ── Public API ───────────────────────────────────────────────────────────────
 
   Navigator.prototype.start = function (destId) {
     var state = Nav.AppState;
@@ -50,6 +45,8 @@
     Nav.HUD.update();
     pano.stopAutorotate();
 
+    // We delay the first auto-rotate by 300 ms to let the search panel finish
+    // closing before the camera starts moving — avoids a jarring visual.
     var firstNext = route.path[1];
     if (firstNext) {
       setTimeout(function () {
@@ -72,7 +69,8 @@
     Nav.EventBus.emit('nav:cancel');
   };
 
-  // Called by App.js every time the panorama's 'changenode' event fires.
+  // We call this from App.js every time the Pano2VR player fires 'changenode'
+  // so Navigator can decide if the user is on-route or needs rerouting.
   Navigator.prototype.handleNodeChange = function (newNodeId) {
     var state = Nav.AppState;
     if (!state.navActive || !state.activeRoute) return;
@@ -112,14 +110,11 @@
     Nav.EventBus.emit('nav:reroute', newRoute);
   };
 
-  // ── Private ──────────────────────────────────────────────────────────────────
-
   Navigator.prototype._advanceStep = function (newNodeId) {
     var state = Nav.AppState;
     var path  = state.activeRoute.path;
     var expectedNext = path[state.stepIndex + 1] ? path[state.stepIndex + 1].nodeId : null;
 
-    // On-route: expected next node
     if (newNodeId === expectedNext) {
       state.stepIndex++;
       if (state.stepIndex >= path.length - 1) {
@@ -130,6 +125,8 @@
       Nav.HUD.update();
       var nextStep = path[state.stepIndex + 1];
       if (nextStep) {
+        // We delay the rotate by 650 ms here — the Pano2VR transition animation
+        // takes about 600 ms, so starting earlier fights with the transition.
         setTimeout(function () {
           Nav.AutoRotator.rotateTo(nextStep.pan, nextStep.tilt);
         }, 650);
@@ -137,13 +134,13 @@
       return true;
     }
 
-    // Jumped directly to destination
     if (newNodeId === path[path.length - 1].nodeId) {
       this._playArrival(path[path.length - 1].title);
       return true;
     }
 
-    // Check if user skipped ahead on the planned path
+    // We also handle the case where the user skipped ahead on the planned path —
+    // rather than declaring them off-route we fast-forward the step index.
     for (var i = state.stepIndex + 2; i < path.length; i++) {
       if (path[i].nodeId === newNodeId) {
         state.stepIndex = i;

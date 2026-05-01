@@ -26,7 +26,7 @@ function pano2vrSkin(player,base) {
 	player.addVariable('vis_video_url', 2, false, { ignoreInState: 0  });
 	player.addVariable('vis_phone_thumbs', 2, false, { ignoreInState: 0  });
 	player.addVariable('vis_phone_info', 2, false, { ignoreInState: 0  });
-	player.addVariable('vis_phone_floorplan', 2, false, { ignoreInState: 0  });
+	player.addVariable('vis_phosne_floorplan', 2, false, { ignoreInState: 0  });
 	player.addVariable('vis_phone_map', 2, false, { ignoreInState: 0  });
 	player.addVariable('vis_phone_share', 2, false, { ignoreInState: 0  });
 	player.addVariable('vis_phone_languages', 2, false, { ignoreInState: 0  });
@@ -43,7 +43,7 @@ function pano2vrSkin(player,base) {
 	player.addVariable('opt_info', 2, true, { ignoreInState: 1  });
 	player.addVariable('opt_info_available', 2, false, { ignoreInState: 1  });
 	player.addVariable('opt_desc_in_maps', 2, true, { ignoreInState: 1  });
-	player.addVariable('opt_auto_rot', 2, true, { ignoreInState: 1  });
+	player.addVariable('opt_auto_rot', 2, false, { ignoreInState: 1  });
 	player.addVariable('opt_fullscreen', 2, true, { ignoreInState: 1  });
 	player.addVariable('opt_gyro', 2, true, { ignoreInState: 1  });
 	player.addVariable('opt_maps', 2, false, { ignoreInState: 1  });

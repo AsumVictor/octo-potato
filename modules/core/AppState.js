@@ -1,36 +1,29 @@
-/**
- * AppState — everything the app needs to share between modules lives here.
- *
- * Nodes, the current route, step index, nav mode — all of it. If two modules
- * both need to know something, it goes in here rather than one module calling
- * into the other. set(key, value) also fires a 'state:<key>' event on EventBus
- * so any module can react to changes without polling.
- */
+// We created AppState as the single shared state container so every module reads
+// and writes from one place instead of passing data through function arguments.
+// We also wired set() to fire an EventBus event so any module can react to a
+// state change without polling or holding a direct reference to another module.
 (function (Nav) {
   'use strict';
 
   function AppState() {
-    // Data layer
-    this.nodes  = {};   // nodeId → NodeData
-    this.graph  = {};   // nodeId → Edge[]
+    this.nodes  = {};
+    this.graph  = {};
 
-    // Navigation state
-    this.activeRoute    = null;   // Route | null
+    this.activeRoute    = null;
     this.stepIndex      = 0;
     this.navActive      = false;
     this.navMode        = 'manual';
     this.navReady       = false;
 
-    // Camera / render helpers
     this.autoRotateDone = false;
     this.lastCamPan     = null;
 
-    // Live location
     this.liveStatus = 'off';
 
-    // Config constants
-    this.NODE_SELECT_RADIUS      = 50;   // metres
-    this.MAX_ACCEPTABLE_ACCURACY = 40;  // metres
+    // We chose 50 m and 40 m after testing on the Ashesi campus — wider nets
+    // caused false node switches on slow GPS hardware.
+    this.NODE_SELECT_RADIUS      = 50;
+    this.MAX_ACCEPTABLE_ACCURACY = 40;
   }
 
   AppState.prototype.set = function (key, value) {

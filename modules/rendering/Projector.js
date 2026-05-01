@@ -1,8 +1,7 @@
-/**
- * Projector — given a hotspot's pan/tilt and the current camera state, works
- * out where on screen (x, y) the hotspot lands, and whether it's actually in
- * the viewport. The Renderer uses this every frame to place arrows and labels.
- */
+// We added Projector to translate a hotspot's spherical pan/tilt angles into
+// 2D pixel coordinates on screen given the camera's current state.
+// We use this every frame inside the Renderer render loop so navigation
+// indicators track hotspots accurately as the user drags the camera around.
 (function (Nav) {
   'use strict';
 
@@ -12,10 +11,11 @@
     var dPan  = hsPan  - cam.pan;
     var dTilt = hsTilt - cam.tilt;
 
-    // Normalise horizontal to [-180, 180] to avoid wrap-around glitches
+    // We normalise dPan to [-180, 180] to prevent wrap-around glitches when
+    // a hotspot is near the ±180° boundary and the camera is on the other side.
     dPan = ((dPan + 180) % 360 + 360) % 360 - 180;
 
-    var ppd = W / cam.fov;            // pixels per degree
+    var ppd = W / cam.fov;
     var x   = W / 2 + dPan  * ppd;
     var y   = H / 2 - dTilt * ppd;
 
@@ -26,7 +26,8 @@
     return { x: x, y: y, dPan: dPan, dTilt: dTilt, inView: inView };
   };
 
-  // Normalise any angle to [-180, 180] — used when comparing pan deltas.
+  // We expose normAngle separately so the Renderer can compare pan deltas
+  // between frames without importing a duplicate normalisation formula.
   Projector.prototype.normAngle = function (a) {
     return ((a + 180) % 360 + 360) % 360 - 180;
   };

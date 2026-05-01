@@ -1,3 +1,7 @@
+// We set up the Supabase client here as the one place that holds the project
+// URL and anon key so no other module needs to know about them.
+// We read the values from window.ENV which is loaded from env.js — that file
+// is gitignored so credentials never get committed to the repository.
 (function (Nav) {
   'use strict';
 
