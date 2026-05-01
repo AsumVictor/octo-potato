@@ -8,29 +8,35 @@ pipeline {
   stages {
     stage('Install') {
       steps {
-        sh 'npm ci'
+        dir('/Users/vrasum/projects/Camera01/output') {
+          sh 'npm ci'
+        }
       }
     }
 
     stage('Test') {
       steps {
-        sh 'npm run test:ci'
+        dir('/Users/vrasum/projects/Camera01/output') {
+          sh 'npm run test:ci'
+        }
       }
     }
   }
 
   post {
     always {
-      junit 'junit.xml'
+      dir('/Users/vrasum/projects/Camera01/output') {
+        junit allowEmptyResults: true, testResults: 'junit.xml'
 
-      publishHTML(target: [
-        allowMissing:         true,
-        alwaysLinkToLastBuild: true,
-        keepAll:              true,
-        reportDir:            'coverage/lcov-report',
-        reportFiles:          'index.html',
-        reportName:           'Coverage Report'
-      ])
+        publishHTML(target: [
+          allowMissing:          true,
+          alwaysLinkToLastBuild: true,
+          keepAll:               true,
+          reportDir:             'coverage/lcov-report',
+          reportFiles:           'index.html',
+          reportName:            'Coverage Report'
+        ])
+      }
     }
     failure {
       echo 'Tests failed — check the Test Results tab above.'
