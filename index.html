@@ -36,9 +36,9 @@
 	</head>
 	<body>
 <!-- - - - - - - 8<- - - - - - cut here - - - - - 8<- - - - - - - -->
-		<script type="text/javascript" src="pano2vr_player.js?ts=81890874">
+		<script type="text/javascript" src="pano2vr_player.js?ts=28667969">
 		</script>
-		<script type="text/javascript" src="skin.js?ts=81890874">
+		<script type="text/javascript" src="skin.js?ts=28667969">
 		</script>
 		<div id="container" style="width:100%;height:100%;overflow:hidden;">
 		<br>Loading...<br><br>
@@ -89,12 +89,12 @@
 			pano=new pano2vrPlayer("container");
 			pano.startNode = startNode;
 			pano.startView = startView;
-			pano.setQueryParameter("ts=81890874")
+			pano.setQueryParameter("ts=28667969")
 			// add the skin object
 			skin=new pano2vrSkin(pano);
 			// load the configuration
 			window.addEventListener("load", function() {
-				pano.readConfigUrlAsync("pano.xml?ts=81890874");
+				pano.readConfigUrlAsync("pano.xml?ts=28667969");
 			});
 			if (window.navigator.userAgent.match(/Safari/i)) {
 				// fix for white borders, rotation on iPhone
@@ -125,17 +125,28 @@
 		<noscript>
 			<p><b>Please enable Javascript!</b></p>
 		</noscript>
-		<!-- Environment variables (gitignored — copy env.example.js → env.js and fill in values) -->
+		<!-- In-panorama navigation — re-add after every Pano2VR re-export -->
+		<!-- core -->
+		<!-- utils -->
+		<!-- data -->
+		<!-- pathfinding -->
+		<!-- navigation -->
+		<!-- rendering -->
+		<!-- sensors -->
+		<!-- ui -->
+		<!-- live location -->
+		<!-- app bootstrap -->
+		<!-- entry point -->
+<!-- - - - - - - 8<- - - - - - cut here - - - - - 8<- - - - - - - -->
+	
+		<!-- Environment variables -->
 		<script src="env.js"></script>
 		<!-- Supabase -->
 		<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
-		<!-- In-panorama navigation — re-add after every Pano2VR re-export -->
-		<!-- core -->
+		<!-- Navigation & reporting modules -->
 		<script src="modules/core/EventBus.js"></script>
 		<script src="modules/core/AppState.js"></script>
-		<!-- utils -->
 		<script src="modules/utils/Utils.js"></script>
-		<!-- data -->
 		<script src="modules/data/XmlLoader.js"></script>
 		<script src="modules/data/NodeParser.js"></script>
 		<script src="modules/data/GraphBuilder.js"></script>
@@ -143,17 +154,12 @@
 		<script src="modules/data/IssueTypes.js"></script>
 		<script src="modules/data/SupabaseClient.js"></script>
 		<script src="modules/data/IssueService.js"></script>
-		<!-- pathfinding -->
 		<script src="modules/pathfinding/Pathfinder.js"></script>
-		<!-- navigation -->
 		<script src="modules/navigation/AutoRotator.js"></script>
 		<script src="modules/navigation/Navigator.js"></script>
-		<!-- rendering -->
 		<script src="modules/rendering/Projector.js"></script>
 		<script src="modules/rendering/Renderer.js"></script>
-		<!-- sensors -->
 		<script src="modules/sensors/Gyroscope.js"></script>
-		<!-- ui -->
 		<script src="modules/ui/StyleInjector.js"></script>
 		<script src="modules/ui/Toast.js"></script>
 		<script src="modules/ui/LoadingOverlay.js"></script>
@@ -162,13 +168,9 @@
 		<script src="modules/ui/ModeChooser.js"></script>
 		<script src="modules/ui/ReportTool.js"></script>
 		<script src="modules/ui/UIBuilder.js"></script>
-		<!-- live location -->
 		<script src="modules/live-location.js"></script>
 		<script src="modules/live/LiveController.js"></script>
-		<!-- app bootstrap -->
 		<script src="modules/App.js"></script>
-		<!-- entry point -->
-		<script src="nav.js?ts=81890874"></script>
-<!-- - - - - - - 8<- - - - - - cut here - - - - - 8<- - - - - - - -->
+		<script src="nav.js?ts=28667969"></script>
 	</body>
 </html>
