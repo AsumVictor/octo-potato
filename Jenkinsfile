@@ -1,14 +1,22 @@
 pipeline {
   agent any
 
-  tools {
-    nodejs 'NodeJS-20'
+  parameters {
+    string(
+      name:         '/Users/vrasum/projects/Camera01/outpu',
+      defaultValue: '',
+      description:  'Absolute path to the project folder on this machine (e.g. /home/user/Camera01/output)'
+    )
+  }
+
+  environment {
+    PATH = "/opt/homebrew/bin:${env.PATH}"
   }
 
   stages {
     stage('Install') {
       steps {
-        dir('/Users/vrasum/projects/Camera01/output') {
+        dir("${params.PROJECT_DIR}") {
           sh 'npm ci'
         }
       }
@@ -16,7 +24,7 @@ pipeline {
 
     stage('Test') {
       steps {
-        dir('/Users/vrasum/projects/Camera01/output') {
+        dir("${params.PROJECT_DIR}") {
           sh 'npm run test:ci'
         }
       }
@@ -25,9 +33,8 @@ pipeline {
 
   post {
     always {
-      dir('/Users/vrasum/projects/Camera01/output') {
+      dir("${params.PROJECT_DIR}") {
         junit allowEmptyResults: true, testResults: 'junit.xml'
-
         publishHTML(target: [
           allowMissing:          true,
           alwaysLinkToLastBuild: true,

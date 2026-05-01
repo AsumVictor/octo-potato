@@ -2,7 +2,6 @@
 
 /**
  * Tests for Nav.haversine (exposed by GraphBuilder.js).
- * Pure maths — no DOM, no GPS, no mocks needed.
  */
 
 beforeAll(() => {
