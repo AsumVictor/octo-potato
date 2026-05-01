@@ -3,4 +3,3 @@ env.js
 node_modules/
 coverage/
 junit.xml
-tiles/
