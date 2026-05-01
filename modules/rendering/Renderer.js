@@ -1,4 +1,8 @@
-
+// We built Renderer as the canvas overlay that draws all navigation indicators
+// on top of the Pano2VR panorama viewer every animation frame.
+// We use a transparent canvas positioned over the panorama with pointer-events
+// set to none so all mouse and touch events still reach the Pano2VR player
+// underneath — the Pano2VR player is generated code we do not modify.
 (function (Nav) {
   'use strict';
 
@@ -6,8 +10,6 @@
     this._canvas = null;
     this._rafId  = null;
   }
-
-  //  Public API 
 
   Renderer.prototype.init = function () {
     this._canvas = document.createElement('canvas');
@@ -24,10 +26,10 @@
     this._startLoop();
   };
 
-  // ── Private ──────────────────────────────────────────────────────────────────
-
   Renderer.prototype._resize = function () {
     if (!this._canvas) return;
+    // We multiply by devicePixelRatio so the canvas stays sharp on retina
+    // screens — without this all drawing looks blurry on high-DPI devices.
     var dpr = window.devicePixelRatio || 1;
     this._canvas.width  = Math.round(window.innerWidth  * dpr);
     this._canvas.height = Math.round(window.innerHeight * dpr);
@@ -63,7 +65,10 @@
     var camTilt = pano.getTilt();
     var camFov  = pano.getFov();
 
-    // Wrong-direction detection: if camera moved AWAY from target since last frame
+    // We compare the pan delta between the current frame and the last frame to
+    // detect when the user is actively looking away from the target hotspot —
+    // we only show the "wrong direction" warning after autoRotateDone is true
+    // so we don't trigger it during the initial auto-rotate animation.
     var isWrong = false;
     if (state.lastCamPan !== null && state.autoRotateDone) {
       var prevDiff = Math.abs(Nav.Projector.normAngle(next.pan - state.lastCamPan));
@@ -88,8 +93,9 @@
     ctx.restore();
   };
 
-  // ── Draw: Ground trail ───────────────────────────────────────────────────────
-
+  // We draw the ground trail as an animated series of chevron arrows from the
+  // bottom-centre of the screen up to the hotspot position to suggest "walk
+  // towards this point on the floor in front of you".
   function drawGroundTrail(ctx, hx, hy, W, H) {
     var ox = W / 2;
     var oy = H * 0.82;
@@ -164,8 +170,8 @@
     ctx.restore();
   }
 
-  // ── Draw: Glowing rings ──────────────────────────────────────────────────────
-
+  // We draw three rings expanding outward in a sonar-ping pattern to draw the
+  // user's eye to the target hotspot without covering it completely.
   function drawGlowingRings(ctx, x, y) {
     var t = (performance.now() % 1800) / 1800;
 
@@ -208,8 +214,8 @@
     ctx.stroke();
   }
 
-  // ── Draw: Bouncing arrow ─────────────────────────────────────────────────────
-
+  // We animate the arrow with Math.sin so it bounces at a constant rate
+  // regardless of the device frame rate.
   function drawBounceArrow(ctx, x, y) {
     var bounce = Math.sin(performance.now() / 300) * 7;
     var ay     = y - 52 + bounce;
@@ -232,8 +238,6 @@
     ctx.stroke();
     ctx.restore();
   }
-
-  // ── Draw: Step label pill ────────────────────────────────────────────────────
 
   function drawNavLabel(ctx, x, y, currentIdx, totalSteps) {
     var label   = 'Move here';
@@ -273,8 +277,10 @@
     ctx.fillText(counter, lx + 12, ly + 33);
   }
 
-  // ── Draw: Edge compass arrow ─────────────────────────────────────────────────
-
+  // We draw the edge arrow when the target hotspot is off-screen so the user
+  // always knows which direction to turn even when they can't see the hotspot.
+  // We also change the colour to red and add "Wrong direction!" text when we
+  // detect the user is actively moving away from the target.
   function drawEdgeArrow(ctx, dPan, dTilt, W, H, isWrong) {
     var angle  = Math.atan2(-dTilt * (H / W), dPan);
     var margin = 56;
@@ -327,17 +333,17 @@
       ctx.fillText(msg, ex, ly + 17);
       ctx.font      = '11px Montserrat, Arial, sans-serif';
       ctx.fillStyle = 'rgba(255,200,200,0.85)';
-      ctx.fillText(Math.abs(Math.round(dPan)) + '\u00B0 away', ex, ey + 36);
+      ctx.fillText(Math.abs(Math.round(dPan)) + '° away', ex, ey + 36);
     } else {
       ctx.font      = 'bold 12px Montserrat, Arial, sans-serif';
       ctx.fillStyle = 'white';
-      ctx.fillText(Math.abs(Math.round(dPan)) + '\u00B0', ex, ey + 36);
+      ctx.fillText(Math.abs(Math.round(dPan)) + '°', ex, ey + 36);
     }
     ctx.textAlign = 'left';
   }
 
-  // ── Helper ───────────────────────────────────────────────────────────────────
-
+  // We implemented roundRect manually because ctx.roundRect() is not available
+  // in all browsers the campus devices run.
   function roundRect(ctx, x, y, w, h, r) {
     if (typeof r === 'number') r = [r, r, r, r];
     ctx.moveTo(x + r[0], y);

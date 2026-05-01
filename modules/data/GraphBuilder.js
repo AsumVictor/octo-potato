@@ -1,14 +1,7 @@
-/**
- * GraphBuilder — turns the flat node map from NodeParser into an adjacency graph
- * that Pathfinder can run Dijkstra on.
- *
- * ROAD-tagged nodes get a 0.1× weight multiplier so the pathfinder strongly
- * prefers proper walkways over cutting through buildings. It'll still use
- * non-road edges if there's no other path.
- *
- * Also exports Nav.haversine so any module can calculate GPS distances without
- * having its own copy of the formula.
- */
+// We built GraphBuilder to convert the flat node map from NodeParser into an
+// adjacency list that Pathfinder can run Dijkstra on.
+// We also decided to expose haversine as Nav.haversine so every other module
+// can calculate GPS distances without keeping its own copy of the formula.
 (function (Nav) {
   'use strict';
 
@@ -25,10 +18,16 @@
         var neighbor = nodeMap[hs.targetId];
         if (!neighbor) return;
 
+        // We prefer the distance Pano2VR recorded on the hotspot because it was
+        // measured directly in the field. We only fall back to haversine when
+        // Pano2VR left the field at zero.
         var rawDist = hs.distance > 0
           ? hs.distance
           : haversine(node.lat, node.lng, neighbor.lat, neighbor.lng);
 
+        // We weight ROAD-tagged edges at 0.1× so Dijkstra strongly prefers
+        // proper walkways over cutting through buildings — it will still use
+        // non-road edges if there is genuinely no other path.
         var weight      = neighbor.isRoad ? 0.1 : 1.0;
         var weightedDist = rawDist * weight;
 
@@ -47,8 +46,8 @@
     return g;
   };
 
-  // BFS from a seed node to find any nodes that can't be reached.
-  // App.js logs isolated nodes at startup — useful for catching broken hotspot links.
+  // We added checkConnectivity to run a BFS from a seed node at startup and log
+  // any isolated nodes — this caught several broken hotspot links during testing.
   GraphBuilder.prototype.checkConnectivity = function (graph, seedId) {
     seedId = seedId || Object.keys(graph)[0];
     var visited = {};
@@ -73,8 +72,6 @@
     return { reachable: reachable, total: total, isolated: isolated };
   };
 
-  // ── Haversine ────────────────────────────────────────────────────────────────
-
   function haversine(lat1, lng1, lat2, lng2) {
     var R    = 6371000;
     var dLat = (lat2 - lat1) * Math.PI / 180;
@@ -86,6 +83,6 @@
   }
 
   Nav.GraphBuilder = new GraphBuilder();
-  Nav.haversine    = haversine;   // shared utility
+  Nav.haversine    = haversine;
 
 })(window.Nav = window.Nav || {});

@@ -1,24 +1,29 @@
+// We wrote LiveLocation as a self-contained GPS tracker that has no dependency
+// on the Nav namespace so it can be tested and used independently.
+// We also thought about putting this logic inside LiveController but decided
+// to keep it standalone so it is easier to unit test without a full app context.
 (function (window) {
   'use strict';
 
-  // ── Config ───────────────────────────────────────────────────────────────────
-  var NODE_SELECT_RADIUS    = 120;  // metres — cast wide net; hysteresis prevents false switches
-  var ROUTE_ADVANCE_RADIUS  = 20;   // metres — auto-advance route step
-  var MAX_ACCEPTABLE_ACCURACY = 40; // metres — ignore readings worse than this
-  var NODE_CHANGE_MARGIN    = 8;    // metres — new node must be this much closer to trigger change
-  var CONFIRM_COUNT         = 2;    // consecutive readings confirming new node before switching
+  var NODE_SELECT_RADIUS      = 120;
+  var ROUTE_ADVANCE_RADIUS    = 20;
+  var MAX_ACCEPTABLE_ACCURACY = 40;
+  var NODE_CHANGE_MARGIN      = 8;
+  var CONFIRM_COUNT           = 2;
 
-  // ── State ────────────────────────────────────────────────────────────────────
-  var watchId           = null;
-  var liveNodeId        = null;
-  var liveNodeDistance  = Infinity;
-  var liveStatus        = 'stopped';
-  var routeState        = null;
+  var watchId            = null;
+  var liveNodeId         = null;
+  var liveNodeDistance   = Infinity;
+  var liveStatus         = 'stopped';
+  var routeState         = null;
   var outOfCoverageTimer = null;
 
-  // Hysteresis: track a candidate node before committing to it
-  var candidateNodeId   = null;
-  var candidateCount    = 0;
+  // We added hysteresis (candidateNodeId + candidateCount) to prevent the
+  // active node from flickering between two adjacent nodes when the user is
+  // standing near the boundary — the new node must be consistently closest
+  // for CONFIRM_COUNT consecutive readings before we commit to it.
+  var candidateNodeId = null;
+  var candidateCount  = 0;
 
   var options = {
     nodes:    [],
@@ -31,8 +36,6 @@
       onError:        function () {}
     }
   };
-
-  // ── Public API ───────────────────────────────────────────────────────────────
 
   function init(opts) {
     opts = opts || {};
@@ -74,6 +77,8 @@
     candidateCount   = 0;
     setStatus('watching');
 
+    // We start an out-of-coverage timer so the user gets feedback if GPS
+    // acquires a fix but no campus nodes are within range after 12 s.
     outOfCoverageTimer = setTimeout(function () {
       if (liveStatus === 'watching' || liveStatus === 'searching') {
         setStatus('out_of_coverage');
@@ -85,7 +90,7 @@
       handleError,
       {
         enableHighAccuracy: true,
-        maximumAge:  0,       // never accept cached readings
+        maximumAge:  0,
         timeout:     10000
       }
     );
@@ -107,8 +112,6 @@
     setStatus('stopped');
   }
 
-  // ── Position handling ────────────────────────────────────────────────────────
-
   function handlePosition(position) {
     if (!position || !position.coords) return;
 
@@ -117,28 +120,27 @@
     var accuracy = position.coords.accuracy > 0 ? position.coords.accuracy : 0;
 
     options.callbacks.onPosition({
-      lat:      lat,
-      lng:      lng,
-      accuracy: accuracy,
+      lat:       lat,
+      lng:       lng,
+      accuracy:  accuracy,
       timestamp: position.timestamp || Date.now(),
-      nodeId:   liveNodeId,
-      distance: liveNodeDistance
+      nodeId:    liveNodeId,
+      distance:  liveNodeDistance
     });
 
     if (options.nodes.length === 0) { setStatus('no_nodes'); return; }
 
-    // Reject readings that are too inaccurate to be useful
+    // We reject readings worse than MAX_ACCEPTABLE_ACCURACY because a 40 m+
+    // accuracy circle covers multiple nodes and makes selection unreliable.
     if (accuracy > MAX_ACCEPTABLE_ACCURACY) {
       setStatus('searching');
       return;
     }
 
-    // Find all nodes within search radius, sorted nearest-first
     var candidates = sortedCandidates(lat, lng, NODE_SELECT_RADIUS);
 
     if (candidates.length === 0) {
       setStatus('searching');
-      // Reset candidate state
       candidateNodeId = null;
       candidateCount  = 0;
       return;
@@ -152,16 +154,9 @@
 
     var best = candidates[0];
 
-    // ── Hysteresis: avoid jitter between adjacent nodes ───────────────────────
-    // Only switch the active node when:
-    //   a) we have no current node, OR
-    //   b) the new best is >= NODE_CHANGE_MARGIN closer than the current node
-    //      AND it has appeared as the best candidate for >= CONFIRM_COUNT readings
-
     var shouldSwitch = false;
 
     if (liveNodeId === null) {
-      // No current node — accept immediately
       shouldSwitch = true;
     } else if (best.nodeId !== liveNodeId) {
       var currentDist = haversine(lat, lng,
@@ -179,7 +174,6 @@
 
       shouldSwitch = isClearlyCloer && (candidateCount >= CONFIRM_COUNT);
     } else {
-      // Still on the same node — update distance, reset candidate
       liveNodeDistance = best.distance;
       candidateNodeId  = null;
       candidateCount   = 0;
@@ -193,7 +187,9 @@
       options.callbacks.onNodeChange(liveNodeId, best.node, best.distance);
     }
 
-    // ── Route auto-advance ───────────────────────────────────────────────────
+    // We auto-advance the route step when the user's GPS position comes within
+    // ROUTE_ADVANCE_RADIUS of the next node — this is the live-mode equivalent
+    // of the Pano2VR 'changenode' event in manual mode.
     if (routeState && routeState.path &&
         routeState.stepIndex < routeState.path.length - 1) {
       var nextStep = routeState.path[routeState.stepIndex + 1];
@@ -217,11 +213,6 @@
     else                            setStatus('error');
   }
 
-  // ── Helpers ──────────────────────────────────────────────────────────────────
-
-  /**
-   * Returns all nodes within maxRadius sorted nearest-first.
-   */
   function sortedCandidates(lat, lng, maxRadius) {
     var results = [];
     options.nodes.forEach(function (node) {
@@ -258,11 +249,10 @@
 
   function getLiveNodeId() { return liveNodeId; }
 
-  /**
-   * Seed the current node from external placement (e.g. GPS detection modal).
-   * Prevents the first watchPosition reading from immediately jumping to a
-   * different node due to GPS jitter — hysteresis will apply from the start.
-   */
+  // We added setCurrentNode so the detection modal can seed the initial node
+  // from the GPS placement result before starting live tracking — this prevents
+  // the first watchPosition reading from immediately jumping to a different node
+  // due to GPS jitter before the hysteresis logic kicks in.
   function setCurrentNode(nodeId) {
     liveNodeId       = nodeId;
     liveNodeDistance = 0;
@@ -281,8 +271,6 @@
                Math.sin(dLon / 2) * Math.sin(dLon / 2);
     return 6371000 * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
   }
-
-  // ── Export ───────────────────────────────────────────────────────────────────
 
   window.LiveLocation = {
     init:           init,

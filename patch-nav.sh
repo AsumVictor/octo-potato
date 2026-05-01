@@ -1,32 +1,85 @@
 #!/bin/bash
-# patch-nav.sh — run this every time you export from Pano2VR
+# Run this every time you export a new pano.xml from Pano2VR.
 # Usage: ./patch-nav.sh
 
 set -e
 
-HTML="$(dirname "$0")/index.html"
+DIR="$(dirname "$0")"
+HTML="$DIR/index.html"
 
-# ── 1. Read the timestamp Pano2VR just wrote into index.html ──────────────────
+# Read the timestamp Pano2VR wrote into index.html
 TS=$(grep -o 'ts=[0-9]*' "$HTML" | head -1 | cut -d= -f2)
 
 if [ -z "$TS" ]; then
-  echo "ERROR: could not find timestamp in index.html"
+  echo "ERROR: could not find a Pano2VR timestamp in index.html"
   exit 1
 fi
 
-echo "Detected Pano2VR timestamp: ts=$TS"
+echo "Timestamp: ts=$TS"
 
-# ── 2. Inject nav script tags into index.html (if not already there) ─────────
-if grep -q 'modules/core/EventBus.js' "$HTML"; then
-  # Already present — update nav.js timestamp only
-  sed -i '' "s/nav\.js?ts=[0-9]*/nav.js?ts=$TS/" "$HTML"
-  echo "Updated nav.js timestamp in index.html"
-else
-  # Insert all module script tags before </noscript>
-  SCRIPTS='<!-- In-panorama navigation — re-add after every Pano2VR re-export -->\n\t\t<!-- core -->\n\t\t<script src="modules\/core\/EventBus.js"><\/script>\n\t\t<script src="modules\/core\/AppState.js"><\/script>\n\t\t<!-- utils -->\n\t\t<script src="modules\/utils\/Utils.js"><\/script>\n\t\t<!-- data -->\n\t\t<script src="modules\/data\/XmlLoader.js"><\/script>\n\t\t<script src="modules\/data\/NodeParser.js"><\/script>\n\t\t<script src="modules\/data\/GraphBuilder.js"><\/script>\n\t\t<script src="modules\/data\/Preloader.js"><\/script>\n\t\t<!-- pathfinding -->\n\t\t<script src="modules\/pathfinding\/Pathfinder.js"><\/script>\n\t\t<!-- navigation -->\n\t\t<script src="modules\/navigation\/AutoRotator.js"><\/script>\n\t\t<script src="modules\/navigation\/Navigator.js"><\/script>\n\t\t<!-- rendering -->\n\t\t<script src="modules\/rendering\/Projector.js"><\/script>\n\t\t<script src="modules\/rendering\/Renderer.js"><\/script>\n\t\t<!-- sensors -->\n\t\t<script src="modules\/sensors\/Gyroscope.js"><\/script>\n\t\t<!-- ui -->\n\t\t<script src="modules\/ui\/StyleInjector.js"><\/script>\n\t\t<script src="modules\/ui\/Toast.js"><\/script>\n\t\t<script src="modules\/ui\/LoadingOverlay.js"><\/script>\n\t\t<script src="modules\/ui\/HUD.js"><\/script>\n\t\t<script src="modules\/ui\/SearchPanel.js"><\/script>\n\t\t<script src="modules\/ui\/ModeChooser.js"><\/script>\n\t\t<script src="modules\/ui\/UIBuilder.js"><\/script>\n\t\t<!-- live location -->\n\t\t<script src="modules\/live-location.js"><\/script>\n\t\t<script src="modules\/live\/LiveController.js"><\/script>\n\t\t<!-- app bootstrap -->\n\t\t<script src="modules\/App.js"><\/script>\n\t\t<!-- entry point -->\n\t\t<script src="nav.js?ts='"$TS"'"><\/script>'
-  sed -i '' "s|</noscript>|</noscript>\n\t\t$SCRIPTS|" "$HTML"
-  echo "Injected nav module script tags into index.html"
-fi
+python3 - "$HTML" "$TS" <<'PYEOF'
+import sys, re
 
-echo ""
-echo "Done. Ready to run with ts=$TS"
+html_path = sys.argv[1]
+ts        = sys.argv[2]
+
+with open(html_path, 'r', encoding='utf-8') as f:
+    content = f.read()
+
+# Remove every script tag that belongs to us (env.js, supabase CDN, modules/, nav.js)
+# Pano2VR's own scripts (pano2vr_player.js, skin.js) are left untouched.
+content = re.sub(
+    r'\s*<script src="(?:env\.js|https://cdn\.jsdelivr\.net[^"]*|modules/[^"]*|nav\.js[^"]*)"></script>',
+    '',
+    content
+)
+
+# Also remove any comment lines we added
+content = re.sub(r'\s*<!-- (?:Environment variables|Supabase|Navigation.*?modules) -->', '', content)
+
+scripts = (
+    '\n'
+    '\t\t<!-- Environment variables -->\n'
+    '\t\t<script src="env.js"></script>\n'
+    '\t\t<!-- Supabase -->\n'
+    '\t\t<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>\n'
+    '\t\t<!-- Navigation & reporting modules -->\n'
+    '\t\t<script src="modules/core/EventBus.js"></script>\n'
+    '\t\t<script src="modules/core/AppState.js"></script>\n'
+    '\t\t<script src="modules/utils/Utils.js"></script>\n'
+    '\t\t<script src="modules/data/XmlLoader.js"></script>\n'
+    '\t\t<script src="modules/data/NodeParser.js"></script>\n'
+    '\t\t<script src="modules/data/GraphBuilder.js"></script>\n'
+    '\t\t<script src="modules/data/Preloader.js"></script>\n'
+    '\t\t<script src="modules/data/IssueTypes.js"></script>\n'
+    '\t\t<script src="modules/data/SupabaseClient.js"></script>\n'
+    '\t\t<script src="modules/data/IssueService.js"></script>\n'
+    '\t\t<script src="modules/pathfinding/Pathfinder.js"></script>\n'
+    '\t\t<script src="modules/navigation/AutoRotator.js"></script>\n'
+    '\t\t<script src="modules/navigation/Navigator.js"></script>\n'
+    '\t\t<script src="modules/rendering/Projector.js"></script>\n'
+    '\t\t<script src="modules/rendering/Renderer.js"></script>\n'
+    '\t\t<script src="modules/sensors/Gyroscope.js"></script>\n'
+    '\t\t<script src="modules/ui/StyleInjector.js"></script>\n'
+    '\t\t<script src="modules/ui/Toast.js"></script>\n'
+    '\t\t<script src="modules/ui/LoadingOverlay.js"></script>\n'
+    '\t\t<script src="modules/ui/HUD.js"></script>\n'
+    '\t\t<script src="modules/ui/SearchPanel.js"></script>\n'
+    '\t\t<script src="modules/ui/ModeChooser.js"></script>\n'
+    '\t\t<script src="modules/ui/ReportTool.js"></script>\n'
+    '\t\t<script src="modules/ui/UIBuilder.js"></script>\n'
+    '\t\t<script src="modules/live-location.js"></script>\n'
+    '\t\t<script src="modules/live/LiveController.js"></script>\n'
+    '\t\t<script src="modules/App.js"></script>\n'
+    f'\t\t<script src="nav.js?ts={ts}"></script>\n'
+)
+
+content = content.replace('</body>', scripts + '\t</body>')
+
+with open(html_path, 'w', encoding='utf-8') as f:
+    f.write(content)
+
+print("Done.")
+PYEOF
+
+echo "Patched index.html with ts=$TS — serve with: npx serve ."

@@ -1,10 +1,8 @@
-/**
- * NodeParser — reads the pano.xml DOM and turns it into a plain JS object map
- * (nodeId → NodeData) that the rest of the app can work with.
- *
- * The XML has a lot of attributes we don't care about; this extracts only what
- * navigation actually needs: id, title, GPS coords, tags, hotspot targets.
- */
+// We wrote NodeParser to read the panorama XML that Pano2VR generates and turn
+// each <panorama> element into a plain JS object the rest of the app can use.
+// Pano2VR stores node metadata (title, GPS, tags) inside a <userdata> child
+// element and hotspot connections as <hotspot> children — we extract only the
+// fields navigation actually needs and ignore the rest.
 (function (Nav) {
   'use strict';
 
@@ -27,6 +25,8 @@
     var id = panorama.getAttribute('id');
     if (!id) return null;
 
+    // We read the start view so we can restore the camera angle when the user
+    // arrives at a node — Pano2VR stores this in <view start>.
     var startView = panorama.querySelector('view start');
     var startPan  = startView ? (parseFloat(startView.getAttribute('pan'))  || 0) : 0;
     var startTilt = startView ? (parseFloat(startView.getAttribute('tilt')) || 0) : 0;
@@ -37,6 +37,8 @@
 
     var hotspots = [];
     eachNode(panorama.querySelectorAll('hotspot'), function (hs) {
+      // We strip curly braces from the url attribute — Pano2VR wraps node IDs
+      // in {braces} as its internal reference format.
       var url      = hs.getAttribute('url') || '';
       var targetId = url.replace(/[{}]/g, '');
       if (!targetId) return;
@@ -65,7 +67,8 @@
     };
   }
 
-  // NodeList.forEach polyfill for older WebKit
+  // We added this polyfill because NodeList.forEach is not available in older
+  // WebKit versions that some campus devices still run.
   function eachNode(list, fn) {
     if (!list) return;
     if (typeof list.forEach === 'function') { list.forEach(fn); return; }

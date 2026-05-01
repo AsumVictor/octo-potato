@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tour apprev="22272" appversion="8.0 beta3" hassounds="0" start="node9">
+<tour apprev="22272" appversion="8.0 beta3" hassounds="0" start="node73">
   <panorama hideabout="1" id="node1">
     <input height="1520" levelbias="0.400" levelbiashidpi="1.000" levelingpitch="0" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node1/cf_%c/l_%l/c_%x/tile_%y.jpg" overlap="1" width="1520">
       <level height="1520" predecode="0" preload="0" width="1520"/>
@@ -1538,7 +1538,7 @@
     </input>
     <userdata altitude="347.20" author="" capturedatetime="2026-03-12T16:44:10" comment="" copyright="" customnodeid="" datetime="12/03/2026 4:44 PM" description="" heading="0" hideinlist="0" info="" latitude="5.75952778" longitude="-0.21952778" nodeid="node73" source="" tags="all|Location|ROAD" title="Engineering_Courtyard"/>
     <view fovmode="2" pannorth="0">
-      <start fov="100" pan="0" projection="4" tilt="0"/>
+      <start fov="100" pan="-120.384" projection="4" tilt="4.02348"/>
       <flyin fov="170" pan="0" projection="9" tilt="-90"/>
       <min fov="1" pan="0" tilt="-90"/>
       <max fov="120" fovfisheye="360" fovstereographic="270" pan="360" scaletofit="0" tilt="90"/>
@@ -2369,6 +2369,7 @@
     </view>
     <hotspots>
       <hotspot description="" distance="6.90025" id="Point01" pan="2.02" skinid="ht_node" target="3.2/6.0/100.0" tilt="-5.22" title="IMG_20260313_143530_00_613.insp" url="{node120}"/>
+      <hotspot description="" distance="27.7987" id="Point02" pan="-169.97" skinid="ht_node" target="-164.5/7.7/100.0" tilt="-8.74" title="IMG_20260313_143658_00_623.insp" url="{node122}"/>
     </hotspots>
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
@@ -2387,6 +2388,9 @@
       <min fov="1" pan="0" tilt="-90"/>
       <max fov="120" fovfisheye="360" fovstereographic="270" pan="360" scaletofit="0" tilt="90"/>
     </view>
+    <hotspots>
+      <hotspot description="" distance="27.7987" id="Point01" pan="9.41" skinid="ht_node" target="0.0/0.0/100.0" tilt="-6.14" title="IMG_20260313_143615_00_618.insp" url="{node121}"/>
+    </hotspots>
     <media/>
     <animation animsequence="Animation01" clipsrandom="0" syncanimationwithvideo="0" useinautorotation="0"/>
   </panorama>

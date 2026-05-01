@@ -1,7 +1,6 @@
-/**
- * Utils — Shared utility functions.
- * Exposed as Nav.Utils so all modules can import without duplicating.
- */
+// We added these helpers to avoid duplicating string escaping and truncation
+// logic across modules. escapeHtml is used whenever we inject user-supplied
+// text into innerHTML to prevent XSS.
 (function (Nav) {
   'use strict';
 
@@ -16,7 +15,7 @@
 
     truncate: function (str, maxLen) {
       if (!str) return '';
-      return str.length > maxLen ? str.slice(0, maxLen - 1) + '\u2026' : str;
+      return str.length > maxLen ? str.slice(0, maxLen - 1) + '…' : str;
     }
   };
 

@@ -1,23 +1,21 @@
-/**
- * AutoRotator — animates the camera to face the next hotspot.
- *
- * When we advance a navigation step, we call rotateTo(pan, tilt) and it
- * smoothly swings the view there over ~1.3 s using an ease-in-out curve.
- * After the animation finishes, if the user looks away, an idle timer kicks
- * in after 4 s and aims them back at the target.
- */
+// We added AutoRotator to smoothly swing the camera to face the next hotspot
+// whenever a navigation step starts — this is the "GPS recalculating" moment
+// where the panorama turns to show you exactly where to walk next.
+// We also added an idle timer that re-aims the camera after 4 s of inactivity
+// in case the user looked away before clicking the highlighted hotspot.
 (function (Nav) {
   'use strict';
 
-  var DURATION   = 1300;  // ms
-  var IDLE_DELAY = 4000;  // ms before re-aim after user looks away
+  var DURATION   = 1300;
+  var IDLE_DELAY = 4000;
 
   function AutoRotator() {
     this._rafId     = null;
     this._idleTimer = null;
   }
 
-  // Cancels any in-flight animation before starting a new one — avoids fighting itself.
+  // We cancel any in-flight animation before starting a new one to avoid two
+  // RAF loops fighting over the camera position simultaneously.
   AutoRotator.prototype.rotateTo = function (targetPan, targetTilt) {
     var self = this;
     this.cancel();
@@ -28,11 +26,11 @@
     var startFov  = pano.getFov();
     var startTime = null;
 
-    // Shortest arc — avoid spinning the long way round
+    // We normalise the pan delta to [-180, 180] so the camera always takes
+    // the shortest arc instead of spinning the long way around the sphere.
     var dPan  = targetPan - startPan;
     dPan      = ((dPan + 180) % 360 + 360) % 360 - 180;
 
-    // Clamp tilt to avoid flipping overhead
     var clampedTilt = Math.max(-70, Math.min(70, targetTilt));
     var dTilt       = clampedTilt - startTilt;
 

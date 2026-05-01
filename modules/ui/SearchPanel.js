@@ -1,9 +1,6 @@
-/**
- * SearchPanel — Destination search UI.
- * Pattern: Singleton
- * Maintains its own search index built from Location-tagged nodes.
- * Emits 'nav:start' via EventBus when the user picks a result.
- */
+// We built SearchPanel to let the user type a campus location name and pick it
+// to start navigation. We restrict the index to Location-tagged nodes only so
+// road/waypoint nodes that are internal routing points never appear in results.
 (function (Nav) {
   'use strict';
 
@@ -14,14 +11,16 @@
     Cafeteria: '☕'
   };
 
+  // We skip these tags when looking for a display category — they describe the
+  // node type rather than the category the user would recognise.
   var SKIP_TAGS = { location: 1, road: 1, all: 1 };
 
   function SearchPanel() {
     this._index = [];
   }
 
-  // ── Public API ───────────────────────────────────────────────────────────────
-
+  // We build a flat array of { label, nodeId, cat } entries so search is a
+  // simple string indexOf scan without needing a trie or fuzzy library.
   SearchPanel.prototype.buildIndex = function () {
     this._index = [];
     var nodes   = Nav.AppState.nodes;
@@ -34,6 +33,9 @@
         return !SKIP_TAGS[t.toLowerCase()] && t.indexOf('IMG_') === -1;
       });
 
+      // We split on hyphens and underscores to generate multiple search labels
+      // per node — "Todd-Library" becomes both "Todd" and "Library" so either
+      // word matches.
       var parts = n.title.split(/[-_]+/).map(function (p) {
         return p.trim().replace(/_/g, ' ');
       }).filter(function (p) {
@@ -60,8 +62,8 @@
     var panel = document.getElementById('nav-search-panel');
     if (!panel) return;
     Nav.ModeChooser.close();
-    panel.style.display      = 'block';
-    panel.style.visibility   = 'visible';
+    panel.style.display       = 'block';
+    panel.style.visibility    = 'visible';
     panel.style.pointerEvents = 'auto';
     requestAnimationFrame(function () { panel.classList.add('open'); });
     var input = document.getElementById('nav-search-input');
@@ -79,8 +81,6 @@
     panel.style.display       = 'none';
     Nav.EventBus.emit('ui:search-close');
   };
-
-  // ── Private ──────────────────────────────────────────────────────────────────
 
   SearchPanel.prototype._render = function (query) {
     var list = document.getElementById('nav-search-results');
@@ -101,6 +101,7 @@
       return;
     }
 
+    // We cap results at 12 to keep the list scannable without scrolling too far.
     filtered.slice(0, 12).forEach(function (e) {
       var icon = (e.cat && CATEGORY_ICONS[e.cat]) ? CATEGORY_ICONS[e.cat] : '📍';
       var li   = document.createElement('li');

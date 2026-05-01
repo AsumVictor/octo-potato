@@ -1,12 +1,7 @@
-/**
- * LiveController — wires live-location.js into the Nav EventBus.
- *
- * live-location.js uses plain callbacks; everything else in Nav talks via
- * EventBus. This module sits between them: it initialises LiveLocation with
- * the node list, translates each callback into an EventBus emit, and listens
- * for EventBus events that need to be forwarded back into LiveLocation (e.g.
- * when a new route starts, LiveLocation needs to know what step we're on).
- */
+// We added LiveController to bridge between live-location.js (which uses plain
+// callbacks) and the rest of Nav (which communicates through EventBus).
+// We also thought about putting these listeners directly in App.js but separating
+// them here keeps App.js focused on boot sequencing rather than event wiring.
 (function (Nav) {
   'use strict';
 
@@ -36,7 +31,8 @@
   };
 
   LiveController.prototype.bindEvents = function () {
-    // GPS found a new closest node while in live mode → jump the panorama there
+    // We listen for GPS node changes and jump the panorama to the new node only
+    // when in live mode — in manual mode the user controls which node is shown.
     Nav.EventBus.on('live:node-change', function (data) {
       if (Nav.AppState.navMode !== 'live') return;
       if (!data || !data.nodeId) return;
@@ -51,13 +47,13 @@
       Nav.Toast.show('Live: moved to ' + node.title + ' (' + Math.round(data.distance) + 'm)', 2200);
     });
 
-    // GPS auto-advanced a route step → open the panorama node if not already there.
-    // Do NOT call Navigator.handleNodeChange() here — the changenode event from
-    // pano.openNext() triggers it via _bindPlayerEvents, avoiding double-advance.
+    // We do NOT call Navigator.handleNodeChange() here — pano.openNext() fires
+    // the Pano2VR 'changenode' event which App.js already routes to Navigator,
+    // so calling it again here would double-advance the step counter.
     Nav.EventBus.on('live:route-advance', function (data) {
       if (!Nav.AppState.activeRoute) return;
       if (!data || !data.nodeId) return;
-      if (pano.getCurrentNode() === data.nodeId) return; // already there, changenode already fired
+      if (pano.getCurrentNode() === data.nodeId) return;
 
       var node = data.node;
       pano.openNext('{' + data.nodeId + '}', {
@@ -67,20 +63,19 @@
       });
     });
 
-    // GPS status changed → update status label + show toasts
     Nav.EventBus.on('live:status', function (status) {
       var statusEl = document.getElementById('nav-mode-status');
       if (statusEl) {
         var labels = {
-          watching:      'Tracking',
-          searching:     'Searching GPS',
-          tracking:      'Live tracking active',
+          watching:        'Tracking',
+          searching:       'Searching GPS',
+          tracking:        'Live tracking active',
           out_of_coverage: 'Out of coverage',
-          denied:        'GPS denied',
-          unavailable:   'GPS unavailable',
-          unsupported:   'GPS unsupported',
-          error:         'GPS error',
-          stopped:       'Live GPS off'
+          denied:          'GPS denied',
+          unavailable:     'GPS unavailable',
+          unsupported:     'GPS unsupported',
+          error:           'GPS error',
+          stopped:         'Live GPS off'
         };
         statusEl.textContent = 'Live mode: ' + (labels[status] || status);
       }
@@ -98,13 +93,11 @@
       }
     });
 
-    // GPS error toast
     Nav.EventBus.on('live:error', function (err) {
       if (!err) return;
       Nav.Toast.show('GPS error: ' + (err.message || 'Unable to get location'), 3200);
     });
 
-    // When navigation mode changes, sync LiveLocation
     Nav.EventBus.on('mode:change', function (mode) {
       if (mode === 'live') {
         if (window.LiveLocation && LiveLocation.setRoute && Nav.AppState.activeRoute) {
@@ -113,7 +106,8 @@
       }
     });
 
-    // Keep LiveLocation route in sync when navigation starts or reroutes
+    // We keep LiveLocation's internal route state in sync with Navigator's so
+    // the GPS auto-advance always knows which step we are on.
     Nav.EventBus.on('nav:started', function (route) {
       if (window.LiveLocation && LiveLocation.setRoute) {
         LiveLocation.setRoute(route, Nav.AppState.stepIndex);

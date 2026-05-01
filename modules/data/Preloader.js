@@ -1,12 +1,9 @@
-/**
- * Preloader — kicks off parallel image tile downloads before the user starts
- * navigating so panoramas load instantly when they arrive at a node.
- *
- * Reads the tile URL templates from pano.xml, expands them across all faces/
- * levels/tiles, and fires up to CONCURRENCY (12) downloads at once. Calls
- * onProgress(loaded, total) on each completion so the loading overlay can
- * show a progress count.
- */
+// We added Preloader to download panorama tiles in the background while the
+// loading screen is up so nodes feel instant when the user navigates to them.
+// We read the tile URL templates directly from the Pano2VR-generated pano.xml
+// and only preload levels that Pano2VR marked with preload="1".
+// We also capped concurrency at 12 to avoid saturating the network on slower
+// campus Wi-Fi connections.
 (function (Nav) {
   'use strict';
 
@@ -42,8 +39,8 @@
     });
   };
 
-  // ── Private ──────────────────────────────────────────────────────────────────
-
+  // We parse the tile URL template that Pano2VR stores in <input leveltileurl>
+  // and expand %c (face), %l (level), %x/%y (tile coords) into real URLs.
   function collectUrls(doc) {
     var urls  = [];
     var panos = doc.querySelectorAll('panorama');
@@ -74,7 +71,6 @@
       });
     });
 
-    // Deduplicate
     return urls.filter(function (v, i) { return urls.indexOf(v) === i; });
   }
 

@@ -1,14 +1,5 @@
 'use strict';
 
-/**
- * Jest global setup — runs before every test file.
- *
- * Our modules are browser IIFEs: (function(Nav){...})(window.Nav = window.Nav || {})
- * jest-environment-jsdom makes window === global, so setting global.Nav here
- * is the same as setting window.Nav.  Each test file re-requires its modules
- * after this setup runs.
- */
-
 // ── Nav namespace ─────────────────────────────────────────────────────────────
 global.Nav = {};
 
